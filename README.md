@@ -13,10 +13,10 @@ As a financial institution, detecting fraud is imperative to ensure safe and con
 In this workshop we will be looking at detecting fradulent transactions in real-time. We will be training our model based on publicly available data from [Kaggle](https://www.kaggle.com/ntnu-testimon/paysim1) and integrating this custom machine learning model in a real-time data pipeline, supported by Azure Stream Analytics.
 
 ## Solution Architecture 
-### Real-Time Data Pipeline with ML.NET
+#### A Real-Time Data Pipeline with ML.NET
 ![Real-Time Data Pipeline with ML.NET](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/Solution%20Architecture%20-%20ML.NET.png)
 
-### Real-Time Data Pipeline with Azure Machine Learning Studio
+#### A Real-Time Data Pipeline with Azure Machine Learning Studio
 ![Real-Time Data Pipeline with Azure ML](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/Solution%20Architecture%20-%20Azure%20ML.png)
 
 ## Outline of Learning and Objectives
