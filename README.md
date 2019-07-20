@@ -8,7 +8,7 @@ The following is required to complete the below outlined workshop:
 - Visual Studio 2017/2019
 
 ## Todo
-- [ ] Define problem to solve
+- [X] Define problem to solve
 - [ ] Write ARM templates to setup the streaming pipeline
 - [ ] Write simulator for potential data source
 - [ ] Aquire data to train model on
@@ -16,6 +16,7 @@ The following is required to complete the below outlined workshop:
 
 ## Problem to solve
 - Financial Analysis to detect fradulent transactions in real-time
+- Datasource: https://www.kaggle.com/ntnu-testimon/paysim1/version/2
 
 ## Outline of Learning and Objectives
 - **Part 1**: Train a Machine Learning Model using ML.NET
