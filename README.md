@@ -4,7 +4,7 @@ Working with real-time data streams, and deriving real-time insights using custo
 ## Prerequisites
 In order to complete the workshop, please ensure you have the following:
 - An Azure subscription
-- [https://www.kaggle.com/](A Kaggle account)
+- [A Kaggle account](https://www.kaggle.com/)
 - Visual Studio 2017/2019
 
 ## Problem outline
