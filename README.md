@@ -4,6 +4,7 @@ Working with real-time data streams, and deriving real-time insights have become
 ## Preparations
 The following is required to complete the below outlined workshop:
 - An Azure subscription
+- A Kaggle account
 - Visual Studio 2017/2019
 
 ## Todo
@@ -12,6 +13,9 @@ The following is required to complete the below outlined workshop:
 - [ ] Write simulator for potential data source
 - [ ] Aquire data to train model on
 - [ ] Train the model 
+
+## Problem to solve
+- Financial Analysis to detect fradulent transactions in real-time
 
 ## Outline of Learning and Objectives
 - **Part 1**: Train a Machine Learning Model using ML.NET
