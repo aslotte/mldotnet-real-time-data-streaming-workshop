@@ -30,9 +30,6 @@ In this workshop we will be looking at detecting fradulent transactions in real-
 - **Part 2**: [Setting up real-time data streaming pipeline](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-streaming.md)
   - Introducing Azure Stream Analytics
   - Setting up a real-time data pipeline
- - **Part 3**: Integrate our real-time data pipeline with our model
-  - Deploy our ML.NET model as an Azure Function
-  - Deploy integrate Azure ML through Azure Stream Analytics
 
 ## Todo
 - [X] Define problem to solve
