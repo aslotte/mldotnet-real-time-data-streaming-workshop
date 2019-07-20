@@ -16,6 +16,7 @@ In this workshop we will be looking at detecting fradulent transactions in real-
 #### A Real-Time Data Pipeline with ML.NET
 ![Real-Time Data Pipeline with ML.NET](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/Solution%20Architecture%20-%20ML.NET.png)
 
+
 #### A Real-Time Data Pipeline with Azure Machine Learning Studio
 ![Real-Time Data Pipeline with Azure ML](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/Solution%20Architecture%20-%20Azure%20ML.png)
 
