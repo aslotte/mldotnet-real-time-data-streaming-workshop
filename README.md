@@ -3,23 +3,23 @@ Working with real-time data streams, and deriving real-time insights using custo
 
 ## Prerequisites
 In order to complete the workshop, please ensure you have the following:
-- An Azure subscription
+- [A free Azure subscription](https://azure.microsoft.com/en-us/free/)
 - [A Kaggle account](https://www.kaggle.com/)
-- Visual Studio 2017/2019
+- [Visual Studio 2019](https://visualstudio.microsoft.com/vs/)
 
 ## Problem outline
-- Financial Analysis to detect fradulent transactions in real-time
-- Datasource: https://www.kaggle.com/ntnu-testimon/paysim1/version/2
+As a financial institution, detecting fraud is imperative to ensure safe and continuous operations for the bank and its customers.  
+In this workshop we will be looking at detecting fradulent transactions in real-time. We will be training our model based on publicly available data from [Kaggle](https://www.kaggle.com/ntnu-testimon/paysim1) and integrating this custom machine learning model in a real-time data pipeline, supported by Azure Stream Analytics.
 
 ## Outline of Learning and Objectives
 - **Part 1**: Machine Learning in .NET
-  - An introduction to Machine Learning and ML.NET
+  - Introducing Machine Learning and ML.NET
   - Explore the data
   - Train a machine learning model using ML.NET
   - Train a machine learning model using AutoML CLI
   - Train a machine learning model using Azure Machine Learning Studio
 - **Part 2**: Setting up real-time data streaming pipeline
-  - An introduction to Azure Stream Analytics
+  - Introducing Azure Stream Analytics
   - Setting up a real-time data pipeline
  - **Part 3**: Integrate our real-time data pipeline with our model
   - Deploy our ML.NET model as an Azure Function
