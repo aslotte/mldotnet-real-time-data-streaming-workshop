@@ -15,6 +15,9 @@ The following is required to complete the below outlined workshop:
 
 ## Outline of Learning and Objectives
 - **Part 1**: Train a Machine Learning Model using ML.NET
+  - Setup your own training pipeline
+  - Utilize AutoML CLI to train your model
+  - Deploy prediction engine
 - **Part 2**: Setup real-time data streaming pipeline
 
 ## Separate parts
