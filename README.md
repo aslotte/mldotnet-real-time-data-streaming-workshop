@@ -1,10 +1,10 @@
 ## Introduction
-Working with real-time data streams, and deriving real-time insights have become increasingly important for many organizations. There are numerous real-time data platforms currently available (e.g. Kafa, Hadoop Spark), but the one we will be focusing on in this workshop in particular is **Azure Stream Analytics**. In addition to diving in to Azure Stream Analytics, we will also explore the open-source cross-plattform library ML.NET.
+Working with real-time data streams, and deriving real-time insights using custom machine learning models have become increasingly important for many organizations. There are numerous real-time data platforms currently available (e.g. Kafa, Hadoop Spark), but the one we will be focusing on in this workshop in particular is **Azure Stream Analytics**. In addition to diving in to Azure Stream Analytics, we will also explore the open-source cross-plattform library ML.NET, which we will use to build our custom machine learning models.
 
 ## Prerequisites
-The following is required to complete the below outlined workshop:
+In order to complete the workshop, please ensure you have the following:
 - An Azure subscription
-- A Kaggle account
+- [https://www.kaggle.com/](A Kaggle account)
 - Visual Studio 2017/2019
 
 ## Problem outline
