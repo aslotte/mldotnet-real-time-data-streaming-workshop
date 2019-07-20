@@ -1,6 +1,7 @@
 ﻿using CsvHelper;
 using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
 using TransactionSimulator.DataModels;
 
 namespace TransactionSimulator.Services
@@ -9,9 +10,14 @@ namespace TransactionSimulator.Services
     {
         public IEnumerable<Transaction> ReadTransactions()
         {
-            using (TextReader reader = File.OpenText(@"/Users/bart/Downloads/Work.csv"))
+            var basePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            var filePath = Path.Combine(basePath, @"Data\simulator-data.csv");
+
+            using (TextReader reader = File.OpenText(filePath))
             {
                 CsvReader csv = new CsvReader(reader);
+                csv.Configuration.HeaderValidated = null;
+
                 csv.Configuration.Delimiter = ",";
                 while (csv.Read())
                 {

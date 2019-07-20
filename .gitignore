@@ -19,3 +19,9 @@ src/real-time-data-streaming/transaction-simulator/TransactionSimulator/Transact
 src/real-time-data-streaming/transaction-simulator/TransactionSimulator/TransactionSimulator/obj/TransactionSimulator.csproj.nuget.dgspec.json
 src/real-time-data-streaming/transaction-simulator/TransactionSimulator/TransactionSimulator/obj/TransactionSimulator.csproj.nuget.g.props
 src/real-time-data-streaming/transaction-simulator/TransactionSimulator/TransactionSimulator/obj/TransactionSimulator.csproj.nuget.g.targets
+src/real-time-data-streaming/transaction-simulator/TransactionSimulator/TransactionSimulator/bin/Debug/netcoreapp2.1/appsettings.json
+src/real-time-data-streaming/transaction-simulator/TransactionSimulator/TransactionSimulator/bin/Debug/netcoreapp2.1/Data/simulator-data.csv
+src/real-time-data-streaming/transaction-simulator/TransactionSimulator/TransactionSimulator/bin/Debug/netcoreapp2.1/TransactionSimulator.dll
+src/real-time-data-streaming/transaction-simulator/TransactionSimulator/TransactionSimulator/bin/Debug/netcoreapp2.1/TransactionSimulator.pdb
+src/real-time-data-streaming/transaction-simulator/TransactionSimulator/TransactionSimulator/obj/Debug/netcoreapp2.1/TransactionSimulator.dll
+src/real-time-data-streaming/transaction-simulator/TransactionSimulator/TransactionSimulator/obj/Debug/netcoreapp2.1/TransactionSimulator.pdb

@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using System;
 using System.IO;
+using System.Linq;
 using TransactionSimulator.Configuration;
 using TransactionSimulator.Services;
 
@@ -9,20 +10,20 @@ namespace TransactionSimulator
 {
     class Program
     {
-        static async void Main(string[] args)
+        static void Main(string[] args)
         {
             var appSettings = GetAppSettings();
 
             using (var loggerFactory = new LoggerFactory())
             {
                 var transactionDataReader = new TransactionDataReader();
-                var eventHubService = new EventHubService(loggerFactory, appSettings.EventHubSettings);
+                var transactions = transactionDataReader.ReadTransactions().ToList();
 
-                var transactions = transactionDataReader.ReadTransactions();
+                var eventHubService = new EventHubService(loggerFactory, appSettings.EventHubSettings);
 
                 foreach (var transaction in transactions)
                 {
-                    await eventHubService.SendMessageToEventHub(transaction);
+                    eventHubService.SendMessageToEventHub(transaction);
                 }
 
                 Console.ReadLine();

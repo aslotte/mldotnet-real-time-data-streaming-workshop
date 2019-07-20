@@ -5,6 +5,6 @@ namespace TransactionSimulator.Services
 {
     internal interface ITransactionDataReader
     {
-        IEnumerable<Transaction> ReadTransactions()
+        IEnumerable<Transaction> ReadTransactions();
     }
 }
