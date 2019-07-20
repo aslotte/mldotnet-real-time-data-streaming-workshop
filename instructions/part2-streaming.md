@@ -1,4 +1,4 @@
-# Real-Time Data Streaming Pipeline
+# Setting up a Real-Time Data Pipeline
 
 ## Introduction
 In this part of the workshop, we will be setting up the real-time data pipeline in Azure.
