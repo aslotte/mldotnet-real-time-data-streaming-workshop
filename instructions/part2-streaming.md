@@ -7,12 +7,19 @@ If you're comfortable setting up the pipeline manually, please follow the instru
 ## Real-Time Data Pipeline with ML.NET integration
 
 ### Step 1: Setup an EventHub
+- Create a new Event Hub Namespace
+- Within the namespace, create two new eventhubs named
+  - transaction-eh
+  - transaction-enriched-eh
 
-### Step 2: Setup an Azure Function
+### Step 2: Create an storage account to store ML.NET model
 
-### Step 2a: Publish the ML.NET Azure Function
+### Step 3: Setup an Azure Function
 
-### Step 3: Setup a Logic App
+### Step 3a: Publish the ML.NET Azure Function
+Make sure to add the following properties to the Configuration section:
+- storageAccountConnection: ConnectionString to the storage account containing the ML.NET model from step 2 
+- eventHubConnection: ConnectionString to the EventHubNameSpace
 
 ### Step 4: Setup a Stream Analytics Job
 
