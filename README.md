@@ -1,12 +1,15 @@
 ## Introduction
 Working with real-time data streams, and deriving real-time insights using custom machine learning models have become increasingly important for many organizations. There are numerous real-time data platforms currently available (e.g. Kafa, Hadoop Spark), but the one we will be focusing on in this workshop in particular is **Azure Stream Analytics**. In addition to diving in to Azure Stream Analytics, we will also explore the open-source cross-plattform library ML.NET, which we will use to build our custom machine learning models.
 
-## Prerequisites
+## Pre-requisites
 In order to complete the workshop, please ensure you have the following:
 - [A free Azure subscription](https://azure.microsoft.com/en-us/free/)
 - [A Kaggle account](https://www.kaggle.com/)
 - [Visual Studio 2019](https://visualstudio.microsoft.com/vs/)
 - [ML.NET Model Builder (optional)](https://dotnet.microsoft.com/apps/machinelearning-ai/ml-dotnet/model-builder)
+
+## Assumptions
+This workshop is currently valid for ML.NET v1.2.0.0
 
 ## Problem outline
 As a financial institution, detecting fraud is imperative to ensure safe and continuous operations for the bank and its customers.  
@@ -42,5 +45,5 @@ In this workshop we will be looking at detecting fradulent transactions in real-
 - [ ] Describe steps to train model using AutoML CLI
 - [ ] Train model using Azure Machine Learning
 - [ ] Describe steps to train model using Azure Machine Learning
-- [ ] Create Azure Function for ML.NET model
-- [ ] Understand why AutoML is training a model using ML.NET v1.0.0.0 not v1.2.0.0
+- [X] Create Azure Function for ML.NET model
+- [X] Understand why AutoML is training a model using ML.NET v1.0.0.0 not v1.2.0.0
