@@ -6,6 +6,7 @@ In order to complete the workshop, please ensure you have the following:
 - [A free Azure subscription](https://azure.microsoft.com/en-us/free/)
 - [A Kaggle account](https://www.kaggle.com/)
 - [Visual Studio 2019](https://visualstudio.microsoft.com/vs/)
+- [ML.NET Model Builder (optional)](https://dotnet.microsoft.com/apps/machinelearning-ai/ml-dotnet/model-builder)
 
 ## Problem outline
 As a financial institution, detecting fraud is imperative to ensure safe and continuous operations for the bank and its customers.  
@@ -42,3 +43,4 @@ In this workshop we will be looking at detecting fradulent transactions in real-
 - [ ] Train model using Azure Machine Learning
 - [ ] Describe steps to train model using Azure Machine Learning
 - [ ] Create Azure Function for ML.NET model
+- [ ] Understand why AutoML is training a model using ML.NET v1.0.0.0 not v1.2.0.0
