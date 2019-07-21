@@ -22,6 +22,11 @@ namespace FraudPredictionFunction
 
             transaction.IsFraud = IsFraudulentTransaction(transaction, model);
 
+            if (transaction.IsFraud)
+            {
+                log.LogInformation("Fraudulent Transaction discovered!");
+            }
+
             var result = JsonConvert.SerializeObject(transaction);
 
             return result;

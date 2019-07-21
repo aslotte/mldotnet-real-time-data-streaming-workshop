@@ -32,3 +32,12 @@ src/real-time-data-streaming/fraud-prediction-function/FraudPredictionFunction/.
 src/real-time-data-streaming/fraud-prediction-function/FraudPredictionFunction/.vs/FraudPredictionFunction/v16/Server/sqlite3/storage.ide
 src/real-time-data-streaming/fraud-prediction-function/FraudPredictionFunction/.vs/FraudPredictionFunction/v16/Server/sqlite3/storage.ide-shm
 src/real-time-data-streaming/fraud-prediction-function/FraudPredictionFunction/.vs/FraudPredictionFunction/v16/Server/sqlite3/storage.ide-wal
+src/real-time-data-streaming/fraud-prediction-function/.vs/FraudPredictionFunction/config/applicationhost.config
+src/real-time-data-streaming/fraud-prediction-function/.vs/FraudPredictionFunction/DesignTimeBuild/.dtbcache
+src/real-time-data-streaming/fraud-prediction-function/.vs/FraudPredictionFunction/v16/.suo
+src/real-time-data-streaming/fraud-prediction-function/.vs/FraudPredictionFunction/v16/Server/sqlite3/db.lock
+src/real-time-data-streaming/fraud-prediction-function/.vs/FraudPredictionFunction/v16/Server/sqlite3/storage.ide
+src/real-time-data-streaming/fraud-prediction-function/.vs/FraudPredictionFunction/v16/Server/sqlite3/storage.ide-shm
+src/real-time-data-streaming/fraud-prediction-function/.vs/FraudPredictionFunction/v16/Server/sqlite3/storage.ide-wal
+src/real-time-data-streaming/transaction-simulator/TransactionSimulator/.vs/TransactionSimulator/DesignTimeBuild/.dtbcache
+src/real-time-data-streaming/fraud-prediction-function/FraudPredictionFunction/Properties/PublishProfiles/prediction-function - Web Deploy.pubxml
