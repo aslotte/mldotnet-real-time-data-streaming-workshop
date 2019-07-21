@@ -34,6 +34,11 @@ In this workshop we will be looking at detecting fradulent transactions in real-
 ## Todo
 - [X] Define problem to solve
 - [ ] Write ARM templates to setup the streaming pipeline
-- [ ] Write simulator for potential data source
-- [ ] Aquire data to train model on
-- [ ] Train the model 
+- [X] Write simulator for potential data source
+- [X] Aquire data to train model on
+- [ ] Train the model in ML.NET
+- [ ] Setup workshop solution for ML.NET (partially filled in)
+- [ ] Describe steps to train model using AutoML CLI
+- [ ] Train model using Azure Machine Learning
+- [ ] Describe steps to train model using Azure Machine Learning
+- [ ] Create Azure Function for ML.NET model
