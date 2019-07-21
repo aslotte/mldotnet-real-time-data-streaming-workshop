@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using TransactionSimulator.Configuration;
 using TransactionSimulator.Services;
 
@@ -16,6 +17,8 @@ namespace TransactionSimulator
 
             using (var loggerFactory = new LoggerFactory())
             {
+                loggerFactory.AddConsole();
+
                 var transactionDataReader = new TransactionDataReader();
                 var transactions = transactionDataReader.ReadTransactions().ToList();
 
@@ -24,6 +27,7 @@ namespace TransactionSimulator
                 foreach (var transaction in transactions)
                 {
                     eventHubService.SendMessageToEventHub(transaction);
+                    Thread.Sleep(300);
                 }
 
                 Console.ReadLine();
