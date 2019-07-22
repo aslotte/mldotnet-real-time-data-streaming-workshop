@@ -7,11 +7,13 @@ If you're comfortable setting up the pipeline manually, please follow the instru
 ## Real-Time Data Pipeline with ML.NET integration
 
 ### Step 1. Deploy Azure Resource Management Template
-To deploy the core Azure infrastructure, please follow the link below:
-
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fgithub.com%2Faslotte%2Fmldotnet-real-time-data-streaming-workshop%2Fblob%2Fmaster%2Fsrc%2Freal-time-data-streaming%2Fdeploy%2Fpipeline-with-mldotnet.json" target="_blank">
-    <img src="http://azuredeploy.net/deploybutton.png"/> 
-</a>
+To deploy the core Azure infrastructure, please do the following:
+- Navigate [here](https://portal.azure.com/#create/Microsoft.Template)
+- Copy the content of the [ARM template](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/src/real-time-data-streaming/deploy/pipeline-with-mldotnet.json)
+- Click on "Build your own template through the editor"
+- Copy paste the ARM template in the editor
+- Click Save
+- Fill in the requested parameters
 
 ### Step 1: Setup an EventHub
 - Create a new Event Hub Namespace
