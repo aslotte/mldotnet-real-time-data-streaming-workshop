@@ -39,8 +39,7 @@ Make sure to add the following properties to the Configuration section:
 
 #### Step 8: Inititate the Event Producer
 
-
-### Real-Time Data Pipeline with Azure ML integration
+## Real-Time Data Pipeline with Azure ML integration
 
 #### Step 1: Setup an EventHub
 
