@@ -7,6 +7,8 @@ In order to complete the workshop, please ensure you have the following:
 - [A Kaggle account](https://www.kaggle.com/)
 - [Visual Studio 2019](https://visualstudio.microsoft.com/vs/)
 - [ML.NET Model Builder (optional)](https://dotnet.microsoft.com/apps/machinelearning-ai/ml-dotnet/model-builder)
+- [PowerBI](https://powerbi.microsoft.com/en-us/)
+- [Outlook e-mail](www.outlook.com)
 
 ## Assumptions
 This workshop is currently valid for ML.NET v1.2.0.0
@@ -47,5 +49,5 @@ In this workshop we will be looking at detecting fradulent transactions in real-
 - [ ] Describe steps to train model using Azure Machine Learning
 - [X] Create Azure Function for ML.NET model
 - [X] Understand why AutoML is training a model using ML.NET v1.0.0.0 not v1.2.0.0
-- [ ] Add more fraudelent data in the simulator data file
-- [ ] Will it be expensive to use the storage account for ML.NET model?
+- [X] Add more fraudelent data in the simulator data file
+- [X] Will it be expensive to use the storage account for ML.NET model?

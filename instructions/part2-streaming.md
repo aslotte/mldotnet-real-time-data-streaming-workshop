@@ -21,13 +21,18 @@ Make sure to add the following properties to the Configuration section:
 - storageAccountConnection: ConnectionString to the storage account containing the ML.NET model from step 2 
 - eventHubConnection: ConnectionString to the EventHubNameSpace
 
-### Step 4: Setup a Stream Analytics Job
+### Step 4: Setup an Egress Service Bus Queue 
 
-### Step 5: Setup an Egress Logic App
+### Step 5: Setup a Stream Analytics Job
 
-### Step 6: Setup a PowerBI Dashboard
+### Step 6: Setup an Egress Logic App
+#### Email settings
+- To: json(base64toString(triggerBody()['ContentData']))['email']
+- Body: "A Fraudulent Transaction was discovered, your account has been locked. The transactions was of type @{json(base64toString(triggerBody()['ContentData']))['Type']}  originating from @{json(base64toString(triggerBody()['ContentData']))['NameDest']}",
 
-### Step 7: Inititate the Event Producer
+### Step 7: Setup a PowerBI Dashboard
+
+### Step 8: Inititate the Event Producer
 
 
 ## Real-Time Data Pipeline with Azure ML integration
