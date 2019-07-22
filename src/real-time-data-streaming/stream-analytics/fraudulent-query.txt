@@ -1,8 +1,9 @@
 -- Service-Bus
-SELECT *
+SELECT trans.*, ref.email
 INTO fraudulent
-FROM transactions
-WHERE IsFraud = 1
+FROM transactions trans
+JOIN reference ref ON ref.customerid = trans.NameOrig
+WHERE trans.IsFraud = 1
 
 -- PowerBI
 SELECT 
