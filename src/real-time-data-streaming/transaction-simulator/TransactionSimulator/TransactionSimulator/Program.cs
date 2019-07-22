@@ -27,7 +27,7 @@ namespace TransactionSimulator
                 foreach (var transaction in transactions)
                 {
                     eventHubService.SendMessageToEventHub(transaction);
-                    Thread.Sleep(300);
+                    Thread.Sleep(500);
                 }
 
                 Console.ReadLine();
