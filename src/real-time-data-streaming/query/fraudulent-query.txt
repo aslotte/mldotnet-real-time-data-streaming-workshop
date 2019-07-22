@@ -1,0 +1,16 @@
+-- Service-Bus
+SELECT *
+INTO fraudulent
+FROM transactions
+WHERE IsFraud = 1
+
+-- PowerBI
+SELECT 
+System.TimeStamp as EventTime,
+COUNT(*) AS NumberOfFraudPerOneHour,
+SUM(OldbalanceOrg - NewbalanceOrig) AS TotalFraudAmount
+INTO powerbi
+FROM transactions
+WHERE IsFraud = 1
+GROUP BY HoppingWindow(Duration(hour, 1), Hop(second, 5))
+
