@@ -48,5 +48,5 @@ In this workshop we will be looking at detecting fradulent transactions in real-
 - [ ] Describe steps to train model using Azure Machine Learning
 - [X] Create Azure Function for ML.NET model
 - [X] Understand why AutoML is training a model using ML.NET v1.0.0.0 not v1.2.0.0
-- [ ] Add more fraudelent data in the simulator data file
-- [ ] Will it be expensive to use the storage account for ML.NET model?
+- [X] Add more fraudelent data in the simulator data file
+- [X] Will it be expensive to use the storage account for ML.NET model?
