@@ -8,6 +8,7 @@ In order to complete the workshop, please ensure you have the following:
 - [Visual Studio 2019](https://visualstudio.microsoft.com/vs/)
 - [ML.NET Model Builder (optional)](https://dotnet.microsoft.com/apps/machinelearning-ai/ml-dotnet/model-builder)
 - [PowerBI](https://powerbi.microsoft.com/en-us/)
+- [Outlook e-mail](www.outlook.com)
 
 ## Assumptions
 This workshop is currently valid for ML.NET v1.2.0.0
