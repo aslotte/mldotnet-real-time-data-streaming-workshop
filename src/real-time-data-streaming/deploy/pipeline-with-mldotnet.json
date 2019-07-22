@@ -1,0 +1,780 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "PowerBIUserDisplayName": {
+            "type": "string",
+            "minLength": 3,
+            "defaultValue": "Please enter your name here",
+            "metadata": {
+              "description": "Your name for connecting Stream Analytics to PowerBI."
+            }
+          },
+          "PowerBIUserLoginName": {
+            "type": "string",
+            "minLength": 3,
+            "defaultValue": "first.last@outlook.com",
+            "metadata": {
+              "description": "Your loginname/alias for connecting Stream Analytics to PowerBI."
+            }
+        },
+        "NotificationEmail": {
+            "type": "string",
+            "minLength": 3,
+            "defaultValue": "first.last@outlook.com",
+            "metadata": {
+              "description": "The e-mail you would like to use to send alerts"
+            }
+        }
+    },
+    "variables": {
+        "connections_servicebus_name": "servicebus",
+        "serverfarms_Plan_name": "[concat('serverfarmsplan-', uniqueString(resourceGroup().id))]",
+        "sites_prediction_function_name": "[concat('prediction-function-', uniqueString(resourceGroup().id))]",
+        "storageAccounts_mlmodel_name": "[concat('mlmodel', uniqueString(resourceGroup().id))]",
+        "namespaces_fraudalerts_name": "[concat('fraudalerts-', uniqueString(resourceGroup().id))]",
+        "namespaces_transaction_eh_name": "[concat('transaction-eh-', uniqueString(resourceGroup().id))]",
+        "workflows_fraudulent_notifier_name": "[concat('fraudulent-notifier-', uniqueString(resourceGroup().id))]",
+        "storageAccounts_prognetstorage_name": "[concat('storage', uniqueString(resourceGroup().id))]",
+        "components_prediction_function_name": "[concat('prediction-function-', uniqueString(resourceGroup().id))]",
+        "streamingjobs_fraud_analytics_name": "[concat('fraud-analytics-', uniqueString(resourceGroup().id))]",
+        "actionGroups_Application%20Insights%20Smart%20Detection_name": "[concat('Application%20Insights%20Smart%20Detection-', uniqueString(resourceGroup().id))]",
+        "eventhub_resourceKey": "[resourceId('Microsoft.EventHub/namespaces/AuthorizationRules', variables('namespaces_transaction_eh_name'), 'RootManageSharedAccessKey')]",
+        "serviceBus_resourceKey": "[resourceId('Microsoft.ServiceBus/namespaces/AuthorizationRules', variables('namespaces_fraudalerts_name'), 'RootManageSharedAccessKey')]"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.EventHub/namespaces",
+            "apiVersion": "2018-01-01-preview",
+            "name": "[variables('namespaces_transaction_eh_name')]",
+            "location": "[resourceGroup().location]",
+            "sku": {
+                "name": "Standard",
+                "tier": "Standard",
+                "capacity": 1
+            },
+            "properties": {
+                "zoneRedundant": false,
+                "isAutoInflateEnabled": false,
+                "maximumThroughputUnits": 0,
+                "kafkaEnabled": false
+            }
+        },
+        {
+            "type": "microsoft.insights/actionGroups",
+            "apiVersion": "2019-03-01",
+            "name": "[variables('actionGroups_Application%20Insights%20Smart%20Detection_name')]",
+            "location": "Global",
+            "properties": {
+                "groupShortName": "SmartDetect",
+                "enabled": true,
+                "emailReceivers": [],
+                "smsReceivers": [],
+                "webhookReceivers": [],
+                "itsmReceivers": [],
+                "azureAppPushReceivers": [],
+                "automationRunbookReceivers": [],
+                "voiceReceivers": [],
+                "logicAppReceivers": [],
+                "azureFunctionReceivers": []
+            }
+        },
+        {
+            "type": "microsoft.insights/components",
+            "apiVersion": "2015-05-01",
+            "name": "[variables('components_prediction_function_name')]",
+            "location": "[resourceGroup().location]",
+            "kind": "web",
+            "properties": {
+                "Application_Type": "web",
+                "Request_Source": "IbizaWebAppExtensionCreate"
+            }
+        },
+        {
+            "type": "Microsoft.ServiceBus/namespaces",
+            "apiVersion": "2017-04-01",
+            "name": "[variables('namespaces_fraudalerts_name')]",
+            "location": "[resourceGroup().location]",
+            "sku": {
+                "name": "Standard",
+                "tier": "Standard"
+            },
+            "properties": {
+                "provisioningState": "Succeeded",
+                "metricId": "[concat(subscription().subscriptionId, variables('namespaces_fraudalerts_name'))]",
+                "createdAt": "2019-07-21T19:58:43.84Z",
+                "updatedAt": "2019-07-21T19:59:25.847Z",
+                "serviceBusEndpoint": "[concat('https://', variables('namespaces_fraudalerts_name'), '.servicebus.windows.net:443/')]",
+                "status": "Active"
+            }
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts",
+            "apiVersion": "2019-04-01",
+            "name": "[variables('storageAccounts_mlmodel_name')]",
+            "location": "[resourceGroup().location]",
+            "sku": {
+                "name": "Standard_RAGRS",
+                "tier": "Standard"
+            },
+            "kind": "StorageV2",
+            "properties": {
+                "networkAcls": {
+                    "bypass": "AzureServices",
+                    "virtualNetworkRules": [],
+                    "ipRules": [],
+                    "defaultAction": "Allow"
+                },
+                "supportsHttpsTrafficOnly": true,
+                "encryption": {
+                    "services": {
+                        "file": {
+                            "enabled": true
+                        },
+                        "blob": {
+                            "enabled": true
+                        }
+                    },
+                    "keySource": "Microsoft.Storage"
+                },
+                "accessTier": "Hot"
+            }
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts",
+            "apiVersion": "2019-04-01",
+            "name": "[variables('storageAccounts_prognetstorage_name')]",
+            "location": "[resourceGroup().location]",
+            "sku": {
+                "name": "Standard_LRS",
+                "tier": "Standard"
+            },
+            "kind": "Storage",
+            "properties": {
+                "networkAcls": {
+                    "bypass": "AzureServices",
+                    "virtualNetworkRules": [],
+                    "ipRules": [],
+                    "defaultAction": "Allow"
+                },
+                "supportsHttpsTrafficOnly": false,
+                "encryption": {
+                    "services": {
+                        "file": {
+                            "enabled": true
+                        },
+                        "blob": {
+                            "enabled": true
+                        }
+                    },
+                    "keySource": "Microsoft.Storage"
+                }
+            }
+        },
+        {
+            "type": "Microsoft.StreamAnalytics/streamingjobs",
+            "apiVersion": "2016-03-01",
+            "name": "[variables('streamingjobs_fraud_analytics_name')]",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[resourceId('Microsoft.EventHub/namespaces', variables('namespaces_transaction_eh_name'))]"
+            ],
+            "properties": {
+                "sku": {
+                    "name": "Standard"
+                },
+                "outputStartMode": "JobStartTime",
+                "eventsOutOfOrderPolicy": "Adjust",
+                "outputErrorPolicy": "Stop",
+                "eventsOutOfOrderMaxDelayInSeconds": 0,
+                "eventsLateArrivalMaxDelayInSeconds": 5,
+                "dataLocale": "en-US",
+                "inputs": [
+                    {
+                        "name": "transactions",
+                        "properties": {
+                            "type": "Stream",
+                            "datasource": {
+                                "type": "Microsoft.ServiceBus/EventHub",
+                                "properties": {
+                                    "eventHubName": "transaction-enriched-eh",
+                                    "serviceBusNamespace": "[variables('namespaces_transaction_eh_name')]",
+                                    "sharedAccessPolicyName": "RootManageSharedAccessKey",
+                                    "sharedAccessPolicyKey": "[listKeys(variables('eventhub_resourceKey'), '2017-04-01').primaryKey]"                                }
+                            },
+                            "serialization": {
+                                "type": "Json",
+                                "properties": {
+                                    "encoding": "UTF8"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name": "reference",
+                        "properties": {
+                            "type": "Reference",
+                            "datasource": {
+                                "type": "Microsoft.Storage/Blob",
+                                "properties": {
+                                    "blobName": "reference",
+                                    "storageAccounts": [
+                                        {
+                                            "accountName": "[variables('storageAccounts_mlmodel_name')]",
+                                            "accountKey": "[listKeys(variables('storageAccounts_mlmodel_name'), '2018-07-01').keys[0].value]"
+                                        }
+                                    ],
+                                    "container": "reference",
+                                    "pathPattern": "reference-data.json",
+                                    "dateFormat": "yyyy/MM/dd",
+                                    "timeFormat": "HH",
+                                    "authenticationMode": "ConnectionString"
+                                }
+                            },
+                            "serialization": {
+                                "type": "Json",
+                                "properties": {
+                                    "encoding": "UTF8"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "fraudulent",
+                        "properties": {
+                            "datasource": {
+                                "type": "Microsoft.ServiceBus/Queue",
+                                "properties": {
+                                    "queueName": "fraudulent-transactions",
+                                    "propertyColumns": [],
+                                    "serviceBusNamespace": "fraudalerts",
+                                    "sharedAccessPolicyName": "RootManageSharedAccessKey",
+                                    "sharedAccessPolicyKey": "[listKeys(variables('serviceBus_resourceKey'), '2017-04-01').primaryKey]"
+                                }
+                            },
+                            "serialization": {
+                                "type": "Json",
+                                "properties": {
+                                    "encoding": "UTF8",
+                                    "format": "LineSeparated"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name": "powerbi",
+                        "properties": {
+                          "dataSource": {
+                            "type": "PowerBI",
+                            "outputPowerBISource": {
+                              "dataSet": "FraudulentTransactions",
+                              "table": "FraudulentTransactions",
+                              "groupId": "",
+                              "groupName": "My Workspace",
+                              "refreshToken": "dummytoken",
+                              "tokenUserDisplayName": "[parameters('PowerBIUserDisplayName')]",
+                              "tokenUserPrincipalName": "[parameters('PowerBIUserLoginName')]"
+                            },
+                            "properties": {
+                              "dataSet": "FraudulentTransactions",
+                              "table": "FraudulentTransactions",
+                              "groupId": "",
+                              "groupName": "My Workspace",
+                              "refreshToken": "dummytoken",
+                              "tokenUserDisplayName": "[parameters('PowerBIUserDisplayName')]",
+                              "tokenUserPrincipalName": "[parameters('PowerBIUserLoginName')]"
+                            }
+                          },
+                          "serialization": null,
+                          "diagnostics": null
+                        }
+                      }                    
+                ],
+                "transformation": {
+                    "name": "Transformation",
+                    "properties": {
+                        "streamingUnits": 1,
+                        "query": "--Service-Bus\r\n SELECT trans.*, ref.email\r\n INTO fraudulent\r\n FROM transactions trans\r\n JOIN reference ref ON ref.customerid = trans.NameOrig\r\n WHERE trans.IsFraud = 1\r\n \r\n --Power BI\r\n SELECT \r\n System.TimeStamp as EventTime,\r\n COUNT(*) AS NumberOfFraudPerOneHour,\r\n SUM(OldbalanceOrg - NewbalanceOrig) AS TotalFraudAmount\r\n INTO powerbi\r\n FROM transactions\r\n WHERE IsFraud = 1\r\n GROUP BY HoppingWindow(Duration(hour, 1), Hop(second, 5))"
+                    }
+                },
+                "compatibilityLevel": "1.1"
+            }
+        },
+        {
+            "type": "Microsoft.Web/connections",
+            "apiVersion": "2016-06-01",
+            "name": "[variables('connections_servicebus_name')]",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[resourceId('Microsoft.ServiceBus/namespaces/queues', variables('namespaces_fraudalerts_name'), 'fraudulent-transactions')]"
+            ],
+            "properties": {
+                "displayName": "fraudulent-transactions",
+                "customParameterValues": {},
+                "api": {
+                    "id": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Web/locations/', resourceGroup().location, '/managedApis/servicebus')]"
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Web/connections",
+            "apiVersion": "2016-06-01",
+            "name": "outlook",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "displayName": "[parameters('NotificationEmail')]",
+                "customParameterValues": {},
+                "api": {
+                    "id": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Web/locations/', resourceGroup().location, '/managedApis/', 'outlook')]"
+                }
+            }
+        },
+
+        {
+            "type": "Microsoft.Web/serverfarms",
+            "apiVersion": "2016-09-01",
+            "name": "[variables('serverfarms_Plan_name')]",
+            "location": "[resourceGroup().location]",
+            "sku": {
+                "name": "Y1",
+                "tier": "Dynamic",
+                "size": "Y1",
+                "family": "Y",
+                "capacity": 0
+            },
+            "kind": "functionapp",
+            "properties": {
+                "name": "[variables('serverfarms_Plan_name')]",
+                "perSiteScaling": false,
+                "reserved": false,
+                "targetWorkerCount": 0,
+                "targetWorkerSizeId": 0
+            }
+        },
+        {
+            "type": "Microsoft.EventHub/namespaces/AuthorizationRules",
+            "apiVersion": "2017-04-01",
+            "name": "[concat(variables('namespaces_transaction_eh_name'), '/RootManageSharedAccessKey')]",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[resourceId('Microsoft.EventHub/namespaces', variables('namespaces_transaction_eh_name'))]"
+            ],
+            "properties": {
+                "rights": [
+                    "Listen",
+                    "Manage",
+                    "Send"
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.EventHub/namespaces/eventhubs",
+            "apiVersion": "2017-04-01",
+            "name": "[concat(variables('namespaces_transaction_eh_name'), '/transaction-eh')]",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[resourceId('Microsoft.EventHub/namespaces', variables('namespaces_transaction_eh_name'))]"
+            ],
+            "properties": {
+                "messageRetentionInDays": 1,
+                "partitionCount": 2,
+                "status": "Active"
+            }
+        },
+        {
+            "type": "Microsoft.EventHub/namespaces/eventhubs",
+            "apiVersion": "2017-04-01",
+            "name": "[concat(variables('namespaces_transaction_eh_name'), '/transaction-enriched-eh')]",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[resourceId('Microsoft.EventHub/namespaces', variables('namespaces_transaction_eh_name'))]"
+            ],
+            "properties": {
+                "messageRetentionInDays": 1,
+                "partitionCount": 2,
+                "status": "Active"
+            }
+        },
+        {
+            "type": "Microsoft.ServiceBus/namespaces/AuthorizationRules",
+            "apiVersion": "2017-04-01",
+            "name": "[concat(variables('namespaces_fraudalerts_name'), '/RootManageSharedAccessKey')]",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[resourceId('Microsoft.ServiceBus/namespaces', variables('namespaces_fraudalerts_name'))]"
+            ],
+            "properties": {
+                "rights": [
+                    "Listen",
+                    "Manage",
+                    "Send"
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.ServiceBus/namespaces/queues",
+            "apiVersion": "2017-04-01",
+            "name": "[concat(variables('namespaces_fraudalerts_name'), '/fraudulent-transactions')]",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[resourceId('Microsoft.ServiceBus/namespaces', variables('namespaces_fraudalerts_name'))]"
+            ],
+            "properties": {
+                "lockDuration": "PT30S",
+                "maxSizeInMegabytes": 1024,
+                "requiresDuplicateDetection": false,
+                "requiresSession": false,
+                "defaultMessageTimeToLive": "P14D",
+                "deadLetteringOnMessageExpiration": false,
+                "enableBatchedOperations": true,
+                "duplicateDetectionHistoryTimeWindow": "PT10M",
+                "maxDeliveryCount": 10,
+                "status": "Active",
+                "autoDeleteOnIdle": "P10675199DT2H48M5.4775807S",
+                "enablePartitioning": false,
+                "enableExpress": false
+            }
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts/blobServices",
+            "apiVersion": "2019-04-01",
+            "name": "[concat(variables('storageAccounts_mlmodel_name'), '/default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccounts_mlmodel_name'))]"
+            ],
+            "properties": {
+                "cors": {
+                    "corsRules": []
+                },
+                "deleteRetentionPolicy": {
+                    "enabled": false
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts/blobServices",
+            "apiVersion": "2019-04-01",
+            "name": "[concat(variables('storageAccounts_prognetstorage_name'), '/default')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccounts_prognetstorage_name'))]"
+            ],
+            "properties": {
+                "cors": {
+                    "corsRules": []
+                },
+                "deleteRetentionPolicy": {
+                    "enabled": false
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites",
+            "apiVersion": "2016-08-01",
+            "name": "[variables('sites_prediction_function_name')]",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/serverfarms', variables('serverfarms_Plan_name'))]"
+            ],
+            "kind": "functionapp",
+            "properties": {
+                "enabled": true,
+                "hostNameSslStates": [
+                    {
+                        "name": "[concat(variables('sites_prediction_function_name'), '.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "hostType": "Standard"
+                    },
+                    {
+                        "name": "[concat(variables('sites_prediction_function_name'), '.scm.azurewebsites.net')]",
+                        "sslState": "Disabled",
+                        "hostType": "Repository"
+                    }
+                ],
+                "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('serverfarms_Plan_name'))]",
+                "reserved": false,
+                "scmSiteAlsoStopped": false,
+                "clientAffinityEnabled": false,
+                "clientCertEnabled": false,
+                "hostNamesDisabled": false,
+                "containerSize": 1536,
+                "dailyMemoryTimeQuota": 0,
+                "httpsOnly": false
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/config",
+            "apiVersion": "2016-08-01",
+            "name": "[concat(variables('sites_prediction_function_name'), '/web')]",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', variables('sites_prediction_function_name'))]"
+            ],
+            "properties": {
+                "numberOfWorkers": 1,
+                "defaultDocuments": [
+                    "Default.htm",
+                    "Default.html",
+                    "Default.asp",
+                    "index.htm",
+                    "index.html",
+                    "iisstart.htm",
+                    "default.aspx",
+                    "index.php"
+                ],
+                "netFrameworkVersion": "v4.0",
+                "phpVersion": "5.6",
+                "pythonVersion": "",
+                "nodeVersion": "",
+                "linuxFxVersion": "",
+                "requestTracingEnabled": false,
+                "remoteDebuggingEnabled": false,
+                "httpLoggingEnabled": false,
+                "logsDirectorySizeLimit": 35,
+                "detailedErrorLoggingEnabled": false,
+                "publishingUsername": "$prediction-function",
+                "scmType": "None",
+                "use32BitWorkerProcess": true,
+                "webSocketsEnabled": false,
+                "alwaysOn": false,
+                "appCommandLine": "",
+                "managedPipelineMode": "Integrated",
+                "virtualApplications": [
+                    {
+                        "virtualPath": "/",
+                        "physicalPath": "site\\wwwroot",
+                        "preloadEnabled": false,
+                        "virtualDirectories": null
+                    }
+                ],
+                "winAuthAdminState": 0,
+                "winAuthTenantState": 0,
+                "customAppPoolIdentityAdminState": false,
+                "customAppPoolIdentityTenantState": false,
+                "loadBalancing": "LeastRequests",
+                "routingRules": [],
+                "experiments": {
+                    "rampUpRules": []
+                },
+                "autoHealEnabled": false,
+                "vnetName": "",
+                "siteAuthEnabled": false,
+                "siteAuthSettings": {
+                    "enabled": null,
+                    "unauthenticatedClientAction": null,
+                    "tokenStoreEnabled": null,
+                    "allowedExternalRedirectUrls": null,
+                    "defaultProvider": null,
+                    "clientId": null,
+                    "clientSecret": null,
+                    "clientSecretCertificateThumbprint": null,
+                    "issuer": null,
+                    "allowedAudiences": null,
+                    "additionalLoginParams": null,
+                    "isAadAutoProvisioned": false,
+                    "googleClientId": null,
+                    "googleClientSecret": null,
+                    "googleOAuthScopes": null,
+                    "facebookAppId": null,
+                    "facebookAppSecret": null,
+                    "facebookOAuthScopes": null,
+                    "twitterConsumerKey": null,
+                    "twitterConsumerSecret": null,
+                    "microsoftAccountClientId": null,
+                    "microsoftAccountClientSecret": null,
+                    "microsoftAccountOAuthScopes": null
+                },
+                "cors": {
+                    "allowedOrigins": [
+                        "https://functions.azure.com",
+                        "https://functions-staging.azure.com",
+                        "https://functions-next.azure.com"
+                    ],
+                    "supportCredentials": false
+                },
+                "localMySqlEnabled": false,
+                "http20Enabled": false,
+                "minTlsVersion": "1.2",
+                "ftpsState": "AllAllowed",
+                "reservedInstanceCount": 0
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites/hostNameBindings",
+            "apiVersion": "2016-08-01",
+            "name": "[concat(variables('sites_prediction_function_name'), '/', variables('sites_prediction_function_name'), '.azurewebsites.net')]",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/sites', variables('sites_prediction_function_name'))]"
+            ],
+            "properties": {
+                "siteName": "prediction-function",
+                "hostNameType": "Verified"
+            }
+        },
+        {
+            "type": "Microsoft.EventHub/namespaces/eventhubs/consumergroups",
+            "apiVersion": "2017-04-01",
+            "name": "[concat(variables('namespaces_transaction_eh_name'), '/transaction-eh/$Default')]",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[resourceId('Microsoft.EventHub/namespaces/eventhubs', variables('namespaces_transaction_eh_name'), 'transaction-eh')]",
+                "[resourceId('Microsoft.EventHub/namespaces', variables('namespaces_transaction_eh_name'))]"
+            ],
+            "properties": {}
+        },
+        {
+            "type": "Microsoft.EventHub/namespaces/eventhubs/consumergroups",
+            "apiVersion": "2017-04-01",
+            "name": "[concat(variables('namespaces_transaction_eh_name'), '/transaction-enriched-eh/$Default')]",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[resourceId('Microsoft.EventHub/namespaces/eventhubs', variables('namespaces_transaction_eh_name'), 'transaction-enriched-eh')]",
+                "[resourceId('Microsoft.EventHub/namespaces', variables('namespaces_transaction_eh_name'))]"
+            ],
+            "properties": {}
+        },
+        {
+            "type": "Microsoft.Logic/workflows",
+            "apiVersion": "2017-07-01",
+            "name": "[variables('workflows_fraudulent_notifier_name')]",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Web/connections', variables('connections_servicebus_name'))]",
+                "[resourceId('Microsoft.Web/connections', 'outlook')]"
+            ],
+            "properties": {
+                "state": "Enabled",
+                "definition": {
+                    "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+                    "contentVersion": "1.0.0.0",
+                    "parameters": {
+                        "$connections": {
+                            "defaultValue": {},
+                            "type": "Object"
+                        }
+                    },
+                    "triggers": {
+                        "When_a_message_is_received_in_a_queue_(auto-complete)": {
+                            "recurrence": {
+                                "frequency": "Second",
+                                "interval": 1
+                            },
+                            "type": "ApiConnection",
+                            "inputs": {
+                                "host": {
+                                    "connection": {
+                                        "name": "@parameters('$connections')['servicebus']['connectionId']"
+                                    }
+                                },
+                                "method": "get",
+                                "path": "/@{encodeURIComponent(encodeURIComponent('fraudulent-transactions'))}/messages/head",
+                                "queries": {
+                                    "queueType": "Main"
+                                }
+                            }
+                        }
+                    },
+                    "actions": {
+                        "Send_an_email": {
+                            "runAfter": {},
+                            "type": "ApiConnection",
+                            "inputs": {
+                                "body": {
+                                    "Body": "A Fraudulent Transaction was discovered, your account has been locked. The transactions was of type @{json(base64toString(triggerBody()['ContentData']))['Type']}  originating from @{json(base64toString(triggerBody()['ContentData']))['NameDest']}",
+                                    "Subject": "Alert: Fraudulent Transaction Detected",
+                                    "To": "@{json(base64toString(triggerBody()['ContentData']))['email']}"
+                                },
+                                "host": {
+                                    "connection": {
+                                        "name": "@parameters('$connections')['outlook']['connectionId']"
+                                    }
+                                },
+                                "method": "post",
+                                "path": "/Mail"
+                            }
+                        }
+                    },
+                    "outputs": {}
+                },
+                "parameters": {
+                    "$connections": {
+                        "value":  {
+                            "outlook": {
+                                "connectionId": "[resourceId('Microsoft.Web/connections', 'outlook')]",
+                                "connectionName": "outlook",
+                                "id": "[concat('/subscriptions/',  subscription().subscriptionId, '/providers/Microsoft.Web/locations/', resourceGroup().location, '/managedApis/outlook')]"
+                            },
+                            "servicebus": {
+                                "connectionId": "[resourceId('Microsoft.Web/connections', variables('connections_servicebus_name'))]",
+                                "connectionName": "servicebus",
+                                "id": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Web/locations/', resourceGroup().location, '/managedApis/servicebus')]"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
+            "apiVersion": "2019-04-01",
+            "name": "[concat(variables('storageAccounts_prognetstorage_name'), '/default/azure-webjobs-eventhub')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts/blobServices', variables('storageAccounts_prognetstorage_name'), 'default')]",
+                "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccounts_prognetstorage_name'))]"
+            ],
+            "properties": {
+                "publicAccess": "None"
+            }
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
+            "apiVersion": "2019-04-01",
+            "name": "[concat(variables('storageAccounts_prognetstorage_name'), '/default/azure-webjobs-hosts')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts/blobServices', variables('storageAccounts_prognetstorage_name'), 'default')]",
+                "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccounts_prognetstorage_name'))]"
+            ],
+            "properties": {
+                "publicAccess": "None"
+            }
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
+            "apiVersion": "2019-04-01",
+            "name": "[concat(variables('storageAccounts_prognetstorage_name'), '/default/azure-webjobs-secrets')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts/blobServices', variables('storageAccounts_prognetstorage_name'), 'default')]",
+                "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccounts_prognetstorage_name'))]"
+            ],
+            "properties": {
+                "publicAccess": "None"
+            }
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
+            "apiVersion": "2019-04-01",
+            "name": "[concat(variables('storageAccounts_mlmodel_name'), '/default/model')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts/blobServices', variables('storageAccounts_mlmodel_name'), 'default')]",
+                "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccounts_mlmodel_name'))]"
+            ],
+            "properties": {
+                "publicAccess": "None"
+            }
+        },
+        {
+            "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
+            "apiVersion": "2019-04-01",
+            "name": "[concat(variables('storageAccounts_mlmodel_name'), '/default/reference')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Storage/storageAccounts/blobServices', variables('storageAccounts_mlmodel_name'), 'default')]",
+                "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccounts_mlmodel_name'))]"
+            ],
+            "properties": {
+                "publicAccess": "None"
+            }
+        }
+    ]
+}
