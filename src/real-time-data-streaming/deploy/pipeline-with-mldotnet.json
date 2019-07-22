@@ -7,15 +7,15 @@
             "minLength": 3,
             "defaultValue": "Please enter your name here",
             "metadata": {
-              "description": "Your name for connecting Stream Analytics to PowerBI."
+                "description": "Your name for connecting Stream Analytics to PowerBI."
             }
-          },
-          "PowerBIUserLoginName": {
+        },
+        "PowerBIUserLoginName": {
             "type": "string",
             "minLength": 3,
             "defaultValue": "first.last@outlook.com",
             "metadata": {
-              "description": "Your loginname/alias for connecting Stream Analytics to PowerBI."
+                "description": "Your loginname/alias for connecting Stream Analytics to PowerBI."
             }
         },
         "NotificationEmail": {
@@ -23,7 +23,7 @@
             "minLength": 3,
             "defaultValue": "first.last@outlook.com",
             "metadata": {
-              "description": "The e-mail you would like to use to send alerts"
+                "description": "The e-mail you would like to use to send alerts"
             }
         }
     },
@@ -200,7 +200,8 @@
                                     "eventHubName": "transaction-enriched-eh",
                                     "serviceBusNamespace": "[variables('namespaces_transaction_eh_name')]",
                                     "sharedAccessPolicyName": "RootManageSharedAccessKey",
-                                    "sharedAccessPolicyKey": "[listKeys(variables('eventhub_resourceKey'), '2017-04-01').primaryKey]"                                }
+                                    "sharedAccessPolicyKey": "[listKeys(variables('eventhub_resourceKey'), '2017-04-01').primaryKey]"
+                                }
                             },
                             "serialization": {
                                 "type": "Json",
@@ -266,31 +267,31 @@
                     {
                         "name": "powerbi",
                         "properties": {
-                          "dataSource": {
-                            "type": "PowerBI",
-                            "outputPowerBISource": {
-                              "dataSet": "FraudulentTransactions",
-                              "table": "FraudulentTransactions",
-                              "groupId": "",
-                              "groupName": "My Workspace",
-                              "refreshToken": "dummytoken",
-                              "tokenUserDisplayName": "[parameters('PowerBIUserDisplayName')]",
-                              "tokenUserPrincipalName": "[parameters('PowerBIUserLoginName')]"
+                            "dataSource": {
+                                "type": "PowerBI",
+                                "outputPowerBISource": {
+                                    "dataSet": "FraudulentTransactions",
+                                    "table": "FraudulentTransactions",
+                                    "groupId": "",
+                                    "groupName": "My Workspace",
+                                    "refreshToken": "dummytoken",
+                                    "tokenUserDisplayName": "[parameters('PowerBIUserDisplayName')]",
+                                    "tokenUserPrincipalName": "[parameters('PowerBIUserLoginName')]"
+                                },
+                                "properties": {
+                                    "dataSet": "FraudulentTransactions",
+                                    "table": "FraudulentTransactions",
+                                    "groupId": "",
+                                    "groupName": "My Workspace",
+                                    "refreshToken": "dummytoken",
+                                    "tokenUserDisplayName": "[parameters('PowerBIUserDisplayName')]",
+                                    "tokenUserPrincipalName": "[parameters('PowerBIUserLoginName')]"
+                                }
                             },
-                            "properties": {
-                              "dataSet": "FraudulentTransactions",
-                              "table": "FraudulentTransactions",
-                              "groupId": "",
-                              "groupName": "My Workspace",
-                              "refreshToken": "dummytoken",
-                              "tokenUserDisplayName": "[parameters('PowerBIUserDisplayName')]",
-                              "tokenUserPrincipalName": "[parameters('PowerBIUserLoginName')]"
-                            }
-                          },
-                          "serialization": null,
-                          "diagnostics": null
+                            "serialization": null,
+                            "diagnostics": null
                         }
-                      }                    
+                    }
                 ],
                 "transformation": {
                     "name": "Transformation",
@@ -312,6 +313,9 @@
             ],
             "properties": {
                 "displayName": "fraudulent-transactions",
+                "parameterValues": {
+                    "connectionString": "[concat('https://', variables('namespaces_fraudalerts_name'), '.servicebus.windows.net:443/')]"
+                },
                 "customParameterValues": {},
                 "api": {
                     "id": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Web/locations/', resourceGroup().location, '/managedApis/servicebus')]"
@@ -331,7 +335,6 @@
                 }
             }
         },
-
         {
             "type": "Microsoft.Web/serverfarms",
             "apiVersion": "2016-09-01",
@@ -700,7 +703,7 @@
                 },
                 "parameters": {
                     "$connections": {
-                        "value":  {
+                        "value": {
                             "outlook": {
                                 "connectionId": "[resourceId('Microsoft.Web/connections', 'outlook')]",
                                 "connectionName": "outlook",
