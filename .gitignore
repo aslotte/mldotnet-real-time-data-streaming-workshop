@@ -41,3 +41,22 @@ src/real-time-data-streaming/fraud-prediction-function/.vs/FraudPredictionFuncti
 src/real-time-data-streaming/fraud-prediction-function/.vs/FraudPredictionFunction/v16/Server/sqlite3/storage.ide-wal
 src/real-time-data-streaming/transaction-simulator/TransactionSimulator/.vs/TransactionSimulator/DesignTimeBuild/.dtbcache
 src/real-time-data-streaming/fraud-prediction-function/FraudPredictionFunction/Properties/PublishProfiles/prediction-function - Web Deploy.pubxml
+src/machine-learning/FraudPreditionTrainer/.vs/FraudPreditionTrainer/v16/.suo
+src/machine-learning/FraudPreditionTrainer/.vs/FraudPreditionTrainer/v16/Server/sqlite3/db.lock
+src/machine-learning/FraudPreditionTrainer/.vs/FraudPreditionTrainer/v16/Server/sqlite3/storage.ide
+src/machine-learning/FraudPreditionTrainer/.vs/FraudPreditionTrainer/v16/Server/sqlite3/storage.ide-shm
+src/machine-learning/FraudPreditionTrainer/.vs/FraudPreditionTrainer/v16/Server/sqlite3/storage.ide-wal
+src/machine-learning/FraudPreditionTrainer/FraudPreditionTrainer/bin/Debug/netcoreapp2.1/FraudPreditionTrainer.deps.json
+src/machine-learning/FraudPreditionTrainer/FraudPreditionTrainer/bin/Debug/netcoreapp2.1/FraudPreditionTrainer.runtimeconfig.dev.json
+src/machine-learning/FraudPreditionTrainer/FraudPreditionTrainer/bin/Debug/netcoreapp2.1/FraudPreditionTrainer.runtimeconfig.json
+src/machine-learning/FraudPreditionTrainer/FraudPreditionTrainer/obj/Debug/netcoreapp2.1/FraudPreditionTrainer.AssemblyInfo.cs
+src/machine-learning/FraudPreditionTrainer/FraudPreditionTrainer/obj/Debug/netcoreapp2.1/FraudPreditionTrainer.AssemblyInfoInputs.cache
+src/machine-learning/FraudPreditionTrainer/FraudPreditionTrainer/obj/Debug/netcoreapp2.1/FraudPreditionTrainer.assets.cache
+src/machine-learning/FraudPreditionTrainer/FraudPreditionTrainer/obj/Debug/netcoreapp2.1/FraudPreditionTrainer.csproj.CoreCompileInputs.cache
+src/machine-learning/FraudPreditionTrainer/FraudPreditionTrainer/obj/Debug/netcoreapp2.1/FraudPreditionTrainer.csproj.FileListAbsolute.txt
+src/machine-learning/FraudPreditionTrainer/FraudPreditionTrainer/obj/Debug/netcoreapp2.1/FraudPreditionTrainer.csprojAssemblyReference.cache
+src/machine-learning/FraudPreditionTrainer/FraudPreditionTrainer/obj/FraudPreditionTrainer.csproj.nuget.cache
+src/machine-learning/FraudPreditionTrainer/FraudPreditionTrainer/obj/FraudPreditionTrainer.csproj.nuget.dgspec.json
+src/machine-learning/FraudPreditionTrainer/FraudPreditionTrainer/obj/FraudPreditionTrainer.csproj.nuget.g.props
+src/machine-learning/FraudPreditionTrainer/FraudPreditionTrainer/obj/FraudPreditionTrainer.csproj.nuget.g.targets
+src/machine-learning/FraudPreditionTrainer/FraudPreditionTrainer/obj/project.assets.json
