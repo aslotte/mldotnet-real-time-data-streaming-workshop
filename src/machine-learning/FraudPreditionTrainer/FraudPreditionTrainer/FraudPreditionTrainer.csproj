@@ -11,7 +11,7 @@
 
   <ItemGroup>
     <None Update="Data\data.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 
