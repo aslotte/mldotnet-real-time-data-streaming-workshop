@@ -8,10 +8,24 @@ In this part of the workshop, we will be setting up the real-time data pipeline 
 ### Deploy with ARM Templates
 Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-stream-automated.md) to utilize ARM templates for deployment
 
-#### Publish the ML.NET Prediction Function
-Make sure to add the following properties to the Configuration section:
-- storageAccountConnection: ConnectionString to the storage account containing the ML.NET model from step 2 
-- eventHubConnection: ConnectionString to the EventHubNameSpace
+### Upload reference data
+The real-time pipeline utilizes reference data to enrich the stream. In this particular case we will be enriching the stream with information about where to send an notification e-mail in case the model detects a fraudulant transaction. Please navigate to your storage account and upload the [reference-data.json](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/src/real-time-data-streaming/stream-analytics/reference-data.json) file in to the container named "reference"
+
+Extract of file:
+
+```  
+[
+    {
+        "customerid": "C1305486145",
+        "email": "alexander.slotte.demo@outlook.com"
+    },
+    ....
+```
+
+### Upload Machine Learning Model
+If you have already trained your Machine Learning model, make sure to navigate to your storage account and upload the model (named MLModel.zip) in to the model container.
+
+### Publish the ML.NET Prediction Function
 
 #### Configure and set up a Power BI Dashboard
 
