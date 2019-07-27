@@ -1,4 +1,4 @@
-###  Deploy Azure Infrastructure using Azure Resource Management (ARM) Template
+###  Deploy Azure Infrastructure using an Azure Resource Management (ARM) Template
 
 #### 1. Deploy ARM Template
 - Navigate to [deploy an ARM template](https://portal.azure.com/#create/Microsoft.Template)
