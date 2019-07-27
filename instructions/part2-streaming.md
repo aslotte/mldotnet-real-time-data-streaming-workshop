@@ -22,8 +22,8 @@ Extract of file:
     ....
 ```
 
-### Upload Machine Learning Model
-If you have already trained your Machine Learning model, make sure to navigate to your storage account and upload the model (named MLModel.zip) in to the model container.
+### Upload the Machine Learning Model
+If you have already trained your Machine Learning model, make sure to navigate to your storage account and upload the model (named MLModel.zip) in to the container named model.
 
 ### Publish the ML.NET Prediction Function
 
