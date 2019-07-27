@@ -26,6 +26,7 @@ Extract of file:
 If you have already trained your Machine Learning model, make sure to navigate to your storage account and upload the model (named MLModel.zip) in to the container named model.
 
 ### Publish the ML.NET Prediction Function
+Please follow the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-azure-function.md) to publish the prediction function to Azure
 
 #### Configure and set up a Power BI Dashboard
 
