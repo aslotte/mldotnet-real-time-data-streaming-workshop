@@ -11,5 +11,17 @@ Open the FraudPredictionFunction solution [here](https://github.com/aslotte/mldo
 
 #### 2. Build solution and Publish to Azure
 Build the solution and publish the function to your new Function App.
+
 To publish the function:
+
+1. Right click on the solution and select "Publish"
+![Publish](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/publish-function-1.png)
+
+2. Check the radio button "Select Existing" and check "Run from Package File". Click Next.
+![Selections](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/publish-function-2.png)
+
+3. Select your Azure Subscription and navigate to your Function app. Select and click ok
+![Subscription(https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/publish-function-3.png)
+
+4. Click "Publish"
 
