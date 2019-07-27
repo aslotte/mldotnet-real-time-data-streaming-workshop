@@ -20,7 +20,7 @@ Select to agree with terms and conditions and click "Purchase" to trigger the de
 **Note: The deployment will indicate failure but this is just because it was unable to authenticate the Power BI connection which you will later have to authorize**
 
 
-#### Authenticate accounts
+#### 4. Authenticate accounts
 The ARM template will succesfully set up the required infrastructure but will require you to authenticate you Outlook and PowerBI accounts to fully function.
 
 1. Authenticate Power BI output
@@ -41,7 +41,7 @@ The ARM template will succesfully set up the required infrastructure but will re
 - Navigate back to the Logic App overview page
 - Click "Enable" to enable your trigger
 
-#### Storage account
+#### 5. Upload resources to Storage account
 
 ##### Upload Machine Learning Model
 If you have already trained your Machine Learning model, make sure to navigate to your storage account and upload the model (named MLModel.zip) in to the model container.
@@ -60,9 +60,8 @@ Extract of file:
     ....
 ```
 
+#### 6. Deploy Azure Function
+
 ### Final touches
-- Navigate to the resource group in which the deployment was made
-- Navigate to your Azure Stream Analytics job - outputs - powerbi. Re-authorize your credentials
-- Navigate to you Logic App - click edit - change connection on your email step
 - Navigate to your mlmodel storage account - upload reference-data.json and MLModel.zip
 - Publish Azure Function - set additional configuration parameters
