@@ -35,6 +35,7 @@ In this workshop we will be looking at detecting fradulent transactions in real-
   - Train a machine learning model using Azure Machine Learning Studio
 - **Part 2**: [Setting up real-time data streaming pipeline](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-streaming.md)
   - Introducing Azure Stream Analytics
+  - Introducing Azure Resource Management (ARM) Templates
   - Setting up a real-time data pipeline
 
 ## Todo
