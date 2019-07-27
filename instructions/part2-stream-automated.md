@@ -23,7 +23,7 @@ Select to agree with terms and conditions and click "Purchase" to trigger the de
 #### 4. Authenticate accounts
 The ARM template will succesfully set up the required infrastructure but will require you to authenticate you Outlook and PowerBI accounts to fully function.
 
-1. Authenticate Power BI output
+**Authenticate Power BI output**
 - Navigate to your Azure Stream Analytics Job
 - Click on the powerbi output
 - Click the blue button "Renew Authorization"
@@ -32,7 +32,7 @@ The ARM template will succesfully set up the required infrastructure but will re
 - Navigate back to the Stream Analytics overview page
 - Click "Start" to start your streaming analyticsc job
 
-2. Authenticate Outlook notifier
+**Authenticate Outlook notifier**
 - Navigate to your Azure Logic App
 - Click on "Edit"
 - Click on the Outlook connection step (last step)
