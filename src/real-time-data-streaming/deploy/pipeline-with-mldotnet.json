@@ -495,6 +495,18 @@
                         "hostType": "Repository"
                     }
                 ],
+                "siteConfig": {
+                    "appSettings": [
+                        {
+                            "name": "storageAccountConnection",
+                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccounts_mlmodel_name'), ';AccountKey=', listKeys(variables('storageAccounts_mlmodel_name'), '2018-07-01').keys[0].value)]"
+                        },
+                        {
+                            "name": "eventHubConnection",
+                            "value": "[listKeys(variables('eventhub_resourceKey'), '2017-04-01').primaryConnectionString]"
+                        }
+                    ]
+                },
                 "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('serverfarms_Plan_name'))]",
                 "reserved": false,
                 "scmSiteAlsoStopped": false,
