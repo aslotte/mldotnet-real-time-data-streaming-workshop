@@ -45,10 +45,10 @@ Other available data-sources worth exploring are:
    To get started:
    - Create a new .NET Core v2+ console application
    - Right-click on the solution and select to "Manage NuGet Packages for Solution"
-   - Search for and install the following NuGet package 
-    - Microsoft.ML
-    - Microsoft.ML.FastTree
-    - Microsoft.ML.LightGmb
+   - Search for and install the following NuGet package<br/> 
+    - Microsoft.ML<br/> 
+    - Microsoft.ML.FastTree<br/>
+    - Microsoft.ML.LightGmb<br/>
    - Right click on the solution once again and select "Add -> Existing Item..."
    - In the file explorer window, select to view all items in the bottom right corner
    - Rename your comma-separated file containing your data to "data.csv" and select to add this as an existing item 
