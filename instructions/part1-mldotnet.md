@@ -194,9 +194,9 @@ To perform OneHotEncoding on the type column, you can call the OneHotEncoding me
                 .Append(mlContext.Transforms.Categorical.OneHotEncoding("nameDest"))
                 
  Perfect. Our non-numeric features are now transformed in to a form the algorithm can understand.
- So which features do you think account for the variance in the dataset? Or put in another way, which features do you think are relavent  to include in your model? Feature engineering is a difficult topic. It's very likely that additional features may be needed to achieve a better model, or dervied features of the existing feature set may yield a better outcome. This is where it is very important to consult with a subject matter expert to understand the problem domain you're in and what data may be relavent. For our purposes, we can start off my trying to include all columns in our model, as we only have seven or so features (you may have thousends if not more in real-world example). 
+ So which features do you think account for the variance in the dataset? Or put in another way, which features do you think are relevant  to include in your model? Feature engineering is a difficult topic. It's very likely that additional features may be needed to achieve a better model, or dervied features of the existing feature set may yield a better outcome. This is where it is very important to consult with a subject matter expert to understand the problem domain you're in and what data may be relevant. For our purposes, we can start off my trying to include all columns in our model, as we only have seven or so features (you may have thousends if not more in real-world example). 
  
- To define which features are relavent for the model to know about, we will have to concatenate them in to a feature vector
+ To define which features are relevant for the model to know about, we will have to concatenate them in to a feature vector
  This can be done as such:
  
        mlContext.Transforms.Concatenate("Features", "type", "nameOrig", "nameDest", "amount", "oldbalanceOrg", "oldbalanceDest", "newbalanceOrig", "newbalanceDest")
@@ -297,7 +297,7 @@ The confusion matrix for our model looks as follows:
 
 From the confusion matrix we can see that we are getting 721 false negatives and only 84 transactions were correctly labelled as fraudlent (true positives)
 
-Given that our model is not up for the task, what can we do to improve it? Lets move on to the next section.
+Given that our model is not up for the task, what can we do to improve it?  move on to the next section.
 
   </p>
 </details>
@@ -309,15 +309,15 @@ We have identified that a cause for our model not being good enough is the fact 
     
 Fortunaly, there are certain algorithms that are better than others in handling highly unbalanced data. One of those are **Decision Trees**
 
-Decision trees are versatile Machine Learning algorithms that can perform both classification as well as regression tasks. Decision trees creates, as the name implies, a tree-like decision structure in which observations are captured in the tree nodes and the final decision (fraudulent or non-fradulent) are captured in the leaves. Decision trees can either be binary or non-binary, depending on how many lower level nodes one node connects to.
+Decision trees are versatile Machine Learning algorithms that can perform both classification and regression tasks. Decision trees creates, as the name implies, a tree-like decision structure in which observations are captured in the tree nodes and the final decision (fraudulent or non-fradulent) are captured in the leaves. Decision trees can either be binary or non-binary, depending on how many lower level nodes one node connects to.
 
 To boost the overall prediction performance of decision trees, it is common to implement something called **Ensemble learning** in which multiple weak learners are trained, from which each individual prediction is pooled together to an overall answer. For decision trees, this is called creating a forest.
 
-To decision tree ensemble algorithms are **FastTreeBinary** and **FastForestBinary**
+Two decision tree ensemble algorithms are **FastTreeBinary** and **FastForestBinary**
 
-Decision trees are easily to conceptually understand, and they fairly immune to non-balanced data. However, compared to logistic regression, they do have a lot more **hyperparameters** to set, e.g. number of leaves, learning rate and so forth that makes using them and finding the optimal values a bit more complicated.
+Decision trees are easily to conceptually understand, and they fairly immune to non-balanced data. However, compared to logistic regression, they do have a lot more **hyper parameters** to set, e.g. number of leaves, learning rate and so forth that makes using them and finding the optimal values a bit more complicated.
 
-Lets take a look at the FastTreeBinary algorithm.
+Let's take a look at the FastTreeBinary algorithm.
 
 To implement the FastTreeBinary algorithm, substitute the line defining the trainer with the following:
 
@@ -338,7 +338,7 @@ If we again run the console application to train our model, we will see the foll
 | Accuracy    | 99.9%  |
 | AreaUnderPrecisionRecallCurve  | 0.86  | 
 
-This is a tremendous improvement. Our area under the precision-recall curve is up to 0.86. This model can be further fine-tuned by altering hyperparameters such as learning curve, number of trees and so forth. For our purposes this model will due just fine.
+This is a tremendous improvement. Our area under the precision-recall curve is up to 0.86. This model can be furthered fine-tuned by altering hyper parameters such as learning curve, number of trees and so forth. For our purposes this model will due just fine.
 
 Training a model involves a lot of iterative work to end up at the most optimal solution.
 A couple of common approaches to improve a model are:
@@ -347,7 +347,7 @@ A couple of common approaches to improve a model are:
 - Adding additional features with predictive power
 - Creating new derived features out of existing features
 - Altering the machine learning algorithm utilized
-- Fine-tuning the model with different hyperparameters
+- Fine-tuning the model with different hyper parameters
 
   </p>
 </details>
