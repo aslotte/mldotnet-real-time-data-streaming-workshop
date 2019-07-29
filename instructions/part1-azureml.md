@@ -39,6 +39,7 @@ The following operations are required
 - Evaluate Model
 
 The experiment should eventually look like:
+![Start](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-ml-5.PNG)
 
 
 
