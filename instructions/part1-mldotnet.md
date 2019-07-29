@@ -86,13 +86,7 @@ Make sure to decorate each property with ColumnName and LoadColumn, where Column
     [ColumnName("step"), LoadColumn(0)]
    ```
  
- <details>  
-  <summary>Here is a finished solution</summary>
-   <p>   
-   </p>
-  </details>
- </p>
-</details>     
+ Did you have a try? Perfect! Here a [a complete solution](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/src/machine-learning/FraudPreditionTrainer/FraudPreditionTrainer/Schema/Transaction.cs) to validate against.
   
    </p>
 </details>
