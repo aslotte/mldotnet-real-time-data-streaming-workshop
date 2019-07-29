@@ -9,18 +9,8 @@ In this part of the workshop, we will be setting up the real-time data pipeline 
 Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-stream-automated.md) to utilize ARM templates for deployment
 
 ### Upload reference data
-The real-time pipeline utilizes reference data to enrich the stream. In this particular case we will be enriching the stream with information about where to send an notification e-mail in case the model detects a fraudulant transaction. Please navigate to your storage account and upload the [reference-data.json](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/src/real-time-data-streaming/stream-analytics/reference-data.json) file in to the container named "reference"
-
-Extract of file:
-
-```  
-[
-    {
-        "customerid": "C1305486145",
-        "email": "alexander.slotte.demo@outlook.com"
-    },
-    ....
-```
+Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/tree/master/instructions)
+to upload reference data used to enrich the moving datastream.
 
 ### Upload the Machine Learning Model
 If you have already trained your Machine Learning model, make sure to navigate to your storage account and upload the model (named MLModel.zip) in to the container named model.
