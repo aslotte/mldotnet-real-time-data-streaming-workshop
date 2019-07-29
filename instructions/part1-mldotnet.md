@@ -63,14 +63,14 @@ Other available data-sources worth exploring are:
     var mlContext = new MLContext(seed: 1)
    ```
    
-   Setting the property seed to 1 ensures deterministic randomness in operations such as splitting test/train data, which is normally desired. 
-   
+   Setting the property seed to 1 ensures deterministic randomness in operations such as splitting test/train data, which is normally desired.    
    </p>
   </details>
   <details>
     <summary>2.3 Load your data in ML.NET</summary>
     <p>
-         If you take a look at the DataCatalog of the MLContext (F12 in the the class) you'll notice a number of ways you can load your data in to memory. Just to mention a couple, we can load data from binary, from file, from a SQL database and so forth. In this example, we will be loading our data from our comma-separated file. To do this, let's start by defining where the file resides. 
+
+If you take a look at the DataCatalog of the MLContext (F12 in the the class) you'll notice a number of ways you can load your data in to memory. Just to mention a couple, we can load data from binary, from file, from a SQL database and so forth. In this example, we will be loading our data from our comma-separated file. To do this, let's start by defining where the file resides. 
    
    Add a static member variable:
    
@@ -78,21 +78,20 @@ Other available data-sources worth exploring are:
     private static string DataPath = "data.csv";
    ```        
    
-   To succesfully load our data, we need to tell ML.NET what the schema of our data looks like. Just as this is done in Entity Framework, we can do this by creating a simple POCO, with a property for each column in the dataset. Try to do this yourself by creating a class called "Transaction". 
+To succesfully load our data, we need to tell ML.NET what the schema of our data looks like. Just as this is done in Entity Framework, we can do this by creating a simple POCO, with a property for each column in the dataset. Try to do this yourself by creating a class called "Transaction". 
    
-   A couple of pointers:
-   - Decorate each property with e.g., where ColumnName defines the name of the column as it reads in the csv file and LoadColumn defines the index of the column.
+Make sure to decorate each property with ColumnName and LoadColumn, where ColumnName defines the name of the column as it reads in the csv file and LoadColumn defines the index of the column.
    
    ```
     [ColumnName("step"), LoadColumn(0)]
    ```
-      
-   <details>  
-    <summary>Here is a finished solution</summary>
-    <p>
-   ```
-      internal sealed class Transaction
-      {
+ 
+ <details>  
+  <summary>Here is a finished solution</summary>
+   <p>
+  ```
+    internal sealed class Transaction
+    {
         [ColumnName("step"), LoadColumn(0)]
         public float Step { get; set; }
 
@@ -125,12 +124,12 @@ Other available data-sources worth exploring are:
 
         [ColumnName("isFlaggedFraud"), LoadColumn(10)]
         public float IsFlaggedFraud { get; set; }
-    }  
-   ```
+    }     
+```     
    </p>
-   </details>
-    </p>
-  </details>     
+  </details>
+ </p>
+</details>     
   
    </p>
 </details>
