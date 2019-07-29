@@ -22,16 +22,8 @@ Please follow the following [guide](https://github.com/aslotte/mldotnet-real-tim
 
 #### Kick-off the Event Producer
 
+
 ## Real-Time Data Pipeline with Azure ML integration
 
-#### Step 1: Setup an EventHub
-
-#### Step 2: Setup an Azure Machine Learning Web Service
-
-#### Step 4: Setup a Stream Analytics Job
-
-#### Step 5: Setup an Egress Logic App
-
-#### Step 6: Setup a PowerBI Dashboard0
-
-#### Step 7: Inititate the Event Producer
+### Deploy with ARM Templates
+Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-stream-automated.md) to utilize ARM templates for deployment
