@@ -28,17 +28,42 @@ Other available data-sources worth exploring are:
   <details>
     <summary>2.1 Explore the dataset</summary>
    <p>
-    - Download the dataset from Kaggle and extract the content<br/>
-    - Familiarize yourself with the available features (columns)<br/>
-    - Which columns are your features and which is your label (what you would like to predict)?<br/>
-    - Is the dataset balanced? (hint: what's the distribution of fraudulant and non-fraudulant transactions)<br/>
-    - What's the data type of the available features?<br/>
+     
+   - Download the dataset from Kaggle and extract the content<br/>
+   - Familiarize yourself with the available features (columns)<br/>
+   - Which columns are your features and which is your label (what you would like to predict)?<br/>
+   - Is the dataset balanced? (hint: what's the distribution of fraudulant and non-fraudulant transactions)<br/>
+   - What's the data type of the available features?<br/>
    </p>
   </details>
   <details>
     <summary>2.2 Getting started with ML.NET</summary>
     <p>
-    
+      
+   Fantastic, you have gathered the required data and are now ready to dive in to ML.NET. ML.NET is distributed as a NuGet package and can be included in your solution like any other package. 
+   
+   To get started:
+   - Create a new .NET Core v2+ console application
+   - Right-click on the solution and select to "Manage NuGet Packages for Solution"
+   - Search for Microsoft.ML and install the latest version
+   - Right click on the solution once again and select "Add -> Existing Item..."
+   - In the file explorer window, select to view all items in the bottom right corner
+   - Rename your comma-separated file containing your data to "data.csv" and select to add this as an existing item 
+   - Right-click on you newly added file and select "Properties". Change to "Copy if Newer"
+   
+   The steps above ensures you have the correct dependencies installed and your data is ready to be worked on.
+   Before we jump in to the code, let me introduce two concepts of ML.NET that we will be depending on a fair amount, **pipelines** and a **MLContext**. 
+   
+   Everything in ML.NET originates from an **MLContext**. The MLContext contains all the data loaders, transformers, algorithms, evaulation tools and so forth. 
+   **Pipelines** is a concept heavily utilized in ML.NET, which just means that we will be creating an initial instance to which we will append operations, such as data transformations, training algorithm and so forth. 
+   
+   To get started, let's create an MLContext. 
+   
+   '''
+    var mlContext = new MLContext(seed: 1)
+   '''
+   Setting the property seed to 1 ensures a deterministic randomness is operations such as splitting test/train data, which is normally desired. 
+   
    </p>
   </details>
   <details>
