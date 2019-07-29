@@ -66,8 +66,6 @@ Other available data-sources worth exploring are:
    Setting the property seed to 1 ensures deterministic randomness in operations such as splitting test/train data, which is normally desired.    
    </p>
   </details>
-  </details>
-  </p>
   <details>
     <summary>2.3 Load your data in ML.NET</summary>
     <p>
@@ -88,9 +86,53 @@ Make sure to decorate each property with ColumnName and LoadColumn, where Column
     [ColumnName("step"), LoadColumn(0)]
    ```
  
-Did you have a try? Perfect! Here's a [a complete solution](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/src/machine-learning/FraudPreditionTrainer/FraudPreditionTrainer/Schema/Transaction.cs) to validate against.
+Did you have a try? Perfect! 
+<details>
+  <summary>Here's a a complete solution to validate against.</summary>
+  <p>
+```
+internal sealed class Transaction
+  {
+    [ColumnName("step"), LoadColumn(0)]
+    public float Step { get; set; }
+
+    [ColumnName("type"), LoadColumn(1)]
+    public string Type { get; set; }
+
+    [ColumnName("amount"), LoadColumn(2)]
+    public float Amount { get; set; }
+
+    [ColumnName("nameOrig"), LoadColumn(3)]
+    public string NameOrig { get; set; }
+
+    [ColumnName("oldbalanceOrg"), LoadColumn(4)]
+    public float OldbalanceOrg { get; set; }
+
+    [ColumnName("newbalanceOrig"), LoadColumn(5)]
+    public float NewbalanceOrig { get; set; }
+
+    [ColumnName("nameDest"), LoadColumn(6)]
+    public string NameDest { get; set; }
+
+    [ColumnName("oldbalanceDest"), LoadColumn(7)]
+    public float OldbalanceDest { get; set; }
+
+    [ColumnName("newbalanceDest"), LoadColumn(8)]
+    public float NewbalanceDest { get; set; }
+
+    [ColumnName("isFraud"), LoadColumn(9)]
+    public bool IsFraud { get; set; }
+
+    [ColumnName("isFlaggedFraud"), LoadColumn(10)]
+    public float IsFlaggedFraud { get; set; }
+}    
+```
+  </p>
+</details>
   
  </p>
+</details>
+</p>
 </details>
 <details>
 <summary>3. Split your data in a test and training set</summary>
