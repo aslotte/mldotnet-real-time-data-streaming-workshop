@@ -18,6 +18,17 @@ As a financial institution, detecting fraud is imperative to ensure safe and con
 
 In this workshop we will be looking at detecting fradulent transactions in real-time. We will be training our model based on publicly available data from [Kaggle](https://www.kaggle.com/ntnu-testimon/paysim1) and integrating this custom machine learning model in a real-time data pipeline, supported by Azure Stream Analytics.
 
+## Outline of Learning Objectives
+- **Part 1**: [Machine Learning in .NET](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part1-ml.md)
+  - Introduction to Machine Learning and ML.NET
+  - Exploring the data with Jupyter notebooks and Pandas
+  - Training a machine learning model using ML.NET
+  - Training a machine learning model using AutoML CLI
+  - Training a machine learning model using Azure Machine Learning Studio
+- **Part 2**: [Setting up real-time data streaming pipeline](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-streaming.md)
+  - Introduction to Real-Time Data Stream Processing and Azure Stream Analytics
+  - Introduction to Azure Resource Management (ARM) Templates
+  
 ## Solution Architecture 
 #### A Real-Time Data Pipeline with ML.NET
 ![Real-Time Data Pipeline with ML.NET](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/Solution%20Architecture%20-%20ML.NET.png)
@@ -26,14 +37,3 @@ In this workshop we will be looking at detecting fradulent transactions in real-
 #### A Real-Time Data Pipeline with Azure Machine Learning Studio
 ![Real-Time Data Pipeline with Azure ML](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/Solution%20Architecture%20-%20Azure%20ML.png)
 
-## Outline of Learning and Objectives
-- **Part 1**: [Machine Learning in .NET](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part1-ml.md)
-  - Introducing Machine Learning and ML.NET
-  - Explore the data
-  - Train a machine learning model using ML.NET
-  - Train a machine learning model using AutoML CLI
-  - Train a machine learning model using Azure Machine Learning Studio
-- **Part 2**: [Setting up real-time data streaming pipeline](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-streaming.md)
-  - Introducing Azure Stream Analytics
-  - Introducing Azure Resource Management (ARM) Templates
-  - Setting up a real-time data pipeline

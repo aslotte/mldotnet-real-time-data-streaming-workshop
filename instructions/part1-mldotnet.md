@@ -9,14 +9,14 @@ The general steps for training your model are the same regardless if you are tra
 <summary>1. Determine your problem domain</summary>
   <p>
 
-Framing and narrowing down on the actual business problem you are attempting to solve is key for a successful Machine Learning model. A lot of the times people attempt to start with a cool algorithm or the data they have, but without a clear understanding of the problem they are trying to solve, and the dialog with Subject Matter Experts (SME's), crucial data may be overlooked and business value may not be provided. In this example, we would like to secure the banks transfers and transactions such that fraudulent activity can be avoided.
+Framing and narrowing down on the actual business problem you are attempting to solve is key for a successful Machine Learning projcet. A lot of the times people attempt to start with either a cool algorithm or the data they have, but without a clear understanding of the problem they are trying to solve, and a dialog with Subject Matter Experts (SME's), crucial data may be overlooked and business value may not be provided. In this example, we would like to secure the banks transfers and transactions in such a way that fraudulent activity can be avoided.
   </p>
 </details>
 <details>
   <summary>2. Gather and load your data</summary>
     <p>
       
-Once the business problem has been determined, it's time to gather your data. In a real-world example, data is normally gathered from multiple data-sources (both public and private), aggregated and pivoted in to a workable shape. For our purposes, the data we will be using can be retrieved from [Kaggle](https://www.kaggle.com/ntnu-testimon/paysim1). 
+Once the business problem has been defined, it's time to gather your data. Data is normally gathered from multiple data-sources (both public and private), aggregated and pivoted in to a workable shape. For our purposes, the data we will be using can be retrieved from [Kaggle](https://www.kaggle.com/ntnu-testimon/paysim1). 
       
 Other available data-sources worth exploring are: 
     - [Google Public Datasets](https://cloud.google.com/public-datasets/)  
@@ -36,7 +36,7 @@ Other available data-sources worth exploring are:
    - Does any of the columns have missing values?<br/>
    - Does any of the columns contain outliers?<br/>
    
-   Exploring a large dataset can be a daunting task. Loading a dataset containing 6+ million rows in something like Excel is not always feasible due to application limitations and performance. To make life easier for us we can use an open-source Python library called **Pandas** in e.g. a Jupyter notebook.
+   Exploring a large dataset can be daunting. Loading a dataset containing 6+ million rows in something like Excel is not always feasible due to application limitations and performance. To make life easier for us we can use an open-source Python library called **Pandas** in e.g. a Jupyter notebook.
    
    To explore the dataset using Pandas and a Jupyter notebook:
    - Navigate to the [Kaggle dataset](https://www.kaggle.com/ntnu-testimon/paysim1) and click "New Kernel". 
@@ -364,3 +364,4 @@ To save the model to disk, simply add the line below:
   </p>
 </details>
 
+To see a complete solution, please open the [FraudPredictorTrainer.sln](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/tree/master/src/machine-learning/FraudPreditionTrainer) in Visual Studio
