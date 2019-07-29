@@ -165,6 +165,7 @@ Note that splitting your data in to a train and test set is strictly not always 
 <details>
 <summary>4. Transform your data</summary>
   <p>
+    
 The dataset from Kaggle is in an overall great condition, as opposed to how it could look. The variables are neatly contained in columns, thus no pivoting of the data is needed. The data contains no missing values that needs to be replaced.
    
 Machine Learning models are very picky in terms of data quality, so making sure that the data is top-notch is critial. We want to make sure that no columns have missing values, that the data is reasonable balanced and that no obvious outliers exists. The only main-concern we have with our data is that it is highly unbalanced. The number of fraudulant transactions to train the data on is just a couple of percents of the total dataset. If we were able to, we would idealy include additional fraudulant transactions to balance the data, but as this is not possible we will apply other techniques to counter this in a later step.
