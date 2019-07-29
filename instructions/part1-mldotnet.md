@@ -20,22 +20,26 @@ Framing and narrowing down on the actual business problem you are attempting to 
 Once the business problem has been determined, it's time to gather your data. In a real-world example, data is normally gathered from multiple data sources (both public and private), aggregated and pivoted in to a workable shape. For our purposes, the data we will be using can be retrieved from [Kaggle](https://www.kaggle.com/ntnu-testimon/paysim1). There are however tons of other great free public data sources available. 
       
 I encourage you to explore the following free open-data sources:  
-    * [Google Public Datasets](https://cloud.google.com/public-datasets/)
-    * [AWS Open Data](https://aws.amazon.com/opendata/)
-    * [Open Government Data](https://www.data.gov/)
-    * [EU Open Data](https://data.europa.eu/euodp/en/data)
+    - [Google Public Datasets](https://cloud.google.com/public-datasets/)  
+    - [AWS Open Data](https://aws.amazon.com/opendata/)  
+    - [Open Government Data](https://www.data.gov/)  
+    - [EU Open Data](https://data.europa.eu/euodp/en/data)  
    
   <details>
     <summary>2.1 Explore the dataset</summary>
-    <p>
-    
-    </p>
+   <p>
+    - Download the dataset from Kaggle and extract the content  
+    - Familiarize yourself with the available features (columns)  
+    - Which columns are your features and which is your label (what you would like to predict)?  
+    - Is the dataset balanced? (hint: what's the distribution of fraudulant and non-fraudulant transactions)  
+    - What's the data type of the available features?  
+   </p>
   </details>
   <details>
     <summary>2.2 Getting started with ML.NET</summary>
     <p>
     
-    </p>
+   </p>
   </details>
   <details>
     <summary>2.3 Load your data in ML.NET</summary>
