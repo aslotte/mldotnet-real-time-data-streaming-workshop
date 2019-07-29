@@ -8,4 +8,4 @@ To build your machine learning model using ML.NET, please refer to the following
 To build your machine learning model using ML.NET's AutoML builder, please refer to the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part1-automl.md)
 
 ### Using Azure Machine Learning Studio
-To build your machine learning model using Azure Machine Learning studio, please refer to the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/tree/master/instructions)
+To build your machine learning model using Azure Machine Learning studio, please refer to the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part1-azureml.md)
