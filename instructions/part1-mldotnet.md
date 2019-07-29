@@ -3,16 +3,25 @@ So you're ready to start creating your Machine Learning model with ML.NET? Aweso
 ML.NET is an open-source, cross-platfrom library, relased to the public in preview during MS Build 2018 and for at MS Build 2019.
 It bridges the gap between Software Developers and Data Scientists and allows .NET Developers to make their applications smarter.
 
-The general steps for training your model are the same regardless if you are training your model using ML.NET or a Python based library such as ScikitLearn
+The general steps for training your model are the same regardless if you are training your model using ML.NET or a Python based library such as ScikitLearn. To train your model in ML.NET, please expand and follow the instructions below:
 
-1. Determine your problem domain
-2. Gather your data
-3. Split your data
-4. Transform your dat
-5. Train your model
-6. Evaluate your model
-7. Deploy to production
 
 <details>
-<summary>Gather your data</summary>
+<summary>1. Determine your problem domain</summary>
 </details>
+<details>
+<summary>2. Gather your data</summary>
+</details>
+<details>
+<summary>3. Split your data</summary>
+</details>
+<details>
+<summary>4. Transform your data</summary>
+</details>
+<details>
+<summary>6. Evaluate your model</summary>
+</details>
+<details>
+<summary>7. Deploy to production</summary>
+</details>
+
