@@ -127,15 +127,16 @@ Did you have a try? Perfect!
         [ColumnName("isFlaggedFraud"), LoadColumn(10)]
         public float IsFlaggedFraud { get; set; }
       }
-    
+   
+  </p>
+</details>
+  
    Once you've defined the schema, you're ready to load the data in to memory. 
    To do this, simply add the following:
    
       var data = mlContext.Data.LoadFromTextFile<Transaction>(DataPath, hasHeader: true, separatorChar: ',');
       
   The LoadFromTextFile defines the schema as a generic. To the method you'll also have to supply the path to the data, if the data contains headers or not as well as how the data is separated. In our scenario that will be comma-separated.
-  </p>
-</details>
   
  </p>
 </details>
@@ -144,6 +145,14 @@ Did you have a try? Perfect!
 <details>
 <summary>3. Split your data in a test and training set</summary>
   <p>
+    
+A cruicial part of training a machine learning model is to be able to evaluate its performance on data not utilized when training the model. Thus, before starting to train our model, we want to make sure we put a portion of the data aside for evaluation purposes.
+
+ML.NET features built-in functionality to perform a random split of the data in to a training and test set. 
+
+      var testTrainData = mlContext.Data.TrainTestSplit(data);
+      
+Note that splitting your data in to a train and test set is strictly not always required. A technique called cross-validation can also be utilized to achieve the same result (which normally results in a better final model). We will explore this concept later on in this workshop.  
 
   </p>
 </details>
