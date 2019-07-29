@@ -66,6 +66,8 @@ Other available data-sources worth exploring are:
    Setting the property seed to 1 ensures deterministic randomness in operations such as splitting test/train data, which is normally desired.    
    </p>
   </details>
+  </details>
+  </p>
   <details>
     <summary>2.3 Load your data in ML.NET</summary>
     <p>
