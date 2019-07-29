@@ -25,7 +25,6 @@ Other available data-sources worth exploring are:
     - [Open Government Data](https://www.data.gov/)  
     - [EU Open Data](https://data.europa.eu/euodp/en/data)  
    
-   
   <details>
     <summary>2.1 Explore the dataset</summary>
    <p>
@@ -141,13 +140,11 @@ Did you have a try? Perfect!
       var data = mlContext.Data.LoadFromTextFile<Transaction>(DataPath, hasHeader: true, separatorChar: ',');
       
   The LoadFromTextFile defines the schema as a generic. To the method you'll also have to supply the path to the data, if the data contains headers or not as well as how the data is separated. In our scenario that will be comma-separated.
-  
  </p>
 </details>
 </p>
 </details>
 <details>
-  
 <summary>3. Split your data in a test and training set</summary>
   <p>
     
