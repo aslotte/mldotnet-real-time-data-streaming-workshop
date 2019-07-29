@@ -1,6 +1,7 @@
 ﻿using FraudPreditionTrainer.Schema;
 using Microsoft.ML;
 using Microsoft.ML.Data;
+using Microsoft.ML.Trainers.FastTree;
 using Microsoft.ML.Transforms;
 
 namespace FraudPreditionTrainer
@@ -21,8 +22,7 @@ namespace FraudPreditionTrainer
             var dataProcessingPipeline = BuildDataProcessingPipeline(mlContext);
 
             //Train
-            var trainingPipeline = dataProcessingPipeline
-                .Append(mlContext.BinaryClassification.Trainers.SdcaLogisticRegression(labelColumnName: "isFraud"));
+            var trainingPipeline = BuildTrainingPipeline(mlContext, dataProcessingPipeline);
 
             var trainedModel = trainingPipeline.Fit(testTrainData.TrainSet);
 
@@ -34,7 +34,7 @@ namespace FraudPreditionTrainer
             mlContext.Model.Save(trainedModel, data.Schema, "MLModel.zip");
         }
 
-        static EstimatorChain<TransformerChain<NormalizingTransformer>> BuildDataProcessingPipeline(MLContext mlContext)
+        private static IEstimator<ITransformer> BuildDataProcessingPipeline(MLContext mlContext)
         {
             return mlContext.Transforms.Categorical.OneHotEncoding("type")
                 .Append(mlContext.Transforms.Categorical.OneHotEncoding("nameOrig"))
@@ -42,5 +42,12 @@ namespace FraudPreditionTrainer
                 .Append(mlContext.Transforms.Concatenate("Features", "type", "nameOrig", "nameDest", "amount", "oldbalanceOrg", "oldbalanceDest", "newbalanceOrig", "newbalanceDest")
                 .Append(mlContext.Transforms.NormalizeMinMax("Features")));
         }
+
+        private static IEstimator<ITransformer> BuildTrainingPipeline(MLContext mlContext, IEstimator<ITransformer> dataProcessingPipeline)
+        {
+            return dataProcessingPipeline.Append(mlContext.BinaryClassification.Trainers.FastTree(new FastTreeBinaryTrainer.Options() { NumberOfLeaves = 10, NumberOfTrees = 500, LabelColumnName = "isFraud", FeatureColumnName = "Features" }));
+        }
+
+
     }
 }

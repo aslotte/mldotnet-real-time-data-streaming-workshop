@@ -65,3 +65,5 @@ src/machine-learning/FraudPreditionTrainer/FraudPreditionTrainer/bin/Debug/netco
 src/machine-learning/FraudPreditionTrainer/FraudPreditionTrainer/bin/Debug/netcoreapp2.1/FraudPreditionTrainer.pdb
 src/machine-learning/FraudPreditionTrainer/FraudPreditionTrainer/obj/Debug/netcoreapp2.1/FraudPreditionTrainer.dll
 src/machine-learning/FraudPreditionTrainer/FraudPreditionTrainer/obj/Debug/netcoreapp2.1/FraudPreditionTrainer.pdb
+src/machine-learning/FraudPreditionTrainer/.vs/FraudPreditionTrainer/DesignTimeBuild/.dtbcache
+src/machine-learning/FraudPreditionTrainer/FraudPreditionTrainer/bin/Debug/netcoreapp2.1/MLModel.zip
