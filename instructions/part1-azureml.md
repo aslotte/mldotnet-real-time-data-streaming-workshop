@@ -26,8 +26,19 @@ That should present you with the view below:
 ![Start](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-ml-4.PNG)
 
 
+### Setting up our experiment 
+Use the left-most menu to set up our experiment. The visual interface functions such that you can drag and drop operations and connect them together in a training pipeline. 
 
+The following operations are required
+- The data source
+- Select columns in data set (column indicies 1-10)
+- Split Data (0.7 split)
+- Two-Class Decision Forest
+- Train Model (set the label-column to isFraud
+- Score Model
+- Evaluate Model
 
+The experiment should eventually look like:
 
 
 
