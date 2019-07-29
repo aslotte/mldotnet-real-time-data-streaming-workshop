@@ -203,6 +203,7 @@ To perform OneHotEncoding on the type column, you can call the OneHotEncoding me
 <details>
 <summary>5. Train your model</summary>
   <p>
+    
     Once we have created our data processing pipeline it's time to select the trainer (algorithm) to use. 
     The most common types of algorithms to use are:
     
@@ -218,8 +219,8 @@ To perform OneHotEncoding on the type column, you can call the OneHotEncoding me
    
    We can create a training pipeline using logistic linear regression as follows:
    
-    dataProcessingPipeline
-    .Append(mlContext.BinaryClassification.Trainers.LbfgsLogisticRegression(labelColumnName: "isFraud"));
+    var trainingPipeline =dataProcessingPipeline
+        .Append(mlContext.BinaryClassification.Trainers.LbfgsLogisticRegression(labelColumnName: "isFraud"));
    
    Note that we append the trainer to the data processing pipeline, as well as define which column we are trying to predict. Often called the label column.
     
@@ -228,16 +229,28 @@ To perform OneHotEncoding on the type column, you can call the OneHotEncoding me
 <details>  
 <summary>6. Evaluate your model</summary>
   <p>
+    
+    - Introduce the various metrics (talk about the fact that accuracy is not by itself useful
+    
   </p>
 </details>
 <details>
 <summary>7. Iterate, iterate, iterate...</summary>
   <p>
+    
+    - Talk about recall/precision
+    - Talk about unbalanced data
+    - Introduce decision trees, fast tree, random forest
+   
   </p>
 </details>
 <details>
 <summary>8. Deploy to production</summary>
   <p>
+    
+    - Save the ML Model to a zip file
+    - Copy the ML Model to the storage account?
+    
   </p>
 </details>
 
