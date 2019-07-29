@@ -283,8 +283,16 @@ This is where to machine learning concepts, **Precision** and **Recall** comes i
 
 Precision and Recall are normally working against each-other, meaning that you'll have to pick what is most important for you. Would you rather flag more transactions as fraudulent even if they're not, but in that case make sure not to miss any (e.g. having many false positives) or are you willing to let some fradulent transactions flow through with every actually flagged transaction being correct (e.g. having no false positives but some false negatives).
 
-A good measurement to determine how good a classifier is, is to look at the area under the precision-recall curve. In an ideal world this value **should be 1**. If we look at how our model did, we can see that we only got a **0.31** value which is very low.
+A good measurement to determine how good a classifier is, is to look at the area under the precision-recall curve. In an ideal world this value **should be 1**. If we look at how our model did, we can see that **we only got a 0.31** value which is very low.
 
+Another good tool to use is the confusion matrix, which gives you a good overview of how many false positives or false negatives the model creates.
+
+The confusion matrix for our model looks as follows:
+
+|   | IsFraud  | IsNotFraud  |
+|---|--:|---|
+| IsFraud  | 84  | 721  |
+| IsNotFraud  | 2  | 637,154  |
 Given that our model is not up for the task, what can we do to improve it? Lets move on to the next section.
 
   </p>
@@ -292,6 +300,10 @@ Given that our model is not up for the task, what can we do to improve it? Lets 
 <details>
 <summary>7. Iterate, iterate, iterate...</summary>
   <p>
+We have identified that a cause for our model not being good enough is the fact that our data is highly unbalanced. As mentioned earlier, this can be addresed by adding more transactions that are fraudulant, but that means going back and finding about 3-6 million more records that are fraudulent. This is most likely not a feasible way forward.
+    
+Fortunaly, there are certain algorithms that are better than others in handling highly unbalanced data. One of those are **Decision Trees**
+
     
    - Talk about recall/precision
    - Talk about unbalanced data
