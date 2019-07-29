@@ -65,7 +65,12 @@ Other available data-sources worth exploring are:
    
    Setting the property seed to 1 ensures deterministic randomness in operations such as splitting test/train data, which is normally desired. 
    
-   If you take a look at the DataCatalog of the MLContext (F12 in the the class) you'll notice a number of ways you can load your data in to memory. Just to mention a couple, we can load data from binary, from file, from a SQL database and so forth. In this example, we will be loading our data from our comma-separated file. To do this, let's start by defining where the file resides. 
+   </p>
+  </details>
+  <details>
+    <summary>2.3 Load your data in ML.NET</summary>
+    <p>
+         If you take a look at the DataCatalog of the MLContext (F12 in the the class) you'll notice a number of ways you can load your data in to memory. Just to mention a couple, we can load data from binary, from file, from a SQL database and so forth. In this example, we will be loading our data from our comma-separated file. To do this, let's start by defining where the file resides. 
    
    Add a static member variable:
    
@@ -85,7 +90,7 @@ Other available data-sources worth exploring are:
    <details>  
     <summary>Here is a finished solution</summary>
     <p>
-     ```
+   ```
       internal sealed class Transaction
       {
         [ColumnName("step"), LoadColumn(0)]
@@ -121,14 +126,10 @@ Other available data-sources worth exploring are:
         [ColumnName("isFlaggedFraud"), LoadColumn(10)]
         public float IsFlaggedFraud { get; set; }
     }  
-     ```
+   ```
    </p>
    </details>
-   </p>
-  </details>
-  <details>
-    <summary>2.3 Load your data in ML.NET</summary>
-    <p></p>
+    </p>
   </details>     
   
    </p>
