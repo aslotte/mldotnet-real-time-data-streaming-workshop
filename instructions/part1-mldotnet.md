@@ -88,10 +88,10 @@ Make sure to decorate each property with ColumnName and LoadColumn, where Column
  
 Did you have a try? Perfect! 
 <details>
-  <summary>Here's a a complete solution to validate against.</summary>
+  <summary>2.3.a Here's a a complete solution to validate against.</summary>
   <p>
+   
     
-    ```
       internal sealed class Transaction
       {
         [ColumnName("step"), LoadColumn(0)]
@@ -127,7 +127,7 @@ Did you have a try? Perfect!
         [ColumnName("isFlaggedFraud"), LoadColumn(10)]
         public float IsFlaggedFraud { get; set; }
       }
-    ```
+    
   </p>
 </details>
   
