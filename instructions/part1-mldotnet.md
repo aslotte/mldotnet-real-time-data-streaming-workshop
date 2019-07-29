@@ -364,3 +364,4 @@ To save the model to disk, simply add the line below:
   </p>
 </details>
 
+To see a complete solution, please open the [FraudPredictorTrainer.sln](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/tree/master/src/machine-learning/FraudPreditionTrainer) in Visual Studio
