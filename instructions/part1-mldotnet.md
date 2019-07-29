@@ -204,8 +204,9 @@ To perform OneHotEncoding on the type column, you can call the OneHotEncoding me
 <summary>5. Train your model</summary>
   <p>
     
-    Once we have created our data processing pipeline it's time to select the trainer (algorithm) to use. 
-    The most common types of algorithms to use are:
+ Once we have created our data processing pipeline it's time to select the trainer (algorithm) to use. 
+ 
+ The most common types of algorithms to use are:
     
    - Linear Regression <br/>
    - Nearest Neighbor <br/>
@@ -230,7 +231,7 @@ To perform OneHotEncoding on the type column, you can call the OneHotEncoding me
 <summary>6. Evaluate your model</summary>
   <p>
     
-    - Introduce the various metrics (talk about the fact that accuracy is not by itself useful
+   - Introduce the various metrics (talk about the fact that accuracy is not by itself useful
     
   </p>
 </details>
@@ -238,9 +239,9 @@ To perform OneHotEncoding on the type column, you can call the OneHotEncoding me
 <summary>7. Iterate, iterate, iterate...</summary>
   <p>
     
-    - Talk about recall/precision
-    - Talk about unbalanced data
-    - Introduce decision trees, fast tree, random forest
+   - Talk about recall/precision
+   - Talk about unbalanced data
+   - Introduce decision trees, fast tree, random forest
    
   </p>
 </details>
@@ -248,8 +249,8 @@ To perform OneHotEncoding on the type column, you can call the OneHotEncoding me
 <summary>8. Deploy to production</summary>
   <p>
     
-    - Save the ML Model to a zip file
-    - Copy the ML Model to the storage account?
+   - Save the ML Model to a zip file
+   - Copy the ML Model to the storage account?
     
   </p>
 </details>
