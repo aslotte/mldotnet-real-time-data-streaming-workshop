@@ -222,7 +222,13 @@ To perform OneHotEncoding on the type column, you can call the OneHotEncoding me
     var trainingPipeline =dataProcessingPipeline
         .Append(mlContext.BinaryClassification.Trainers.LbfgsLogisticRegression(labelColumnName: "isFraud"));
    
-   Note that we append the trainer to the data processing pipeline, as well as define which column we are trying to predict. Often called the label column.
+   _Note that we append the trainer to the data processing pipeline, as well as define which column we are trying to predict. Often called the label column._
+   
+  Once the trainer has been appended, all that remains is to using the trainingPipeline to a fit an as accurate model as possible based on the training dataset. To do this, we will use the `.Fit` method on the IEstimator interface
+
+    var trainedModel = trainingPipeline.Fit(testTrainData.TrainSet);
+  
+  _Note that we are using only the training dataset to train our model_
     
   </p>
 </details>
@@ -230,8 +236,22 @@ To perform OneHotEncoding on the type column, you can call the OneHotEncoding me
 <summary>6. Evaluate your model</summary>
   <p>
     
-   - Introduce the various metrics (talk about the fact that accuracy is not by itself useful
+   Your data is in the right shape, an algorithm has been chosen and your model has been trained. Great job so far!
+   Let's take a look at how accurate the model you've created is. 
+   
+   Evaluating your model is a two step process:
+   1. Transforming your test dataset using the trained model
+   2. Calculating metrics based on predicted value (in this case, if our model predicted a fraudulent transaction or not) and actual value
+   
+To transform your test data using the trained model, simply call the `.Transform` method on the trained model, passing in the test dataset
+   
+    var predictions = trainedModel.Transform(testTrainData.TestSet);
     
+To calculate the metrics we will be using to benchmark our model, use the BinaryClassification evaluator on the MLContext:
+      
+    var metrics = mlContext.BinaryClassification.Evaluate(predictions, labelColumnName: "isFraud");
+      
+   
   </p>
 </details>
 <details>
