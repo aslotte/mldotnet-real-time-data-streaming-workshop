@@ -33,15 +33,20 @@ The following operations are required
 - The data source
 - Select columns in data set (column indicies 1-10)
 - Split Data (0.7 split)
-- Two-Class Decision Forest
-- Train Model (set the label-column to isFraud
+- Two-Class Boosted Decision Tree (set the maximum number of leaves to 10 and the learning rate to 0.1)
+- Train Model (set the label-column to isFraud)
 - Score Model
 - Evaluate Model
 
 The experiment should eventually look like:
 ![Start](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-ml-5.PNG)
 
+### Running your experiment
+To run your experiment, simply click Run in the bottom task bar.
+Training the model will take about 15 min.
 
+### Evaluate your model
+Once training has completed, right click on the "Evaluate Model" step and click to Vizualize the Evaluation results 
 
 ### AutoML
 
