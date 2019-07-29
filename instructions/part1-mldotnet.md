@@ -332,8 +332,9 @@ To implement the FastTreeBinary algorithm, substitute the line defining the trai
 _Note: training this model will take a longer time as we will be training 50 individual models_
 
 If we again run the console application to train our model, we will see the following result:
-|   |   | 
-|---|:--------:|
+
+| Metric  | Value  | 
+|:---|:--------:|
 | **Accuracy**    | 99.9%  |
 | **AreaUnderPrecisionRecallCurve**  | 0.86  | 
 
