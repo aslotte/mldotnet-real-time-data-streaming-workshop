@@ -128,6 +128,12 @@ Did you have a try? Perfect!
         public float IsFlaggedFraud { get; set; }
       }
     
+   Once you've defined the schema, you're ready to load the data in to memory. 
+   To do this, simply add the following:
+   
+      var data = mlContext.Data.LoadFromTextFile<Transaction>(DataPath, hasHeader: true, separatorChar: ',');
+      
+  The LoadFromTextFile defines the schema as a generic. To the method you'll also have to supply the path to the data, if the data contains headers or not as well as how the data is separated. In our scenario that will be comma-separated.
   </p>
 </details>
   
@@ -138,6 +144,7 @@ Did you have a try? Perfect!
 <details>
 <summary>3. Split your data in a test and training set</summary>
   <p>
+
   </p>
 </details>
 <details>
