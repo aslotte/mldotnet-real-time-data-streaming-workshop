@@ -9,7 +9,8 @@ The general steps for training your model are the same regardless if you are tra
 <details>
 <summary>1. Determine your problem domain</summary>
   <p>
-    Framing and narrowing down on the actual business problem you are attempting to solve is key for a succesful Machine Learning model. A lot of the times people attempt to start with a cool algorithm or the data they have, but without a clear understanding of the problem they are trying to solve, and the dialog with Subject Matter Experts (SME's), crucial data may be overlooked and business value may not be provided. In this example, we would like to secure the banks transfers and transactions such that fraudulant activity can be avoided.
+
+Framing and narrowing down on the actual business problem you are attempting to solve is key for a succesful Machine Learning model. A lot of the times people attempt to start with a cool algorithm or the data they have, but without a clear understanding of the problem they are trying to solve, and the dialog with Subject Matter Experts (SME's), crucial data may be overlooked and business value may not be provided. In this example, we would like to secure the banks transfers and transactions such that fraudulant activity can be avoided.
   </p>
 </details>
 <details>
