@@ -335,10 +335,19 @@ If we again run the console application to train our model, we will see the foll
 
 | Metric  | Value  | 
 |:---|:--------:|
-| **Accuracy**    | 99.9%  |
-| **AreaUnderPrecisionRecallCurve**  | 0.86  | 
+| Accuracy    | 99.9%  |
+| AreaUnderPrecisionRecallCurve  | 0.86  | 
 
 This is a tremendous improvement. Our area under the precision-recall curve is up to 0.86. This model can be further fine-tuned by altering hyperparameters such as learning curve, number of trees and so forth. For our purposes this model will due just fine.
+
+Training a model involves a lot of iterative work to end up at the most optimal solution.
+A couple of common approaches to improve a model are:
+
+- Increasing the size of the dataset
+- Adding additional features with predictive power
+- Creating new derived features out of existing features
+- Altering the machine learning algorithm utilized
+- Fine-tuning the model with different hyperparameters
 
   </p>
 </details>
@@ -346,8 +355,11 @@ This is a tremendous improvement. Our area under the precision-recall curve is u
 <summary>8. Deploy to production</summary>
   <p>
     
-   - Save the ML Model to a zip file
-   - Copy the ML Model to the storage account?
+Once we are happy with our model we will need to save it for further use. ML.NET models are saved as .zip files that later can be loaded in to a prediction engine and used to run prediction in e.g. an Azure Function or ASP.NET Core application.
+   
+To save the model to disk, simply add the line below:
+
+    mlContext.Model.Save(trainedModel, data.Schema, "MLModel.zip");
     
   </p>
 </details>
