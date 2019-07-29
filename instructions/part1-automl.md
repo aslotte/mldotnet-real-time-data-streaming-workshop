@@ -20,3 +20,5 @@ r true --ml-task binary-classification
 For this example we are setting the max-exploration time to only 2 minutes, which is not sufficient for a data-set of this size but serves as a good example to showcase the functionality. A minimum of 1800 seconds is recommended for a data-set of this size.
 
 AutoML is a tremendous addition to the ML.NET toolset. Not only does it create a ready to go model based on the best algorithm, but it also creates a sample application with the code used to come up with this model for further fine-tuning. 
+
+It is also possible to use AutoML through Visual Studio. If you would like to do that, please download the Model Builder Visual Studio Extension which will give you a nice UI to work with.
