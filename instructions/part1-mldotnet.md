@@ -308,11 +308,32 @@ We have identified that a cause for our model not being good enough is the fact 
     
 Fortunaly, there are certain algorithms that are better than others in handling highly unbalanced data. One of those are **Decision Trees**
 
-    
-   - Talk about recall/precision
-   - Talk about unbalanced data
-   - Introduce decision trees, fast tree, random forest
-   
+Decision trees are versatile Machine Learning algorithms that can perform both classification as well as regression tasks. Decision trees creates, as the name implies, a tree-like decision structure in which observations are captured in the tree nodes and the final decision (fraudulent or non-fradulent) are captured in the leaves. Decision trees can either be binary or non-binary, depending on how many lower level nodes one node connects to.
+
+To boost the overall prediction performance of decision trees, it is common to implement something called **Ensemble learning** in which multiple weak learners are trained, from which each individual prediction is pooled together to an overall answer. For decision trees, this is called creating a forest.
+
+To decision tree ensemble algorithms are **FastTreeBinary** and **FastForestBinary**
+
+Decision trees are easily to conceptually understand, and they fairly immune to non-balanced data. However, compared to logistic regression, they do have a lot more **hyperparameters** to set, e.g. number of leaves, learning rate and so forth that makes using them and finding the optimal values a bit more complicated.
+
+Lets take a look at FastTreeBinary.
+
+To implement the FastTreeBinary algorithm, substitute the line defining the trainer with the following:
+
+    mlContext.BinaryClassification.Trainers.FastTree(new FastTreeBinaryTrainer.Options 
+    { 
+      NumberOfLeaves = 10, 
+      NumberOfTrees = 500,  
+      LabelColumnName = "isFraud", 
+      FeatureColumnName = "Features" 
+    }));
+
+_Note: training this model will take a longer time as we will be training 500 individual models_
+
+If we again run the console application to train our model, we will see the following result:
+- **Accuracy** - 
+- **AreaUPRC** - 
+
   </p>
 </details>
 <details>
