@@ -174,7 +174,12 @@ Note that splitting your data in to a train and test set is strictly not always 
   </p>
 </details>
 <details>
-<summary>7. Deploy to production</summary>
+<summary>7. Iterate, iterate, iterate...</summary>
+  <p>
+  </p>
+</details>
+<details>
+<summary>8. Deploy to production</summary>
   <p>
   </p>
 </details>
