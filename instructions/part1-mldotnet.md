@@ -43,6 +43,8 @@ Other available data-sources worth exploring are:
    - When selecting Kernel type, select "Notebook"
    - In the top-left corner, select File -> Upload Notebook
    - Upload the [Jupyter notebook](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/src/machine-learning/jupyter/fraudulent-transactions-jupyter-notebook.ipynb) in this repo
+   - Select Run -> Run all
+   - Explore the results
    
    </p>
   </details>
