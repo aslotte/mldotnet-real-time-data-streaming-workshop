@@ -16,8 +16,10 @@ Framing and narrowing down on the actual business problem you are attempting to 
 <details>
   <summary>2. Gather and load your data</summary>
     <p>
-      Testing
-    </p>
+      
+Once the business problem has been determined, it's time to gather your data. In a real-world example, data is normally gathered from multiple data sources (both public and private), aggregated and pivoted in to a workable shape. For our purposes, the data we will be using can be retrieved from [Kaggle](https://www.kaggle.com/ntnu-testimon/paysim1). There are however tons of other great free public data sources available. 
+      
+   </p>
 </details>
 <details>
 <summary>3. Split your data in a test and training set</summary>
