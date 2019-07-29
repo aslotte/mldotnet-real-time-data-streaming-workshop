@@ -290,9 +290,13 @@ Another good tool to use is the confusion matrix, which gives you a good overvie
 The confusion matrix for our model looks as follows:
 
 |   | IsFraud  | IsNotFraud  |
-|---|--:|---|
-| IsFraud  | 84  | 721  |
+|---|:--------:|:-----------:|
+| IsFraud   | 84  | 721  |
 | IsNotFraud  | 2  | 637,154  |
+
+
+From the confusion matrix we can see that we are getting 721 false negatives and only 84 transactions were correctly labelled as fraudlent (true positives)
+
 Given that our model is not up for the task, what can we do to improve it? Lets move on to the next section.
 
   </p>
