@@ -304,6 +304,7 @@ Given that our model is not up for the task, what can we do to improve it? Lets 
 <details>
 <summary>7. Iterate, iterate, iterate...</summary>
   <p>
+    
 We have identified that a cause for our model not being good enough is the fact that our data is highly unbalanced. As mentioned earlier, this can be addresed by adding more transactions that are fraudulant, but that means going back and finding about 3-6 million more records that are fraudulent. This is most likely not a feasible way forward.
     
 Fortunaly, there are certain algorithms that are better than others in handling highly unbalanced data. One of those are **Decision Trees**
@@ -316,23 +317,27 @@ To decision tree ensemble algorithms are **FastTreeBinary** and **FastForestBina
 
 Decision trees are easily to conceptually understand, and they fairly immune to non-balanced data. However, compared to logistic regression, they do have a lot more **hyperparameters** to set, e.g. number of leaves, learning rate and so forth that makes using them and finding the optimal values a bit more complicated.
 
-Lets take a look at FastTreeBinary.
+Lets take a look at the FastTreeBinary algorithm.
 
 To implement the FastTreeBinary algorithm, substitute the line defining the trainer with the following:
 
     mlContext.BinaryClassification.Trainers.FastTree(new FastTreeBinaryTrainer.Options 
     { 
       NumberOfLeaves = 10, 
-      NumberOfTrees = 500,  
+      NumberOfTrees = 50,  
       LabelColumnName = "isFraud", 
       FeatureColumnName = "Features" 
     }));
 
-_Note: training this model will take a longer time as we will be training 500 individual models_
+_Note: training this model will take a longer time as we will be training 50 individual models_
 
 If we again run the console application to train our model, we will see the following result:
-- **Accuracy** - 
-- **AreaUPRC** - 
+|   |   | 
+|---|:--------:|
+| **Accuracy**    | 99.9%  |
+| **AreaUnderPrecisionRecallCurve**  | 0.86  | 
+
+This is a tremendous improvement. Our area under the precision-recall curve is up to 0.86. This model can be further fine-tuned by altering hyperparameters such as learning curve, number of trees and so forth. For our purposes this model will due just fine.
 
   </p>
 </details>
