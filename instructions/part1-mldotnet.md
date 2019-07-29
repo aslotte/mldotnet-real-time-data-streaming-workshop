@@ -271,8 +271,21 @@ Hold on a minute, can we have been so lucky to chose the right algorithm at the 
 Unfortunately we are not that lucky. Accuary alone can be a very misleading metric, especially for highly unbalanced datasets as the one we are working on.
 
 If we look at the shape of the dataset given by the Jupyter notebook executed earlier we can see that we have 6,362,620 rows in the dataset, but only 8,213 are fradulent. That means **99.9%** of all transactions in the dataset are non-fraudulent. Given that, if our model is just guessing non-fradulent for all transactions it will achieve a 99.9% accuracy but miss all and any fradulent transactions. 
+This is the curse of non-balanced datasets. What are some other metrics we can use together with accuracy to determine if a model truely is useful?
 
+ML.NET provides some great documentation on [metrics](https://docs.microsoft.com/en-us/dotnet/machine-learning/resources/metrics)
+For our scenario, we want to have a better measurement to determine true positives, false positives, true negatives and false negatives.
 
+This is where to machine learning concepts, **Precision** and **Recall** comes in to play. 
+
+- **Precision** - attempts to answer the question of how many of my positive findings are actually correct? If we only have true positives, this value will be 1
+- **Recall** - attempts to answer the question of how many of actual true positives were actually correct. Recall takes in to consideration false negatives, meaning in our case fraudulent transactions that we didn't catch. If we catch all fradulent transactions then this value will be 1
+
+Precision and Recall are normally working against each-other, meaning that you'll have to pick what is most important for you. Would you rather flag more transactions as fraudulent even if they're not, but in that case make sure not to miss any (e.g. having many false positives) or are you willing to let some fradulent transactions flow through with every actually flagged transaction being correct (e.g. having no false positives but some false negatives).
+
+A good measurement to determine how good a classifier is, is to look at the area under the precision-recall curve. In an ideal world this value should be 1. If we look at how our model did, we can see that we only got a 0.31 value which is very low.
+
+Given that our model is not up for the task, what can we do to improve it? Lets move on to the next section.
 
   </p>
 </details>
