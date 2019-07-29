@@ -42,7 +42,7 @@ Other available data-sources worth exploring are:
    - Navigate to the [Kaggle dataset](https://www.kaggle.com/ntnu-testimon/paysim1) and click "New Kernel". 
    - When selecting Kernel type, select "Notebook"
    - In the top-left corner, select File -> Upload Notebook
-   - Upload the Jupyter notebook in this repo
+   - Upload the [Jupyter notebook](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/src/machine-learning/jupyter/fraudulent-transactions-jupyter-notebook.ipynb) in this repo
    
    </p>
   </details>
