@@ -19,28 +19,26 @@ Framing and narrowing down on the actual business problem you are attempting to 
       
 Once the business problem has been determined, it's time to gather your data. In a real-world example, data is normally gathered from multiple data sources (both public and private), aggregated and pivoted in to a workable shape. For our purposes, the data we will be using can be retrieved from [Kaggle](https://www.kaggle.com/ntnu-testimon/paysim1). There are however tons of other great free public data sources available. 
       
-I encourage you to explore the following free open-data sources:
-    - [Google Public Datasets](https://cloud.google.com/public-datasets/)
-    - [AWS Open Data](https://aws.amazon.com/opendata/)
-    - [Open Government Data](https://www.data.gov/)
-    - [EU Open Data](https://data.europa.eu/euodp/en/data)
+I encourage you to explore the following free open-data sources:  
+    * [Google Public Datasets](https://cloud.google.com/public-datasets/)
+    * [AWS Open Data](https://aws.amazon.com/opendata/)
+    * [Open Government Data](https://www.data.gov/)
+    * [EU Open Data](https://data.europa.eu/euodp/en/data)
    
   <details>
-    <summary>Explore the dataset</summary>
+    <summary>2.1 Explore the dataset</summary>
     <p>
     
     </p>
   </details>
-  
   <details>
-    <summary>Getting started with ML.NET</summary>
+    <summary>2.2 Getting started with ML.NET</summary>
     <p>
     
     </p>
   </details>
-  
   <details>
-    <summary>Load your data in ML.NET</summary>
+    <summary>2.3 Load your data in ML.NET</summary>
     <p></p>
   </details>     
   
