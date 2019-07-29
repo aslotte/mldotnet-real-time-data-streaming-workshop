@@ -3,7 +3,7 @@ So you're ready to start creating your Machine Learning model with ML.NET? Aweso
 ML.NET is an open-source, cross-platform library, released to the public in preview during MS Build 2018 and for at MS Build 2019.
 It bridges the gap between Software Developers and Data Scientists and allows .NET Developers to make their applications smarter.
 
-The general steps for training your model are the same regardless if you are training your model using ML.NET or a Python based library such as ScikitLearn. To train your model in ML.NET, please expand and follow the instructions below:
+The general steps for training your model are the same regardless if you are training your model using ML.NET or a Python based library such as Scikit Learn. To train your model in ML.NET, please expand and follow the instructions below:
 
 <details>
 <summary>1. Determine your problem domain</summary>
@@ -36,7 +36,7 @@ Other available data-sources worth exploring are:
    - Does any of the columns have missing values?<br/>
    - Does any of the columns contain outliers?<br/>
    
-   Exploring a large dataset can be a daunting task. Loading a dataset containing 6+ million rows in something like Excel is not always feasible due to application limitations and performance. To make life easier for us we can use an open-source Python library called **Pandas** in e.g. a Jupyter notebook. There is unfortunately currently no good equivalent to Pandas in .NET. 
+   Exploring a large dataset can be a daunting task. Loading a dataset containing 6+ million rows in something like Excel is not always feasible due to application limitations and performance. To make life easier for us we can use an open-source Python library called **Pandas** in e.g. a Jupyter notebook.
    
    To explore the dataset using Pandas and a Jupyter notebook:
    - Navigate to the [Kaggle dataset](https://www.kaggle.com/ntnu-testimon/paysim1) and click "New Kernel". 
@@ -268,7 +268,11 @@ This should take about 2-5 min depending on the power of your computer. Once at 
 Wow, the accurary is 0.9988 or more precisly **99.9%**!
 Hold on a minute, can we have been so lucky to chose the right algorithm at the first try to get a nearly pefect model?
 
-Unfortunately we are not that lucky. Accuary alone can be a very misleading metric, especially for highly unbalanced datasets as the one we are working on.  
+Unfortunately we are not that lucky. Accuary alone can be a very misleading metric, especially for highly unbalanced datasets as the one we are working on.
+
+If we look at the shape of the dataset given by the Jupyter notebook executed earlier we can see that we have 6,362,620 rows in the dataset, but only 8,213 are fradulent. That means **99.9%** of all transactions in the dataset are non-fraudulent. Given that, if our model is just guessing non-fradulent for all transactions it will achieve a 99.9% accuracy but miss all and any fradulent transactions. 
+
+
 
   </p>
 </details>
