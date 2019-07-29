@@ -283,7 +283,7 @@ This is where to machine learning concepts, **Precision** and **Recall** comes i
 
 Precision and Recall are normally working against each-other, meaning that you'll have to pick what is most important for you. Would you rather flag more transactions as fraudulent even if they're not, but in that case make sure not to miss any (e.g. having many false positives) or are you willing to let some fradulent transactions flow through with every actually flagged transaction being correct (e.g. having no false positives but some false negatives).
 
-A good measurement to determine how good a classifier is, is to look at the area under the precision-recall curve. In an ideal world this value should be 1. If we look at how our model did, we can see that we only got a 0.31 value which is very low.
+A good measurement to determine how good a classifier is, is to look at the area under the precision-recall curve. In an ideal world this value **should be 1**. If we look at how our model did, we can see that we only got a **0.31** value which is very low.
 
 Given that our model is not up for the task, what can we do to improve it? Lets move on to the next section.
 
