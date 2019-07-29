@@ -203,6 +203,26 @@ To perform OneHotEncoding on the type column, you can call the OneHotEncoding me
 <details>
 <summary>5. Train your model</summary>
   <p>
+    Once we have created our data processing pipeline it's time to select the trainer (algorithm) to use. 
+    The most common types of algorithms to use are:
+    
+   - Linear Regression <br/>
+   - Nearest Neighbor <br/>
+   - Naive Bayes <br/>
+   - Decision Trees <br/>
+   - Support Vector Machines (SVM) <br/>
+   
+   Each family of algorithms has its pros and cons as we will see later in this workshop, but for simplicities sake, lets start off with the most straightforward algorithm, linear regression. A variant of linear regression is logistic regression. 
+   So where do you find the trainers in ML.NET? 
+   The trainers are located under the given ML Task we are trying to perform. In our case we are attempting to do something called **BinaryClassification**, which is to predict one out of two possible values (thus binary). Other common ML tasks are Multi-Class Classification (three or more values), regression, clustering, anomaly detection and so forth.
+   
+   We can create a training pipeline using logistic linear regression as follows:
+   
+    dataProcessingPipeline
+    .Append(mlContext.BinaryClassification.Trainers.LbfgsLogisticRegression(labelColumnName: "isFraud"));
+   
+   Note that we append the trainer to the data processing pipeline, as well as define which column we are trying to predict. Often called the label column.
+    
   </p>
 </details>
 <details>  
