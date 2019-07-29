@@ -86,9 +86,9 @@ Make sure to decorate each property with ColumnName and LoadColumn, where Column
     [ColumnName("step"), LoadColumn(0)]
    ```
  
- Did you have a try? Perfect! Here a [a complete solution](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/src/machine-learning/FraudPreditionTrainer/FraudPreditionTrainer/Schema/Transaction.cs) to validate against.
+Did you have a try? Perfect! Here's a [a complete solution](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/src/machine-learning/FraudPreditionTrainer/FraudPreditionTrainer/Schema/Transaction.cs) to validate against.
   
-   </p>
+ </p>
 </details>
 <details>
 <summary>3. Split your data in a test and training set</summary>
