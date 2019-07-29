@@ -35,6 +35,15 @@ Other available data-sources worth exploring are:
    - What's the data type of the available features?<br/>
    - Does any of the columns have missing values?<br/>
    - Does any of the columns contain outliers?<br/>
+   
+   Exploring a large dataset can be a daunting task. Loading a dataset containing 6+ million rows in something like Excel is not always feasible due to application limitations and performance. To make life easier for us we can use an open-source Python library called **Pandas** in e.g. a Jupyter notebook. There is unfortunately currently no good equivalent to Pandas in .NET. 
+   
+   To explore the dataset using Pandas and a Jupyter notebook:
+   - Navigate to the [Kaggle dataset](https://www.kaggle.com/ntnu-testimon/paysim1) and click "New Kernel". 
+   - When selecting Kernel type, select "Notebook"
+   - In the top-left corner, select File -> Upload Notebook
+   - Upload the Jupyter notebook in this repo
+   
    </p>
   </details>
   <details>
@@ -251,7 +260,14 @@ To calculate the metrics we will be using to benchmark our model, use the Binary
       
     var metrics = mlContext.BinaryClassification.Evaluate(predictions, labelColumnName: "isFraud");
       
-   
+Let's put a break-point at this most recently added line and run the console application.
+This should take about 2-5 min depending on the power of your computer. Once at debug statement, expand the properties to see the metrics. 
+
+Wow, the accurary is 0.9988 or more precisly **99.9%**!
+Hold on a minute, can we have been so lucky to chose the right algorithm at the first try to get a nearly pefect model?
+
+Unfortunately we are not that lucky. Accuary alone can be a very misleading metric, especially for highly unbalanced datasets as the one we are working on.  
+
   </p>
 </details>
 <details>
