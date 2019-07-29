@@ -1,16 +1,15 @@
 ## Training your model in ML.NET
 So you're ready to start creating your Machine Learning model with ML.NET? Awesome!
-ML.NET is an open-source, cross-platfrom library, relased to the public in preview during MS Build 2018 and for at MS Build 2019.
+ML.NET is an open-source, cross-platform library, released to the public in preview during MS Build 2018 and for at MS Build 2019.
 It bridges the gap between Software Developers and Data Scientists and allows .NET Developers to make their applications smarter.
 
 The general steps for training your model are the same regardless if you are training your model using ML.NET or a Python based library such as ScikitLearn. To train your model in ML.NET, please expand and follow the instructions below:
-
 
 <details>
 <summary>1. Determine your problem domain</summary>
   <p>
 
-Framing and narrowing down on the actual business problem you are attempting to solve is key for a succesful Machine Learning model. A lot of the times people attempt to start with a cool algorithm or the data they have, but without a clear understanding of the problem they are trying to solve, and the dialog with Subject Matter Experts (SME's), crucial data may be overlooked and business value may not be provided. In this example, we would like to secure the banks transfers and transactions such that fraudulant activity can be avoided.
+Framing and narrowing down on the actual business problem you are attempting to solve is key for a successful Machine Learning model. A lot of the times people attempt to start with a cool algorithm or the data they have, but without a clear understanding of the problem they are trying to solve, and the dialog with Subject Matter Experts (SME's), crucial data may be overlooked and business value may not be provided. In this example, we would like to secure the banks transfers and transactions such that fraudulent activity can be avoided.
   </p>
 </details>
 <details>
@@ -32,7 +31,7 @@ Other available data-sources worth exploring are:
    - Download the dataset from Kaggle and extract the content<br/>
    - Familiarize yourself with the available features (columns)<br/>
    - Which columns are your features and which is your label (what you would like to predict)?<br/>
-   - Is the dataset balanced? (hint: what's the distribution of fraudulant and non-fraudulant transactions)<br/>
+   - Is the dataset balanced? (hint: what's the distribution of fraudulent and non-fraudulent transactions)<br/>
    - What's the data type of the available features?<br/>
    - Does any of the columns have missing values?<br/>
    - Does any of the columns contain outliers?<br/>
@@ -168,7 +167,7 @@ Note that splitting your data in to a train and test set is strictly not always 
     
 The dataset from Kaggle is in an overall great condition, as opposed to how it could look. The variables are neatly contained in columns, thus no pivoting of the data is needed. The data contains no missing values that needs to be replaced.
    
-Machine Learning models are very picky in terms of data quality, so making sure that the data is top-notch is critial. We want to make sure that no columns have missing values, that the data is reasonable balanced and that no obvious outliers exists. The only main-concern we have with our data is that it is highly unbalanced. The number of fraudulant transactions to train the data on is just a couple of percents of the total dataset. If we were able to, we would idealy include additional fraudulant transactions to balance the data, but as this is not possible we will apply other techniques to counter this in a later step.
+Machine Learning models are very picky in terms of data quality, so making sure that the data is top-notch is critial. We want to make sure that no columns have missing values, that the data is reasonable balanced and that no obvious outliers exists. The only main-concern we have with our data is that it is highly unbalanced. The number of fraudulent transactions to train the data on is just a couple of percents of the total dataset. If we were able to, we would idealy include additional fraudulent transactions to balance the data, but as this is not possible we will apply other techniques to counter this in a later step.
 
 As mentioned when loading the data in to memory, machine learning algorithms function based on numerical data, and has a difficult time working with e.g. strings. Our dataset currently contains three features that contains text, **type**, **nameOrig** and **nameDest**.
 To transform this features to float vectors, we can use a technique called **OneHotEncoding** which will create new binary columns for each value present in a feature space. For example, the type column contains values such as "Payment" and "Transfer". If we apply OneHotEncoding on the type column, ML.NET will create new columns, e.g. IsPayment, IsTransfer with a binary response, either 1 or 0 to define what the type is. This approach greatly increases the performance of the algorithm and allows is to converge to an optimal solution.
