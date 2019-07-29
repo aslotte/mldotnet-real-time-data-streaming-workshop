@@ -34,6 +34,8 @@ Other available data-sources worth exploring are:
    - Which columns are your features and which is your label (what you would like to predict)?<br/>
    - Is the dataset balanced? (hint: what's the distribution of fraudulant and non-fraudulant transactions)<br/>
    - What's the data type of the available features?<br/>
+   - Does any of the columns have missing values?<br/>
+   - Does any of the columns contain outliers?<br/>
    </p>
   </details>
   <details>
@@ -88,7 +90,9 @@ Make sure to decorate each property with ColumnName and LoadColumn, where Column
    ```
     [ColumnName("step"), LoadColumn(0)]
    ```
- 
+
+Furthermore, the machine learning algorithms can only work on number data of type floats. Thus make sure each property containing a number is of type float.
+
 Did you have a try? Perfect! 
 <details>
   <summary>2.3.a Here's a a complete solution to validate against.</summary>
@@ -161,6 +165,38 @@ Note that splitting your data in to a train and test set is strictly not always 
 <details>
 <summary>4. Transform your data</summary>
   <p>
+The dataset from Kaggle is in an overall great condition, as opposed to how it could look. The variables are neatly contained in columns, thus no pivoting of the data is needed. The data contains no missing values that needs to be replaced.
+   
+Machine Learning models are very picky in terms of data quality, so making sure that the data is top-notch is critial. We want to make sure that no columns have missing values, that the data is reasonable balanced and that no obvious outliers exists. The only main-concern we have with our data is that it is highly unbalanced. The number of fraudulant transactions to train the data on is just a couple of percents of the total dataset. If we were able to, we would idealy include additional fraudulant transactions to balance the data, but as this is not possible we will apply other techniques to counter this in a later step.
+
+As mentioned when loading the data in to memory, machine learning algorithms function based on numerical data, and has a difficult time working with e.g. strings. Our dataset currently contains three features that contains text, **type**, **nameOrig** and **nameDest**.
+To transform this features to float vectors, we can use a technique called **OneHotEncoding** which will create new binary columns for each value present in a feature space. For example, the type column contains values such as "Payment" and "Transfer". If we apply OneHotEncoding on the type column, ML.NET will create new columns, e.g. IsPayment, IsTransfer with a binary response, either 1 or 0 to define what the type is. This approach greatly increases the performance of the algorithm and allows is to converge to an optimal solution.
+
+To perform OneHotEncoding on the type column, you can call the OneHotEncoding method located in the Transforms catalog of ML.NET as such:
+
+    mlContext.Transforms.Categorical.OneHotEncoding("type")
+    
+ At this point, this is very pipelines come in to play. As we will have multiple transformation operations we would like to conduct, we can chain them all together in to a data processing pipeline:
+ 
+    var dataProcessingPipeline = mlContext.Transforms.Categorical.OneHotEncoding("type")
+                .Append(mlContext.Transforms.Categorical.OneHotEncoding("nameOrig"))
+                .Append(mlContext.Transforms.Categorical.OneHotEncoding("nameDest"))
+                
+ Perfect. Our non-numeric features are now transformed in to a form the algorithm can understand.
+ So which features do you think account for the variance in the dataset? Or put in another way, which features do you think are relavent  to include in your model? Feature engineering is a difficult topic. It's very likely that additional features may be needed to achieve a better model, or dervied features of the existing feature set may yield a better outcome. This is where it is very important to consult with a subject matter expert to understand the problem domain you're in and what data may be relavent. For our purposes, we can start off my trying to include all columns in our model, as we only have seven or so features (you may have thousends if not more in real-world example). 
+ 
+ To define which features are relavent for the model to know about, we will have to concatenate them in to a feature vector
+ This can be done as such:
+ 
+       mlContext.Transforms.Concatenate("Features", "type", "nameOrig", "nameDest", "amount", "oldbalanceOrg", "oldbalanceDest", "newbalanceOrig", "newbalanceDest")
+       
+ To put it all together, your data processing pipeline will look like this:
+ 
+             var dataProcessingPipeline = mlContext.Transforms.Categorical.OneHotEncoding("type")
+                .Append(mlContext.Transforms.Categorical.OneHotEncoding("nameOrig"))
+                .Append(mlContext.Transforms.Categorical.OneHotEncoding("nameDest"))
+                .Append(mlContext.Transforms.Concatenate("Features", "type", "nameOrig", "nameDest", "amount", "oldbalanceOrg", "oldbalanceDest", "newbalanceOrig", "newbalanceDest")
+ 
   </p>
 </details>
 <details>
