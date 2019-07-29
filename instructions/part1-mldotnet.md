@@ -28,10 +28,10 @@ Other available data-sources worth exploring are:
   <details>
     <summary>2.1 Explore the dataset</summary>
    <p>
-    - Download the dataset from Kaggle and extract the content
-    - Familiarize yourself with the available features (columns)
-    - Which columns are your features and which is your label (what you would like to predict)?
-    - Is the dataset balanced? (hint: what's the distribution of fraudulant and non-fraudulant transactions)
+    - Download the dataset from Kaggle and extract the content  
+    - Familiarize yourself with the available features (columns)  
+    - Which columns are your features and which is your label (what you would like to predict)?  
+    - Is the dataset balanced? (hint: what's the distribution of fraudulant and non-fraudulant transactions)  
     - What's the data type of the available features?  
    </p>
   </details>
