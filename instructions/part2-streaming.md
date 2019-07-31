@@ -6,7 +6,7 @@ In this part of the workshop, we will be setting up the real-time data pipeline 
 ## Real-Time Data Pipeline with ML.NET integration
 
 ### Deploy with ARM Templates
-Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-stream-automated.md) to utilize ARM templates for deployment
+Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-stream-mldotnet-automated.md) to utilize ARM templates for deployment
 
 ### Upload reference data
 Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/tree/master/instructions)
