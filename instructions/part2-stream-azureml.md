@@ -3,7 +3,7 @@
 #### 1. Deploy ARM Template
 - Navigate to [deploy an ARM template](https://portal.azure.com/#create/Microsoft.Template)
 - Click on "Build your own Template in the Editor"
-- Copy and paste the [Raspberry PI ARM Template](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/src/real-time-data-streaming/deploy/pipeline-with-azureml.json)
+- Copy and paste the [ARM Template](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/src/real-time-data-streaming/deploy/pipeline-with-azureml.json)
 - Click "Save"
 
 #### 2. Enter valid parameter values
