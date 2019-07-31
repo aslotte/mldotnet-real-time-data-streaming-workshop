@@ -42,6 +42,10 @@ The ARM template will succesfully set up the required infrastructure but will re
 - Click "Enable" to enable your trigger
 
 #### 5. Create an Azure ML Workspace
+1. In your Azure Portal, click "Create a Resource"
+2. Search for "Machine Learning Service" and click to add that new resource
+3. Fill in the required parameters to create the service such as workspace name. Use the previously created resource group
+4. Click "Review + Create"
 
 #### 6. Create a Machine Learning input to Azure Stream Analytics
 This step will need to be done once a Machine Learning model have been trained and a Machine Learning Web Service have been created.
