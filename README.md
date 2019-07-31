@@ -14,7 +14,7 @@ In order to complete the workshop, please ensure you have the following:
 ## Assumptions
 This workshop is currently valid for ML.NET v1.2.0.0
 
-## Problem outline
+## Problem Outline
 As a financial institution, detecting fraud is imperative to ensure safe and continuous operations for the bank and its customers.  
 
 In this workshop we will be looking at detecting fradulent transactions in real-time. We will be training our model based on publicly available data from [Kaggle](https://www.kaggle.com/ntnu-testimon/paysim1) and integrating this custom machine learning model in a real-time data pipeline, supported by Azure Stream Analytics.
