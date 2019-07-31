@@ -18,12 +18,9 @@ If you have already trained your Machine Learning model, make sure to navigate t
 ### Publish the ML.NET Prediction Function
 Please follow the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-azure-function.md) to publish the prediction function to Azure
 
-#### Configure and set up a Power BI Dashboard
-
-#### Kick-off the Event Producer
-
-
 ## Real-Time Data Pipeline with Azure ML integration
 
 ### Deploy with ARM Templates
-Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-stream-automated.md) to utilize ARM templates for deployment
+Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-stream-azureml.md) to utilize ARM templates for deployment
+
+## Kick-off the Event Producer
