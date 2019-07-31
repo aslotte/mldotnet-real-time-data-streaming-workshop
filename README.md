@@ -15,7 +15,7 @@ In order to complete the workshop, please ensure you have the following:
 This workshop is currently valid for ML.NET v1.2.0.0
 
 ## Resources
-- [ML.NET)(https://github.com/dotnet/machinelearning)
+- [ML.NET](https://github.com/dotnet/machinelearning)
 - [ML.NET Samples](https://github.com/dotnet/machinelearning-samples)
 - [Azure Stream Analytics](https://docs.microsoft.com/en-us/azure/stream-analytics/stream-analytics-introduction)
 
