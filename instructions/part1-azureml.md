@@ -104,6 +104,8 @@ First thing we need to do before diving in to Azure AutoML is to upload our data
 ![automl1](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-auto-ml-6.PNG)
 14. Click **Start**
 
+While this experiment is running, lets take a moment to reflect on why we changed primary metric from accuarcy to recall. If you remember earlier in this workshop, we discussed the fact that the data is highly unbalanced, meaning that if the algorithm just guesses non-fraudlent on everything it will achieve a 99.8% accuracy. Although accuracy is important for us, achieving a higher recall (minimum number of false negatives) is crucial.
+
   </p>
 </details>  
 
