@@ -2,7 +2,7 @@
 ML.NET offers fantastic support to train your model using C# and offline. Another way to train your model is by utilizing Azure, and in particular Azure Machine Learning Service. Azure Machine Learning Service currently do not offer support for training your models using C#, but rather relies on Jupyter Notebooks and Python. There is however an similar AutoML interface that can be used, as well as visual designer that's neat to setup your training pipeline
 
 ### Prerequisites
-- Azure Machine Learning Service (please set up a data pipeline using the [following instructions](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-streaming.md) first 
+- Azure Machine Learning Service (please set up a data pipeline using the [following instructions](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-streaming.md) first) 
 - [Azure Storage Explorer](https://azure.microsoft.com/en-us/features/storage-explorer/)
 
 ### Visual Interface
@@ -87,22 +87,24 @@ First thing we need to do before diving in to Azure AutoML is to upload our data
     
 2. Click **Create Experiment**
 3. Enter an experiement name 
-![automl1](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-auto-ml-2.png)
-4. Click **New Compute**
+![automl1](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-auto-ml-2.PNG)
+4. Click **Create a new compute**
 5. In the new pane that appears, enter compute name and fill in minimum number of nodes 1
-![automl1](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-auto-ml-3.png)
+![automl1](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-auto-ml-3.PNG)
 6. Once the compute target has finished being created, select it from the drop-down list
 7. Click **Next**
 8. Select the storage account named **mlmodel**
 9. Select the container named **model**
-![automl1](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-auto-ml-4.png)
+![automl1](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-auto-ml-4.PNG)
 10. Select the file data.csv which was uploaded in the previous step
 11. Scroll down and select **isFraud** as the target column and classification as prediction task
-![automl1](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-auto-ml-5.png)
+![automl1](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-auto-ml-5.PNG)
 12. Expand the **Advanced Settings**
 13. Set the training job time to 20 min and change the primary metric to norm_macro_recall
-![automl1](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-auto-ml-6.png)
+![automl1](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-auto-ml-6.PNG)
 14. Click **Start**
+
+While this experiment is running, lets take a moment to reflect on why we changed primary metric from accuarcy to recall. If you remember earlier in this workshop, we discussed the fact that the data is highly unbalanced, meaning that if the algorithm just guesses non-fraudlent on everything it will achieve a 99.8% accuracy. Although accuracy is important for us, achieving a higher recall (minimum number of false negatives) is crucial.
 
   </p>
 </details>  
