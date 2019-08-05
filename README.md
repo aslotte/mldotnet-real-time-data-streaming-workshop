@@ -27,13 +27,17 @@ In this workshop we will be looking at detecting fradulent transactions in real-
 ## Outline of Learning Objectives
 - **Part 1**: [Machine Learning in .NET](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part1-ml.md)
   - Introduction to Machine Learning and ML.NET
-  - Exploring the data with Jupyter notebooks and Pandas
-  - Training a machine learning model using ML.NET
-  - Training a machine learning model using AutoML CLI
-  - Training a machine learning model using Azure Machine Learning Studio
+  - Explore the data with Jupyter Notebooks and Pandas
+  - Train a machine learning model using ML.NET
+  - Train a machine learning model using AutoML CLI
 - **Part 2**: [Setting up real-time data streaming pipeline](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-streaming.md)
   - Introduction to Real-Time Data Stream Processing and Azure Stream Analytics
   - Introduction to Azure Resource Management (ARM) Templates
+- **Part 3** [Machine Learning in Azure]
+- Introduction to Azure Machine Learning Service
+- Train a machine learning model using Azure ML Visual Interface
+- Train a machine learning using Azure AutoML
+- Train a machine learning using Jupyter Notebooks
   
 ## Solution Architecture 
 #### A Real-Time Data Pipeline with ML.NET
