@@ -24,3 +24,4 @@ Please follow the following [guide](https://github.com/aslotte/mldotnet-real-tim
 Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-stream-azureml.md) to utilize ARM templates for deployment
 
 ## Kick-off the Event Producer
+Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-kickoff-event-producer.md) to kick-off the event producer.
