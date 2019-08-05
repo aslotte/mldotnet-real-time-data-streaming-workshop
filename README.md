@@ -34,10 +34,10 @@ In this workshop we will be looking at detecting fradulent transactions in real-
   - Introduction to Real-Time Data Stream Processing and Azure Stream Analytics
   - Introduction to Azure Resource Management (ARM) Templates
 - **Part 3** [Machine Learning in Azure]
-- Introduction to Azure Machine Learning Service
-- Train a machine learning model using Azure ML Visual Interface
-- Train a machine learning using Azure AutoML
-- Train a machine learning using Jupyter Notebooks
+  - Introduction to Azure Machine Learning Service
+  - Train a machine learning model using Azure ML Visual Interface
+  - Train a machine learning using Azure AutoML
+  - Train a machine learning using Jupyter Notebooks
   
 ## Solution Architecture 
 #### A Real-Time Data Pipeline with ML.NET
