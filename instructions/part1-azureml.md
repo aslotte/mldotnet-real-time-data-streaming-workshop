@@ -7,8 +7,13 @@ ML.NET offers fantastic support to train your model using C# and offline. Traini
 - [Azure Storage Explorer](https://azure.microsoft.com/en-us/features/storage-explorer/)
 
 ### Provision resources 
-Before we can start to train our models, we need to provision our resources. Please follow the following [guide]((https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-stream-azureml.md) which will provision both an Azure Machine Learning Service instance as well as streaming pipeline to integrate our models with.
-
+<details>
+  <summary> Provision resources </summary>
+  <p>
+    
+Before we can start to train our models, we need to provision our resources. Please follow the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-stream-azureml.md) which will provision both an Azure Machine Learning Service instance as well as streaming pipeline to integrate our models with.
+</p
+</details>
 
 ### Create compute targets
 <details>
