@@ -90,18 +90,18 @@ First thing we need to do before diving in to Azure AutoML is to upload our data
 ![automl1](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-auto-ml-2.PNG)
 4. Click **New Compute**
 5. In the new pane that appears, enter compute name and fill in minimum number of nodes 1
-![automl1](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-auto-ml-3.png)
+![automl1](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-auto-ml-3.PNG)
 6. Once the compute target has finished being created, select it from the drop-down list
 7. Click **Next**
 8. Select the storage account named **mlmodel**
 9. Select the container named **model**
-![automl1](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-auto-ml-4.png)
+![automl1](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-auto-ml-4.PNG)
 10. Select the file data.csv which was uploaded in the previous step
 11. Scroll down and select **isFraud** as the target column and classification as prediction task
-![automl1](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-auto-ml-5.png)
+![automl1](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-auto-ml-5.PNG)
 12. Expand the **Advanced Settings**
 13. Set the training job time to 20 min and change the primary metric to norm_macro_recall
-![automl1](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-auto-ml-6.png)
+![automl1](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-auto-ml-6.PNG)
 14. Click **Start**
 
   </p>
