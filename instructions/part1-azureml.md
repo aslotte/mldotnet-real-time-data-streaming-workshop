@@ -4,7 +4,7 @@ ML.NET offers fantastic support to train your model using C# and offline. Traini
 **Please note:** As of time of writing this, integrating ML models trained in Azure Machine Learning Service with Azure Stream Analytics is currently not supported. Stream Analytics currently only support models trained in Azure Machine Learning **Studio**. There will however we a release in the near future changing this. This workshop will regardless focus on Azure Machine Learning Service as this is what will be supported going forward.
 
 ### Prerequisites
-- Azure Machine Learning Service (please set up a data pipeline using the [following instructions](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-streaming.md) first) 
+- [Azure Machine Learning Service](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-stream-azureml.md)
 - [Azure Storage Explorer](https://azure.microsoft.com/en-us/features/storage-explorer/)
 
 Before we start to training our models, we will have to create a couple of compute targets that will be used throughout this section.
