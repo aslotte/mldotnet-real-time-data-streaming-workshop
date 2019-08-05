@@ -17,7 +17,7 @@
 
 **Please Note:** The deployment will indicate failure but this is just because it was unable to authenticate the Power BI connection which you will later have to authorize
 
-#### 1.1 Azure Machine Learning workspace
+##### 1.1 Azure Machine Learning workspace
 - Follow this [link](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-machine-learning-create%2Fazuredeploy.json)
 - Select the previously created resource group
 - Enter name for your machine learning workspace, e.g. fraudulent-transactions
@@ -27,7 +27,7 @@
 #### 2. Authenticate accounts
 The ARM template will succesfully set up the required infrastructure but will require you to authenticate you Outlook and PowerBI accounts to fully function.
 
-**Authenticate Power BI output**
+##### Authenticate Power BI output
 - Navigate to your Azure Stream Analytics Job
 - Click on the powerbi output
 - Click the blue button "Renew Authorization"
@@ -36,7 +36,7 @@ The ARM template will succesfully set up the required infrastructure but will re
 - Navigate back to the Stream Analytics overview page
 - Click "Start" to start your streaming analyticsc job
 
-**Authenticate Outlook notifier**
+##### Authenticate Outlook notifier
 - Navigate to your Azure Logic App
 - Click on "Edit"
 - Click on the Outlook connection step (last step)
