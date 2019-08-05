@@ -1,29 +1,33 @@
 ###  Deploy Azure Infrastructure using an Azure Resource Management (ARM) Template
 
-#### 1. Deploy ARM Template
+#### 1. Deploy ARM Templates
+
+##### 1.1 Real-time streaming pipeline
 - Navigate to [deploy an ARM template](https://portal.azure.com/#create/Microsoft.Template)
-- Click on "Build your own Template in the Editor"
+- Click **Build your own Template in the Editor**
 - Copy and paste the [ARM Template](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/src/real-time-data-streaming/deploy/pipeline-with-azureml.json)
 - Click "Save"
-
-#### 2. Enter valid parameter values
-- Select to create a new resource group, or utilize an existing.
+- Select to create a new resource group
 - Enter the required template parameters:
     - Notification e-mail
     - Power BI user name
     - Power BI display name
+- Select a location closest to you    
+- Select to agree to terms and conditions and click **Purchase** to trigger the deployment.
 
-#### 3. Deploy
-Select to agree with terms and conditions and click "Purchase" to trigger the deployment.
+**Please Note:** The deployment will indicate failure but this is just because it was unable to authenticate the Power BI connection which you will later have to authorize
 
+##### 1.1 Azure Machine Learning workspace
+- Follow this [link](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-machine-learning-create%2Fazuredeploy.json)
+- Select the previously created resource group
+- Enter name for your machine learning workspace, e.g. fraudulent-transactions
+- Select a location closest to you
+- Select to agree to terms and conditions and click **Purchase** to trigger the deployment.
 
-**Note: The deployment will indicate failure but this is just because it was unable to authenticate the Power BI connection which you will later have to authorize**
-
-
-#### 4. Authenticate accounts
+#### 2. Authenticate accounts
 The ARM template will succesfully set up the required infrastructure but will require you to authenticate you Outlook and PowerBI accounts to fully function.
 
-**Authenticate Power BI output**
+##### Authenticate Power BI output
 - Navigate to your Azure Stream Analytics Job
 - Click on the powerbi output
 - Click the blue button "Renew Authorization"
@@ -32,7 +36,7 @@ The ARM template will succesfully set up the required infrastructure but will re
 - Navigate back to the Stream Analytics overview page
 - Click "Start" to start your streaming analyticsc job
 
-**Authenticate Outlook notifier**
+##### Authenticate Outlook notifier
 - Navigate to your Azure Logic App
 - Click on "Edit"
 - Click on the Outlook connection step (last step)
@@ -41,11 +45,5 @@ The ARM template will succesfully set up the required infrastructure but will re
 - Navigate back to the Logic App overview page
 - Click "Enable" to enable your trigger
 
-#### 5. Create an Azure ML Workspace
-1. In your Azure Portal, click "Create a Resource"
-2. Search for "Machine Learning Service" and click to add that new resource
-3. Fill in the required parameters to create the service such as workspace name. Use the previously created resource group
-4. Click "Review + Create"
-
-#### 6. Create a Machine Learning input to Azure Stream Analytics
-This step will need to be done once a Machine Learning model have been trained and a Machine Learning Web Service have been created.
+#### 4. Create a Machine Learning input to Azure Stream Analytics
+This step will need to be done in part 3, once a Machine Learning model have been trained and a Machine Learning Web Service have been created. 
