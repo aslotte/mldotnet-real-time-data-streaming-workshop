@@ -89,6 +89,13 @@ This step will take about the same time to complete as the training step did.
 
 ![predictive](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/predictive-experiement-1.PNG)
 
+Once building your web-service has completed, click **Deploy Web Service**
+
+![predictive](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/predictive-experiement-2.PNG)
+
+In the modal that appears, select the previously created compute **web-service** and click **Deploy**
+![predictive](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/predictive-experiement-3.PNG)
+
 </p>
 </details>
 
