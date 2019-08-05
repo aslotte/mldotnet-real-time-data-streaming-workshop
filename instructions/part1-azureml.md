@@ -1,24 +1,44 @@
 ## Training your Machine Learning Model using Azure Machine Learning Service
-ML.NET offers fantastic support to train your model using C# and offline. Another way to train your model is by utilizing Azure, and in particular Azure Machine Learning Service. Azure Machine Learning Service currently do not offer support for training your models using C#, but rather relies on Jupyter Notebooks and Python. There is however an similar AutoML interface that can be used, as well as visual designer that's neat to setup your training pipeline
+ML.NET offers fantastic support to train your model using C# and offline. Training your model using ML.NET requires you however to have to manually set up your compute environment for larger machine learning models, and currently limits your from the possibility to train more complex neural networks. An alternative to ML.NET is to use Azure Machine Learning Service, which is Azure's managed machine learning environment. There are three ways to train your custom machine learning model in the service, using Azure's AutoML functionality, a visual interface or using Jupyter Notebooks with full support for custom models in Python or R. 
 
 ### Prerequisites
 - Azure Machine Learning Service (please set up a data pipeline using the [following instructions](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-streaming.md) first) 
 - [Azure Storage Explorer](https://azure.microsoft.com/en-us/features/storage-explorer/)
+
+Before we start to training our models, we will have to create a couple of compute targets that will be used throughout this section.
+
+### Create compute targets
+<details>
+  <summary> Create compute targets </summary>
+  <p>
+    
+1. Navigate to the Azure Machine Learning Service in Azure.
+2. In the left menu, select **Compute**
+![compute](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-ml-compute-1.PNG)
+3. Create a **Machine Learning Compute** according to the image below
+![compute](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-ml-compute-ml-1.PNG)
+4. Create a **Kubernetes compute** according to the image below
+![compute](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-ml-compute-kubernetes-1.PNG)
+
+</p>
+</details>
 
 ### Visual Interface
 
 <details>
   <summary> Steps to train your model using the Visual Interface </summary>
   <p>
-    
-- Navigate to your Azure Machine Learning Service, previously created
-- Select "Visual Interface" in the menu to the left
+
+- Navigate to the Azure Machine Learning Service in Azure.
+- In the left menu, select "Visual Interface"
 - Select "Launch visual interface"
+
+This will open the Machine Learning workspace in which we can create experiments using a visual interface.
+Feel free to navigate around to make yourself familiar with the surroundings. 
 
 ![Start](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-ml-1.PNG)
 
-#### Upload Dataset
-This will open the Machine Learning Workspace. Feel free to navigate around to make yourself familiar with the surroundings. 
+#### Upload our data
 The first thing we would like to do is to upload our data set. To this, click on the "New" button in the bottom-left corner. Select to "Upload from Local File"
 
 ![Start](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-ml-2.PNG)
@@ -79,7 +99,7 @@ Similiarly to ML.NET's AutoML functinality, Azure provides its own. This is a ve
 ### Upload our data
 First thing we need to do before diving in to Azure AutoML is to upload our dataset to our storage account using the [Storage Explorer](https://azure.microsoft.com/en-us/features/storage-explorer/). There is a size limit uploading large files through the web interface, thus we have to reside to the storage explorer for our 450+ Mb file.  To do this, download and open the Azure Storage Explorer, navigate to your mlmodel storage account and upload the file to the container called model.
 
-### Create an experiement 
+### Create a new experiement 
 
 1. To create our first AutoML experiment, open the Azure Machine Learning Service in Azure and click on **Automated Machine Learning** to the left.
 
