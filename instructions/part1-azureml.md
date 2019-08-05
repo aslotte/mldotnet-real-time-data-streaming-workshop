@@ -71,7 +71,7 @@ The experiment should eventually look like:
 ![Start](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-ml-5.PNG)
 
 ### Running your experiment
-To run your experiment, simply click Run in the bottom task bar.
+To run your experiment, simply click **Run** in the bottom task bar and select our previously created compute target called **experiment**
 Training the model will take about 15 min.
 
 ### Evaluate your model
