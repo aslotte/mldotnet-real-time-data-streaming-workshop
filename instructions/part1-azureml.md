@@ -88,7 +88,7 @@ First thing we need to do before diving in to Azure AutoML is to upload our data
 2. Click **Create Experiment**
 3. Enter an experiement name 
 ![automl1](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-auto-ml-2.PNG)
-4. Click **New Compute**
+4. Click **Create a new compute**
 5. In the new pane that appears, enter compute name and fill in minimum number of nodes 1
 ![automl1](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-auto-ml-3.PNG)
 6. Once the compute target has finished being created, select it from the drop-down list
