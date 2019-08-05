@@ -2,7 +2,7 @@
 ML.NET offers fantastic support to train your model using C# and offline. Another way to train your model is by utilizing Azure, and in particular Azure Machine Learning Service. Azure Machine Learning Service currently do not offer support for training your models using C#, but rather relies on Jupyter Notebooks and Python. There is however an similar AutoML interface that can be used, as well as visual designer that's neat to setup your training pipeline
 
 ### Prerequisites
-- Azure Machine Learning Service (please set up a data pipeline using the [following instructions](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-streaming.md) first 
+- Azure Machine Learning Service (please set up a data pipeline using the [following instructions](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-streaming.md) first) 
 - [Azure Storage Explorer](https://azure.microsoft.com/en-us/features/storage-explorer/)
 
 ### Visual Interface
