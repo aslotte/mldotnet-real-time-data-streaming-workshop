@@ -173,7 +173,7 @@ Once we are happy with our model, we can deploy it to be consumed by an external
    2. In the menu to the left, click **Functions**
    3. In the top left corner, click Add => Azure ML
    
-   ![addfunction](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/part3-add-ml-function.PNG) 
+   ![addfunction](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/add-ml-function.png) 
    4. In the pane that appears, select the deployed ML model/service and enter a name (this name will be used in your query)
    5. Once the function has been added, you can call the function from you query, e.g. isFraudulant(input.text)
   </p>
