@@ -14,10 +14,13 @@ Before we start to training our models, we will have to create a couple of compu
     
 1. Navigate to the Azure Machine Learning Service in Azure.
 2. In the left menu, select **Compute**
+
 ![compute](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-ml-compute-1.PNG)
 3. Create a **Machine Learning Compute** according to the image below
+
 ![compute](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-ml-compute-ml-1.PNG)
 4. Create a **Kubernetes compute** according to the image below
+
 ![compute](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-ml-compute-kubernetes-1.PNG)
 
 </p>
