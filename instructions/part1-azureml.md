@@ -62,6 +62,8 @@ To be able to integrate our ML model in to our data streaming pipeline, we would
 To do so, please click the button **"Create New Predictive Experiement"** in the bottom right corner.
 
 This will create a predictive experiment tab, with web inputs and outputs. To preapare the service for deployment, please click **"Run"**
+This step will take about the same time to complete as the training step did.
+
 ![predictive](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/predictive-experiement-1.PNG)
 
 </p>
@@ -72,7 +74,15 @@ This will create a predictive experiment tab, with web inputs and outputs. To pr
   <summary> Steps to train your model using Azure AutoML </summary>
   <p>
     
-  The Azure AutoML service acts in a similar way to the AutoML functionality provided by ML.NET. Before we can use Azure AutoML, we will need to upload our data using Azure Storage Explorer. Open Azure Storage Explorer, navigate to your mlmodel storage account and upload the file to the container called model.
+Similiarly to ML.NET's AutoML functinality, Azure provides its own. This is a very neat functionality, as it allows you to get a jump start on training advanced model with little to no previous Machine Learning experience. 
+
+### Upload our data
+First thing we need to do before diving in to Azure AutoML is to upload our dataset to our storage account using the [Storage Explorer](https://azure.microsoft.com/en-us/features/storage-explorer/). There is a size limit uploading large files through the web interface, thus we have to reside to the storage explorer for our 450+ Mb file.  To do this, download and open the Azure Storage Explorer, navigate to your mlmodel storage account and upload the file to the container called model.
+
+### Create an experiement 
+To create our first AutoML experiment, open the Azure Machine Learning Service in Azure and click on **"Automated Machine Learning"** to the left.
+
+[automl1](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-auto-ml-1.png)
     
     
   </p>
