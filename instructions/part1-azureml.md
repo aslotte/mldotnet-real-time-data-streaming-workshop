@@ -180,10 +180,12 @@ To start trainig your model, please do the following:
 
 This will take you to the Jupyter environment hosted on your VM.
 
-In Jupyter lab; 
+In Jupyter lab:
 1. Upload our data file
 2. Upload the following [Jupyter Notebook](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/src/machine-learning/jupyter/jupytervm/fraudulent-transactions.ipynb)
   
+Run and explore the Notebook.
+
   </p>
 </details>  
 
