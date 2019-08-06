@@ -168,6 +168,22 @@ Once we are happy with our model, we can deploy it to be consumed by an external
 <details>
   <summary> Steps to train your model using Jupyter Notebooks </summary>
   <p>
+The Visual interface and Azure AutoML offers options to train your custom ML model without too much previous knowledge in machine learning. If you would like complete control over the training process, as well as wanting to use Python based open-source libraries such as ScikitLearn, Pandas and Numpy, Azure offers the option to provision Jupyter Notebook VMs. This allows you to create your own notebook and attach and run operations in Kubernetes clusters. 
+    
+To start trainig your model, please do the following:
+1. Navigate to your Azure Machine Learning Service in Azure
+2. In the menu to the left, click Notebooks VMs
+3. Click **New** to create a new Jupyter VM
+4. Provide the machine with a new name and click create
+5. Once created, start the VM
+6. Once started, click Jupyter Lab
+
+This will take you to the Jupyter environment hosted on your VM.
+
+In Jupyter lab; 
+1. Upload our data file
+2. Upload the following [Jupyter Notebook](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/src/machine-learning/jupyter/jupytervm/fraudulent-transactions.ipynb)
+  
   </p>
 </details>  
 
