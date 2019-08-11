@@ -231,7 +231,7 @@ To perform OneHotEncoding on the type column, you can call the OneHotEncoding me
    
    We can create a training pipeline using logistic linear regression as follows:
    
-    var trainingPipeline =dataProcessingPipeline
+    var trainingPipeline = dataProcessingPipeline
         .Append(mlContext.BinaryClassification.Trainers.LbfgsLogisticRegression(labelColumnName: "isFraud"));
    
    _Note that we append the trainer to the data processing pipeline, as well as define which column we are trying to predict. Often called the label column._
