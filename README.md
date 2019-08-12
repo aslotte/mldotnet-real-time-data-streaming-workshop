@@ -37,7 +37,9 @@ In this workshop we will be looking at detecting fradulent transactions in real-
   - Introduction to Azure Machine Learning Service
   - Train a machine learning model using Azure ML Visual Interface
   - Train a machine learning using Azure AutoML
-  - Train a machine learning using Jupyter Notebooks
+  - Train a machine learning using Jupyter Notebooks and  Scikit Learn
+  - ** Part 3 Bonus** [Consume ONNX Model from Jupyter Notebook in ML.NET](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part3-consume-onnx-model.md)
+  - Consume an exported ONNX model in ML.NET, which was trained with Scikit Learn (Python)
   
 ## Solution Architecture 
 #### A Real-Time Data Pipeline with ML.NET
