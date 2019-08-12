@@ -181,18 +181,20 @@ The dataset from Kaggle is in an overall great condition, as opposed to how it c
    
 Machine Learning models are very picky in terms of data quality, so making sure that the data is top-notch is critial. We want to make sure that no columns have missing values, that the data is reasonable balanced and that no obvious outliers exists. The only main-concern we have with our data is that it is highly unbalanced. The number of fraudulent transactions to train the data on is just a couple of percents of the total dataset. If we were able to, we would idealy include additional fraudulent transactions to balance the data, but as this is not possible we will apply other techniques to counter this in a later step.
 
-As mentioned when loading the data in to memory, machine learning algorithms function based on numerical data, and has a difficult time working with e.g. strings. Our dataset currently contains three features that contains text, **type**, **nameOrig** and **nameDest**.
+As mentioned when loading the data in to memory, machine learning algorithms function based on numerical data, and has a difficult time working with e.g. strings. Our dataset currently contains two features that contains text, **type** and **nameDest**. We could also look at the nameOrig column, but we can assume that the victims are chosen at random, so this column may not hold much predictable power.
+
 To transform this features to float vectors, we can use a technique called **OneHotEncoding** which will create new binary columns for each value present in a feature space. For example, the type column contains values such as "Payment" and "Transfer". If we apply OneHotEncoding on the type column, ML.NET will create new columns, e.g. IsPayment, IsTransfer with a binary response, either 1 or 0 to define what the type is. This approach greatly increases the performance of the algorithm and allows is to converge to an optimal solution.
 
 To perform OneHotEncoding on the type column, you can call the OneHotEncoding method located in the Transforms catalog of ML.NET as such:
 
     mlContext.Transforms.Categorical.OneHotEncoding("type")
-    
- At this point, this is very pipelines come in to play. As we will have multiple transformation operations we would like to conduct, we can chain them all together in to a data processing pipeline:
+
+The cardinality of the nameDest column is likely to be very high, thus regular OneHotEncoding is would create a very wide dataset, causing either a large model or out-of-memory exceptions when training it. We can instead use **OneHotHashEncoding** to reduce the dimensions and save some space.
+
+At this point, this is very pipelines come in to play. As we will have multiple transformation operations we would like to conduct, we can chain them all together in to a data processing pipeline:
  
     var dataProcessingPipeline = mlContext.Transforms.Categorical.OneHotEncoding("type")
-                .Append(mlContext.Transforms.Categorical.OneHotEncoding("nameOrig"))
-                .Append(mlContext.Transforms.Categorical.OneHotEncoding("nameDest"))
+                .Append(mlContext.Transforms.Categorical.OneHotHashEncoding("nameDest"))
                 
  Perfect. Our non-numeric features are now transformed in to a form the algorithm can understand.
  So which features do you think account for the variance in the dataset? Or put in another way, which features do you think are relevant  to include in your model? Feature engineering is a difficult topic. It's very likely that additional features may be needed to achieve a better model, or dervied features of the existing feature set may yield a better outcome. This is where it is very important to consult with a subject matter expert to understand the problem domain you're in and what data may be relevant. For our purposes, we can start off my trying to include all columns in our model, as we only have seven or so features (you may have thousends if not more in real-world example). 
@@ -200,14 +202,13 @@ To perform OneHotEncoding on the type column, you can call the OneHotEncoding me
  To define which features are relevant for the model to know about, we will have to concatenate them in to a feature vector
  This can be done as such:
  
-       mlContext.Transforms.Concatenate("Features", "type", "nameOrig", "nameDest", "amount", "oldbalanceOrg", "oldbalanceDest", "newbalanceOrig", "newbalanceDest")
+       mlContext.Transforms.Concatenate("Features", "type", "nameDest", "amount", "oldbalanceOrg", "oldbalanceDest", "newbalanceOrig", "newbalanceDest")
        
  To put it all together, your data processing pipeline will look like this:
  
              var dataProcessingPipeline = mlContext.Transforms.Categorical.OneHotEncoding("type")
-                .Append(mlContext.Transforms.Categorical.OneHotEncoding("nameOrig"))
-                .Append(mlContext.Transforms.Categorical.OneHotEncoding("nameDest"))
-                .Append(mlContext.Transforms.Concatenate("Features", "type", "nameOrig", "nameDest", "amount", "oldbalanceOrg", "oldbalanceDest", "newbalanceOrig", "newbalanceDest")
+                .Append(mlContext.Transforms.Categorical.OneHotHashEncoding("nameDest"))
+                .Append(mlContext.Transforms.Concatenate("Features", "type", "nameDest", "amount", "oldbalanceOrg", "oldbalanceDest", "newbalanceOrig", "newbalanceDest")
  
   </p>
 </details>
