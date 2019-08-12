@@ -14,7 +14,9 @@ Please follow the steps below:
    - Microsoft.ML
    - Microsoft.ML.OnnxTransformer
 5. Create an MLContext
-    `var mlContext = new MLContext();`
+```   
+var mlContext = new MLContext();
+```
 6. Create an input class callled `InputModel`
 ```
 using Microsoft.ML.Data;
@@ -45,16 +47,32 @@ namespace OnnxDemo
 ```
 8. Create a method in Program.cs to create sample data to be used for the prediction (same as in the Jupyter Notebook)
 ```
-        private static List<InputModel> CreateInputData()
-        {
-            float[] data = { 1, 2806.0f, 1379875, 2806.0f, 0, 563886.0f, 0f, 0f, 0f, 0f, 0f, 0f, 1 };
+private static List<InputModel> CreateInputData()
+{
+   float[] data = { 1, 2806.0f, 1379875, 2806.0f, 0, 563886.0f, 0f, 0f, 0f, 0f, 0f, 0f, 1 };
 
-            return new List<InputModel>
-            {
-                new InputModel
-                {
-                    Data = data
-                }
-            };
-        }
+   return new List<InputModel>
+   {
+      new InputModel
+      {
+         Data = data
+      }
+   };
+}
+```
+9. Load the data to be used for predictions
+```
+var data = mlContext.Data.LoadFromEnumerable(CreateInputData());
+```
+10. Create a prediction pipeline
+```
+var pipeline = mlContext.Transforms.ApplyOnnxModel(modelPath);
+```
+11. Transform values and make predictions
+```
+var transformedValues = pipeline.Fit(data).Transform(data);
+
+var predictions = mlContext.Data
+   .CreateEnumerable<PredictionResult>(transformedValues, reuseRowObject: false)
+   .ToList();
 ```
