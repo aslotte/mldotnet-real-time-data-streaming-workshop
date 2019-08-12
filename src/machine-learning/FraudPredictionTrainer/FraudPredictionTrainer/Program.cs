@@ -1,8 +1,7 @@
 ﻿using FraudPreditionTrainer.Schema;
 using Microsoft.ML;
-using Microsoft.ML.Data;
 using Microsoft.ML.Trainers.FastTree;
-using Microsoft.ML.Transforms;
+using System;
 
 namespace FraudPreditionTrainer
 {
@@ -29,6 +28,8 @@ namespace FraudPreditionTrainer
             //Evaluate
             var predictions = trainedModel.Transform(testTrainData.TestSet);
             var metrics = mlContext.BinaryClassification.Evaluate(predictions, labelColumnName: "isFraud");
+
+            Console.WriteLine(metrics.ToString());
 
             //Save
             mlContext.Model.Save(trainedModel, data.Schema, "MLModel.zip");
