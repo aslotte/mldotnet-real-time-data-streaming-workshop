@@ -339,7 +339,17 @@ If we again run the console application to train our model, we will see the foll
 | Accuracy    | 99.9%  |
 | AreaUnderPrecisionRecallCurve  | 0.86  | 
 
-This is a tremendous improvement. Our area under the precision-recall curve is up to 0.86. This model can be furthered fine-tuned by altering hyper parameters such as learning curve, number of trees and so forth. For our purposes this model will due just fine.
+This is a tremendous improvement. Our area under the precision-recall curve is up to 0.86. 
+
+The confusion matrix now looks as follows as follows:
+
+||Predicted |
+||   | IsFraud  | IsNotFraud  |
+||---|:--------:|:-----------:|
+|Actual| IsFraud   | 84  | 721  |
+|| IsNotFraud  | 2  | 637,154  |
+
+This model can be furthered fine-tuned by altering hyper parameters such as learning curve, number of trees and so forth. For our purposes this model will due just fine.
 
 Training a model involves a lot of iterative work to end up at the most optimal solution.
 A couple of common approaches to improve a model are:
