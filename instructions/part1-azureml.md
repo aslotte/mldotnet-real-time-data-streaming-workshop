@@ -168,6 +168,7 @@ Once we are happy with our model, we can deploy it to be consumed by an external
 <details>
   <summary> Steps to train your model using Jupyter Notebooks </summary>
   <p>
+    
 The Visual interface and Azure AutoML offers options to train your custom ML model without too much previous knowledge in machine learning. If you would like complete control over the training process, as well as wanting to use Python based open-source libraries such as ScikitLearn, Pandas and Numpy, Azure offers the option to provision Jupyter Notebook VMs. This allows you to create your own notebook and attach and run operations in Kubernetes clusters. 
     
 To start trainig your model, please do the following:
