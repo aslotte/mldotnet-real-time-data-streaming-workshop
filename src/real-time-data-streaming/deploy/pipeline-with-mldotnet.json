@@ -250,7 +250,7 @@
                                 "properties": {
                                     "queueName": "fraudulent-transactions",
                                     "propertyColumns": [],
-                                    "serviceBusNamespace": "fraudalerts",
+                                    "serviceBusNamespace": "[variables('namespaces_fraudalerts_name')]",
                                     "sharedAccessPolicyName": "RootManageSharedAccessKey",
                                     "sharedAccessPolicyKey": "[listKeys(variables('serviceBus_resourceKey'), '2017-04-01').primaryKey]"
                                 }
