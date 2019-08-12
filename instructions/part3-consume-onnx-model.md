@@ -65,7 +65,7 @@ private static List<InputModel> CreateInputData()
 11. Change the file to copy always
 12. Add path to file
 ```
-private static string modelPath = "fraudulent-classifier-jupyter.onnx";
+private static readonly string ModelPath = "fraudulent-classifier-jupyter.onnx";
 ```
 13. Load the data to be used for predictions
 ```
@@ -73,7 +73,7 @@ var data = mlContext.Data.LoadFromEnumerable(CreateInputData());
 ```
 14. Create a prediction pipeline
 ```
-var pipeline = mlContext.Transforms.ApplyOnnxModel(modelPath);
+var pipeline = mlContext.Transforms.ApplyOnnxModel(ModelPath);
 ```
 15. Transform values and make predictions
 ```
@@ -88,4 +88,4 @@ var predictions = mlContext.Data
 Congratulations, you've created your first prediction engine in ML.NET using an exported ONNX model!
 A couple of things to point out here, the names of the columns for the input and output models are defined by the schema in the ONNX file. You can inspect the model schema in the pipeline if you are not sure about the names to start with. Once you know the names, make sure decorate the respective properties with the `[ColumnName()]` attribute.
 
-Secondly, the input to the model is an array of float values. In contrast to our prediction engine in ML.NET where we can pass in the raw data (and the prediction engine handles the transformations) there is a need to pre-process the data here if we would use this in production.
+Secondly, the input to the model is an array of float values. In contrast to our prediction engine in ML.NET where we can pass in the raw data (and the prediction engine handles the transformations) there is a need to pre-process the data here if we would use this in production. We also need to specify the expected length of the vector, in our case we have 13 features thus specifiying it as `[VectorType(13)]`
