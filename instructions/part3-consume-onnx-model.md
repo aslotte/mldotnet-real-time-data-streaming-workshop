@@ -61,7 +61,7 @@ private static List<InputModel> CreateInputData()
 }
 ```
 9. Right click on the project and select to add existing file
-10. Select the downloaded .onnx file (also available [here](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/src/machine-learning/model/fraudulent-classifier-jupyter.onnx)
+10. Select the downloaded .onnx file (also available [here](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/src/machine-learning/model/fraudulent-classifier-jupyter.onnx))
 11. Change the file to copy always
 12. Add path to file
 ```
@@ -83,3 +83,9 @@ var predictions = mlContext.Data
    .CreateEnumerable<PredictionResult>(transformedValues, reuseRowObject: false)
    .ToList();
 ```
+
+#### Summary
+Congratulations, you've created your first prediction engine in ML.NET using an exported ONNX model!
+A couple of things to point out here, the names of the columns for the input and output models are defined by the schema in the ONNX file. You can inspect the model schema in the pipeline if you are not sure about the names to start with. Once you know the names, make sure decorate the respective properties with the `[ColumnName()]` attribute.
+
+Secondly, the input to the model is an array of float values. In contrast to our prediction engine in ML.NET where we can pass in the raw data (and the prediction engine handles the transformations) there is a need to pre-process the data here if we would use this in production.
