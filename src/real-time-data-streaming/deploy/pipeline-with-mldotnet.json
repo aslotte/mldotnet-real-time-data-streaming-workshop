@@ -32,7 +32,7 @@
         "serverfarms_Plan_name": "[concat('serverfarmsplan-', uniqueString(resourceGroup().id))]",
         "sites_prediction_function_name": "[concat('prediction-function-', uniqueString(resourceGroup().id))]",
         "storageAccounts_mlmodel_name": "[concat('mlmodel', uniqueString(resourceGroup().id))]",
-        "namespaces_fraudalerts_name": "[concat('fraudalerts-', uniqueString(resourceGroup().id))]",
+        "namespaces_fraudalerts_name": "[concat('fraudalerts', uniqueString(resourceGroup().id))]",
         "namespaces_transaction_eh_name": "[concat('transaction-eh-', uniqueString(resourceGroup().id))]",
         "workflows_fraudulent_notifier_name": "[concat('fraudulent-notifier-', uniqueString(resourceGroup().id))]",
         "storageAccounts_prognetstorage_name": "[concat('storage', uniqueString(resourceGroup().id))]",
@@ -314,7 +314,7 @@
             "properties": {
                 "displayName": "fraudulent-transactions",
                 "parameterValues": {
-                    "connectionString": "[concat('https://', variables('namespaces_fraudalerts_name'), '.servicebus.windows.net:443/')]"
+                    "connectionString": "[listKeys(variables('serviceBus_resourceKey'), '2017-04-01').primaryConnectionString]"
                 },
                 "customParameterValues": {},
                 "api": {
