@@ -12,7 +12,7 @@ In order to complete the workshop, please ensure you have the following:
 - [An Outlook e-mail](www.outlook.com)
 
 ## Assumptions
-This workshop is currently valid for ML.NET v1.2.0.0
+This workshop is currently valid for ML.NET v1.3.1.0
 
 ## Resources
 - [ML.NET](https://github.com/dotnet/machinelearning)
