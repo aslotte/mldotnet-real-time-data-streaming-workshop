@@ -29,7 +29,10 @@ namespace FraudPreditionTrainer
             var predictions = trainedModel.Transform(testTrainData.TestSet);
             var metrics = mlContext.BinaryClassification.Evaluate(predictions, labelColumnName: "isFraud");
 
-            Console.WriteLine(metrics.ToString());
+            Console.WriteLine($"Accuracy: {metrics.Accuracy}");
+            Console.WriteLine($"AUCPC: {metrics.AreaUnderPrecisionRecallCurve}");
+            Console.WriteLine($"Recall: {metrics.PositiveRecall}");
+            Console.WriteLine($"Precision: {metrics.PositivePrecision}");
 
             //Save
             mlContext.Model.Save(trainedModel, data.Schema, "MLModel.zip");
