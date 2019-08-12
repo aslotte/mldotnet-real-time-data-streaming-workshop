@@ -181,6 +181,9 @@ To start trainig your model, please do the following:
 
 This will take you to the Jupyter environment hosted on your VM.
 
+In the notebook we will learn how to train a simple classifier using Sklearn.
+We will deploy our model to a Docker image in an Azure Container Instance as well as output the model as .pkl file and in the ONNX open standard for use in e.g. ML.NET
+
 In Jupyter lab:
 1. Upload our data file
 2. Upload the following [Jupyter Notebook](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/src/machine-learning/jupyter/jupytervm/fraudulent-transactions.ipynb)
