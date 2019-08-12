@@ -60,15 +60,22 @@ private static List<InputModel> CreateInputData()
    };
 }
 ```
-9. Load the data to be used for predictions
+9. Right click on the project and select to add existing file
+10. Select the downloaded .onnx file (also available [here](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/src/machine-learning/model/fraudulent-classifier-jupyter.onnx)
+11. Change the file to copy always
+12. Add path to file
+```
+private static string modelPath = "fraudulent-classifier-jupyter.onnx";
+```
+13. Load the data to be used for predictions
 ```
 var data = mlContext.Data.LoadFromEnumerable(CreateInputData());
 ```
-10. Create a prediction pipeline
+14. Create a prediction pipeline
 ```
 var pipeline = mlContext.Transforms.ApplyOnnxModel(modelPath);
 ```
-11. Transform values and make predictions
+15. Transform values and make predictions
 ```
 var transformedValues = pipeline.Fit(data).Transform(data);
 
