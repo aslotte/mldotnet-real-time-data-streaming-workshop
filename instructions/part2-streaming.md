@@ -25,3 +25,7 @@ Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-t
 
 ## Kick-off the Event Producer
 Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-kickoff-event-producer.md) to kick-off the event producer.
+
+
+## Set up infrastructure manually
+If you are interested and would like to further sharpen your Azure skills, attempt to set up the infrastructure manually in a new resource group
