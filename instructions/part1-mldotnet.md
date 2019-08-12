@@ -19,16 +19,17 @@ Framing and narrowing down on the actual business problem you are attempting to 
 Once the business problem has been defined, it's time to gather your data. Data is normally gathered from multiple data-sources (both public and private), aggregated and pivoted in to a workable shape. For our purposes, the data we will be using can be retrieved from [Kaggle](https://www.kaggle.com/ntnu-testimon/paysim1). 
       
 Other available data-sources worth exploring are: 
-    - [Google Public Datasets](https://cloud.google.com/public-datasets/)  
-    - [AWS Open Data](https://aws.amazon.com/opendata/)  
-    - [Open Government Data](https://www.data.gov/)  
-    - [EU Open Data](https://data.europa.eu/euodp/en/data)  
+   - [Google Public Datasets](https://cloud.google.com/public-datasets/)  
+   - [AWS Open Data](https://aws.amazon.com/opendata/)  
+   - [Open Government Data](https://www.data.gov/)  
+   - [EU Open Data](https://data.europa.eu/euodp/en/data)  
    
   <details>
     <summary>2.1 Explore the dataset</summary>
    <p>
      
    - Download the dataset from Kaggle and extract the content<br/>
+   - Rename the dataset to data.csv for simplicities sake going forward <br/>
    - Familiarize yourself with the available features (columns)<br/>
    - Which columns are your features and which is your label (what you would like to predict)?<br/>
    - Is the dataset balanced? (hint: what's the distribution of fraudulent and non-fraudulent transactions)<br/>
@@ -230,7 +231,7 @@ To perform OneHotEncoding on the type column, you can call the OneHotEncoding me
    
    We can create a training pipeline using logistic linear regression as follows:
    
-    var trainingPipeline =dataProcessingPipeline
+    var trainingPipeline = dataProcessingPipeline
         .Append(mlContext.BinaryClassification.Trainers.LbfgsLogisticRegression(labelColumnName: "isFraud"));
    
    _Note that we append the trainer to the data processing pipeline, as well as define which column we are trying to predict. Often called the label column._
