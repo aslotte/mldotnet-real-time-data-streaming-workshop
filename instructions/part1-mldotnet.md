@@ -288,7 +288,9 @@ A good measurement to determine how good a classifier is, is to look at the area
 
 Another good tool to use is the confusion matrix, which gives you a good overview of how many false positives or false negatives the model creates.
 
-The confusion matrix for our model looks as follows:
+The confusion matrix  looks as follows: <br/>
+Predicted values &rightarrow; <br/>
+Actual values &downarrow; <br/>
 
 |   | IsFraud  | IsNotFraud  |
 |---|:--------:|:-----------:|
@@ -341,14 +343,16 @@ If we again run the console application to train our model, we will see the foll
 
 This is a tremendous improvement. Our area under the precision-recall curve is up to 0.86. 
 
-The confusion matrix now looks as follows:
-(Predicted values &rightarrow;)
-(Actual values &downarrow;)
+The confusion matrix now looks as follows: <br/>
+Predicted values &rightarrow; <br/>
+Actual values &downarrow; <br/>
 
 |   | IsFraud  | IsNotFraud  |
 |---|:--------:|:-----------:|
 | IsFraud   | 609  | 33 |
 | IsNotFraud  | 196  | 637,123  |
+
+What do we notice? We have reduced the number of false negatives, fraudulent transactions being marked as non-fraudulent when they in fact are. We had to sacrifice some precision to do so, meaning that we have increased the number of false positives.
 
 This model can be furthered fine-tuned by altering hyper parameters such as learning curve, number of trees and so forth. For our purposes this model will due just fine.
 
