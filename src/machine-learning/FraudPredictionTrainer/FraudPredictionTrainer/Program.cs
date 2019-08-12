@@ -41,9 +41,8 @@ namespace FraudPreditionTrainer
         private static IEstimator<ITransformer> BuildDataProcessingPipeline(MLContext mlContext)
         {
             return mlContext.Transforms.Categorical.OneHotEncoding("type")
-                .Append(mlContext.Transforms.Categorical.OneHotEncoding("nameOrig"))
-                .Append(mlContext.Transforms.Categorical.OneHotEncoding("nameDest"))
-                .Append(mlContext.Transforms.Concatenate("Features", "type", "nameOrig", "nameDest", "amount", "oldbalanceOrg", "oldbalanceDest", "newbalanceOrig", "newbalanceDest")
+                .Append(mlContext.Transforms.Categorical.OneHotHashEncoding("nameDest"))
+                .Append(mlContext.Transforms.Concatenate("Features", "type", "nameDest", "amount", "oldbalanceOrg", "oldbalanceDest", "newbalanceOrig", "newbalanceDest")
                 .Append(mlContext.Transforms.NormalizeMinMax("Features")));
         }
 
@@ -51,7 +50,5 @@ namespace FraudPreditionTrainer
         {
             return dataProcessingPipeline.Append(mlContext.BinaryClassification.Trainers.FastTree(new FastTreeBinaryTrainer.Options() { NumberOfLeaves = 10, NumberOfTrees = 500, LabelColumnName = "isFraud", FeatureColumnName = "Features" }));
         }
-
-
     }
 }

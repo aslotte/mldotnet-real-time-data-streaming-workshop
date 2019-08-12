@@ -154,3 +154,4 @@ src/machine-learning/FraudPredictionTrainer/FraudPredictionTrainer/obj/FraudPred
 src/machine-learning/FraudPredictionTrainer/FraudPredictionTrainer/obj/FraudPreditionTrainer.csproj.nuget.g.targets
 src/machine-learning/FraudPredictionTrainer/FraudPredictionTrainer/obj/project.assets.json
 src/machine-learning/FraudPredictorOnnx/.vs/FraudPredictorOnnx/DesignTimeBuild/.dtbcache
+src/machine-learning/FraudPredictionTrainer/.vs/FraudPredictionTrainer/DesignTimeBuild/.dtbcache
