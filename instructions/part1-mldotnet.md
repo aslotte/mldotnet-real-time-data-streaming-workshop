@@ -341,13 +341,14 @@ If we again run the console application to train our model, we will see the foll
 
 This is a tremendous improvement. Our area under the precision-recall curve is up to 0.86. 
 
-The confusion matrix now looks as follows as follows:
+The confusion matrix now looks as follows:
+(Predicted values &rightarrow;)
+(Actual values &downarrow;)
 
-||Predicted |
-||   | IsFraud  | IsNotFraud  |
-||---|:--------:|:-----------:|
-|Actual| IsFraud   | 84  | 721  |
-|| IsNotFraud  | 2  | 637,154  |
+|   | IsFraud  | IsNotFraud  |
+|---|:--------:|:-----------:|
+| IsFraud   | 609  | 33 |
+| IsNotFraud  | 196  | 637,123  |
 
 This model can be furthered fine-tuned by altering hyper parameters such as learning curve, number of trees and so forth. For our purposes this model will due just fine.
 
