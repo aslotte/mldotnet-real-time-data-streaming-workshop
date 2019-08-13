@@ -248,7 +248,7 @@
             "properties": {
                 "displayName": "fraudulent-transactions",
                 "parameterValues": {
-                    "connectionString": "[concat('https://', variables('namespaces_fraudalerts_name'), '.servicebus.windows.net:443/')]"
+                    "connectionString": "[listKeys(variables('serviceBus_resourceKey'), '2017-04-01').primaryConnectionString]"
                 },
                 "customParameterValues": {},
                 "api": {
