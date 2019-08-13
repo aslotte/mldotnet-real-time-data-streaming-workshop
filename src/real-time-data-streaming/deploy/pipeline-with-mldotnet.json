@@ -501,7 +501,7 @@
                     "appSettings": [
                         {
                             "name": "storageAccountConnection",
-                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccounts_mlmodel_name'), ';AccountKey=', listKeys(variables('storageAccounts_mlmodel_name'), '2018-07-01').keys[0].value)]"
+                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccounts_mlmodel_name'), ';AccountKey=', listKeys(variables('storageAccounts_mlmodel_name'), '2018-07-01').keys[0].value, ';EndpointSuffix=core.windows.net')]"
                         },
                         {
                             "name": "eventHubConnection",
