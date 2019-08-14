@@ -517,11 +517,11 @@
                         },
                         {
                             "name": "AzureWebJobsStorage",
-                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccounts_mlmodel_name'), ';AccountKey=', listKeys(variables('storageAccounts_mlmodel_name'), '2018-07-01').keys[0].value, ';EndpointSuffix=core.windows.net')]"
+                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccounts_prognetstorage_name'), ';AccountKey=', listKeys(variables('storageAccounts_prognetstorage_name'), '2018-07-01').keys[0].value, ';EndpointSuffix=core.windows.net')]"
                         },
                         {
                             "name": "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING",
-                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccounts_mlmodel_name'), ';AccountKey=', listKeys(variables('storageAccounts_mlmodel_name'), '2018-07-01').keys[0].value, ';EndpointSuffix=core.windows.net')]"
+                            "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccounts_prognetstorage_name'), ';AccountKey=', listKeys(variables('storageAccounts_prognetstorage_name'), '2018-07-01').keys[0].value, ';EndpointSuffix=core.windows.net')]"
                         },
                         {
                             "name": "WEBSITE_CONTENTSHARE",
