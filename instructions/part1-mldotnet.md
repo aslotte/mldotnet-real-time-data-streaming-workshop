@@ -308,7 +308,7 @@ Given that our model is not up for the task, what can we do to improve it?  move
 <summary>7. Iterate, iterate, iterate...</summary>
   <p>
     
-We have identified that a cause for our model not being good enough is the fact that our data is highly unbalanced. As mentioned earlier, this can be addresed by adding more transactions that are fraudulant, but that means going back and finding about 3-6 million more records that are fraudulent. This is most likely not a feasible way forward.
+We have identified that a cause for our model not being good enough is the fact that our data is highly unbalanced. As mentioned earlier, this can be addresed by adding more transactions that are fraudulent, but that means going back and finding about 3-6 million more records that are fraudulent. This is most likely not a feasible way forward.
     
 Fortunaly, there are certain algorithms that are better than others in handling highly unbalanced data. One of those are **Decision Trees**
 
