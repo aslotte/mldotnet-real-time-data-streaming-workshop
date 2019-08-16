@@ -1,5 +1,5 @@
-## Publish Azure Function to Predict Fraudulant Transactions
-All incoming transactions get evaluated to determine if they are fraudulant or not based on our traine ML.NET Machine Learning Model.
+## Publish Azure Function to Predict Fraudulent Transactions
+All incoming transactions get evaluated to determine if they are fraudulent or not based on our traine ML.NET Machine Learning Model.
 This prediction occurs in an Azure Function that we will go ahead and deploy.
 
 ### Prerequisites
