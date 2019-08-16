@@ -2,6 +2,8 @@
 The real-time pipeline utilizes reference data to enrich the stream. 
 In this particular case we will be enriching the stream with information about where to send an notification e-mail in case the model detects a fraudulant transaction. Please navigate to your storage account and upload the [reference-data.json](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/src/real-time-data-streaming/stream-analytics/reference-data.json) file in to the container named "reference"
 
+**Note: Before you upload the file, please do a "Find All" on alexander.slotte.demo@outlook.com and change that to the e-mail to which you would like to recieve the notifications.**
+
 Extract of file:
 
 ```  
