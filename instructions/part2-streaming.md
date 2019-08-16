@@ -19,11 +19,11 @@ You are also able to directly use a pre-trained model from this repo if you've d
 ### 4. Publish the ML.NET Prediction Function
 Please follow the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-azure-function.md) to publish the prediction function to Azure
 
-### 5. Setup Power BI Dashboard
-TBD
-
-### 6. Kick-off the Event Producer
+### 5. Kick-off the Event Producer
 Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-kickoff-event-producer.md) to kick-off the event producer.
+
+### 6. Setup Power BI Dashboard
+Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-powerbi.md) to set up a Power BI dashboard
 
 ### Conclusion
 Once the event-producer has been kicked off, you should see events flowing to your Power BI dashboard as well as receiving e-mails for any fraudulent transactions. 
@@ -36,8 +36,11 @@ Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-t
 ### 2. Complete Part 3
 Please complete [Part 3](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part1-azureml.md) of this tutorial before moving on.
 
-## 3. Kick-off the Event Producer
+### 3. Kick-off the Event Producer
 Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-kickoff-event-producer.md) to kick-off the event producer.
+
+### 4. Setup Power BI Dashboard
+Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-powerbi.md) to set up a Power BI dashboard
 
 ## Set up infrastructure manually
 If you are interested and would like to further sharpen your Azure skills, attempt to set up the infrastructure manually in a new resource group
