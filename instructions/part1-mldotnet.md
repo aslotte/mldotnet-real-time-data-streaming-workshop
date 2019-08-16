@@ -15,7 +15,7 @@ Framing and narrowing down on the actual business problem you are attempting to 
   <summary>2. Gather and load your data</summary>
     <p>
       
-Once the business problem has been defined, it's time to gather your data. Data is normally gathered from multiple data-sources (both public and private), aggregated and pivoted in to a workable shape. For our purposes, the data we will be using can be retrieved from [Kaggle](https://www.kaggle.com/ntnu-testimon/paysim1). 
+Once the business problem has been defined, it's time to gather your data. Data is normally gathered from multiple data-sources (both public and private), aggregated and pivoted in to a workable shape. For our purposes, the data we will be using can be retrieved from Kaggle. To download the data, use this [link](https://www.kaggle.com/ntnu-testimon/paysim1) to get to the dataset.
       
 Other available data-sources worth exploring are: 
    - [Google Public Datasets](https://cloud.google.com/public-datasets/)  
