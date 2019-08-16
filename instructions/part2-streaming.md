@@ -33,7 +33,10 @@ Once the event-producer has been kicked off, you should see events flowing to yo
 ### 1. Deploy with ARM Templates
 Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-stream-azureml.md) to utilize ARM templates for deployment
 
-## 2. Kick-off the Event Producer
+### 2. Complete Part 3
+Please complete [Part 3](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part1-azureml.md) of this tutorial before moving on.
+
+## 3. Kick-off the Event Producer
 Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-kickoff-event-producer.md) to kick-off the event producer.
 
 ## Set up infrastructure manually
