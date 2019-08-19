@@ -60,7 +60,7 @@ Other available data-sources worth exploring are:
    - Search for and install the following NuGet package<br/> 
     - Microsoft.ML<br/> 
     - Microsoft.ML.FastTree<br/>
-    - Microsoft.ML.LightGmb<br/>
+    - Microsoft.ML.LightGbm<br/>
    - Right click on the solution once again and select "Add -> Existing Item..."
    - In the file explorer window, select to view all items in the bottom right corner
    - Rename your comma-separated file containing your data to "data.csv" and select to add this as an existing item 
