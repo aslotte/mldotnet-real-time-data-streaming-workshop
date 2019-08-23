@@ -60,7 +60,7 @@ Other available data-sources worth exploring are:
    - Search for and install the following NuGet package<br/> 
     - Microsoft.ML<br/> 
     - Microsoft.ML.FastTree<br/>
-    - Microsoft.ML.LightGmb<br/>
+    - Microsoft.ML.LightGbm<br/>
    - Right click on the solution once again and select "Add -> Existing Item..."
    - In the file explorer window, select to view all items in the bottom right corner
    - Rename your comma-separated file containing your data to "data.csv" and select to add this as an existing item 
@@ -196,7 +196,7 @@ At this point, this is very pipelines come in to play. As we will have multiple 
                 .Append(mlContext.Transforms.Categorical.OneHotHashEncoding("nameDest"))
                 
  Perfect. Our non-numeric features are now transformed in to a form the algorithm can understand.
- So which features do you think account for the variance in the dataset? Or put in another way, which features do you think are relevant  to include in your model? Feature engineering is a difficult topic. It's very likely that additional features may be needed to achieve a better model, or dervied features of the existing feature set may yield a better outcome. This is where it is very important to consult with a subject matter expert to understand the problem domain you're in and what data may be relevant. For our purposes, we can start off my trying to include all columns in our model, as we only have seven or so features (you may have thousends if not more in real-world example). 
+ So which features do you think account for the variance in the dataset? Or put in another way, which features do you think are relevant  to include in your model? Feature engineering is a difficult topic. It's very likely that additional features may be needed to achieve a better model, or dervied features of the existing feature set may yield a better outcome. This is where it is very important to consult with a subject matter expert to understand the problem domain you're in and what data may be relevant. For our purposes, we can start off by trying to include all columns in our model, as we only have seven or so features (you may have thousands if not more in real-world example). 
  
  To define which features are relevant for the model to know about, we will have to concatenate them in to a feature vector
  This can be done as such:
