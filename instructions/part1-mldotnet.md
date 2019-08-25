@@ -71,11 +71,11 @@ Other available data-sources worth exploring are:
    **In VS Code**
    - Create a folder
    - Open a new terminal window (View -> Terminal)
-   - Create a new console project (dotnet new console)
+   - Create a new console project using `dotnet new console`
    - Install the required NuGet packages by executing
-    - dotnet add package Microsoft.ML
-    - dotnet add package Microsoft.FastTree
-    - dotnet add package Microsoft.LightGbm
+    - `dotnet add package Microsoft.ML`
+    - `dotnet add package Microsoft.FastTree`
+    - `dotnet add package Microsoft.LightGbm`
    - Add the data file to the folder and rename it to data.csv
    
    The steps above ensures you have the correct dependencies installed and your data is ready to be worked on.
