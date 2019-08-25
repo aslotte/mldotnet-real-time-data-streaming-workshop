@@ -8,7 +8,7 @@ The general steps for training your model are the same regardless if you are tra
 <summary>1. Determine your problem domain</summary>
   <p>
 
-Framing and narrowing down on the actual business problem you are attempting to solve is key for a successful Machine Learning projcet. A lot of the times people attempt to start with either a cool algorithm or the data they have, but without a clear understanding of the problem they are trying to solve, and a dialog with Subject Matter Experts (SME's), crucial data may be overlooked and business value may not be provided. In this example, we would like to secure the banks transfers and transactions in such a way that fraudulent activity can be avoided.
+Framing and narrowing down on the actual business problem you are attempting to solve is key for a successful Machine Learning project. A lot of the times people attempt to start with either a cool algorithm or the data they have, but without a clear understanding of the problem they are trying to solve, and a dialog with Subject Matter Experts (SME's), crucial data may be overlooked and business value may not be provided. In this example, we would like to secure the banks transfers and transactions in such a way that fraudulent activity can be avoided.
   </p>
 </details>
 <details>
@@ -69,7 +69,7 @@ Other available data-sources worth exploring are:
    The steps above ensures you have the correct dependencies installed and your data is ready to be worked on.
    Before we jump in to the code, let me introduce two concepts of ML.NET that we will be depending on a fair amount, **pipelines** and a **MLContext**. 
    
-   Everything in ML.NET originates from an **MLContext**. The MLContext contains all the data loaders, transformers, algorithms, evaulation tools and so forth. 
+   Everything in ML.NET originates from an **MLContext**. The MLContext contains all the data loaders, transformers, algorithms, evaluation tools and so forth. 
    **Pipelines** is a concept heavily utilized in ML.NET, which just means that we will be creating an initial instance to which we will append operations, such as data transformations, training algorithm and so forth. 
    
    To get started, let's create an MLContext. 
@@ -85,7 +85,7 @@ Other available data-sources worth exploring are:
     <summary>2.3 Load your data in ML.NET</summary>
     <p>
 
-If you take a look at the DataCatalog of the MLContext (F12 in the the class) you'll notice a number of ways you can load your data in to memory. Just to mention a couple, we can load data from binary, from file, from a SQL database and so forth. In this example, we will be loading our data from our comma-separated file. To do this, let's start by defining where the file resides. 
+If you take a look at the Data Catalog of the MLContext (F12 in the class) you'll notice a number of ways you can load your data in to memory. Just to mention a couple, we can load data from binary, from file, from a SQL database and so forth. In this example, we will be loading our data from our comma-separated file. To do this, let's start by defining where the file resides. 
    
    Add a static member variable:
    
@@ -93,7 +93,7 @@ If you take a look at the DataCatalog of the MLContext (F12 in the the class) yo
     private static string DataPath = "data.csv";
    ```        
    
-To succesfully load our data, we need to tell ML.NET what the schema of our data looks like. Just as this is done in Entity Framework, we can do this by creating a simple POCO, with a property for each column in the dataset. Try to do this yourself by creating a class called "Transaction". 
+To successfully load our data, we need to tell ML.NET what the schema of our data looks like. Just as this is done in Entity Framework, we can do this by creating a simple POCO, with a property for each column in the dataset. Try to do this yourself by creating a class called "Transaction". 
    
 Make sure to decorate each property with ColumnName and LoadColumn, where ColumnName defines the name of the column as it reads in the csv file and LoadColumn defines the index of the column.
    
@@ -105,7 +105,7 @@ Furthermore, the machine learning algorithms can only work on number data of typ
 
 Did you have a try? Perfect! 
 <details>
-  <summary>2.3.a Here's a a complete solution to validate against.</summary>
+  <summary>2.3.a Here's a complete solution to validate against.</summary>
   <p>
    
     
@@ -162,7 +162,7 @@ Did you have a try? Perfect!
 <summary>3. Split your data in a test and training set</summary>
   <p>
     
-A cruicial part of training a machine learning model is to be able to evaluate its performance on data not utilized when training the model. Thus, before starting to train our model, we want to make sure we put a portion of the data aside for evaluation purposes.
+A crucial part of training a machine learning model is to be able to evaluate its performance on data not utilized when training the model. Thus, before starting to train our model, we want to make sure we put a portion of the data aside for evaluation purposes.
 
 ML.NET features built-in functionality to perform a random split of the data in to a training and test set. 
 
@@ -178,7 +178,7 @@ Note that splitting your data in to a train and test set is strictly not always 
     
 The dataset from Kaggle is in an overall great condition, as opposed to how it could look. The variables are neatly contained in columns, thus no pivoting of the data is needed. The data contains no missing values that needs to be replaced.
    
-Machine Learning models are very picky in terms of data quality, so making sure that the data is top-notch is critial. We want to make sure that no columns have missing values, that the data is reasonable balanced and that no obvious outliers exists. The only main-concern we have with our data is that it is highly unbalanced. The number of fraudulent transactions to train the data on is just a couple of percents of the total dataset. If we were able to, we would idealy include additional fraudulent transactions to balance the data, but as this is not possible we will apply other techniques to counter this in a later step.
+Machine Learning models are very picky in terms of data quality, so making sure that the data is top-notch is critical. We want to make sure that no columns have missing values, that the data is reasonable balanced and that no obvious outliers exists. The only main-concern we have with our data is that it is highly unbalanced. The number of fraudulent transactions to train the data on is just a couple of percent's of the total dataset. If we were able to, we would ideally include additional fraudulent transactions to balance the data, but as this is not possible we will apply other techniques to counter this in a later step.
 
 As mentioned when loading the data in to memory, machine learning algorithms function based on numerical data, and has a difficult time working with e.g. strings. Our dataset currently contains two features that contains text, **type** and **nameDest**. We could also look at the nameOrig column, but we can assume that the victims are chosen at random, so this column may not hold much predictable power.
 
@@ -196,7 +196,7 @@ At this point, this is very pipelines come in to play. As we will have multiple 
                 .Append(mlContext.Transforms.Categorical.OneHotHashEncoding("nameDest"))
                 
  Perfect. Our non-numeric features are now transformed in to a form the algorithm can understand.
- So which features do you think account for the variance in the dataset? Or put in another way, which features do you think are relevant  to include in your model? Feature engineering is a difficult topic. It's very likely that additional features may be needed to achieve a better model, or dervied features of the existing feature set may yield a better outcome. This is where it is very important to consult with a subject matter expert to understand the problem domain you're in and what data may be relevant. For our purposes, we can start off by trying to include all columns in our model, as we only have seven or so features (you may have thousands if not more in real-world example). 
+ So which features do you think account for the variance in the dataset? Or put in another way, which features do you think are relevant  to include in your model? Feature engineering is a difficult topic. It's very likely that additional features may be needed to achieve a better model, or derived features of the existing feature set may yield a better outcome. This is where it is very important to consult with a subject matter expert to understand the problem domain you're in and what data may be relevant. For our purposes, we can start off by trying to include all columns in our model, as we only have seven or so features (you may have thousands if not more in real-world example). 
  
  To define which features are relevant for the model to know about, we will have to concatenate them in to a feature vector
  This can be done as such:
@@ -266,13 +266,13 @@ To calculate the metrics we will be using to benchmark our model, use the Binary
 Let's put a break-point at this most recently added line and run the console application.
 This should take about 2-5 min depending on the power of your computer. Once at debug statement, expand the properties to see the metrics. 
 
-Wow, the accurary is 0.9988 or more precisly **99.9%**!
-Hold on a minute, can we have been so lucky to chose the right algorithm at the first try to get a nearly pefect model?
+Wow, the accuracy is 0.9988 or more precisely **99.9%**!
+Hold on a minute, can we have been so lucky to chose the right algorithm at the first try to get a nearly perfect model?
 
-Unfortunately we are not that lucky. Accuary alone can be a very misleading metric, especially for highly unbalanced datasets as the one we are working on.
+Unfortunately we are not that lucky. Accuracy alone can be a very misleading metric, especially for highly unbalanced datasets as the one we are working on.
 
-If we look at the shape of the dataset given by the Jupyter notebook executed earlier we can see that we have 6,362,620 rows in the dataset, but only 8,213 are fradulent. That means **99.9%** of all transactions in the dataset are non-fraudulent. Given that, if our model is just guessing non-fradulent for all transactions it will achieve a 99.9% accuracy but miss all and any fradulent transactions. 
-This is the curse of non-balanced datasets. What are some other metrics we can use together with accuracy to determine if a model truely is useful?
+If we look at the shape of the dataset given by the Jupyter notebook executed earlier we can see that we have 6,362,620 rows in the dataset, but only 8,213 are fraudulent. That means **99.9%** of all transactions in the dataset are non-fraudulent. Given that, if our model is just guessing non-fraudulent for all transactions it will achieve a 99.9% accuracy but miss all and any fraudulent transactions. 
+This is the curse of non-balanced datasets. What are some other metrics we can use together with accuracy to determine if a model truly is useful?
 
 ML.NET provides some great documentation on [metrics](https://docs.microsoft.com/en-us/dotnet/machine-learning/resources/metrics)
 For our scenario, we want to have a better measurement to determine true positives, false positives, true negatives and false negatives.
@@ -280,9 +280,9 @@ For our scenario, we want to have a better measurement to determine true positiv
 This is where to machine learning concepts, **Precision** and **Recall** comes in to play. 
 
 - **Precision** - attempts to answer the question of how many of my positive findings are actually correct? If we only have true positives, this value will be 1
-- **Recall** - attempts to answer the question of how many of actual true positives were actually correct. Recall takes in to consideration false negatives, meaning in our case fraudulent transactions that we didn't catch. If we catch all fradulent transactions then this value will be 1
+- **Recall** - attempts to answer the question of how many of actual true positives were actually correct. Recall takes in to consideration false negatives, meaning in our case fraudulent transactions that we didn't catch. If we catch all fraudulent transactions then this value will be 1
 
-Precision and Recall are normally working against each-other, meaning that you'll have to pick what is most important for you. Would you rather flag more transactions as fraudulent even if they're not, but in that case make sure not to miss any (e.g. having many false positives) or are you willing to let some fradulent transactions flow through with every actually flagged transaction being correct (e.g. having no false positives but some false negatives).
+Precision and Recall are normally working against each-other, meaning that you'll have to pick what is most important for you. Would you rather flag more transactions as fraudulent even if they're not, but in that case make sure not to miss any (e.g. having many false positives) or are you willing to let some fraudulent transactions flow through with every actually flagged transaction being correct (e.g. having no false positives but some false negatives).
 
 A good measurement to determine how good a classifier is, is to look at the area under the precision-recall curve. In an ideal world this value **should be 1**. If we look at how our model did, we can see that **we only got a 0.31** value which is very low.
 
@@ -298,7 +298,7 @@ Actual values &downarrow; <br/>
 | IsNotFraud  | 2  | 637,154  |
 
 
-From the confusion matrix we can see that we are getting 721 false negatives and only 84 transactions were correctly labelled as fraudlent (true positives)
+From the confusion matrix we can see that we are getting 721 false negatives and only 84 transactions were correctly labelled as fraudulent (true positives)
 
 Given that our model is not up for the task, what can we do to improve it?  move on to the next section.
 
@@ -308,11 +308,11 @@ Given that our model is not up for the task, what can we do to improve it?  move
 <summary>7. Iterate, iterate, iterate...</summary>
   <p>
     
-We have identified that a cause for our model not being good enough is the fact that our data is highly unbalanced. As mentioned earlier, this can be addresed by adding more transactions that are fraudulent, but that means going back and finding about 3-6 million more records that are fraudulent. This is most likely not a feasible way forward.
+We have identified that a cause for our model not being good enough is the fact that our data is highly unbalanced. As mentioned earlier, this can be addressed by adding more transactions that are fraudulent, but that means going back and finding about 3-6 million more records that are fraudulent. This is most likely not a feasible way forward.
     
-Fortunaly, there are certain algorithms that are better than others in handling highly unbalanced data. One of those are **Decision Trees**
+Fortunately, there are certain algorithms that are better than others in handling highly unbalanced data. One of those are **Decision Trees**
 
-Decision trees are versatile Machine Learning algorithms that can perform both classification and regression tasks. Decision trees creates, as the name implies, a tree-like decision structure in which observations are captured in the tree nodes and the final decision (fraudulent or non-fradulent) are captured in the leaves. Decision trees can either be binary or non-binary, depending on how many lower level nodes one node connects to.
+Decision trees are versatile Machine Learning algorithms that can perform both classification and regression tasks. Decision trees creates, as the name implies, a tree-like decision structure in which observations are captured in the tree nodes and the final decision (fraudulent or non-fraudulent) are captured in the leaves. Decision trees can either be binary or non-binary, depending on how many lower level nodes one node connects to.
 
 To boost the overall prediction performance of decision trees, it is common to implement something called **Ensemble learning** in which multiple weak learners are trained, from which each individual prediction is pooled together to an overall answer. For decision trees, this is called creating a forest.
 
