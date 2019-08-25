@@ -5,7 +5,7 @@ Working with real-time data streams, and deriving real-time insights using custo
 In order to complete the workshop, please ensure you have the following:
 - [A free Azure subscription](https://azure.microsoft.com/en-us/free/)
 - [A Kaggle account](https://www.kaggle.com/)
-- [Visual Studio 2019](https://visualstudio.microsoft.com/vs/)
+- [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) or [VS Code](https://docs.microsoft.com/en-us/dotnet/core/tutorials/with-visual-studio-code)
 - [ML.NET Model Builder (optional)](https://dotnet.microsoft.com/apps/machinelearning-ai/ml-dotnet/model-builder)
 - [Azure Storage Explorer](https://azure.microsoft.com/en-us/features/storage-explorer/)
 - [A Power BI account](https://powerbi.microsoft.com/en-us/)
