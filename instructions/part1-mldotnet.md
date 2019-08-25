@@ -69,14 +69,14 @@ Other available data-sources worth exploring are:
    - Right-click on you newly added file and select "Properties". Change to "Copy if Newer"
    
    **In VS Code**
-   - Create a folder
-   - Open a new terminal window (View -> Terminal)
-   - Create a new console project using `dotnet new console`
-   - Install the required NuGet packages by executing
-    - `dotnet add package Microsoft.ML`
-    - `dotnet add package Microsoft.FastTree`
-    - `dotnet add package Microsoft.LightGbm`
-   - Add the data file to the folder and rename it to data.csv
+   - Create a folder<br/>
+   - Open a new terminal window (View -> Terminal)<br/>
+   - Create a new console project using `dotnet new console`<br/>
+   - Install the required NuGet packages by executing<br/>
+    - `dotnet add package Microsoft.ML`<br/>
+    - `dotnet add package Microsoft.FastTree`<br/>
+    - `dotnet add package Microsoft.LightGbm`<br/>
+   - Add the data file to the folder and rename it to data.csv<br/><br/>
    
    The steps above ensures you have the correct dependencies installed and your data is ready to be worked on.
    Before we jump in to the code, let me introduce two concepts of ML.NET that we will be depending on a fair amount, **pipelines** and a **MLContext**. 
