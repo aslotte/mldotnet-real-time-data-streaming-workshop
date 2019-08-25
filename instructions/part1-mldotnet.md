@@ -55,7 +55,9 @@ Other available data-sources worth exploring are:
    Fantastic, you have gathered the required data and are now ready to dive in to ML.NET. ML.NET is distributed as a NuGet package and can be included in your solution like any other package. 
    
    To get started:
-   - Create a new .NET Core v2+ console application
+   
+   **In Visual Studio**
+   - Create a new .NET Core v2.1+ console application
    - Right-click on the solution and select to "Manage NuGet Packages for Solution"
    - Search for and install the following NuGet package<br/> 
     - Microsoft.ML<br/> 
@@ -65,6 +67,16 @@ Other available data-sources worth exploring are:
    - In the file explorer window, select to view all items in the bottom right corner
    - Rename your comma-separated file containing your data to "data.csv" and select to add this as an existing item 
    - Right-click on you newly added file and select "Properties". Change to "Copy if Newer"
+   
+   **In VS Code**
+   - Create a folder
+   - Open a new terminal window (View -> Terminal)
+   - Create a new console project using `dotnet new console`
+   - Install the required NuGet packages by executing
+    - `dotnet add package Microsoft.ML`
+    - `dotnet add package Microsoft.FastTree`
+    - `dotnet add package Microsoft.LightGbm`
+   - Add the data file to the folder and rename it to data.csv
    
    The steps above ensures you have the correct dependencies installed and your data is ready to be worked on.
    Before we jump in to the code, let me introduce two concepts of ML.NET that we will be depending on a fair amount, **pipelines** and a **MLContext**. 
