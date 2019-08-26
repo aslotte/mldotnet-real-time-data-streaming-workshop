@@ -1,7 +1,7 @@
 ## Training your Machine Learning Model using Azure Machine Learning Service
-ML.NET offers fantastic support to train your model using C# and offline. Training your model using ML.NET requires you however to have to manually set up your compute environment for larger machine learning models, and currently limits your from the possibility to train more complex neural networks. An alternative to ML.NET is to use Azure Machine Learning Service, which is Azure's managed machine learning environment. There are three ways to train your custom machine learning model in the service, using Azure's AutoML functionality, a visual interface or using Jupyter Notebooks with full support for custom models in Python or R. 
+ML.NET offers fantastic support to train your model offline using C#. Training your model using ML.NET however requires you to manually set up your compute environment for larger machine learning models, and currently limits you from the possibility of training more complex neural networks. An alternative to ML.NET is to use Azure Machine Learning Service, which is Azure's managed machine learning environment. There are three ways to train your custom machine learning model in the service, using Azure's AutoML functionality, a visual interface or using Jupyter Notebooks with full support for custom models in Python or R. 
 
-**Please note:** As of time of writing this, integrating ML models trained in Azure Machine Learning Service with Azure Stream Analytics is currently not supported. Stream Analytics currently only support models trained in Azure Machine Learning **Studio**. There will however we a release in the near future changing this. This workshop will regardless focus on Azure Machine Learning Service as this is what will be supported going forward.
+**Please note:** At time of writing, integrating ML models trained in Azure Machine Learning Service with Azure Stream Analytics is currently not supported. Stream Analytics currently only support models trained in Azure Machine Learning **Studio**. There will however be a release in the near future changing this. This workshop will regardless focus on Azure Machine Learning Service as this is what will be supported going forward.
 
 ### Prerequisites
 - [Azure Storage Explorer](https://azure.microsoft.com/en-us/features/storage-explorer/)
@@ -44,8 +44,8 @@ Our machine learning models will be trained and deployed using various compute t
   <p>
 
 - Navigate to the Azure Machine Learning Service in Azure.
-- In the left menu, select "Visual Interface"
-- Select "Launch visual interface"
+- In the left menu, select **Visual Interface**
+- Select **Launch visual interface**
 
 This will open the Machine Learning workspace in which we can create experiments using a visual interface.
 Feel free to navigate around to make yourself familiar with the surroundings. 
@@ -53,12 +53,12 @@ Feel free to navigate around to make yourself familiar with the surroundings.
 ![Start](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-ml-1.PNG)
 
 #### Upload our data
-The first thing we would like to do is to upload our data set. To this, click on the "New" button in the bottom-left corner. Select to "Upload from Local File"
+The first thing we would like to do is to upload our data set. To this, click on the **New** button in the bottom-left corner. Select to **Upload from Local File**
 
 ![Start](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-ml-2.PNG)
 
 #### Create a new experiment
-Once the dataset has been uploaded, click the "New" button once again and select to create a new "Blank Experiment"
+Once the dataset has been uploaded, click the **New** button once again and select to create a new **Blank Experiment**
 
 ![Start](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-ml-3.PNG)
 
@@ -71,7 +71,7 @@ Use the left-most menu to set up our experiment. The visual interface functions 
 
 The following operations are required
 - The data source
-- Select columns in data set (column indicies 1-10)
+- Select columns in data set (column indices 1-10)
 - Split Data (0.7 split)
 - Two-Class Boosted Decision Tree (set the maximum number of leaves to 10 and the learning rate to 0.1)
 - Train Model (set the label-column to isFraud)
@@ -86,16 +86,16 @@ To run your experiment, simply click **Run** in the bottom task bar and select o
 Training the model will take about 15 min.
 
 ### Evaluate your model
-Once training has completed, right click on the "Evaluate Model" step and click to Vizualize the Evaluation results
+Once training has completed, right click on the **Evaluate Model** step and click to Visualize the Evaluation results
 ![Start](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-ml-6.PNG)
 
-We can see that our model generated by the Visual Interface have similar accuarcy as the one generated by ML.NET, but not the same quality in terms of precision and recall. 
+We can see that our model generated by the Visual Interface have similar accuracy as the one generated by ML.NET, but not the same quality in terms of precision and recall. 
 
 ### Deploy model for consumption
 To be able to integrate our ML model in to our data streaming pipeline, we would need to deploy it as a web service. 
-To do so, please click the button **Create New Predictive Experiement** in the bottom right corner.
+To do so, please click the button **Create New Predictive Experiment** in the bottom right corner.
 
-This will create a predictive experiment tab, with web inputs and outputs. To preapare the service for deployment, please click **Run**
+This will create a predictive experiment tab, with web inputs and outputs. To prepare the service for deployment, please click **Run**
 This step will take about the same time to complete as the training step did.
 
 ![predictive](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/predictive-experiement-1.PNG)
@@ -115,19 +115,19 @@ In the modal that appears, select the previously created compute **web-service**
   <summary> Steps to train your model using Azure AutoML </summary>
   <p>
     
-Similiarly to ML.NET's AutoML functinality, Azure provides its own. This is a very neat functionality, as it allows you to get a jump start on training advanced model with little to no previous Machine Learning experience. 
+Similarly to ML.NET's AutoML functionality, Azure provides its own. This is a very neat functionality, as it allows you to get a jump start on training advanced model with little to no previous Machine Learning experience. 
 
 ### Upload our data
 First thing we need to do before diving in to Azure AutoML is to upload our dataset to our storage account using the [Storage Explorer](https://azure.microsoft.com/en-us/features/storage-explorer/). There is a size limit uploading large files through the web interface, thus we have to reside to the storage explorer for our 450+ Mb file.  To do this, download and open the Azure Storage Explorer, navigate to your mlmodel storage account and upload the file to the container called model.
 
-### Create a new experiement 
+### Create a new experiment 
 
 1. To create our first AutoML experiment, open the Azure Machine Learning Service in Azure and click on **Automated Machine Learning** to the left.
 
 ![automl1](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-auto-ml-1.png)
     
 2. Click **Create Experiment**
-3. Enter an experiement name 
+3. Enter an experiment name 
 ![automl1](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-auto-ml-2.PNG)
 4. Select the compute target named **experiment** previously created
 5. Click **Next**
@@ -142,7 +142,7 @@ First thing we need to do before diving in to Azure AutoML is to upload our data
 ![automl1](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-auto-ml-6.PNG)
 12. Click **Start**
 
-While this experiment is running, lets take a moment to reflect on why we changed primary metric from accuarcy to recall. If you remember earlier in this workshop, we discussed the fact that the data is highly unbalanced, meaning that if the algorithm just guesses non-fraudlent on everything it will achieve a 99.8% accuracy. Although accuracy is important for us, achieving a higher recall (minimum number of false negatives) is crucial.
+While this experiment is running, lets take a moment to reflect on why we changed primary metric from accuracy to recall. If you remember earlier in this workshop, we discussed the fact that the data is highly unbalanced, meaning that if the algorithm just guesses non-fraudulent on everything it will achieve a 99.8% accuracy. Although accuracy is important for us, achieving a higher recall (minimum number of false negatives) is crucial.
 
 Once the run has completed, you can navigate to the result by
 1. Selecting **Automated Machine Learning** in the left menu
@@ -171,13 +171,13 @@ Once we are happy with our model, we can deploy it to be consumed by an external
     
 The Visual interface and Azure AutoML offers options to train your custom ML model without too much previous knowledge in machine learning. If you would like complete control over the training process, as well as wanting to use Python based open-source libraries such as ScikitLearn, Pandas and Numpy, Azure offers the option to provision Jupyter Notebook VMs. This allows you to create your own notebook and attach and run operations in Kubernetes clusters. 
     
-To start trainig your model, please do the following:
+To start training your model, please do the following:
 1. Navigate to your Azure Machine Learning Service in Azure
 2. In the menu to the left, click Notebooks VMs
 3. Click **New** to create a new Jupyter VM
 4. Provide the machine with a new name and click create
 5. Once created, start the VM
-6. Once started, click Jupyter Lab
+6. Once started, click **JupyterLab**
 
 This will take you to the Jupyter environment hosted on your VM.
 
