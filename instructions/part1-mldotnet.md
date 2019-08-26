@@ -8,7 +8,8 @@ The general steps for training your model are the same regardless if you are tra
 <summary>1. Determine your problem domain</summary>
   <p>
 
-Framing and narrowing down on the actual business problem you are attempting to solve is key for a successful Machine Learning project. A lot of the times people attempt to start with either a cool algorithm or the data they have, but without a clear understanding of the problem they are trying to solve, and a dialog with Subject Matter Experts (SME's), crucial data may be overlooked and business value may not be provided. In this example, we would like to secure the banks transfers and transactions in such a way that fraudulent activity can be avoided.
+Framing the actual business problem you are attempting to solve is key for a successful machine learning project. A lot of the times people attempt to start with either a cool algorithm or just the data they have, but without a clear understanding of the problem they are trying to solve, and a dialog with Subject Matter Experts (SME's), crucial data may be overlooked and business value may not be provided. 
+
   </p>
 </details>
 <details>
@@ -27,19 +28,21 @@ Other available data-sources worth exploring are:
     <summary>2.1 Explore the dataset</summary>
    <p>
      
-   - Download the dataset from Kaggle and extract the content<br/>
-   - Rename the dataset to data.csv for simplicities sake going forward <br/>
+   - Download the either from:
+        - Kaggle - extract the content and rename to data.csv<br/>
+        - From this repo located [here](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/src/machine-learning/FraudPredictionTrainer/FraudPredictionTrainer/Data/data.csv)
+        - Provided USB memory sticks
    - Familiarize yourself with the available features (columns)<br/>
    - Which columns are your features and which is your label (what you would like to predict)?<br/>
    - Is the dataset balanced? (hint: what's the distribution of fraudulent and non-fraudulent transactions)<br/>
    - What's the data type of the available features?<br/>
    - Does any of the columns have missing values?<br/>
-   - Does any of the columns contain outliers?<br/>
+   - Are there any obvious correlation in-between features?<br/>
    
    Exploring a large dataset can be daunting. Loading a dataset containing 6+ million rows in something like Excel is not always feasible due to application limitations and performance. To make life easier for us we can use an open-source Python library called **Pandas** in e.g. a Jupyter notebook.
    
    To explore the dataset using Pandas and a Jupyter notebook:
-   - Navigate to the [Kaggle dataset](https://www.kaggle.com/ntnu-testimon/paysim1) and click "New Kernel". 
+   - Navigate to the [Kaggle dataset](https://www.kaggle.com/ntnu-testimon/paysim1) and click "New Notebook". 
    - When selecting Kernel type, select "Notebook"
    - In the top-left corner, select File -> Upload Notebook
    - Upload the [Jupyter notebook](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/src/machine-learning/jupyter/fraudulent-transactions-jupyter-notebook.ipynb) in this repo
@@ -81,13 +84,13 @@ Other available data-sources worth exploring are:
    The steps above ensures you have the correct dependencies installed and your data is ready to be worked on.
    Before we jump in to the code, let me introduce two concepts of ML.NET that we will be depending on a fair amount, **pipelines** and a **MLContext**. 
    
-   Everything in ML.NET originates from an **MLContext**. The MLContext contains all the data loaders, transformers, algorithms, evaluation tools and so forth. 
-   **Pipelines** is a concept heavily utilized in ML.NET, which just means that we will be creating an initial instance to which we will append operations, such as data transformations, training algorithm and so forth. 
+   Everything in ML.NET originates from an **MLContext**. The MLContext contains all the data loaders, transformers, algorithms, evaluation tools and so forth that you may need. 
+   **Pipelines** is a concept in ML.NET, which just means that we will be creating an initial instance to which we will append operations, such as data transformations, training algorithm and so forth. We generally speak about data processing pipelines and training pipelines.
    
    To get started, let's create an MLContext. 
    
    ```
-    var mlContext = new MLContext(seed: 1)
+    var mlContext = new MLContext(seed: 1);
    ```
    
    Setting the property seed to 1 ensures deterministic randomness in operations such as splitting test/train data, which is normally desired.    
@@ -97,7 +100,7 @@ Other available data-sources worth exploring are:
     <summary>2.3 Load your data in ML.NET</summary>
     <p>
 
-If you take a look at the Data Catalog of the MLContext (F12 in the class) you'll notice a number of ways you can load your data in to memory. Just to mention a couple, we can load data from binary, from file, from a SQL database and so forth. In this example, we will be loading our data from our comma-separated file. To do this, let's start by defining where the file resides. 
+If you take a look at the Data Catalog of the MLContext (F12 in the class) you'll notice a number of ways you can load your data in to memory. Just to mention a couple, we can load data from binary, from file and from a SQL database. In this example, we will be loading our data from our comma-separated file. To do this, let's start by defining where the file resides. 
    
    Add a static member variable:
    
@@ -219,7 +222,7 @@ At this point, this is very pipelines come in to play. As we will have multiple 
  
              var dataProcessingPipeline = mlContext.Transforms.Categorical.OneHotEncoding("type")
                 .Append(mlContext.Transforms.Categorical.OneHotHashEncoding("nameDest"))
-                .Append(mlContext.Transforms.Concatenate("Features", "type", "nameDest", "amount", "oldbalanceOrg", "oldbalanceDest", "newbalanceOrig", "newbalanceDest")
+                .Append(mlContext.Transforms.Concatenate("Features", "type", "nameDest", "amount", "oldbalanceOrg", "oldbalanceDest", "newbalanceOrig", "newbalanceDest");
  
   </p>
 </details>
