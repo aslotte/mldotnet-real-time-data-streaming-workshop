@@ -26,5 +26,9 @@ To publish the function:
 3. Select your Azure Subscription and navigate to your Function app. Select and click ok
 ![Subscription](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/publish-function-3.png)
 
-4. Click "Publish"
+4. Click **Publish**
+
+5. Click **Yes** on the message to update the function run-time
+![upgrade](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/function-upgrade-runtime.png)
+
 
