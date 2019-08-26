@@ -28,7 +28,7 @@ To publish the function:
 
 4. Click **Publish**
 
-5. Click **Yes** on the message to update the function run-time
+5. Click **Yes** if asked to update the functions runtime version.
 ![upgrade](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/function-upgrade-runtime.png)
 
 
