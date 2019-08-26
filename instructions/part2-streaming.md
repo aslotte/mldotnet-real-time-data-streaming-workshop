@@ -25,8 +25,14 @@ Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-t
 ### 6. Setup Power BI Dashboard
 Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-powerbi.md) to set up a Power BI dashboard
 
-### Conclusion
-Once the event-producer has been kicked off, you should see events flowing to your Power BI dashboard as well as receiving e-mails for any fraudulent transactions. 
+### 7. Explore
+Great job. With the event producer kicked off, you should start to see events flowing through your pipelines and being enriched by your machine learning model. 
+
+1. Open your Azure Event Hub and notice that events are being recivied 
+2. Open your Power BI Dashboard see a live feed of events, aggregated from your Stream Analytics Jobs
+3. Open your Outlook inbox to see e-mails being sent from you Azure Logic App when fraudulent transactions are detected
+
+**Please continue with Part 3 from this point**
 
 ## Real-Time Data Pipeline with Azure ML integration
 
