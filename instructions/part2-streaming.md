@@ -1,4 +1,4 @@
-# Setting up a Real-Time Data Pipeline
+# Setting up a Real-Time Data Streaming Pipeline
 
 ## Introduction
 In this part of the workshop, we will be setting up the real-time data pipeline in Azure. The core pipeline will be automatically provisioned using Azure Resource Management (ARM) templates. If you are interested, feel free to try to set up the entire pipeline manually using the solution architecture diagram as a guide!
