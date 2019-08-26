@@ -28,7 +28,7 @@ namespace OnnxDemo
 
         private static List<InputModel> CreateInputData()
         {
-            float[] data = { 1, 2806.0f, 1379875, 2806.0f, 0, 563886.0f, 0f, 0f, 0f, 0f, 0f, 0f, 1 };
+            float[] data = { 181, 0, 0, 0, 181, 439685, 0, 0, 0, 0, 1 };
 
             return new List<InputModel>
             {

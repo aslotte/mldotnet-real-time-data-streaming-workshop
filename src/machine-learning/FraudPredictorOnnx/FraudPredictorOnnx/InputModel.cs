@@ -4,7 +4,7 @@ namespace OnnxDemo
 {
     class InputModel
     {
-        [VectorType(13)]
+        [VectorType(11)]
         [ColumnName("float_input")]
         public float[] Data { get; set; }
     }
