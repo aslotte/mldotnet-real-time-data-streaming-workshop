@@ -30,7 +30,7 @@ The ARM template will succesfully set up the required infrastructure but will re
 - Log-in using your Power BI user account
 - Click "Save"
 - Navigate back to the Stream Analytics overview page
-- Click "Start" to start your streaming analyticsc job
+- Click "Start" to start your streaming analytics job
 
 **Authenticate Outlook notifier**
 - Navigate to your Azure Logic App
