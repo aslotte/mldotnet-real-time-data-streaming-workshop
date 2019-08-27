@@ -80,7 +80,17 @@ Other available data-sources worth exploring are:
     - `dotnet add package Microsoft.FastTree`<br/>
     - `dotnet add package Microsoft.LightGbm`<br/>
    - Add the data file to the folder and rename it to data.csv<br/><br/>
+   - Add the following to the .csproj file:
    
+   ```
+<ItemGroup>
+  <None Update="data.csv">
+    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+  </None>
+</ItemGroup>
+```
+<br/>
+
    The steps above ensures you have the correct dependencies installed and your data is ready to be worked on.
    Before we jump in to the code, let me introduce two concepts of ML.NET that we will be depending on a fair amount, **pipelines** and a **MLContext**. 
    
