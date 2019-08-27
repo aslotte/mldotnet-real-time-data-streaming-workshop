@@ -74,7 +74,7 @@ Other available data-sources worth exploring are:
    **In VS Code**
    - Create a folder<br/>
    - Open a new terminal window (View -> Terminal)<br/>
-   - Create a new console project using `dotnet new console`<br/>
+   - Create a new console project using `dotnet new console -o FraudulentTransactionsTrainer`<br/>
    - Install the required NuGet packages by executing<br/>
     - `dotnet add package Microsoft.ML`<br/>
     - `dotnet add package Microsoft.FastTree`<br/>
