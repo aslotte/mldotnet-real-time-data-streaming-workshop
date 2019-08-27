@@ -79,7 +79,7 @@ Other available data-sources worth exploring are:
     - `dotnet add package Microsoft.ML`<br/>
     - `dotnet add package Microsoft.FastTree`<br/>
     - `dotnet add package Microsoft.LightGbm`<br/>
-   - Add the data file to the folder and rename it to data.csv<br/><br/>
+   - Add the data file to the folder and rename it to data.csv<br/>
    - Add the following to the .csproj file:
    
    ```
