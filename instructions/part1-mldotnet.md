@@ -77,8 +77,8 @@ Other available data-sources worth exploring are:
    - Create a new console project using `dotnet new console -o FraudulentTransactionsTrainer`<br/>
    - Install the required NuGet packages by executing<br/>
     - `dotnet add package Microsoft.ML`<br/>
-    - `dotnet add package Microsoft.FastTree`<br/>
-    - `dotnet add package Microsoft.LightGbm`<br/>
+    - `dotnet add package Microsoft.ML.FastTree`<br/>
+    - `dotnet add package Microsoft.ML.LightGbm`<br/>
    - Add the data file to the folder and rename it to data.csv<br/>
    - Add the following to the .csproj file:
    
