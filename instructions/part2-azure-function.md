@@ -5,7 +5,10 @@ This prediction occurs in an Azure Function that we will go ahead and deploy.
 ### Prerequisites
 - Visual Studio 2017/2019 or Visual Studio code with Azure Toolkit and Azure Function's extensions
 
-### Deploy from Visual Studio
+<details>
+<summary>Deploy from Visual Studio</summary>
+  <p>
+    
 To deploy the Azure Function, please follow the steps listed below:
 
 #### 1. Clone source code
@@ -31,7 +34,13 @@ To publish the function:
 5. Click **Yes** if asked to update the functions runtime version.
 ![upgrade](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/function-upgrade-runtime.png)
 
-### Deploy from VS Code
+</p>
+</details>
+
+<details>
+<summary>Deploy from VS Code</summary>
+  <p>
+
 To deploy the Azure Function from VS Code, please follow the steps listed below:
 
 #### 1. Install the Azure Functions Extension
@@ -59,3 +68,5 @@ Open the FraudPredictionFunction solution [here](https://github.com/aslotte/mldo
   - Azure subscription
   - The existing function to deploy to
 
+</p>
+</details>
