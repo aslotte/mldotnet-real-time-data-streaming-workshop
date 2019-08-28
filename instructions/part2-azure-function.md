@@ -3,7 +3,9 @@ All incoming transactions get evaluated to determine if they are fraudulent or n
 This prediction occurs in an Azure Function that we will go ahead and deploy.
 
 ### Prerequisites
-- Visual Studio 2017/2019 or Visual Studio code with Azure Toolkit and Azure Function's extensions
+- Visual Studio or VS Code
+
+<br/>
 
 <details>
 <summary>Deploy from Visual Studio</summary>
