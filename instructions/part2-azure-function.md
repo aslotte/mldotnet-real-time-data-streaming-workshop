@@ -3,9 +3,14 @@ All incoming transactions get evaluated to determine if they are fraudulent or n
 This prediction occurs in an Azure Function that we will go ahead and deploy.
 
 ### Prerequisites
-- Visual Studio 2017/2019 or Visual Studio code with Azure Toolkit and Azure Function's extensions
+- Visual Studio or VS Code
 
-### Deploy
+<br/>
+
+<details>
+<summary>Deploy from Visual Studio</summary>
+  <p>
+    
 To deploy the Azure Function, please follow the steps listed below:
 
 #### 1. Clone source code
@@ -31,4 +36,39 @@ To publish the function:
 5. Click **Yes** if asked to update the functions runtime version.
 ![upgrade](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/function-upgrade-runtime.png)
 
+</p>
+</details>
 
+<details>
+<summary>Deploy from VS Code</summary>
+  <p>
+
+To deploy the Azure Function from VS Code, please follow the steps listed below:
+
+#### 1. Install the Azure Functions Extension
+In VS Code:
+- Select View -> Extensions
+- Search for **Azure Functions**
+- Install the Azure Functions extension
+
+#### 2. Clone the source repository 
+Please clone this repository locally using for example a Git command prompt or Github Desktop.
+Open the FraudPredictionFunction solution [here](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/tree/master/src/real-time-data-streaming/fraud-prediction-function)
+
+#### 3. Open the solution in VS Code
+- Select File -> Open Folder... 
+- Navigate to the location of the FraudPredictionFunction
+
+#### 4. Sign-in to Azure
+- In the menu to the left, select the Azure symbol (at the bottom of the menu)
+- Click "Sign-in to Azure" -> Sign-in to your Azure account
+
+#### 5. Publish to Azure
+- In the top left, click on the up-arrow to "Deploy to Function App"
+- Select your
+  - Function
+  - Azure subscription
+  - The existing function to deploy to
+
+</p>
+</details>

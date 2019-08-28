@@ -74,13 +74,23 @@ Other available data-sources worth exploring are:
    **In VS Code**
    - Create a folder<br/>
    - Open a new terminal window (View -> Terminal)<br/>
-   - Create a new console project using `dotnet new console`<br/>
+   - Create a new console project using `dotnet new console -o FraudulentTransactionsTrainer`<br/>
    - Install the required NuGet packages by executing<br/>
     - `dotnet add package Microsoft.ML`<br/>
     - `dotnet add package Microsoft.FastTree`<br/>
     - `dotnet add package Microsoft.LightGbm`<br/>
-   - Add the data file to the folder and rename it to data.csv<br/><br/>
+   - Add the data file to the folder and rename it to data.csv<br/>
+   - Add the following to the .csproj file:
    
+   ```
+<ItemGroup>
+  <None Update="data.csv">
+    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+  </None>
+</ItemGroup>
+```
+<br/>
+
    The steps above ensures you have the correct dependencies installed and your data is ready to be worked on.
    Before we jump in to the code, let me introduce two concepts of ML.NET that we will be depending on a fair amount, **pipelines** and a **MLContext**. 
    

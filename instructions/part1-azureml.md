@@ -6,7 +6,7 @@ ML.NET offers fantastic support to train your model offline using C#. Training y
 ### Prerequisites
 - [Azure Storage Explorer](https://azure.microsoft.com/en-us/features/storage-explorer/)
 
-### Provision resources 
+### 1. Provision resources 
 <details>
   <summary> Provision resources </summary>
   <p>
@@ -16,7 +16,7 @@ Before we can start to train our models, we need to provision our resources. Ple
 </p>
 </details>
 
-### Create compute targets
+### 2. Create compute targets
 <details>
   <summary> Create compute targets </summary>
   <p>
@@ -37,7 +37,7 @@ Our machine learning models will be trained and deployed using various compute t
 </p>
 </details>
 
-### Visual Interface
+### 3. Visual Interface
 
 <details>
   <summary> Steps to train your model using the Visual Interface </summary>
@@ -110,7 +110,7 @@ In the modal that appears, select the previously created compute **web-service**
 </p>
 </details>
 
-### AutoML
+### 4. AutoML
 <details>
   <summary> Steps to train your model using Azure AutoML </summary>
   <p>
@@ -164,7 +164,7 @@ Once we are happy with our model, we can deploy it to be consumed by an external
   </p>
 </details>  
 
-### Jupyter Notebooks
+### 5. Jupyter Notebooks
 <details>
   <summary> Steps to train your model using Jupyter Notebooks </summary>
   <p>
@@ -193,7 +193,7 @@ Run and explore the Notebook.
   </p>
 </details>  
 
-### Integrating our model with Azure Stream Analytics
+### 6. Integrating our model with Azure Stream Analytics
 <details>
   <summary> Integrating our model with Azure Stream Analytics </summary>
   <p>
