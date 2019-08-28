@@ -65,10 +65,12 @@ Open the FraudPredictionFunction solution [here](https://github.com/aslotte/mldo
 
 #### 5. Publish to Azure
 - In the top left, click on the up-arrow to "Deploy to Function App"
-- Select your
-  - Function
-  - Azure subscription
-  - The existing function to deploy to
+![deployToAzure](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/publish-function-vs-code-publish.png)
+- In the top-middle, select the folder you want to deploy (where the function exists)
+- Next, select your Azure Subscription
+- Next, select the existing, previously created Function app 
+- If prompted to update runtime, select yes
+- If prompted to optimize for VS Code, select yes 
 
 </p>
 </details>
