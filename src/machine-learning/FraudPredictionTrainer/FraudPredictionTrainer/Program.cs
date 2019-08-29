@@ -1,7 +1,8 @@
-﻿using FraudPreditionTrainer.Schema;
+using FraudPreditionTrainer.Schema;
 using Microsoft.ML;
 using Microsoft.ML.Trainers.FastTree;
 using System;
+using System.Diagnostics;
 
 namespace FraudPreditionTrainer
 {
@@ -11,23 +12,36 @@ namespace FraudPreditionTrainer
 
         static void Main(string[] args)
         {
+            // Create new stopwatch.
+            Stopwatch stopwatch = new Stopwatch();
+            // Begin timing.
+            stopwatch.Start();
+            Console.WriteLine("Time elapsed: {0}", stopwatch.Elapsed);
+
             var mlContext = new MLContext(seed: 1);
 
             //Load
             var data = mlContext.Data.LoadFromTextFile<Transaction>(DataPath, hasHeader: true, separatorChar: ',');
             var testTrainData = mlContext.Data.TrainTestSplit(data);
+            Console.WriteLine("Time elapsed: {0}-TrainTestSplit", stopwatch.Elapsed);
 
             //Transform
             var dataProcessingPipeline = BuildDataProcessingPipeline(mlContext);
+            Console.WriteLine("Time elapsed: {0}-BuildDataProcessingPipeline", stopwatch.Elapsed);
 
             //Train
             var trainingPipeline = BuildTrainingPipeline(mlContext, dataProcessingPipeline);
+            Console.WriteLine("Time elapsed: {0}-BuildTrainingPipeline", stopwatch.Elapsed);
 
             var trainedModel = trainingPipeline.Fit(testTrainData.TrainSet);
+            Console.WriteLine("Time elapsed: {0}-Fit", stopwatch.Elapsed);
 
             //Evaluate
             var predictions = trainedModel.Transform(testTrainData.TestSet);
+            Console.WriteLine("Time elapsed: {0}-Transform", stopwatch.Elapsed);
+
             var metrics = mlContext.BinaryClassification.Evaluate(predictions, labelColumnName: "isFraud");
+            Console.WriteLine("Time elapsed: {0}-Evaluate", stopwatch.Elapsed);
 
             Console.WriteLine($"Accuracy: {metrics.Accuracy}");
             Console.WriteLine($"AUCPC: {metrics.AreaUnderPrecisionRecallCurve}");
@@ -36,6 +50,9 @@ namespace FraudPreditionTrainer
 
             //Save
             mlContext.Model.Save(trainedModel, data.Schema, "MLModel.zip");
+            Console.WriteLine("End Program Time elapsed: {0}", stopwatch.Elapsed);
+            stopwatch.Stop();
+            Console.ReadKey();
         }
 
         private static IEstimator<ITransformer> BuildDataProcessingPipeline(MLContext mlContext)
