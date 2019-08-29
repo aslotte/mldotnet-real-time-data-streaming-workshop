@@ -68,7 +68,7 @@ Other available data-sources worth exploring are:
     - Microsoft.ML.LightGbm<br/>
    - Right click on the solution once again and select "Add -> Existing Item..."
    - In the file explorer window, select to view all items in the bottom right corner
-   - Rename your comma-separated file containing your data to "data.csv" and select to add this as an existing item 
+   - Rename your comma-separated [file](https://github.com/lastlink/mldotnet-real-time-data-streaming-workshop/releases/download/data/data.zip) containing your data to "data.csv" and select to add this as an existing item 
    - Right-click on you newly added file and select "Properties". Change to "Copy if Newer"
    
    **In VS Code**
