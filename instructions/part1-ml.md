@@ -5,6 +5,7 @@ In this section we will be training our Machine Learning model by first manually
 To build your machine learning model using ML.NET, please refer to the instructions below:
 <details>
   <summary>Instructions</summary>
+<br/>
 So you're ready to start creating your Machine Learning model in ML.NET? Awesome!
 ML.NET is an open-source, cross-platform library, released to the public in preview during MS Build 2018 and for general availability at MS Build 2019. It bridges the gap between Software Engineering and Data Science, and allows .NET Developers to make their applications smarter.
 
