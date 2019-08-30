@@ -19,8 +19,9 @@ In order to complete the workshop, please ensure you have the following:
    2. Install VS Code <br/>
    3. Install the C# Extension <br/>
    4. Install the Azure Function's Extension <br/>
-   5. Copy/Clone repo <br/>
-   6. Open the solution <br/>    
+   5. Install the ML.NET CLI
+   6. Copy/Clone repo <br/>
+   7. Open the solution <br/>    
   </p>
 </details>
 
