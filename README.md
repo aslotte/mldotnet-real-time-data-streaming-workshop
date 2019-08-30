@@ -1,17 +1,7 @@
 ## Introduction
 Working with real-time data streams, and deriving real-time insights using custom machine learning models have become increasingly important for many organizations. There are numerous real-time data platforms currently available (e.g. Kafa, Hadoop Spark), but the one we will be focusing on in this workshop in particular is **Azure Stream Analytics**. In addition to diving in to Azure Stream Analytics, we will also explore the open-source cross-plattform library [ML.NET](https://github.com/dotnet/machinelearning), which we will use to build our custom machine learning models and look at an alternative solution using **Azure Machine Learning Service**.
 
-## Pre-requisites
-In order to complete the workshop, please ensure you have the following:
-- [A free Azure subscription](https://azure.microsoft.com/en-us/free/)
-- [A Kaggle account](https://www.kaggle.com/)
-- [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) or [VS Code](https://docs.microsoft.com/en-us/dotnet/core/tutorials/with-visual-studio-code)
-- [ML.NET Model Builder (optional)](https://dotnet.microsoft.com/apps/machinelearning-ai/ml-dotnet/model-builder)
-- [Azure Storage Explorer](https://azure.microsoft.com/en-us/features/storage-explorer/)
-- [A Power BI account](https://powerbi.microsoft.com/en-us/)
-- [An Outlook e-mail](www.outlook.com)
-
-## Getting set up
+## Setting up pre-requisites
 <details>
   <summary>Instructions</summary>
   <p>
@@ -21,17 +11,13 @@ In order to complete the workshop, please ensure you have the following:
    4. Install the Azure Function's Extension <br/>
    5. Install the ML.NET CLI
    6. Copy/Clone repo <br/>
-   7. Open the solution <br/>    
+   8. Download the data
+   9. Create a free Azure subscription
+   10. Download Azure Storage Explorer (optional)
+   11. Create a Power BI account
+   12. Create an Outlook e-mail  
   </p>
 </details>
-
-## Assumptions
-This workshop is currently valid for ML.NET v1.3.1
-
-## Resources
-- [ML.NET](https://github.com/dotnet/machinelearning)
-- [ML.NET Samples](https://github.com/dotnet/machinelearning-samples)
-- [Azure Stream Analytics](https://docs.microsoft.com/en-us/azure/stream-analytics/stream-analytics-introduction)
 
 ## Problem Outline
 As a financial institution, detecting fraud is imperative to ensure safe and continuous operations for the bank and its customers.  
@@ -64,4 +50,12 @@ In this workshop we will be looking at detecting fradulent transactions in real-
 
 #### A Real-Time Data Pipeline with Azure Machine Learning Studio
 ![Real-Time Data Pipeline with Azure ML](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/Solution%20Architecture%20-%20Azure%20ML.png)
+
+## Assumptions
+This workshop is currently valid for ML.NET v1.3.1
+
+## Additional Resources
+- [ML.NET](https://github.com/dotnet/machinelearning)
+- [ML.NET Samples](https://github.com/dotnet/machinelearning-samples)
+- [Azure Stream Analytics](https://docs.microsoft.com/en-us/azure/stream-analytics/stream-analytics-introduction)
 
