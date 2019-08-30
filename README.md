@@ -11,8 +11,22 @@ In order to complete the workshop, please ensure you have the following:
 - [A Power BI account](https://powerbi.microsoft.com/en-us/)
 - [An Outlook e-mail](www.outlook.com)
 
+## Getting set up
+<details>
+  <summary>Instructions</summary>
+  <p>
+   1. Download the .NET Core SDK <br/>
+   2. Install VS Code <br/>
+   3. Install the C# Extension <br/>
+   4. Install the Azure Function's Extension <br/>
+   5. Install the ML.NET CLI
+   6. Copy/Clone repo <br/>
+   7. Open the solution <br/>    
+  </p>
+</details>
+
 ## Assumptions
-This workshop is currently valid for ML.NET v1.3.1.0
+This workshop is currently valid for ML.NET v1.3.1
 
 ## Resources
 - [ML.NET](https://github.com/dotnet/machinelearning)
