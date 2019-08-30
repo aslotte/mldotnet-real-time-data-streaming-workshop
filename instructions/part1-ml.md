@@ -417,12 +417,12 @@ To build your machine learning model using ML.NET's AutoML builder, please refer
 Selecting the correct features, algorithms, hyper arameters and so forth is complex. There is a lot of trial and error involved until you've managed to fine-tune a model to not only have good enough accuracy but also a decent area under the precision-recall curve.
 To simplify, ML.NET has introduced AutoML to automatically iterate through numerous algorithms with various hyper parameters to find one that yields a good model.
 </br></br>
-1. Open a PowerShell or Command prompt <br/>
+1. Open powershell or the command prompt <br/>
 2. Navigate to the location of your data file <br/>
-3. Execute </br></br>
+3. Copy the command below and hit enter </br>
+
 ```
-mlnet auto-train --dataset "data.csv" --label-column-name "isFraud" --max-exploration-time 120 --has-heade
-r true --ml-task binary-classification
+mlnet auto-train --dataset "data.csv" --label-column-name "isFraud" --max-exploration-time 120 --has-header true --ml-task binary-classification
 ```
 
 For this example we are setting the max-exploration time to only 2 minutes, which is not sufficient for a data-set of this size but serves as a good example to showcase the functionality. A minimum of 1800 seconds is recommended for a data-set of this size.
