@@ -3,7 +3,7 @@ Working with real-time data streams, and deriving real-time insights using custo
 
 ## Setting up pre-requisites
 <details>
-  <summary><br>Expand for instructions</b></summary>
+  <summary><b>Expand for instructions</b></summary>
   <p>
   </br>
    1. Download the .NET Core SDK <br/>
