@@ -185,7 +185,7 @@ Here's a complete solution to validate against.
 </p>
 </details>
 <details>
-<summary><b>3. Split your data in a test and training set<b></summary>
+<summary><b>3. Split your data in a test and training set</b></summary>
   <p>
     
 A crucial part of training a machine learning model is to be able to evaluate its performance on data not utilized when training the model. Thus, before starting to train our model, we want to make sure we put a portion of the data aside for evaluation purposes.
