@@ -410,7 +410,9 @@ To see a complete solution, please open the [FraudPredictionTrainer.sln](https:/
 </details>
 
 #### Using AutoML (CLI/Visual Studio Extension)
+<br/>
 To build your machine learning model using ML.NET's AutoML builder, please refer to the instructions below:
+
 <details>
   <summary>Instructions</summary>
 Selecting the correct features, algorithms, hyper arameters and so forth is complex. There is a lot of trial and error involved until you've managed to fine-tune a model to not only have good enough accuracy but also a decent area under the precision-recall curve.
