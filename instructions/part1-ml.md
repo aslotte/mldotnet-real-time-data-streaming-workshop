@@ -416,10 +416,10 @@ To build your machine learning model using ML.NET's AutoML builder, please refer
   <summary>Instructions</summary>
 Selecting the correct features, algorithms, hyper arameters and so forth is complex. There is a lot of trial and error involved until you've managed to fine-tune a model to not only have good enough accuracy but also a decent area under the precision-recall curve.
 To simplify, ML.NET has introduced AutoML to automatically iterate through numerous algorithms with various hyper parameters to find one that yields a good model.
-<br/>
-1. Open a PowerShell or Command prompt 
-2. Navigate to the location of your data file
-3. Execute
+</br></br>
+1. Open a PowerShell or Command prompt <br/>
+2. Navigate to the location of your data file <br/>
+3. Execute </br></br>
 ```
 mlnet auto-train --dataset "data.csv" --label-column-name "isFraud" --max-exploration-time 120 --has-heade
 r true --ml-task binary-classification
