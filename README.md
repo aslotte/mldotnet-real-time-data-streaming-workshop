@@ -3,7 +3,7 @@ Working with real-time data streams, and deriving real-time insights using custo
 
 ## Setting up pre-requisites
 <details>
-  <summary>Instructions</summary>
+  <summary>Expand for instructions</summary>
   <p>
    1. Download the .NET Core SDK <br/>
    2. Install VS Code <br/>
@@ -11,11 +11,11 @@ Working with real-time data streams, and deriving real-time insights using custo
    4. Install the Azure Function's Extension <br/>
    5. Install the ML.NET CLI
    6. Copy/Clone repo <br/>
-   8. Download the data
-   9. Create a free Azure subscription
-   10. Download Azure Storage Explorer (optional)
-   11. Create a Power BI account
-   12. Create an Outlook e-mail  
+   8. Download the data <br/>
+   9. Create a free Azure subscription <br/>
+   10. Create a Power BI account <br/>
+   11. Create an Outlook e-mail  <br/>
+   12. Download Azure Storage Explorer (required for part 3) <br/>
   </p>
 </details>
 
