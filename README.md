@@ -33,6 +33,10 @@ Working with real-time data streams, and deriving real-time insights using custo
      <li>Click <b>Install</b><img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-install-azurefunctionextension.png"></li>      
   </ol>     
    <li><b>Install the ML.NET CLI</b></li>
+    <ol>
+      <li>In VS Code, select Terminal -> New Terminal<img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-open-terminal.png"></li>
+      <li>In the terminal, enter <code>dotnet tool install -g mlnet</code> and hit enter<img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-terminal-installcli.png"></li>
+    </ol>
    <li><b>Copy/Clone repo</b></li>
    <li><b>Download the data</b></li>
    <li><b>Create a free Azure subscription</b></li>
