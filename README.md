@@ -5,23 +5,25 @@ Working with real-time data streams, and deriving real-time insights using custo
 <details>
   <summary><b>Expand for instructions</b></summary>
   <p>
-  </br>
-   1. Download the .NET Core SDK </br>
-      - Go to [dotnet.microsoft.com/download](https://dotnet.microsoft.com/download) </br>
-      - Select the correct tab for your operating system (e.g. Windows, Linux or Mac) </br>
-      - Click on the **Build Apps** download option
-   ![download](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/download-dotnetcoresdk.PNG</br>
-      - Open the installer once the download is complete and follow provided instructions </br></br>
-   2. Install VS Code <br/>
-   3. Install the C# Extension <br/>
-   4. Install the Azure Function's Extension <br/>
-   5. Install the ML.NET CLI <br/>
-   6. Copy/Clone repo <br/>
-   7. Download the data <br/>
-   8. Create a free Azure subscription <br/>
-   9. Create a Power BI account <br/>
-   10. Create an Outlook e-mail  <br/>
-   11. Download Azure Storage Explorer (required for part 3) <br/>
+  <ol>
+   <li> Download the .NET Core SDK </li>
+   <ol>
+      <li>Go to <a href="https://dotnet.microsoft.com/download">the following page to download the SDK</a></li>
+      <li>Select the correct tab for your operating system (e.g. Windows, Linux or Mac) </li>
+      <li>Click on the <b>Build Apps</b> download option <img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/download-dotnetcoresdk.PNG" alt="Flowers in Chania"></li>
+      <li>Open the installer once the download is complete and follow provided instructions </li>
+  </ol>
+   <li> Install VS Code </li>
+   <li> Install the C# Extension </li>
+   <li> Install the Azure Function's Extension </li>
+   <li> Install the ML.NET CLI </li>
+   <li> Copy/Clone repo </li>
+   <li> Download the data </li>
+   <li> Create a free Azure subscription </li>
+   <li> Create a Power BI account </li>
+   <li> Create an Outlook e-mail  </li>
+   <li> Download Azure Storage Explorer (required for part 3) </li>
+  </ol>
   </p>
 </details>
 
