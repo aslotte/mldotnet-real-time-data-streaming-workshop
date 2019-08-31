@@ -18,6 +18,7 @@ Working with real-time data streams, and deriving real-time insights using custo
       <li>Go to <a href="https://code.visualstudio.com/download">the following page to download the VS Code</a></li>
       <li>Select the correct installation for your operating system (e.g. Windows, Linux or Mac)<img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/download-vscode.PNG"> </li>
       <li>Open the installer once the download is complete and follow provided instructions </li>
+     <li>Open VS Code once the installation is complete</li>
   </ol>    
    <li><b>Install the C# Extension</b></li>
    <li><b>Install the Azure Function's Extension</b></li>
