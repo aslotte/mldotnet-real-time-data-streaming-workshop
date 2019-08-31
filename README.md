@@ -6,7 +6,12 @@ Working with real-time data streams, and deriving real-time insights using custo
   <summary><b>Expand for instructions</b></summary>
   <p>
   </br>
-   1. Download the .NET Core SDK <br/>
+   1. Download the .NET Core SDK </br>
+      - Go to [dotnet.microsoft.com/download](https://dotnet.microsoft.com/download) </br>
+      - Select the correct tab for your operating system (e.g. Windows, Linux or Mac) </br>
+      - Click on the **Build Apps** download option
+   ![download](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/download-dotnetcoresdk.PNG</br>
+      - Open the installer once the download is complete and follow provided instructions </br></br>
    2. Install VS Code <br/>
    3. Install the C# Extension <br/>
    4. Install the Azure Function's Extension <br/>
