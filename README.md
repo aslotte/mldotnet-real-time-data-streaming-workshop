@@ -3,26 +3,26 @@ Working with real-time data streams, and deriving real-time insights using custo
 
 ## Setting up pre-requisites
 <details>
-  <summary><b>Expand for instructions</b></summary>
+  <summary>Expand for instructions</summary>
   <p>
   <ol>
-   <li> Download the .NET Core SDK </li>
+    <li><b>Download the .NET Core SDK</b></li>
    <ol>
       <li>Go to <a href="https://dotnet.microsoft.com/download">the following page to download the SDK</a></li>
       <li>Select the correct tab for your operating system (e.g. Windows, Linux or Mac) </li>
       <li>Click on the <b>Build Apps</b> download option <img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/download-dotnetcoresdk.PNG" alt="Flowers in Chania"></li>
       <li>Open the installer once the download is complete and follow provided instructions </li>
   </ol>
-   <li> Install VS Code </li>
-   <li> Install the C# Extension </li>
-   <li> Install the Azure Function's Extension </li>
-   <li> Install the ML.NET CLI </li>
-   <li> Copy/Clone repo </li>
-   <li> Download the data </li>
-   <li> Create a free Azure subscription </li>
-   <li> Create a Power BI account </li>
-   <li> Create an Outlook e-mail  </li>
-   <li> Download Azure Storage Explorer (required for part 3) </li>
+   <li><b>Install VS Code</b></li>
+   <li><b>Install the C# Extension</b></li>
+   <li><b>Install the Azure Function's Extension</b></li>
+   <li><b>Install the ML.NET CLI</b></li>
+   <li><b>Copy/Clone repo</b></li>
+   <li><b>Download the data</b></li>
+   <li><b>Create a free Azure subscription</b></li>
+   <li><b>Create a Power BI account</b></li>
+   <li><b>Create an Outlook e-mail</b></li>
+   <li><b>Download Azure Storage Explorer (required for part 3)</b></li>
   </ol>
   </p>
 </details>
