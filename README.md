@@ -41,7 +41,7 @@ Working with real-time data streams, and deriving real-time insights using custo
     <ol>
       <li>In VS Code, select Terminal -> New Terminal to open a new terminal window<img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-open-terminal.png"></li>
       <li>In the terminal, enter <code>cd C:\</code> and hit enter</li>
-      <li>In the terminal, enter <code>git clone https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop.git</code> and hit enter to clone the repository to the C:\ drive (<b>Note:</b> Feel free to clone the repository elsewhere, just make sure to adjust the path in instructions to follow)<img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-clone-repo.png"></li>
+      <li>In the terminal, enter <code>git clone https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop.git</code> and hit enter to clone the repository to the C: drive. </br><b>Note:</b> Feel free to clone the repository elsewhere, just make sure to adjust the path in instructions to follow<img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-clone-repo.PNG"></li>
     </ol>    
    <li><b>Download the data</b></li>
    <li><b>Create a free Azure subscription</b></li>
