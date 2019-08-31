@@ -10,10 +10,16 @@ Working with real-time data streams, and deriving real-time insights using custo
    <ol>
       <li>Go to <a href="https://dotnet.microsoft.com/download">the following page to download the SDK</a></li>
       <li>Select the correct tab for your operating system (e.g. Windows, Linux or Mac) </li>
-      <li>Click on the <b>Build Apps</b> download option <img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/download-dotnetcoresdk.PNG" alt="Flowers in Chania"></li>
+      <li>Click on the <b>Build Apps</b> download option <img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/download-dotnetcoresdk.PNG"></li>
       <li>Open the installer once the download is complete and follow provided instructions </li>
   </ol>
    <li><b>Install VS Code</b></li>
+   <ol>
+      <li>Go to <a href="https://code.visualstudio.com/download">the following page to download the VS Code</a></li>
+      <li>Select the correct installation for your operating system (e.g. Windows, Linux or Mac)<img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/download-vscode.PNG"> </li>
+      <li>Open the installer once the download is complete and follow provided instructions </li>
+     <li>Open VS Code once the installation is complete</li>
+  </ol>    
    <li><b>Install the C# Extension</b></li>
    <li><b>Install the Azure Function's Extension</b></li>
    <li><b>Install the ML.NET CLI</b></li>
