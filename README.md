@@ -22,7 +22,7 @@ Working with real-time data streams, and deriving real-time insights using custo
   </ol>    
    <li><b>Install the C# Extension</b></li>
    <ol>
-      <li>In VS Code, select View -> Extensions<img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-view-extensions.PNG"></li>
+      <li>In VS Code, select View -> Extensions<img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-opening-extensions.png"></li>
   </ol>        
    <li><b>Install the Azure Function's Extension</b></li>
    <li><b>Install the ML.NET CLI</b></li>
