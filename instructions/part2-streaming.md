@@ -22,8 +22,9 @@ Please follow the following [guide](https://github.com/aslotte/mldotnet-real-tim
 ### 5. Kick-off the Event Producer
 Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-kickoff-event-producer.md) to kick-off the event producer.
 
-### 6. Setup Power BI Dashboard
-Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-powerbi.md) to set up a Power BI dashboard
+### 6. Setup Power BI Dashboard (optional)
+Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-powerbi.md) to set up a Power BI dashboard and Power BI output if desired.
+**Note that you will need a work or school account to create a Power BI account.**
 
 ### 7. Explore
 Great job. With the event producer kicked off, you should start to see events flowing through your pipelines and being enriched by your machine learning model. 
@@ -45,8 +46,9 @@ Please complete [Part 3](https://github.com/aslotte/mldotnet-real-time-data-stre
 ### 3. Kick-off the Event Producer
 Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-kickoff-event-producer.md) to kick-off the event producer.
 
-### 4. Setup Power BI Dashboard
-Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-powerbi.md) to set up a Power BI dashboard
+### 4. Setup Power BI Dashboard (optional)
+Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-powerbi.md) to set up a Power BI dashboard and Power BI output if desired.
+**Note that you will need a work or school account to create a Power BI account.**
 
 ## Set up infrastructure manually
 If you are interested and would like to further sharpen your Azure skills, attempt to set up the infrastructure manually in a new resource group
