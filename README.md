@@ -54,7 +54,7 @@ Working with real-time data streams, and deriving real-time insights using custo
       <li>There are three (3) ways to get the data we will be working with. Please choose the most convenient for you:</li>
         <ol>
           <li>Download the data from provided USB Memory sticks</li>
-          <li>Download the data from <a href="bit.ly/2NC5P7f">here</a>
+          <li>Download the data from <a href="https://bit.ly/2NC5P7f">here</a>
           <li>Downlaod the data from <a href="https://www.kaggle.com/ntnu-testimon/paysim1">Kaggle</a> (requires free account)
         </ol>
     </ol>   
