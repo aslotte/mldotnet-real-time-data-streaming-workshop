@@ -2,22 +2,6 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "PowerBIUserDisplayName": {
-            "type": "string",
-            "minLength": 3,
-            "defaultValue": "Please enter your name here",
-            "metadata": {
-                "description": "Your name for connecting Stream Analytics to PowerBI."
-            }
-        },
-        "PowerBIUserLoginName": {
-            "type": "string",
-            "minLength": 3,
-            "defaultValue": "first.last@outlook.com",
-            "metadata": {
-                "description": "Your loginname/alias for connecting Stream Analytics to PowerBI."
-            }
-        },
         "NotificationEmail": {
             "type": "string",
             "minLength": 3,
@@ -263,41 +247,13 @@
                                 }
                             }
                         }
-                    },
-                    {
-                        "name": "powerbi",
-                        "properties": {
-                            "dataSource": {
-                                "type": "PowerBI",
-                                "outputPowerBISource": {
-                                    "dataSet": "FraudulentTransactions",
-                                    "table": "FraudulentTransactions",
-                                    "groupId": "",
-                                    "groupName": "My Workspace",
-                                    "refreshToken": "dummytoken",
-                                    "tokenUserDisplayName": "[parameters('PowerBIUserDisplayName')]",
-                                    "tokenUserPrincipalName": "[parameters('PowerBIUserLoginName')]"
-                                },
-                                "properties": {
-                                    "dataSet": "FraudulentTransactions",
-                                    "table": "FraudulentTransactions",
-                                    "groupId": "",
-                                    "groupName": "My Workspace",
-                                    "refreshToken": "dummytoken",
-                                    "tokenUserDisplayName": "[parameters('PowerBIUserDisplayName')]",
-                                    "tokenUserPrincipalName": "[parameters('PowerBIUserLoginName')]"
-                                }
-                            },
-                            "serialization": null,
-                            "diagnostics": null
-                        }
                     }
                 ],
                 "transformation": {
                     "name": "Transformation",
                     "properties": {
                         "streamingUnits": 1,
-                        "query": "--Service-Bus\r\n SELECT trans.*, ref.email\r\n INTO fraudulent\r\n FROM transactions trans\r\n JOIN reference ref ON ref.customerid = trans.NameOrig\r\n WHERE trans.IsFraud = 1\r\n \r\n --Power BI\r\n SELECT \r\n System.TimeStamp as EventTime,\r\n COUNT(*) AS NumberOfFraudPerOneHour,\r\n SUM(OldbalanceOrg - NewbalanceOrig) AS TotalFraudAmount\r\n INTO powerbi\r\n FROM transactions\r\n WHERE IsFraud = 1\r\n GROUP BY HoppingWindow(Duration(hour, 1), Hop(second, 5))"
+                        "query": "--Service-Bus\r\n SELECT trans.*, ref.email\r\n INTO fraudulent\r\n FROM transactions trans\r\n JOIN reference ref ON ref.customerid = trans.NameOrig\r\n WHERE trans.IsFraud = 1\r\n \r\n --Power BI\r\n /*SELECT \r\n System.TimeStamp as EventTime,\r\n COUNT(*) AS NumberOfFraudPerOneHour,\r\n SUM(OldbalanceOrg - NewbalanceOrig) AS TotalFraudAmount\r\n INTO powerbi\r\n FROM transactions\r\n WHERE IsFraud = 1\r\n GROUP BY HoppingWindow(Duration(hour, 1), Hop(second, 5))*/"
                     }
                 },
                 "compatibilityLevel": "1.1"
