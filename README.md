@@ -13,37 +13,52 @@ Working with real-time data streams, and deriving real-time insights using custo
       <li>Click on the <b>Build Apps</b> download option <img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/download-dotnetcoresdk.PNG"></li>
       <li>Open the installer once the download is complete and follow provided instructions </li>
   </ol>
+    </br>
    <li><b>Install VS Code</b></li>
    <ol>
       <li>Go to <a href="https://code.visualstudio.com/download">the following page to download the VS Code</a></li>
       <li>Select the correct installation for your operating system (e.g. Windows, Linux or Mac)<img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/download-vscode.PNG"> </li>
       <li>Open the installer once the download is complete and follow provided instructions </li>
      <li>Open VS Code once the installation is complete</li>
-  </ol>    
+  </ol>  
+  </br>
    <li><b>Install the C# Extension</b></li>
    <ol>
       <li>In VS Code, select View -> Extensions<img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-opening-extensions.png"></li>
      <li>Search for <b>C#</b></li> 
      <li>Click <b>Install</b><img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-install-csharpextension.png"></li>      
-  </ol>        
+  </ol>   
+  </br>
    <li><b>Install the Azure Function's Extension</b></li>
    <ol>
       <li>In VS Code, select View -> Extensions<img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-opening-extensions.png"></li>
      <li>Search for <b>Azure Function</b></li> 
      <li>Click <b>Install</b><img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-install-azurefunctionextension.png"></li>      
-  </ol>     
+  </ol>  
+  </br>
    <li><b>Install the ML.NET CLI</b></li>
     <ol>
       <li>In VS Code, select Terminal -> New Terminal to open a new terminal window<img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-open-terminal.png"></li>
       <li>In the terminal, enter <code>dotnet tool install -g mlnet</code> and hit enter<img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-terminal-installcli.PNG"></li>
     </ol>
-   <li><b>Clone repository</b></li>
+    </br>
+   <li><b>Clone the repository</b></li>
     <ol>
       <li>In VS Code, select Terminal -> New Terminal to open a new terminal window<img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-open-terminal.png"></li>
       <li>In the terminal, enter <code>cd C:\</code> and hit enter</li>
       <li>In the terminal, enter <code>git clone https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop.git</code> and hit enter to clone the repository to the C: drive. </br><b>Note:</b> Feel free to clone the repository elsewhere, just make sure to adjust the path in instructions to follow<img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-clone-repo.PNG"></li>
-    </ol>    
+    </ol>   
+    </br>
    <li><b>Download the data</b></li>
+    <ol>
+      <li>There are three (3) ways to get the data we will be working with. Please choose the most convenient for you:</li>
+        <ol>
+          <li>Download the data from provided USB Memory sticks</li>
+          <li>Download the data from <a href="bit.ly/2NC5P7f">here</a>
+          <li>Downlaod the data from <a href="https://www.kaggle.com/ntnu-testimon/paysim1">Kaggle</a> (requires free account)
+        </ol>
+    </ol>   
+    </br>
    <li><b>Create a free Azure subscription</b></li>
    <li><b>Create a Power BI account</b></li>
    <li><b>Create an Outlook e-mail</b></li>
