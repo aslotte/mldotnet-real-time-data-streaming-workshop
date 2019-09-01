@@ -67,7 +67,6 @@ Working with real-time data streams, and deriving real-time insights using custo
   <li>Check the checkbox to agree to terms and conditions and click <b>Sign-up</b><img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-trial-4.PNG"></li>
     </ol> 
     </br>
-   <li><b>Create a Power BI account</b></li>
    <li><b>Create an Outlook e-mail</b></li>
    <li><b>Download Azure Storage Explorer (required for part 3)</b></li>
   </ol>
