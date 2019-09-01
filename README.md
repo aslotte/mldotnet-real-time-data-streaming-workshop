@@ -62,10 +62,11 @@ Working with real-time data streams, and deriving real-time insights using custo
    <li><b>Create a free Azure subscription</b></li>
        <ol>
           <li>Go to <a href="https://azure.microsoft.com/en-us/free/">Azure</a> to create a free trial account<img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-trial-1.PNG"></li>
-          <li>Enter your contact information and click <b>Next</b><img src="https://github.com/aslotte/mldotnet-real-time-data-     streaming-workshop/blob/master/instructions/images/azure-trial-2.PNG"></li>
-  <li>Fill in your credit card information and click Next. <b>Note that this is only used to verify your identify, you'll not be charged as there is a billing cap automatically put on your account<img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-trial-3.PNG"></b></li>
+          <li>Enter your contact information and click <b>Next</b><img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-trial-2.PNG"></li>
+  <li>Fill in your credit card information and click Next. </br><b>Note that this is only used to verify your identify, you'll not be charged.<img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-trial-3.PNG"></b></li>
   <li>Check the checkbox to agree to terms and conditions and click <b>Sign-up</b><img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-trial-4.PNG"></li>
     </ol> 
+    </br>
    <li><b>Create a Power BI account</b></li>
    <li><b>Create an Outlook e-mail</b></li>
    <li><b>Download Azure Storage Explorer (required for part 3)</b></li>
