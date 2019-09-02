@@ -63,17 +63,27 @@ Other available data-sources worth exploring are:
    </br>
    The first step is to create a new console application</br>
    - In VS Code, open a new terminal window ![terminal](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-open-terminal.png) </br>
-   - In the terminal window, execute the following command `cd C:\mldotnet-real-time-data-streaming-workshop\workspace` to navigate to the workspace folder.
+   - In the terminal window, execute the following command to navigate to the workspace folder.</br>`cd C:\mldotnet-real-time-data-streaming-workshop\workspace`
    ![navigate](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-to-workspace.PNG)</br>
-   - In the terminal window, execute the following command `dotnet new console -o FraudPredictionTrainer` to create a new solution
+   - In the terminal window, execute the following command to create a new solution.</br>`dotnet new console -o FraudPredictionTrainer`
       ![source](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-create-solution.PNG)</br>
    - In the terminal window, execute the following command `cd FraudPredictionTrainer` to navigate in to the folder of the newly created solution ![navigatetofolder](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-navigate-in-to-folder.PNG)</br>
+</br>
+
+Once we have created our solution, we will need to install the required NuGet packages.</br>
+In the previously open terminal window, copy/paste and execute the following below commands</br>
+   - `dotnet add package Microsoft.ML`<br/>
+   - `dotnet add package Microsoft.ML.FastTree`<br/>
+   - `dotnet add package Microsoft.ML.LightGbm`<br/></br>
+
+To browse the solution:</br>
+- In the terminal window, execute the following command `code . -r` to open VS Code in the folder
+![navigatetofolder](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-open-folder.PNG)</br>
+- Click **Yes** if asked to add build assets
+- Open the project file to the left. The content should look as below
+![projectfile](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-project-file.PNG)</br>
+
    
-   
-   - Install the required NuGet packages by executing<br/>
-    - `dotnet add package Microsoft.ML`<br/>
-    - `dotnet add package Microsoft.ML.FastTree`<br/>
-    - `dotnet add package Microsoft.ML.LightGbm`<br/>
    - Add the data file to the folder and rename it to data.csv<br/>
    - Add the following to the .csproj file:
    
