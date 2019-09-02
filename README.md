@@ -72,7 +72,13 @@ Working with real-time data streams, and deriving real-time insights using custo
           <li>Go to <a href="https://outlook.live.com/owa/">Outlook</a> to create a free Outlook account<img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/outlook-1.PNG"></li>
     <li>Follow the provided instructions</li>
       </ol>
+   </br>
    <li><b>Download Azure Storage Explorer (required for part 3)</b></li>
+       <ol>
+          <li><a href="https://azure.microsoft.com/en-us/features/storage-explorer/">Download the Azure Storage Explorer</a><img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-storage-explorer.PNG"></li>
+  <li>Open the installer and follow provided instructions</li>
+    <li>Follow the provided instructions</li>
+      </ol>   
   </ol>
   </p>
 </details>
