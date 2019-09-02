@@ -279,7 +279,7 @@ So which features do you think account for the variance in the dataset? Or put i
     var trainingPipeline = dataProcessingPipeline
         .Append(mlContext.BinaryClassification.Trainers.LbfgsLogisticRegression(labelColumnName: "isFraud"));
    
-  Once we have appended the trainer, all that remains is to use the `trainingPipeline` to a fit an as accurate model as possible based on the training dataset. To do this, we will use the `.Fit` method located on the `IEstimator` interface.
+  Once we have appended the trainer, all that remains is to use the `trainingPipeline` to a fit an as accurate model as possible based on the training dataset. To do this, we will use the `.Fit` method located on the `IEstimator` interface.</br>
   Add the below line of code to your `Program.cs` file
 
     var trainedModel = trainingPipeline.Fit(testTrainData.TrainSet);
@@ -292,23 +292,30 @@ So which features do you think account for the variance in the dataset? Or put i
 <summary><b>6. Evaluate your model</b></summary>
   <p>
     
-   Your data is in the right shape, an algorithm has been chosen and your model has been trained. Great job so far!
+   Your data is in the right shape, an algorithm has been chosen, and your model is ready to be trained. Great job so far!
    Let's take a look at how accurate the model you've created is. 
    
    Evaluating your model is a two step process:
    1. Transforming your test dataset using the trained model
-   2. Calculating metrics based on predicted value (in this case, if our model predicted a fraudulent transaction or not) and actual value
+   2. Calculating metrics based on probabilities of the predicted values and the true values
    
-To transform your test data using the trained model, simply call the `.Transform` method on the trained model, passing in the test dataset
+To transform our test data using the trained model, simply call the `.Transform` method on the trained model, passing in the test dataset as an argument.</br>
+Add the below line of code to your `Program.cs` file
    
     var predictions = trainedModel.Transform(testTrainData.TestSet);
     
-To calculate the metrics we will be using to benchmark our model, use the BinaryClassification evaluator on the MLContext:
+To calculate the evaluation metrics for our model, use the `BinaryClassification` evaluator on the `MLContext`.
+Add the below line of code to your `Program.cs` file
       
     var metrics = mlContext.BinaryClassification.Evaluate(predictions, labelColumnName: "isFraud");
-      
-Let's put a break-point at this most recently added line and run the console application.
-This should take about 2-5 min depending on the power of your computer. Once at debug statement, expand the properties to see the metrics. 
+
+ The `Program.cs` file should now look as below
+ ![afterEvaluation](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-after-evaluation.PNG)  
+
+**Train our model**
+Put a break-point just after the most recently added line, and run the console application by hitting F5.</br>
+This should take about 2-5 min depending on the power of your computer. </br>
+Once at the debug statement, expand the properties to see the metrics. 
 
 Wow, the accuracy is 0.9988 or more precisely **99.9%**!
 Hold on a minute, can we have been so lucky to chose the right algorithm at the first try to get a nearly perfect model?
