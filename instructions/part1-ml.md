@@ -98,11 +98,11 @@ The next step is to include our previously downloaded **data.csv** file in the s
  - Open a new terminal window and execute `dotnet build` to ensure everything is setup correctly.
  ![projectfile](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-dotnet-build.PNG)</br><br/>
 
-   The steps above ensures you have the correct dependencies installed and your data is ready to be worked on.
-   Before we jump in to the code, let me introduce two concepts of ML.NET that we will be depending on a fair amount, **pipelines** and a **MLContext**. 
+Alright, setup complete! Great work so far.</br>
+Before we jump in to the code, let me introduce two concepts of ML.NET that will be mentioned a fair bit; pipelines and the MLContext. 
    
-   Everything in ML.NET originates from an **MLContext**. The MLContext contains all the data loaders, transformers, algorithms, evaluation tools and so forth that you may need. 
-   **Pipelines** is a concept in ML.NET, which just means that we will be creating an initial instance to which we will append operations, such as data transformations, training algorithm and so forth. We generally speak about data processing pipelines and training pipelines.
+**The MLContext** contains the data loaders, transformers, algorithms and event the evaluation tools that one may need. </br>
+**Pipelines** is a paradigm in ML.NET, in which we create an object to which we chain multiple operations, such as data transformations and training algorithms.
    
    To get started, let's create an MLContext. 
    
@@ -111,6 +111,15 @@ The next step is to include our previously downloaded **data.csv** file in the s
    ```
    
    Setting the property seed to 1 ensures deterministic randomness in operations such as splitting test/train data, which is normally desired.    
+   
+   Make sure to also add a using statement for ML.NET
+   
+   ```
+    using Microsoft.ML;
+   ```   
+   
+   Your Program.cs should currently look like:
+   ![programcs1](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-program-1.PNG)
    </p>
   </details>
   <details>
