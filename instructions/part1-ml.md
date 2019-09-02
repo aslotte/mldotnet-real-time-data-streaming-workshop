@@ -317,7 +317,7 @@ Put a break-point just after the most recently added line, and run the console a
 This should take a couple of minutes depending on the power of your computer. </br>
 Once at the debug statement, expand the properties to see the metrics. 
 
- ![aftermetrics](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-after-run-1.PNG)  
+ ![aftermetrics](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-after-run-1.png)  
  
 Wow, the accuracy is 0.9988 or more precisely **99.9%**!
 Hold on a minute, can we have been so lucky to chose the right algorithm at the first try to get a nearly perfect model?
@@ -398,11 +398,11 @@ Make sure to also add the neccessary using statement:
 _Note: training this model will take a longer time as we will be training 50 individual models_
 
 The `Program.cs` file should now look as below
-![aftermetrics2](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-after-run-2.PNG) 
+![aftermetrics2](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-after-run-2.png) 
 
 If we again run the console application to train our model (hit F5 and set the breakpoint after the metrics variable), we will see the following result:
 
-![aftermetrics3](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-after-run-3.PNG) 
+![aftermetrics3](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-after-run-3.png) 
 
 | Metric  | Value  | 
 |:---|:--------:|
