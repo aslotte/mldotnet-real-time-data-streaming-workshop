@@ -312,30 +312,40 @@ Add the below line of code to your `Program.cs` file
  The `Program.cs` file should now look as below
  ![afterEvaluation](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-after-evaluation.PNG)  
 
-**Train our model**
+**Train our model**</br>
 Put a break-point just after the most recently added line, and run the console application by hitting F5.</br>
-This should take about 2-5 min depending on the power of your computer. </br>
+This should take a couple of minutes depending on the power of your computer. </br>
 Once at the debug statement, expand the properties to see the metrics. 
 
+ ![aftermetrics](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-after-after-run-1.PNG)  
+ 
 Wow, the accuracy is 0.9988 or more precisely **99.9%**!
 Hold on a minute, can we have been so lucky to chose the right algorithm at the first try to get a nearly perfect model?
 
 Unfortunately we are not that lucky. Accuracy alone can be a very misleading metric, especially for highly unbalanced datasets as the one we are working on.
 
-If we look at the shape of the dataset given by the Jupyter notebook executed earlier we can see that we have 6,362,620 rows in the dataset, but only 8,213 are fraudulent. That means **99.9%** of all transactions in the dataset are non-fraudulent. Given that, if our model is just guessing non-fraudulent for all transactions it will achieve a 99.9% accuracy but miss all and any fraudulent transactions. 
-This is the curse of non-balanced datasets. What are some other metrics we can use together with accuracy to determine if a model truly is useful?
+If we look at the shape of the dataset given by the Jupyter notebook executed earlier we can see that we have 6,362,620 rows in the dataset, but only 8,213 are fraudulent. That means **99.9%** of all transactions in the dataset are non-fraudulent. Given that, if our model is just guessing non-fraudulent for all transactions it will achieve a 99.9% accuracy but miss all and any fraudulent transactions.</br> 
 
+This is the curse of non-balanced datasets. What are some other metrics we can use together with accuracy to determine if a model truly is useful?
+</br>
 ML.NET provides some great documentation on [metrics](https://docs.microsoft.com/en-us/dotnet/machine-learning/resources/metrics)
 For our scenario, we want to have a better measurement to determine true positives, false positives, true negatives and false negatives.
 
-This is where to machine learning concepts, **Precision** and **Recall** comes in to play. 
+This is where to machine learning concepts, **Precision**, **Recall** and **F1 Score** comes in to play. 
 
 - **Precision** - attempts to answer the question of how many of my positive findings are actually correct? If we only have true positives, this value will be 1
 - **Recall** - attempts to answer the question of how many of actual true positives were actually correct. Recall takes in to consideration false negatives, meaning in our case fraudulent transactions that we didn't catch. If we catch all fraudulent transactions then this value will be 1
+**F1 Score** - The harmonic mean between Precision and Recall
 
 Precision and Recall are normally working against each-other, meaning that you'll have to pick what is most important for you. Would you rather flag more transactions as fraudulent even if they're not, but in that case make sure not to miss any (e.g. having many false positives) or are you willing to let some fraudulent transactions flow through with every actually flagged transaction being correct (e.g. having no false positives but some false negatives).
 
-A good measurement to determine how good a classifier is, is to look at the area under the precision-recall curve. In an ideal world this value **should be 1**. If we look at how our model did, we can see that **we only got a 0.31** value which is very low.
+A good measurement for a binary classifier, especially trained on highly unbalanced dataset, is the F1 Score. In an ideal world this value **should be 1**. If we look at how our model did, we can see that **we only got a value of 0.48**, which is very low.
+
+| Metric  | Value  | 
+|:---|:--------:|
+| Accuracy    | 99.9%  |
+| AreaUnderPrecisionRecallCurve  | 0.75  | 
+| F1Score  | 0.48  | 
 
 Another good tool to use is the confusion matrix, which gives you a good overview of how many false positives or false negatives the model creates.
 
@@ -345,13 +355,13 @@ Actual values &downarrow; <br/>
 
 |   | IsFraud  | IsNotFraud  |
 |---|:--------:|:-----------:|
-| IsFraud   | 84  | 721  |
-| IsNotFraud  | 2  | 637,154  |
+| IsFraud   | 650  | 1274  |
+| IsNotFraud  | 155  | 635,882  |
 
 
-From the confusion matrix we can see that we are getting 721 false negatives and only 84 transactions were correctly labelled as fraudulent (true positives)
+From the confusion matrix we can see that we are getting 155 false negatives and 650 transactions were correctly labelled as fraudulent (true positives). However, we missed a total of 1274 transactions that were predicted as non-fraudulent when they actually were.
 
-Given that our model is not up for the task, what can we do to improve it?  move on to the next section.
+Given that our model is not fully up to the task, what can we do to improve it? To find out, please move on to the next section.
 
   </p>
 </details>
@@ -391,6 +401,7 @@ If we again run the console application to train our model, we will see the foll
 |:---|:--------:|
 | Accuracy    | 99.9%  |
 | AreaUnderPrecisionRecallCurve  | 0.78  | 
+| F1Score  | 0.84  | 
 
 This is a tremendous improvement. Our area under the precision-recall curve is up to 0.78. 
 
@@ -400,8 +411,8 @@ Actual values &downarrow; <br/>
 
 |   | IsFraud  | IsNotFraud  |
 |---|:--------:|:-----------:|
-| IsFraud   | 619  | 186 |
-| IsNotFraud  | 61  | 637,095  |
+| IsFraud   | 603  | 21 |
+| IsNotFraud  | 202  | 637,135  |
 
 What do we notice? We have reduced the number of false negatives, fraudulent transactions being marked as non-fraudulent when they in fact are. We had to sacrifice some precision to do so, meaning that we have increased the number of false positives.
 
