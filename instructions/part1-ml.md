@@ -195,13 +195,19 @@ namespace FraudPredictionTrainer
 <summary><b>3. Split your data in a test and training set</b></summary>
   <p>
     
-A crucial part of training a machine learning model is to be able to evaluate its performance on data not utilized when training the model. Thus, before starting to train our model, we want to make sure we put a portion of the data aside for evaluation purposes.
+A crucial part of training a machine learning model, is to be able to evaluate its performance on data not utilized during training. Thus, before starting to train our model, we want to make sure we put a portion of the data aside for evaluation purposes.
 
-ML.NET features built-in functionality to perform a random split of the data in to a training and test set. 
+ML.NET features built-in functionality to perform a random split of the data in to a training and test set. </br>
+The created instance will have a `TrainSet` and a `TestSet` property.</br>
+
+To split the data, add the following line to your code:
 
       var testTrainData = mlContext.Data.TrainTestSplit(data);
       
-Note that splitting your data in to a train and test set is strictly not always required. A technique called cross-validation can also be utilized to achieve the same result (which normally results in a better final model). We will explore this concept later on in this workshop.  
+Note that splitting your data in to a train and test set is not always required. A technique called cross-validation can also be utilized to achieve similar, if not better result.</br></br>
+
+Our `Program.cs` file should now look as below:
+![aftersplit](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-after-split.PNG)
 
   </p>
 </details>
