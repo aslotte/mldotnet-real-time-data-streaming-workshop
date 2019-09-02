@@ -64,10 +64,10 @@ Other available data-sources worth exploring are:
    The first step is to create a new console application</br>
    - In VS Code, open a new terminal window ![terminal](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-open-terminal.png) </br>
    - In the terminal window, execute the following command `cd C:\mldotnet-real-time-data-streaming-workshop\workspace` to navigate to the workspace folder.
-   ![navigate](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-to-workspace.png)</br>
+   ![navigate](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-to-workspace.PNG)</br>
    - In the terminal window, execute the following command `dotnet new console -o FraudPredictionTrainer` to create a new solution
-      ![source](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-create-solution.png)</br>
-   - In the terminal window, execute the following command `cd FraudPredictionTrainer` to navigate in to the folder of the newly created solution ![navigatetofolder](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-navigate-in-to-folder.png)</br>
+      ![source](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-create-solution.PNG)</br>
+   - In the terminal window, execute the following command `cd FraudPredictionTrainer` to navigate in to the folder of the newly created solution ![navigatetofolder](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-navigate-in-to-folder.PNG)</br>
    
    
    - Install the required NuGet packages by executing<br/>
