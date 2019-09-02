@@ -204,7 +204,7 @@ To split the data, add the following line to your code:
 
       var testTrainData = mlContext.Data.TrainTestSplit(data);
       
-Note that splitting your data in to a train and test set is not always required. A technique called cross-validation can also be utilized to achieve similar, if not better result.</br></br>
+Note that splitting your data in to a train and test set is not always required. A technique called cross-validation can also be utilized to achieve similar, if not better result.</br>
 
 Our `Program.cs` file should now look as below:
 ![aftersplit](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-after-split.PNG)
