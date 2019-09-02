@@ -133,8 +133,8 @@ The Data Catalog of the MLContext (F12 in the class if you are curious) contains
     private static string DataPath = "data.csv";
    ```        
    
-To load our data, we'll need to tell ML.NET what the schema of our data looks like. Just as this is done in Entity Framework, we can do this by creating a simple POCO, with a property for each column in the dataset. Each property needs to be decorated with the `LoadColumn` and `ColumnName` attributes, which defines the index of the column in the data, as well as its name.</br></br>
-To do this, create a new file called `Transaction.cs` and copy/paste the below code
+To load our data, we'll need to tell ML.NET what the schema of our data looks like. Just as this is done in Entity Framework, we can do this by creating a simple POCO, with a property for each column in the dataset. Each property needs to be decorated with the `LoadColumn` and `ColumnName` attributes, which defines the index of the column in the data, as well as its name. Furthermore, note that ML models are only able to work with float vectors, thus any column containing numerical data will have to have a corresponding property defined of type `float`. We will later see how we can transform non-numerical data to a numerical form.</br></br>
+To define a schema, create a new file called `Transaction.cs` and copy/paste the below code
 
 ```
 using Microsoft.ML.Data;
@@ -219,34 +219,39 @@ The dataset from Kaggle is in an overall great condition, as opposed to how it c
    
 Machine Learning models are very picky in terms of data quality, so making sure that the data is top-notch is critical. We want to make sure that no columns have missing values, that the data is reasonable balanced and that no obvious outliers exists. The only main-concern we have with our data is that it is highly unbalanced. The number of fraudulent transactions to train the data on is just a couple of percent's of the total dataset. If we were able to, we would ideally include additional fraudulent transactions to balance the data, but as this is not possible we will apply other techniques to counter this in a later step.
 
-As mentioned when loading the data in to memory, machine learning algorithms function based on numerical data, and has a difficult time working with e.g. strings. Our dataset currently contains two features that contains text, **type** and **nameDest**. We could also look at the nameOrig column, but we can assume that the victims are chosen at random, so this column may not hold much predictable power.
+As previously mentioned, machine learning algorithms function best on numerical data, and has a difficult time working with textual values. Our dataset currently contains two non-numerical features, **type** and **nameDest**. We could ofcourse also look at the **nameOrig** column, but we can assume that the victims are chosen at random, so this column may not hold much predictable power and can be discarded.
 
-To transform this features to float vectors, we can use a technique called **OneHotEncoding** which will create new binary columns for each value present in a feature space. For example, the type column contains values such as "Payment" and "Transfer". If we apply OneHotEncoding on the type column, ML.NET will create new columns, e.g. IsPayment, IsTransfer with a binary response, either 1 or 0 to define what the type is. This approach greatly increases the performance of the algorithm and allows is to converge to an optimal solution.
+To transform these features to float vectors, we can utilize a technique called `OneHotEncoding` which will create new binary columns for each value present in the feature space. For example, the type column contains values such as "Payment" and "Transfer". If we apply `OneHotEncoding` on the type column, ML.NET will create new columns such as IsPayment, IsTransfer with a binary response, either 1 or 0 to indicate the type. This approach greatly increases the performance of the algorithm and allows it to converge to an optimal solution.
 
-To perform OneHotEncoding on the type column, you can call the OneHotEncoding method located in the Transforms catalog of ML.NET as such:
+To transform the type column using `OneHotEncoding`, you can call the `OneHotEncoding` method located in the Transforms catalog of ML.NET
 
     mlContext.Transforms.Categorical.OneHotEncoding("type")
 
-The cardinality of the nameDest column is likely to be very high, thus regular OneHotEncoding is would create a very wide dataset, causing either a large model or out-of-memory exceptions when training it. We can instead use **OneHotHashEncoding** to reduce the dimensions and save some space.
+The cardinality of the nameDest column however, is likely to be very high, thus regular `OneHotEncoding` would create a very wide dataset, causing either a large model or an out-of-memory exception when performing the training. We can instead use `OneHotHashEncoding` to reduce the dimensions and save some space.
 
 At this point, this is very pipelines come in to play. As we will have multiple transformation operations we would like to conduct, we can chain them all together in to a data processing pipeline:
  
     var dataProcessingPipeline = mlContext.Transforms.Categorical.OneHotEncoding("type")
                 .Append(mlContext.Transforms.Categorical.OneHotHashEncoding("nameDest"))
                 
- Perfect. Our non-numeric features are now transformed in to a form the algorithm can understand.
- So which features do you think account for the variance in the dataset? Or put in another way, which features do you think are relevant  to include in your model? Feature engineering is a difficult topic. It's very likely that additional features may be needed to achieve a better model, or derived features of the existing feature set may yield a better outcome. This is where it is very important to consult with a subject matter expert to understand the problem domain you're in and what data may be relevant. For our purposes, we can start off by trying to include all columns in our model, as we only have seven or so features (you may have thousands if not more in real-world example). 
+ Perfect. Our non-numeric features are now transformed into a form the algorithm can understand.</br>
  
- To define which features are relevant for the model to know about, we will have to concatenate them in to a feature vector
- This can be done as such:
+So which features do you think account for the variance in the dataset? Or put in another way, which features do you think are relevant  to include in our model? Feature engineering is a difficult topic. It's very likely that additional features may be needed to achieve a better model, or derived features of the existing featureset may yield a better outcome. This is where it is very important to consult with a subject matter expert to understand the problem domain you're in, and what data may be relevant. For our purposes, we can start off by trying to include more or less all columns in our model, as we only have seven or so features (you may have thousands if not more in real-world example). 
+ 
+ To define which features to include during training, we will have to concatenate them in to a `Feature` vector
+ This can be done by using the `Concatenate` method located in the `Transforms` catalog
  
        mlContext.Transforms.Concatenate("Features", "type", "nameDest", "amount", "oldbalanceOrg", "oldbalanceDest", "newbalanceOrig", "newbalanceDest")
        
- To put it all together, your data processing pipeline will look like this:
+ To add the required transformations, add the below lines to your `Program.cs` file.
  
-             var dataProcessingPipeline = mlContext.Transforms.Categorical.OneHotEncoding("type")
+            var dataProcessingPipeline = mlContext.Transforms.Categorical.OneHotEncoding("type")
                 .Append(mlContext.Transforms.Categorical.OneHotHashEncoding("nameDest"))
-                .Append(mlContext.Transforms.Concatenate("Features", "type", "nameDest", "amount", "oldbalanceOrg", "oldbalanceDest", "newbalanceOrig", "newbalanceDest");
+                .Append(mlContext.Transforms.Concatenate("Features", "type", "nameDest", 
+                "amount", "oldbalanceOrg", "oldbalanceDest", "newbalanceOrig", "newbalanceDest"));
+ 
+ The `Program.cs` file should now look as below
+ ![afterTransformations](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-after-transformations.PNG)
  
   </p>
 </details>
