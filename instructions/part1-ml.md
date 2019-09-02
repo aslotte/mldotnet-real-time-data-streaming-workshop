@@ -334,8 +334,8 @@ For our scenario, we want to have a better measurement to determine true positiv
 This is where to machine learning concepts, **Precision**, **Recall** and **F1 Score** comes in to play. 
 
 - **Precision** - attempts to answer the question of how many of my positive findings are actually correct? If we only have true positives, this value will be 1
-- **Recall** - attempts to answer the question of how many of actual true positives were actually correct. Recall takes in to consideration false negatives, meaning in our case fraudulent transactions that we didn't catch. If we catch all fraudulent transactions then this value will be 1
-**F1 Score** - The harmonic mean between Precision and Recall
+- **Recall** - attempts to answer the question of how many of actual true positives were actually correct. Recall takes in to consideration false negatives, meaning in our case fraudulent transactions that we didn't catch. If we catch all fraudulent transactions then this value will be 1 </br>
+**F1 Score** - The harmonic mean between Precision and Recall</br>
 
 Precision and Recall are normally working against each-other, meaning that you'll have to pick what is most important for you. Would you rather flag more transactions as fraudulent even if they're not, but in that case make sure not to miss any (e.g. having many false positives) or are you willing to let some fraudulent transactions flow through with every actually flagged transaction being correct (e.g. having no false positives but some false negatives).
 
