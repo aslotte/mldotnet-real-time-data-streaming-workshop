@@ -133,7 +133,7 @@ The Data Catalog of the MLContext (F12 in the class if you are curious) contains
     private static string DataPath = "data.csv";
    ```        
    
-To load our data, we'll need to tell ML.NET what the schema of our data looks like. Just as this is done in Entity Framework, we can do this by creating a simple POCO, with a property for each column in the dataset. Each property needs to be decorated with the `LoadColumn` and `ColumnName` attributes, which defines the index of the column in the data, as well as its name.</br>
+To load our data, we'll need to tell ML.NET what the schema of our data looks like. Just as this is done in Entity Framework, we can do this by creating a simple POCO, with a property for each column in the dataset. Each property needs to be decorated with the `LoadColumn` and `ColumnName` attributes, which defines the index of the column in the data, as well as its name.</br></br>
 To do this, create a new file called `Transaction.cs` and copy/paste the below code
 
 ```
