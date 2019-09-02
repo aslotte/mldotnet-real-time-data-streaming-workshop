@@ -74,7 +74,7 @@ Once we have created our solution, we will need to install the required NuGet pa
 In the previously open terminal window, copy/paste and execute the following below commands</br>
    - `dotnet add package Microsoft.ML`<br/>
    - `dotnet add package Microsoft.ML.FastTree`<br/>
-   - `dotnet add package Microsoft.ML.LightGbm`<br/></br>
+   - `dotnet add package Microsoft.ML.LightGbm`<br/>
 
 To browse the solution:</br>
 - In the terminal window, execute the following command `code . -r` to open VS Code in the folder
@@ -112,13 +112,12 @@ Before we jump in to the code, let me introduce two concepts of ML.NET that will
    
    Setting the property seed to 1 ensures deterministic randomness in operations such as splitting test/train data, which is normally desired.    
    
-   Make sure to also add a using statement for ML.NET
-   
+   Furthermore, add a using statement for ML.NET
    ```
     using Microsoft.ML;
    ```   
    
-   Your Program.cs should currently look like:
+   Your Program.cs file should currently look like:
    ![programcs1](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-program-1.PNG)
    </p>
   </details>
