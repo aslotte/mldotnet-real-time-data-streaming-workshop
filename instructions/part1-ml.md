@@ -317,7 +317,7 @@ Put a break-point just after the most recently added line, and run the console a
 This should take a couple of minutes depending on the power of your computer. </br>
 Once at the debug statement, expand the properties to see the metrics. 
 
- ![aftermetrics](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-after-after-run-1.PNG)  
+ ![aftermetrics](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-after-run-1.PNG)  
  
 Wow, the accuracy is 0.9988 or more precisely **99.9%**!
 Hold on a minute, can we have been so lucky to chose the right algorithm at the first try to get a nearly perfect model?
@@ -335,7 +335,7 @@ This is where to machine learning concepts, **Precision**, **Recall** and **F1 S
 
 - **Precision** - attempts to answer the question of how many of my positive findings are actually correct? If we only have true positives, this value will be 1
 - **Recall** - attempts to answer the question of how many of actual true positives were actually correct. Recall takes in to consideration false negatives, meaning in our case fraudulent transactions that we didn't catch. If we catch all fraudulent transactions then this value will be 1 </br>
-**F1 Score** - The harmonic mean between Precision and Recall</br>
+- **F1 Score** - The harmonic mean between Precision and Recall</br>
 
 Precision and Recall are normally working against each-other, meaning that you'll have to pick what is most important for you. Would you rather flag more transactions as fraudulent even if they're not, but in that case make sure not to miss any (e.g. having many false positives) or are you willing to let some fraudulent transactions flow through with every actually flagged transaction being correct (e.g. having no false positives but some false negatives).
 
@@ -358,7 +358,6 @@ Actual values &downarrow; <br/>
 | IsFraud   | 650  | 1274  |
 | IsNotFraud  | 155  | 635,882  |
 
-
 From the confusion matrix we can see that we are getting 155 false negatives and 650 transactions were correctly labelled as fraudulent (true positives). However, we missed a total of 1274 transactions that were predicted as non-fraudulent when they actually were.
 
 Given that our model is not fully up to the task, what can we do to improve it? To find out, please move on to the next section.
@@ -369,21 +368,21 @@ Given that our model is not fully up to the task, what can we do to improve it? 
 <summary><b>7. Iterate, iterate, iterate...</b></summary>
   <p>
     
-We have identified that a cause for our model not being good enough is the fact that our data is highly unbalanced. As mentioned earlier, this can be addressed by adding more transactions that are fraudulent, but that means going back and finding about 3-6 million more records that are fraudulent. This is most likely not a feasible way forward.
+We have identified that a cause for our model not being good enough is the fact that our data is highly unbalanced. As mentioned earlier, this can be addressed by adding more transactions that are fraudulent, but that means going back and finding about 3-6 million more records that are fraudulent. Although it's possible to synthesize more data, this is most likely not a feasible way forward.
     
-Fortunately, there are certain algorithms that are better than others in handling highly unbalanced data. One of those are **Decision Trees**
+Fortunately, there are certain algorithms that are better than others in handling highly unbalanced data. One of those are `Decision Trees`
 
 Decision trees are versatile Machine Learning algorithms that can perform both classification and regression tasks. Decision trees creates, as the name implies, a tree-like decision structure in which observations are captured in the tree nodes and the final decision (fraudulent or non-fraudulent) are captured in the leaves. Decision trees can either be binary or non-binary, depending on how many lower level nodes one node connects to.
 
-To boost the overall prediction performance of decision trees, it is common to implement something called **Ensemble learning** in which multiple weak learners are trained, from which each individual prediction is pooled together to an overall answer. For decision trees, this is called creating a forest.
+To boost the overall prediction performance of decision trees, it is common to implement something called `Ensemble learning` in which multiple weak learners are trained, and from which each individual prediction is pooled together to an overall answer. For decision trees, this is called creating a forest.
 
-Two decision tree ensemble algorithms are **FastTreeBinary** and **FastForestBinary**
+Two decision tree ensemble algorithms are `FastTreeBinary` and `FastForestBinary`
 
-Decision trees are easily to conceptually understand, and they fairly immune to non-balanced data. However, compared to logistic regression, they do have a lot more **hyper parameters** to set, e.g. number of leaves, learning rate and so forth that makes using them and finding the optimal values a bit more complicated.
+Decision trees are easily to conceptually understand, and they are fairly immune to non-balanced data. However, compared to logistic regression, they do have a lot more hyper parameters to set, for example number of leaves, learning rate and so forth that makes using them and finding the optimal values a bit more complicated.
 
-Let's take a look at the FastTreeBinary algorithm.
+Let's take a look at the `FastTreeBinary` algorithm.
 
-To implement the FastTreeBinary algorithm, substitute the line defining the trainer with the following:
+To implement the `FastTreeBinary` algorithm, substitute the line defining the trainer with the following:
 
     mlContext.BinaryClassification.Trainers.FastTree(new FastTreeBinaryTrainer.Options 
     { 
@@ -393,19 +392,27 @@ To implement the FastTreeBinary algorithm, substitute the line defining the trai
       FeatureColumnName = "Features" 
     }));
 
+Make sure to also add the neccessary using statement:
+`using Microsoft.ML.Trainers.FastTree;`
+
 _Note: training this model will take a longer time as we will be training 50 individual models_
 
-If we again run the console application to train our model, we will see the following result:
+The `Program.cs` file should now look as below
+![aftermetrics2](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-after-run-2.PNG) 
+
+If we again run the console application to train our model (hit F5 and set the breakpoint after the metrics variable), we will see the following result:
+
+![aftermetrics3](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-after-run-3.PNG) 
 
 | Metric  | Value  | 
 |:---|:--------:|
 | Accuracy    | 99.9%  |
-| AreaUnderPrecisionRecallCurve  | 0.78  | 
+| AreaUnderPrecisionRecallCurve  | 0.79  | 
 | F1Score  | 0.84  | 
 
-This is a tremendous improvement. Our area under the precision-recall curve is up to 0.78. 
+This is a tremendous improvement. Our F1 Score has increased to 0.84.
 
-The confusion matrix now looks as follows: <br/>
+The confusion matrix does also look a lot better<br/>
 Predicted values &rightarrow; <br/>
 Actual values &downarrow; <br/>
 
@@ -414,7 +421,7 @@ Actual values &downarrow; <br/>
 | IsFraud   | 603  | 21 |
 | IsNotFraud  | 202  | 637,135  |
 
-What do we notice? We have reduced the number of false negatives, fraudulent transactions being marked as non-fraudulent when they in fact are. We had to sacrifice some precision to do so, meaning that we have increased the number of false positives.
+What do we notice? We have reduced the number of false negatives, fraudulent transactions being marked as non-fraudulent when they in fact are. We had to sacrifice some precision to do so, meaning that we have increased the number of false positives. We only missed 21 transactions that actually were fraudulent, a fantastic improvement from our earlier value of 1274.
 
 This model can be furthered fine-tuned by altering hyper parameters such as learning curve, number of trees and so forth. We can also use techniques such as cross-validation. For our purposes this model will do just fine.
 
@@ -426,6 +433,7 @@ A couple of common approaches to improve a model are:
 - Creating new derived features out of existing features
 - Altering the machine learning algorithm utilized
 - Fine-tuning the model with different hyper parameters
+- Down-sizing the dataset
 
   </p>
 </details>
