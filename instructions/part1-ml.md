@@ -443,14 +443,20 @@ A couple of common approaches to improve a model are:
     
 Once we are happy with our model we will need to save it for further use. ML.NET models are saved as .zip files that later can be loaded in to a prediction engine and used to run prediction in e.g. an Azure Function or ASP.NET Core application.
    
-To save the model to disk, simply add the line below:
+To save the model to disk, simply add the line below to your `Program.cs` file:
 
     mlContext.Model.Save(trainedModel, data.Schema, "MLModel.zip");
-    
+
+The `Program.cs` file should now look as below
+![afterSave](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-after-save.PNG) 
+
+Hit F5 one more time to train your model.</br>
+The MLModel.zip file will be located in your bin folder, e.g. here if running .NET Core SDK 2.2</br>
+`C:\mldotnet-real-time-data-streaming-workshop\workspace\FraudPredictionTrainer\bin\Debug\netcoreapp2.2`
   </p>
 </details>
 
-To see a complete solution, please open the [FraudPredictionTrainer.sln](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/tree/master/src/machine-learning/FraudPredictionTrainer) in Visual Studio
+To see a complete solution, please open the [FraudPredictionTrainer.sln](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/tree/master/src/machine-learning/FraudPredictionTrainer) in VS Code
 </details>
 
 #### Using AutoML (CLI/Visual Studio Extension)
