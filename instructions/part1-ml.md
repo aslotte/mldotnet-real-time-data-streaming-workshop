@@ -58,26 +58,18 @@ Other available data-sources worth exploring are:
     <summary><b>2.2 Getting started with ML.NET</b></summary>
     <p>
       
-   Fantastic, you have gathered the required data and are now ready to dive in to ML.NET. ML.NET is distributed as a NuGet package and can be included in your solution like any other package. 
+   Fantastic, you have gathered the required data and are now ready to dive in to ML.NET.</br>
+   ML.NET is distributed as a NuGet package and can be installed like any other package.</br>
+   </br>
+   The first step is to create a new console application</br>
+   - In VS Code, open a new terminal window ![terminal](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-open-terminal.png) </br>
+   - In the terminal window, execute the following command `cd C:\mldotnet-real-time-data-streaming-workshop\workspace` to navigate to the workspace folder.
+   ![navigate](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-to-workspace.PNG)</br>
+   - In the terminal window, execute the following command `dotnet new console -o FraudPredictionTrainer` to create a new solution
+      ![source](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-create-solution.PNG)</br>
+   - In the terminal window, execute the following command `cd FraudPredictionTrainer` to navigate in to the folder of the newly created solution ![navigatetofolder](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-navigate-in-to-folder.PNG)</br>
    
-   To get started:
    
-   **In Visual Studio**
-   - Create a new .NET Core v2.1+ console application
-   - Right-click on the solution and select to "Manage NuGet Packages for Solution"
-   - Search for and install the following NuGet package<br/> 
-    - Microsoft.ML<br/> 
-    - Microsoft.ML.FastTree<br/>
-    - Microsoft.ML.LightGbm<br/>
-   - Right click on the solution once again and select "Add -> Existing Item..."
-   - In the file explorer window, select to view all items in the bottom right corner
-   - Rename your comma-separated [file](https://github.com/lastlink/mldotnet-real-time-data-streaming-workshop/releases/download/data/data.zip) containing your data to "data.csv" and select to add this as an existing item 
-   - Right-click on you newly added file and select "Properties". Change to "Copy if Newer"
-   
-   **In VS Code**
-   - Create a folder<br/>
-   - Open a new terminal window (View -> Terminal)<br/>
-   - Create a new console project using `dotnet new console -o FraudulentTransactionsTrainer`<br/>
    - Install the required NuGet packages by executing<br/>
     - `dotnet add package Microsoft.ML`<br/>
     - `dotnet add package Microsoft.ML.FastTree`<br/>
