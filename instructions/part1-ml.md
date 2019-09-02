@@ -83,9 +83,9 @@ To browse the solution:</br>
 - Open the project file to the left. The content should look as below
 ![projectfile](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-project-file.PNG)</br>
 
-To be able to create our machine learning model, we'll need to add our previously downloaded **data.csv** file to the solution.
-  - Copy the previously downloaded data.csv file to e.g. `C:\mldotnet-real-time-data-streaming-workshop\workspace\FraudPredictionTrainer`
-  - In the previously opened project file, copy/paste the below snippet. This will ensure the data.csv is copied out to the bin folder upon build, so that it can be used by ML.NET.</br>   
+The next step is to include our previously downloaded **data.csv** file in the solution.
+  - Copy the previously downloaded data.csv file to</br> `C:\mldotnet-real-time-data-streaming-workshop\workspace\FraudPredictionTrainer`
+  - In the open project file, copy/paste the below snippet.</br>This will ensure the data.csv is copied out to the bin folder upon build, so that it can be used by ML.NET.</br>   
    ```
 <ItemGroup>
   <None Update="data.csv">
@@ -93,7 +93,7 @@ To be able to create our machine learning model, we'll need to add our previousl
   </None>
 </ItemGroup>
 ```
- - The project file should now look like below:
+ - The project file should now look like:
  ![projectfile](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-project-file-2.PNG)
  - Open a new terminal window and execute `dotnet build` to ensure everything is setup correctly.
  ![projectfile](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-dotnet-build.PNG)</br><br/>
