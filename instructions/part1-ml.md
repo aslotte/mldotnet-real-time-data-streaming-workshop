@@ -83,9 +83,9 @@ To browse the solution:</br>
 - Open the project file to the left. The content should look as below
 ![projectfile](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-project-file.PNG)</br>
 
-The next step is to include our previously downloaded **data.csv** file in the solution.
-  - Copy the previously downloaded data.csv file to</br> `C:\mldotnet-real-time-data-streaming-workshop\workspace\FraudPredictionTrainer`
-  - In the open project file, copy/paste the below snippet.</br>This will ensure the data.csv is copied out to the bin folder upon build, so that it can be used by ML.NET.</br>   
+The next step is to include our previously downloaded `data.csv` file in the solution.
+  - Copy the previously downloaded `data.csv` file to</br> `C:\mldotnet-real-time-data-streaming-workshop\workspace\FraudPredictionTrainer`
+  - In the open project file, copy/paste the below snippet.</br>This will ensure the `data.csv` is copied out to the bin folder upon build, so that it can be used by ML.NET.</br>   
    ```
 <ItemGroup>
   <None Update="data.csv">
@@ -117,7 +117,7 @@ Before we jump in to the code, let me introduce two concepts of ML.NET that will
     using Microsoft.ML;
    ```   
    
-   Your Program.cs file should currently look like:
+   The `Program.cs` file should currently look as below:
    ![programcs1](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-program-1.PNG)
    </p>
   </details>
@@ -125,29 +125,24 @@ Before we jump in to the code, let me introduce two concepts of ML.NET that will
     <summary><b>2.3 Load your data in ML.NET</b></summary>
     <p>
 
-If you take a look at the Data Catalog of the MLContext (F12 in the class) you'll notice a number of ways you can load your data in to memory. Just to mention a couple, we can load data from binary, from file and from a SQL database. In this example, we will be loading our data from our comma-separated file. To do this, let's start by defining where the file resides. 
+The Data Catalog of the MLContext (F12 in the class if you are curious) contains a number of ways you can load your data in to memory. To just mention a couple, we can load data from binary, from file and from a SQL database. In this example, we will be loading our data from our comma-separated file. To do this, let's start by defining where the file resides. 
    
-   Add a static member variable:
+   Add a static member variable above the main method, but within the class:
    
    ```
     private static string DataPath = "data.csv";
    ```        
    
-To successfully load our data, we need to tell ML.NET what the schema of our data looks like. Just as this is done in Entity Framework, we can do this by creating a simple POCO, with a property for each column in the dataset. Try to do this yourself by creating a class called "Transaction". 
-   
-Make sure to decorate each property with ColumnName and LoadColumn, where ColumnName defines the name of the column as it reads in the csv file and LoadColumn defines the index of the column.
-   
-   ```
-    [ColumnName("step"), LoadColumn(0)]
-   ```
+To load our data, we'll need to tell ML.NET what the schema of our data looks like. Just as this is done in Entity Framework, we can do this by creating a simple POCO, with a property for each column in the dataset. Each property needs to be decorated with the `LoadColumn` and `ColumnName` attributes, which defines the index of the column in the data, as well as its name.</br></br>
+To do this, create a new file called `Transaction.cs` and copy/paste the below code
 
-Furthermore, the machine learning algorithms can only work on number data of type floats. Thus make sure each property containing a number is of type float.
+```
+using Microsoft.ML.Data;
 
-Did you have a try? Perfect! 
-Here's a complete solution to validate against.
-
-      internal sealed class Transaction
-      {
+namespace FraudPredictionTrainer 
+{
+    internal sealed class Transaction
+    {
         [ColumnName("step"), LoadColumn(0)]
         public float Step { get; set; }
 
@@ -181,13 +176,17 @@ Here's a complete solution to validate against.
         [ColumnName("isFlaggedFraud"), LoadColumn(10)]
         public float IsFlaggedFraud { get; set; }
       }
+}
+```
    
-   Once you've defined the schema, you're ready to load the data in to memory. 
-   To do this, simply add the following:
+   To load the data with the given schema, open the Program.cs file and add the following line: 
    
       var data = mlContext.Data.LoadFromTextFile<Transaction>(DataPath, hasHeader: true, separatorChar: ',');
       
-  The LoadFromTextFile defines the schema as a generic. To the method you'll also have to supply the path to the data, if the data contains headers or not as well as how the data is separated. In our scenario that will be comma-separated.
+  The generic `LoadFromTextFile` method takes the location of the data file. We will also need to define if the data has headers and how it is separated. </br></br>
+  The `Program.cs` file should currently look as below:
+     ![aftertransaction](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-after-transaction.PNG)
+  
  </p>
 </details>
 </p>
