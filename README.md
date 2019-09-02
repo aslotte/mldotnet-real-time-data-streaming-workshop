@@ -1,9 +1,9 @@
 ## Introduction
 Working with real-time data streams, and deriving real-time insights using custom machine learning models have become increasingly important for many organizations. There are numerous real-time data platforms currently available (e.g. Kafa, Hadoop Spark), but the one we will be focusing on in this workshop in particular is **Azure Stream Analytics**. In addition to diving in to Azure Stream Analytics, we will also explore the open-source cross-plattform library [ML.NET](https://github.com/dotnet/machinelearning), which we will use to build our custom machine learning models and look at an alternative solution using **Azure Machine Learning Service**.
 
-## Setting up pre-requisites
+## Getting started
 <details>
-  <summary>Expand for instructions</summary>
+  <summary>Expand for instructions to set up prerequisites</summary>
   <p>
   <ol>
     <li><b>Download the .NET Core SDK</b></li>
