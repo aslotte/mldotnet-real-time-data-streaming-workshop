@@ -75,7 +75,7 @@ Working with real-time data streams, and deriving real-time insights using custo
    </br>
    <li><b>Download Azure Storage Explorer (required for part 3)</b></li>
        <ol>
-          <li><a href="https://azure.microsoft.com/en-us/features/storage-explorer/">Download the Azure Storage Explorer</a><img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-storage-explorer.PNG"></li>
+          <li><a href="https://azure.microsoft.com/en-us/features/storage-explorer/">Download Azure Storage Explorer</a>Make sure to select the correct OS.<img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-storage-explorer.PNG"></li>
   <li>Open the installer and follow provided instructions</li>
     <li>Follow the provided instructions</li>
       </ol>   
