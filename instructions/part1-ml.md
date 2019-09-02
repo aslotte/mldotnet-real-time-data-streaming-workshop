@@ -270,22 +270,22 @@ So which features do you think account for the variance in the dataset? Or put i
    - Support Vector Machines (SVM) <br/>
    
    Each family of algorithms has its pros and cons as we will see later in this workshop, but for simplicities sake, lets start off with the most straightforward algorithm, linear regression. A variant of linear regression is logistic regression. 
-   So where do you find the trainers in ML.NET? 
-   The trainers are located under the given ML Task we are trying to perform. In our case we are attempting to do something called **BinaryClassification**, which is to predict one out of two possible values (thus binary). Other common ML tasks are Multi-Class Classification (three or more values), regression, clustering, anomaly detection and so forth.
+   So where can we find the available trainers in ML.NET? 
+   The trainers are located under the given ML Task we are trying to perform. In our case we are attempting to do something called `BinaryClassification`, which is to predict one out of two possible values (thus binary). Other common ML tasks are Multi-Class Classification (three or more values), regression, clustering, anomaly detection and recommender systems.
    
-   We can create a training pipeline using logistic linear regression as follows:
+   We can create a training pipeline using logistic linear regression by appending the `LbfgsLogisticRegression` trainer to our previously created data processing pipeline. The `LbfgsLogisticRegression` requires us to define which column in the dataset is contains our labels, the value we are trying to predict</br>
+   To do this, add the below lines of code to your `Program.cs` file
    
     var trainingPipeline = dataProcessingPipeline
         .Append(mlContext.BinaryClassification.Trainers.LbfgsLogisticRegression(labelColumnName: "isFraud"));
    
-   _Note that we append the trainer to the data processing pipeline, as well as define which column we are trying to predict. Often called the label column._
-   
-  Once the trainer has been appended, all that remains is to using the trainingPipeline to a fit an as accurate model as possible based on the training dataset. To do this, we will use the `.Fit` method on the IEstimator interface
+  Once we have appended the trainer, all that remains is to use the `trainingPipeline` to a fit an as accurate model as possible based on the training dataset. To do this, we will use the `.Fit` method located on the `IEstimator` interface.
+  Add the below line of code to your `Program.cs` file
 
     var trainedModel = trainingPipeline.Fit(testTrainData.TrainSet);
   
-  _Note that we are using only the training dataset to train our model_
-    
+ The `Program.cs` file should now look as below
+ ![afterTraining](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-after-training.PNG)   
   </p>
 </details>
 <details>  
