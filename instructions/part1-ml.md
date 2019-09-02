@@ -8,14 +8,14 @@ To build your machine learning model using ML.NET, please refer to the instructi
 <br/>
 So you're ready to start creating your Machine Learning model in ML.NET? Awesome!
 ML.NET is an open-source, cross-platform library, released to the public in preview during MS Build 2018 and for general availability at MS Build 2019. It bridges the gap between Software Engineering and Data Science, and allows .NET Developers to make their applications smarter.
-
+</br>
 The general steps for training your model are the same regardless if you are training your model using ML.NET or a Python based library such as Scikit Learn. To train your model in ML.NET, please expand and follow the instructions below:
 
 <details>
   <summary><b>1. Determine your problem domain </b></summary>
   <p>
 
-Framing the actual business problem you are attempting to solve is key for a successful machine learning project. A lot of the times people attempt to start with either a cool algorithm or just the data they have, but without a clear understanding of the problem they are trying to solve, and a dialog with Subject Matter Experts (SME's), crucial data may be overlooked and business value may not be provided. 
+Framing the business problem you are attempting to solve is absolute key for a successful machine learning project. A lot of the times, people attempt to start with either a cool algorithm or just the data they have, but without a clear understanding of the problem they are trying to solve. Furthermore, without a dialog with Subject Matter Experts (SME's), crucial data may be overlooked and business value may not be provided.
 
   </p>
 </details>
@@ -23,7 +23,7 @@ Framing the actual business problem you are attempting to solve is key for a suc
   <summary><b>2. Gather and load your data</b></summary>
     <p>
       
-Once the business problem has been defined, it's time to gather your data. Data is normally gathered from multiple data-sources (both public and private), aggregated and pivoted in to a workable shape. For our purposes, the data we will be using can be retrieved from Kaggle. To download the data, use this [link](https://www.kaggle.com/ntnu-testimon/paysim1) to get to the dataset.
+Once the problem has been defined, it's time to gather our data. Data is normally gathered from multiple sources (both public and private), and then aggregated and pivoted in to a workable shape. For our purposes, the data we will be using can be retrieved from [Kaggle](https://www.kaggle.com/ntnu-testimon/paysim1). You should already have downloaded the data as part of getting started.
       
 Other available data-sources worth exploring are: 
    - [Google Public Datasets](https://cloud.google.com/public-datasets/)  
@@ -34,28 +34,24 @@ Other available data-sources worth exploring are:
   <details>
     <summary><b>2.1 Explore the dataset</b></summary>
    <p>
-     
-   - Download the either from:
-        - Kaggle - extract the content and rename to data.csv<br/>
-        - From this repo located [here](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/src/machine-learning/FraudPredictionTrainer/FraudPredictionTrainer/Data/data.csv)
-        - Provided USB memory sticks
-   - Familiarize yourself with the available features (columns)<br/>
-   - Which columns are your features and which is your label (what you would like to predict)?<br/>
-   - Is the dataset balanced? (hint: what's the distribution of fraudulent and non-fraudulent transactions)<br/>
-   - What's the data type of the available features?<br/>
-   - Does any of the columns have missing values?<br/>
-   - Are there any obvious correlation in-between features?<br/>
    
    Exploring a large dataset can be daunting. Loading a dataset containing 6+ million rows in something like Excel is not always feasible due to application limitations and performance. To make life easier for us we can use an open-source Python library called **Pandas** in e.g. a Jupyter notebook.
    
    To explore the dataset using Pandas and a Jupyter notebook:
-   - Navigate to the [Kaggle dataset](https://www.kaggle.com/ntnu-testimon/paysim1) and click "New Notebook". 
-   - When selecting Kernel type, select "Notebook"
+   - Create a free [Kaggle account](https://www.kaggle.com/)
+   - Navigate to the [Dataset](https://www.kaggle.com/ntnu-testimon/paysim1) and click "New Notebook". 
+   - When selecting Kernel type, select **Notebook**
    - In the top-left corner, select File -> Upload Notebook
-   - Upload the [Jupyter notebook](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/src/machine-learning/jupyter/fraudulent-transactions-jupyter-notebook.ipynb) in this repo
+   - Upload the [Jupyter notebook](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/src/machine-learning/jupyter/fraudulent-transactions-jupyter-notebook.ipynb) from this repo
    - Select Run -> Run all
    - Explore the results
    
+   **Questions to think about:**
+   - What kind of features are we working with?(columns)<br/>
+   - Which column is considered your label column (what we would like to predict)?<br/>
+   - Is the dataset balanced? (hint: what's the distribution of fraudulent and non-fraudulent transactions)<br/>
+   - What's the data type of the available features?<br/>
+   - Does any of the columns have missing values?<br/>   
    </p>
   </details>
   <details>
