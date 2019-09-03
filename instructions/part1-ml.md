@@ -496,5 +496,5 @@ To explore the sample application, execute the following commands in your curren
 - `cd C:\mldotnet-real-time-data-streaming-workshop\workspace\FraudPredictionTrainer\SampleBinaryClassification\SampleBinaryClassification.ConsoleApp`
 - `code .`
 
-Feel to take a look around and compare and contrast differences.
+Feel free to take a look around, and compare and contrast differences between the solutions.
 </details>
