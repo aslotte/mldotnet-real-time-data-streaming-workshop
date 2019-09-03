@@ -492,10 +492,9 @@ The ML.NET CLI creates a couple of artifacts
 - The MLModel.zip file containing the finished model
 - A sample solution indicating how the finished model was constructed
 
-To explore the sample application, execute the following commands in your currently open terminal window
+To explore the sample application, execute the following commands in your currently open terminal window to open it
 - `cd C:\mldotnet-real-time-data-streaming-workshop\workspace\FraudPredictionTrainer\SampleBinaryClassification\SampleBinaryClassification.ConsoleApp`
 - `code .`
 
-Open the sample solution created by the AutoML CLI tool once completed (the path to the solution will be given in the terminal window).
-Do you notice any differenes with the solution you created earlier?
+Feel to take a look around and compare and contrast differences.
 </details>
