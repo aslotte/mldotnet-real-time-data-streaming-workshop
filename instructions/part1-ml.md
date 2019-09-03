@@ -451,8 +451,8 @@ The `Program.cs` file should now look as below
 ![afterSave](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-after-save.PNG) 
 
 Hit F5 one more time to train your model.</br>
-The MLModel.zip file will be located in your bin folder, e.g. here if running .NET Core SDK 2.2</br>
-`C:\mldotnet-real-time-data-streaming-workshop\workspace\FraudPredictionTrainer\bin\Debug\netcoreapp2.2`
+The MLModel.zip file will be located in the solutions directory</br>
+`C:\mldotnet-real-time-data-streaming-workshop\workspace\FraudPredictionTrainer`
   </p>
 </details>
 
@@ -464,16 +464,21 @@ To build your machine learning model using ML.NET's AutoML builder, please refer
 
 <details>
   <summary>Instructions</summary>
-Selecting the correct features, algorithms, hyper arameters and so forth is complex. There is a lot of trial and error involved until you've managed to fine-tune a model to not only have good enough accuracy but also a decent area under the precision-recall curve.
+Selecting the correct features, algorithms, hyper arameters and so forth is complex. There is a lot of trial and error involved until you've managed to fine-tune a model to not only have good enough accuracy but also a decent area under the precision-recall curve.</br>
+
 To simplify, ML.NET has introduced AutoML to automatically iterate through numerous algorithms with various hyper parameters to find one that yields a good model.
 </br></br>
-1. Open powershell or the command prompt <br/>
-2. Navigate to the location of your data file <br/>
-3. Copy the command below and hit enter </br>
 
+To use the ML.NET CLI to automatically train a model based on our given data, to the following:
+
+   - In VS Code, open a new terminal window ![terminal](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-open-terminal.png) </br>
+   - In the terminal window, execute the following command to navigate to the workspace folder.</br>`cd C:\mldotnet-real-time-data-streaming-workshop\workspace\FraudPredictionTrainer`</br>
+   - Enter the below command and hit enter
 ```
 mlnet auto-train --dataset "data.csv" --label-column-name "isFraud" --max-exploration-time 120 --has-header true --ml-task binary-classification
 ```
+
+![cli](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-mldotnetcli.PNG)
 
 For this example we are setting the max-exploration time to only 2 minutes, which is not sufficient for a data-set of this size but serves as a good example to showcase the functionality. A minimum of 1800 seconds is recommended for a data-set of this size.
 
@@ -482,6 +487,14 @@ AutoML is a tremendous addition to the ML.NET toolset. Not only does it create a
 It is also possible to use AutoML through Visual Studio. If you would like to do that, please download the Model Builder Visual Studio Extension which will give you a nice UI to work with.
 
 <h5> Exploring the sample solution </h5>
+The ML.NET CLI creates a couple of artifacts
+- The MLModel.zip file containing the finished model
+- A sample solution indicating how the finished model was constructed
+
+To explore the sample application, execute the following commands in your currently open terminal window
+- cd `C:\mldotnet-real-time-data-streaming-workshop\workspace\FraudPredictionTrainer\SampleBinaryClassification\SampleBinaryClassification.ConsoleApp`
+- `code .`
+
 Open the sample solution created by the AutoML CLI tool once completed (the path to the solution will be given in the terminal window).
 Do you notice any differenes with the solution you created earlier?
 </details>
