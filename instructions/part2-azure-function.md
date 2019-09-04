@@ -9,7 +9,7 @@ To deploy the Azure Function from VS Code, please follow the steps listed below:
    - In VS Code, open a new terminal window ![terminal](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-open-terminal.png) </br> 
    - In the terminal window, execute the following command to navigate to the workspace folder.</br>`cd C:\mldotnet-real-time-data-streaming-workshop\src\real-time-data-streaming\fraud-prediction-function`
    - In the terminal window, execute the following command to open the folder in VS Code `code . -r`
-   - In the menu to the left, select the Azure symbol (at the bottom of the menu)
-   - Click "Sign-in to Azure" -> Sign-in to your Azure account
-    - In the top left, click on the up-arrow to "Deploy to Function App"
+   - In the menu to the left, select the Azure symbol (at the bottom-left of the menu)
+   - Click **Sign-in to Azure** and sign in with your Azure credentials
+    - In the top left, click on the up-arrow to **Deploy to Function App**
 ![deployToAzure](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/publish-function-vs-code-publish.png)

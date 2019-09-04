@@ -13,8 +13,12 @@ Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-t
 to upload reference data used to enrich the moving datastream.
 
 ### 3. Upload the Machine Learning Model
-If you have already trained your Machine Learning model, make sure to navigate to your storage account and upload the model (named MLModel.zip) in to the container named **model**.
-You are also able to directly use a pre-trained model from this repo if you've decided to skip part 1, found [here](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/tree/master/src/machine-learning/model)
+You can either upload your trained model to Azure, or you can use a pre-trained model found [here](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/tree/master/src/machine-learning/model)
+
+To upload the model:
+- In Azure, navigate to your storage account starting with mlmodel and select **Blob** ![storageAccount](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-storage-blob.png)
+- Select the container named **model**
+- Click on **Upload** and browse to, and upload the `MLModel.zip` file. ![upload](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-storage-upload.png)
 
 ### 4. Publish the ML.NET Prediction Function
 Please follow the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-azure-function.md) to publish the prediction function to Azure
