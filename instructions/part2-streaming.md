@@ -27,11 +27,11 @@ Please follow the following [guide](https://github.com/aslotte/mldotnet-real-tim
 Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-kickoff-event-producer.md) to kick-off the event producer.
 
 ### 6. Setup Power BI Dashboard (optional)
-Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-powerbi.md) to set up a Power BI dashboard and Power BI output if desired.
+Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-powerbi.md) to set up a Power BI dashboard and Power BI output if desired.</br>
 **Note that you will need a work or school account to create a Power BI account.**
 
 ### 7. Explore
-Great job! With the event producer kicked off, you should start to see events flowing through your pipelines and enriched by your machine learning model. 
+Great job! With the event producer kicked off, you should start to see events flowing through your pipeline and enriched by your machine learning model. 
 
 1. Open your Azure Event Hub and observe event flowing
 2. Open your Outlook inbox to see e-mails being sent to you from your Azure Logic App, when fraudulent transactions are detected
