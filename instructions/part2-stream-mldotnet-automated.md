@@ -2,7 +2,7 @@
 
 #### 1. Deploy ARM Template
 - Navigate to [deploy an ARM template](https://portal.azure.com/#create/Microsoft.Template)
-- Click on **Build your own Template in the Editor** ![editor](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-custom-deployment.PNG) </br>
+- Click on **Build your own Template in the Editor** ![editor](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-custom-deploy.PNG) </br>
 - Copy and paste the [ARM Template](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/src/real-time-data-streaming/deploy/pipeline-with-mldotnet.json)
 - Click "Save"
 
