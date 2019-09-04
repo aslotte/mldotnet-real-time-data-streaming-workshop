@@ -15,12 +15,12 @@
 Select to agree with terms and conditions and click **Purchase** to trigger the deployment.
 
 #### 4. Authenticate accounts
-The ARM template will succesfully set up the required infrastructure but will require you to authenticate you Outlook account to fully function.
+The ARM template will successfully set up the required infrastructure, but it will require you to authenticate your Outlook credentials manually.
 
 **Authenticate Outlook notifier**
 - Navigate to your Azure Logic App (fraudulent-notifier)
-- Click on **Edit** ![logic app](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-edit-logic-app.PNG) </br>
-- Click on the Outlook connection step and then the invalid connection symbol ![invalidconnection](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-invalid-outlook.PNG) </br>
+- Click on **Edit** ![logic app](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-edit-logic-app.png) </br>
+- Click on the Outlook connection step and then the invalid connection symbol ![invalidconnection](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-invalid-outlook.png) </br>
 - Log-in with your credentials
 - Navigate back to the Logic App overview page
 - Click **Enable** to enable your trigger
