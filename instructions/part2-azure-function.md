@@ -13,3 +13,8 @@ To deploy the Azure Function from VS Code, please follow the steps listed below:
    - Click **Sign-in to Azure** and sign in with your Azure credentials
     - In the top left, click on the up-arrow to **Deploy to Function App**
 ![deployToAzure](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/publish-function-vs-code-publish.png)
+   - Select your Azure Subscription
+   - Select your created Function App
+   - If asked to update the Function apps run-time, select **Yes**
+   - When asked if you're sure that you want to deploy the Function App, select **Yes**
+   ![deploymentConfirm](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-deploy-function-confirm.PNG)
