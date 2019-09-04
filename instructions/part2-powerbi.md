@@ -10,18 +10,18 @@ Please follow the steps below to get started with Power BI.</br></br>
 ### Create a Power BI Output
 To output data from Azure Stream Analytics, we'll need to create an output.
 1. Navigate to your Stream Analyics Job in Azure
-2. Click on **Outputs** [image here]
-3. Select to add an output [image here]
-4. Select Power BI in the list
-5. Select to **Authorize Power BI** [image here]
-6. Provide your Power BI credentials
-7. Provide a name for your dataset 
-8. Give your output a name of **powerbi** [image here]
-9. In the menu to the left, select query
-10. Select to edit the query
-11. Uncomment the Power BI query
-12. Save the query
-13. Start the Stream Analytics Job
+2. Stop the job if it is running
+3. Click on **Outputs** ![streamAnalytics](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-stream-analytics.png)
+4. Select to add an output and select Power BI in the list ![output](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-stream-analytics-add-output.png)
+5. Enter **powerbi** as output name
+6. Enter **fraudulent** as dataset and table name ![output1](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-add-powerbi-output.PNG)
+7. Click **Authorize**
+8. Provide your Power BI credentials
+9. Click **Save**
+10. In the menu to the left, select **Query**
+11. Uncomment the Power BI query ![output1](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-stream-analytics-query.PNG)
+12. Save the changes
+13. Go back to **Overview** and start the Stream Analytics Job
 
 ### Creating a dashboard
 To create a dashboard, please follow the steps below:
