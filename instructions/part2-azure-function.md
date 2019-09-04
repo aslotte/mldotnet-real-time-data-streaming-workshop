@@ -1,4 +1,4 @@
-## Publish Azure Function to Predict Fraudulent Transactions
+## Publish an Azure Function to Predict Fraudulent Transactions
 All incoming transactions get evaluated to determine if they are fraudulent or not based on our trained Machine Learning Model.
 This prediction occurs in an Azure Function that needs to get deployed to Azure.
 
@@ -15,6 +15,6 @@ To deploy the Azure Function from VS Code, please follow the steps listed below:
 ![deployToAzure](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/publish-function-vs-code-publish.png)
    - Select your Azure Subscription
    - Select your created Function App
-   - If asked to update the Function apps run-time, select **Yes**
+   - If asked to update the Function App's run-time, select **Yes**
    - When asked if you're sure that you want to deploy the Function App, select **Yes**
    ![deploymentConfirm](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-deploy-function-confirm.PNG)
