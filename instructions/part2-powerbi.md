@@ -27,11 +27,13 @@ To output data from Azure Stream Analytics, we'll need to create an output.
 To create a dashboard, please follow the steps below:
 1. Navigate to https://app.powerbi.com/ 
 2. Sign-in to your account
-3. Select to create a new dashboard [image here]
-4. In the dashboard, select **Add tile**. 
+3. Select to create a new dashboard in the top-right corner
+4. In the dashboard, select **+Add tile**. 
 5. For the tile type, select **Custom Streaming Data**
-6. Select what kind of tile you would like to create
-7. From the drop-down, select what value should be displayed
+![tile](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/powerbi-add-tile.PNG)
+6. Select the dataset the Stream Analytics job has created for you named **fraudulent**
+7. Select the type of tile you would like to create and which values to display
+![tile](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/powerbi-add-custom-tile.PNG)
 
 #### Example Dashboard
 ![Fraudulent](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/powerbi-example.PNG)
