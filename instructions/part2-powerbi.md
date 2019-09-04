@@ -31,7 +31,7 @@ To create a dashboard, please follow the steps below:
 4. In the dashboard, select **+Add tile**. 
 5. For the tile type, select **Custom Streaming Data**
 ![tile](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/powerbi-add-tile.PNG)
-6. Select the dataset the Stream Analytics job has created for you named **fraudulent**
+6. Select the dataset the Stream Analytics job created for you, named **fraudulent**
 7. Select the type of tile you would like to create and which values to display
 ![tile](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/powerbi-add-custom-tile.PNG)
 
