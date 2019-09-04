@@ -3,9 +3,9 @@ Please follow the steps below to get started with Power BI.</br></br>
 **Note - this step is optional and only possible to complete if you possess a work or school account. It's not possible to create a Power BI account with a @gmail or @outlook address.**
 
 ### Create a Power BI Account
-1. Navigate to https://app.powerbi.com 
-2. Select to Sign-up for a free account
-3. Follow provided instructions
+1. Navigate to https://powerbi.com 
+2. Click on **Start Free**![start](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/powerbi-create.PNG)
+3. Follow the provided instructions
 
 ### Create a Power BI Output
 To output data from Azure Stream Analytics, we'll need to create an output.
