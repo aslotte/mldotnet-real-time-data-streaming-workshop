@@ -31,11 +31,11 @@ Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-t
 **Note that you will need a work or school account to create a Power BI account.**
 
 ### 7. Explore
-Great job. With the event producer kicked off, you should start to see events flowing through your pipelines and being enriched by your machine learning model. 
+Great job! With the event producer kicked off, you should start to see events flowing through your pipelines and enriched by your machine learning model. 
 
-1. Open your Azure Event Hub and notice that events are being recivied 
-2. Open your Power BI Dashboard see a live feed of events, aggregated from your Stream Analytics Jobs
-3. Open your Outlook inbox to see e-mails being sent from you Azure Logic App when fraudulent transactions are detected
+1. Open your Azure Event Hub and observe event flowing
+2. Open your Outlook inbox to see e-mails being sent to you from your Azure Logic App, when fraudulent transactions are detected
+3. Open your Power BI Dashboard to see live events flowing via you Stream Analytics job (optional)
 
 **Please continue with Part 3 from this point**
 
