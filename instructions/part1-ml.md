@@ -464,10 +464,11 @@ To build your machine learning model using ML.NET's AutoML builder, please refer
 
 <details>
   <summary>Instructions</summary>
+  </br>
 Selecting the correct features, algorithms, hyper arameters and so forth is complex. There is a lot of trial and error involved until you've managed to fine-tune a model to not only have good enough accuracy but also a decent area under the precision-recall curve.</br>
-
+</br>
 To simplify, ML.NET has introduced AutoML to automatically iterate through numerous algorithms with various hyper parameters to find one that yields a good model.
-</br></br>
+</br>
 
 To use the ML.NET CLI to automatically train a model based on our given data, to the following:
 
@@ -491,10 +492,9 @@ The ML.NET CLI creates a couple of artifacts
 - The MLModel.zip file containing the finished model
 - A sample solution indicating how the finished model was constructed
 
-To explore the sample application, execute the following commands in your currently open terminal window
-- cd `C:\mldotnet-real-time-data-streaming-workshop\workspace\FraudPredictionTrainer\SampleBinaryClassification\SampleBinaryClassification.ConsoleApp`
+To explore the sample application, execute the following commands in your currently open terminal window to open it
+- `cd C:\mldotnet-real-time-data-streaming-workshop\workspace\FraudPredictionTrainer\SampleBinaryClassification\SampleBinaryClassification.ConsoleApp`
 - `code .`
 
-Open the sample solution created by the AutoML CLI tool once completed (the path to the solution will be given in the terminal window).
-Do you notice any differenes with the solution you created earlier?
+Feel free to take a look around, and compare and contrast differences between the solutions.
 </details>
