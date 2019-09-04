@@ -27,7 +27,7 @@ Please follow the following [guide](https://github.com/aslotte/mldotnet-real-tim
 Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-kickoff-event-producer.md) to kick-off the event producer.
 
 ### 6. Setup Power BI Dashboard (optional)
-Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-powerbi.md) to set up a Power BI dashboard and Power BI output if desired.
+Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-powerbi.md) to set up a Power BI dashboard and Power BI output if desired.</br>
 **Note that you will need a work or school account to create a Power BI account.**
 
 ### 7. Explore
