@@ -65,7 +65,7 @@ To upload the reference data, please do the following:
   <summary>Upload the Machine Learning Model</summary>
   <p>
     
-You can either upload your previously trained model or you can use a pre-trained model found [here](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/tree/master/src/machine-learning/model) to Azure.
+You can either upload your previously trained model or a pre-trained model found [here](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/tree/master/src/machine-learning/model) to Azure.
 
 To upload the model:
 - In Azure, navigate to your storage account starting with mlmodel and select **Blob** ![storageAccount](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-storage-blob.png)
