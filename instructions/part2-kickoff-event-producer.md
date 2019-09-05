@@ -7,7 +7,7 @@ To start the event producer, please follow the steps below.
    - In VS Code, open a new terminal window ![terminal](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-open-terminal.png) </br> 
    - In the terminal window, execute the following command to navigate to the folder of the solution.</br>`cd C:\mldotnet-real-time-data-streaming-workshop\src\real-time-data-streaming\transaction-simulator\TransactionSimulator`</br> 
    - In the terminal window, execute the following command to open the folder in VS Code `code . -r`</br> 
-   - Navigate to your transaction-eh event hub namespace in Azure</br> 
+   - Navigate to your transaction-eh event hub namespace in Azure![ehnamespace](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-event-hub-namespace.png)</br> 
    - In the menu to the left, click **Shared Access Policies**</br> 
    - Click on the **RootManagedShareAccessKey**</br> 
    - Copy the primary connection string to clipboard</br> 
