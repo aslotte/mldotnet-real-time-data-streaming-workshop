@@ -128,9 +128,51 @@ To start the event producer, please follow the steps below.
   </p>  
 </details>
 
-### 6. Setup Power BI Dashboard (optional)
-Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-powerbi.md) to set up a Power BI dashboard and Power BI output if desired.</br>
-**Note that you will need a work or school account to create a Power BI account.**
+### 6. Setup a Power BI Dashboard (optional)
+<details>
+  <summary>Setup a Power BI Dashboard</summary>
+  <p>
+Please follow the steps below to get started with Power BI.</br>
+**Note - this step is optional and only possible to complete if you possess a work or school account. It's not possible to create a Power BI account with a @gmail or @outlook address.**
+
+#### 6.1 Create a Power BI Account
+1. Navigate to https://powerbi.com 
+2. Click on **Start Free**![start](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/powerbi-create.PNG)
+3. Follow the provided instructions
+
+#### 6.2 Create a Power BI Output
+To output data from Azure Stream Analytics, we'll need to create an output.
+1. Navigate to your Stream Analyics Job in Azure
+2. Stop the job if it is running
+3. Click on **Outputs** ![streamAnalytics](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-stream-analytics.png)
+4. Select to add an output and select Power BI in the list ![output](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-stream-analytics-add-output.png)
+5. Enter **powerbi** as output name
+6. Enter **fraudulent** as dataset and table name ![output1](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-add-powerbi-output.PNG)
+7. Click **Authorize**
+8. Provide your Power BI credentials
+9. Click **Save**
+10. In the menu to the left, select **Query**
+11. Uncomment the Power BI query ![output1](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-stream-analytics-query.PNG)
+12. Save the changes
+13. Go back to **Overview** and start the Stream Analytics Job
+
+#### 6.3 Creating a dashboard
+To create a dashboard, please follow the steps below:
+1. Navigate to https://app.powerbi.com/ 
+2. Sign-in to your account
+3. Select to create a new dashboard in the top-right corner
+4. In the dashboard, select **+Add tile**. 
+5. For the tile type, select **Custom Streaming Data**
+![tile](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/powerbi-add-tile.PNG)
+6. Select the dataset the Stream Analytics job created for you, named **fraudulent**
+7. Select the type of tile you would like to create and which values to display
+![tile](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/powerbi-add-custom-tile.PNG)
+
+#### 6.4 Example Dashboard
+![Fraudulent](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/powerbi-example.PNG)
+    
+  </p>
+</details>
 
 ### 7. Explore
 Great job! With the event producer kicked off, you should start to see events flowing through your pipeline and enriched by your machine learning model. 
