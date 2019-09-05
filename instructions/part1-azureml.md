@@ -22,10 +22,17 @@ ML.NET offers fantastic support to train your model offline using C#. Training y
 #### 3. Deploy
 Select to agree with terms and conditions and click **Purchase** to trigger the deployment.
 
-#### 4. Authenticate accounts
+#### 4 Deploy an Azure Machine Learning workspace
+- Follow this [link](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-machine-learning-create%2Fazuredeploy.json)
+- Select the previously created resource group
+- Enter name for your machine learning workspace, e.g. fraudulent-transactions
+- Select a location closest to you
+- Select to agree to terms and conditions and click **Purchase** to trigger the deployment.
+
+#### 5. Authenticate accounts
 The ARM template will successfully set up the required infrastructure, but it will require you to authenticate your Outlook credentials manually.
 
-**Authenticate Outlook Notifier**
+##### 5.1 Authenticate Outlook Notifier
 - Navigate to your Azure Logic App (fraudulent-notifier)
 - Click on **Edit** ![logic app](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-edit-logic-app.png) </br>
 - Click on the Outlook connection step and then the invalid connection symbol ![invalidconnection](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-invalid-outlook.png) </br>
@@ -36,7 +43,7 @@ The ARM template will successfully set up the required infrastructure, but it wi
 </p>
 </details>
 
-### 1. Provision resources 
+### 2. Provision resources 
 <details>
   <summary> Provision resources </summary>
   <p>
@@ -46,7 +53,7 @@ Before we can start to train our models, we need to provision our resources. Ple
 </p>
 </details>
 
-### 2. Create compute targets
+### 3. Create compute targets
 <details>
   <summary> Create compute targets </summary>
   <p>
@@ -67,7 +74,7 @@ Our machine learning models will be trained and deployed using various compute t
 </p>
 </details>
 
-### 3. Visual Interface
+### 4. Visual Interface
 
 <details>
   <summary> Steps to train your model using the Visual Interface </summary>
@@ -140,7 +147,7 @@ In the modal that appears, select the previously created compute **web-service**
 </p>
 </details>
 
-### 4. AutoML
+### 5. AutoML
 <details>
   <summary> Steps to train your model using Azure AutoML </summary>
   <p>
@@ -194,7 +201,7 @@ Once we are happy with our model, we can deploy it to be consumed by an external
   </p>
 </details>  
 
-### 5. Jupyter Notebooks
+### 6. Jupyter Notebooks
 <details>
   <summary> Steps to train your model using Jupyter Notebooks </summary>
   <p>
@@ -223,7 +230,7 @@ Run and explore the Notebook.
   </p>
 </details>  
 
-### 6. Integrating our model with Azure Stream Analytics
+### 7. Integrating our model with Azure Stream Analytics
 <details>
   <summary> Integrating our model with Azure Stream Analytics </summary>
   <p>
