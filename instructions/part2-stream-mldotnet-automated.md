@@ -24,4 +24,4 @@ The ARM template will successfully set up the required infrastructure, but it wi
 - Click on the Outlook connection step and then the invalid connection symbol ![invalidconnection](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-invalid-outlook.png) </br>
 - Log-in with your credentials
 - Navigate back to the Logic App overview page
-- Click **Enable** to enable your trigger
+- Click **Enable** to enable your trigger (if not already enabled)
