@@ -103,7 +103,7 @@ To deploy the Azure Function from VS Code, please follow the steps listed below:
 
 ### 5. Kick-off the Event Producer
 <details>
-  <summary></summary>
+  <summary>Kick-off the Event Producer</summary>
   <p>
     
 #### 5.1 How to Kick-off the Event Producer
