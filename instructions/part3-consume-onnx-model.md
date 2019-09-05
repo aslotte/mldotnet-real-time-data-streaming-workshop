@@ -7,17 +7,19 @@ In part 3 we trained a model using Scikit Learn in a Jupyter Notebook. A finishe
 In this section we'll create a small ML.NET console application that will utilize the .onnx model to make predictions.
 Please follow the steps below: 
 
-1. Open Visual Studio
-2. Create an empty .NET Core Console application, name it e.g. FraudulentOnnx
-3. Right-click on the solution and select to "Manage NuGet packages"
-4. Install the following packages
-   - Microsoft.ML
-   - Microsoft.ML.OnnxTransformer
-5. Create an MLContext
+   - Open VS Code</br>
+   - In VS Code, open a new terminal window ![terminal](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-open-terminal.png) </br>
+   - In the terminal, execute `cd C:\mldotnet-real-time-data-streaming-workshop\workspace` to navigate to your workspace folder
+   - In the terminal, execute `dotnet new console -o FraudulentOnnx` 
+   - In the terminal, execute `cd FraudulentOnnx` to navigate in to your newly created solution
+   - In the terminal, execute `dotnet add package Microsoft.ML` 
+   - In the terminal, execute `dotnet add package Microsoft.ML.OnnxTransformer`
+   - Open the `Program.cs` file
+   - In the `Main` method, add an `MLContext`
 ```   
 var mlContext = new MLContext();
 ```
-6. Create an input class callled `InputModel`
+   - Create a new class called `InputModel.cs`
 ```
 using Microsoft.ML.Data;
 
@@ -31,7 +33,7 @@ namespace OnnxDemo
     }
 }
 ```
-7. Create an output prediction called `PredictionResult`
+   - Create a new class called `PredictionResult.cs`
 ```
 using Microsoft.ML.Data;
 using System;
@@ -45,7 +47,7 @@ namespace OnnxDemo
     }
 }
 ```
-8. Create a method in Program.cs to create sample data to be used for the prediction (same as in the Jupyter Notebook)
+   - In the `Program.cs` class, add a method for `CreateInputData` to create sample data to be used for the prediction (same as in the Jupyter Notebook)
 ```
 private static List<InputModel> CreateInputData()
 {
@@ -60,22 +62,30 @@ private static List<InputModel> CreateInputData()
    };
 }
 ```
-9. Right click on the project and select to add existing file
-10. Select the downloaded .onnx file (also available [here](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/src/machine-learning/model/fraudulent-classifier-jupyter.onnx))
-11. Change the file to copy always
-12. Add path to file
+   - Copy the downloaded .onnx file in your solutions folder (also available [here](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/src/machine-learning/model/fraudulent-classifier-jupyter.onnx))
+   - Open the `FraudulentOnnx.csproj` file
+   - Add the following to allow the .onnx file to be copied on build
+```
+<ItemGroup>
+  <None Update="fraudulent-classifier-jupyter.onnx">
+    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+  </None>
+</ItemGroup>   
+```
+
+   - In the `Program.cs` class, above the `Main` method, add a path to the model
 ```
 private static readonly string ModelPath = "fraudulent-classifier-jupyter.onnx";
 ```
-13. Load the data to be used for predictions
+   - In the `Program.cs` class, add the following
 ```
 var data = mlContext.Data.LoadFromEnumerable(CreateInputData());
 ```
-14. Create a prediction pipeline
+   - Add the following line to create a prediction pipeline
 ```
 var pipeline = mlContext.Transforms.ApplyOnnxModel(ModelPath);
 ```
-15. Transform values and make predictions
+   - To transform  your values and make predictions, please add the following lines
 ```
 var transformedValues = pipeline.Fit(data).Transform(data);
 
@@ -83,7 +93,8 @@ var predictions = mlContext.Data
    .CreateEnumerable<PredictionResult>(transformedValues, reuseRowObject: false)
    .ToList();
 ```
-
+   - Hit F5 to run your application
+   
 #### Summary
 Congratulations, you've created your first prediction engine in ML.NET using an exported ONNX model!
 A couple of things to point out here, the names of the columns for the input and output models are defined by the schema in the ONNX file. You can inspect the model schema in the pipeline if you are not sure about the names to start with. Once you know the names, make sure decorate the respective properties with the `[ColumnName()]` attribute.
