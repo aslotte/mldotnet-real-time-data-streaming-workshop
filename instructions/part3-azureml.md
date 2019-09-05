@@ -43,17 +43,7 @@ The ARM template will successfully set up the required infrastructure, but it wi
 </p>
 </details>
 
-### 2. Provision resources 
-<details>
-  <summary> Provision resources </summary>
-  <p>
-    
-Before we can start to train our models, we need to provision our resources. Please follow the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-stream-azureml.md) which will provision both an Azure Machine Learning Service instance as well as streaming pipeline to integrate our models with.
-
-</p>
-</details>
-
-### 3. Create compute targets
+### 2. Create compute targets
 <details>
   <summary> Create compute targets </summary>
   <p>
@@ -74,7 +64,7 @@ Our machine learning models will be trained and deployed using various compute t
 </p>
 </details>
 
-### 4. Visual Interface
+### 3. Visual Interface
 
 <details>
   <summary> Steps to train your model using the Visual Interface </summary>
@@ -147,7 +137,7 @@ In the modal that appears, select the previously created compute **web-service**
 </p>
 </details>
 
-### 5. AutoML
+### 4. AutoML
 <details>
   <summary> Steps to train your model using Azure AutoML </summary>
   <p>
@@ -201,7 +191,7 @@ Once we are happy with our model, we can deploy it to be consumed by an external
   </p>
 </details>  
 
-### 6. Jupyter Notebooks
+### 5. Jupyter Notebooks
 <details>
   <summary> Steps to train your model using Jupyter Notebooks </summary>
   <p>
@@ -230,7 +220,7 @@ Run and explore the Notebook.
   </p>
 </details>  
 
-### 7. Integrating our model with Azure Stream Analytics
+### 6. Integrating our model with Azure Stream Analytics
 <details>
   <summary> Integrating our model with Azure Stream Analytics </summary>
   <p>
@@ -246,4 +236,6 @@ Run and explore the Notebook.
    5. Once the function has been added, you can call the function from you query, e.g. isFraudulant(input.text)
   </p>
 </details> 
+
+Once complete, update the EventHubConnectionString for the event producer in part 2 to point to your new Event Hub and run the console application.
 
