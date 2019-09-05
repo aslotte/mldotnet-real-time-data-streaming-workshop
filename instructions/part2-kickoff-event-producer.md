@@ -14,6 +14,6 @@ To start the event producer, please follow the steps below.
 ![eh-keys](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/eh-access-keys.png)
    - Navigate back to VS Code</br> 
    - Open the solutions `appsettings.json` file
-   ![appSettings](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-appsettings.PNG)</br> 
+   ![appSettings](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-appconfig.PNG)</br> 
    - Set the parameter `EventHubConnectionString` to the copied value</br> 
    - To start sending events to the event-hub, build and run the solution by pressing F5.</br> 
