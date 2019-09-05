@@ -3,7 +3,11 @@ ML.NET offers fantastic support to train your model offline using C#. Training y
 
 **Please note:** At time of writing, integrating ML models trained in Azure Machine Learning Service with Azure Stream Analytics is currently not supported. Stream Analytics currently only support models trained in Azure Machine Learning **Studio**. There will however be a release in the near future changing this. This workshop will regardless focus on Azure Machine Learning Service as this is what will be supported going forward.
 
-### 1. Create Azure Infrastructure
+### 1. Deploy the Azure Infrastructure
+<details>
+  <summary> Deploy the Azure Infrastructure </summary>
+  <p>
+    
 #### 1. Deploy ARM Template
 - Navigate to [deploy an ARM template](https://portal.azure.com/#create/Microsoft.Template)
 - Click on **Build your own Template in the Editor** ![editor](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-custom-deploy.PNG) </br>
@@ -28,6 +32,9 @@ The ARM template will successfully set up the required infrastructure, but it wi
 - Log-in with your credentials
 - Navigate back to the Logic App overview page
 - Click **Enable** to enable your trigger
+
+</p>
+</details>
 
 ### 1. Provision resources 
 <details>
