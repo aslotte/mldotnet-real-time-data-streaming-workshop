@@ -132,7 +132,9 @@ To start the event producer, please follow the steps below.
 <details>
   <summary>Setup a Power BI Dashboard</summary>
   <p>
+    
 Please follow the steps below to get started with Power BI.</br>
+
 **Note - this step is optional and only possible to complete if you possess a work or school account. It's not possible to create a Power BI account with a @gmail or @outlook address.**
 
 #### 6.1 Create a Power BI Account
