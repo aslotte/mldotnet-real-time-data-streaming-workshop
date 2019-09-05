@@ -23,7 +23,7 @@ var mlContext = new MLContext();
 ```
 using Microsoft.ML.Data;
 
-namespace OnnxDemo
+namespace FraudulentOnnx
 {
     class InputModel
     {
