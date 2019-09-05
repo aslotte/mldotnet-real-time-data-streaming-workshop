@@ -39,16 +39,41 @@ The ARM template will successfully set up the required infrastructure, but it wi
 </details>
 
 ### 2. Upload reference data
-Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-referencedata.md)
-to upload reference data used to enrich the moving datastream.
+<details>
+  <summary>Upload reference data</summary>
+  <p>
+    
+#### 2.1 Upload reference data
+The real-time pipeline utilizes reference data to enrich the stream. 
+In this particular case we will be enriching the stream with information about where to send an notification e-mail in case the model detects a fraudulant transaction.
+
+To upload the reference data, please do the following:
+- In VS Code, open a new terminal window ![terminal](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-open-terminal.png) </br>
+- In the terminal window, execute the following command to open the `reference-data.json` file </br> 
+`code C:\mldotnet-real-time-data-streaming-workshop\src\real-time-data-streaming\stream-analytics\reference-data.json`![refData](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-reference-data.PNG)
+- In `reference-data.json`, do a "Find All" and replace the current e-mail with the one you would like to get notifications too.
+- In Azure, navigate to your storage account starting with mlmodel and select **Blob** ![storageAccount](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-storage-blob.png)
+- Select the container named **reference**
+- Click on **Upload** and browse to, and upload the `reference-data.json` file. ![upload](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-storage-upload.png)
+
+  </p>
+</details>
 
 ### 3. Upload the Machine Learning Model
-You can either upload your trained model to Azure, or you can use a pre-trained model found [here](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/tree/master/src/machine-learning/model)
+
+<details>
+  <summary>Upload the Machine Learning Model</summary>
+  <p>
+    
+You can either upload your previously trained model or you can use a pre-trained model found [here](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/tree/master/src/machine-learning/model) to Azure.
 
 To upload the model:
 - In Azure, navigate to your storage account starting with mlmodel and select **Blob** ![storageAccount](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-storage-blob.png)
 - Select the container named **model**
 - Click on **Upload** and browse to, and upload the `MLModel.zip` file. ![upload](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-storage-upload.png)
+
+</p>
+</details>
 
 ### 4. Publish the ML.NET Prediction Function
 Please follow the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-azure-function.md) to publish the prediction function to Azure
