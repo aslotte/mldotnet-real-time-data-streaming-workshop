@@ -83,7 +83,6 @@ To upload the model:
 All incoming transactions gets evaluated to determine if they are fraudulent or not, based on our trained Machine Learning Model.
 This prediction occurs in an Azure Function that needs to get deployed to Azure.
 
-<br/>
 To deploy the Azure Function from VS Code, please follow the steps listed below:
 
    - In VS Code, open a new terminal window ![terminal](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-open-terminal.png) </br> 
