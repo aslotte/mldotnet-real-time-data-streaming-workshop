@@ -37,22 +37,5 @@ Great job! With the event producer kicked off, you should start to see events fl
 2. Open your Outlook inbox to see e-mails being sent to you from your Azure Logic App, when fraudulent transactions are detected
 3. Open your Power BI Dashboard to see live events flowing via you Stream Analytics job (optional)
 
-**Please continue with Part 3 from this point**
-
-## Real-Time Data Pipeline with Azure ML integration
-
-### 1. Deploy with ARM Templates
-Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-stream-azureml.md) to utilize ARM templates for deployment
-
-### 2. Complete Part 3
-Please complete [Part 3](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part1-azureml.md) of this tutorial before moving on.
-
-### 3. Kick-off the Event Producer
-Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-kickoff-event-producer.md) to kick-off the event producer.
-
-### 4. Setup Power BI Dashboard (optional)
-Please refer to the following [guide](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-powerbi.md) to set up a Power BI dashboard and Power BI output if desired.
-**Note that you will need a work or school account to create a Power BI account.**
-
-## Set up infrastructure manually
+### Set up infrastructure manually
 If you are interested and would like to further sharpen your Azure skills, attempt to set up the infrastructure manually in a new resource group
