@@ -15,7 +15,7 @@ The general steps for training your model are the same regardless if you are tra
   <summary><b>1. Determine your problem domain </b></summary>
   <p>
 
-Framing the business problem you are attempting to solve is absolute key for a successful machine learning project. A lot of the times, people attempt to start with either a cool algorithm or just the data they have, but without a clear understanding of the problem they are trying to solve. Furthermore, without a dialog with Subject Matter Experts (SME's), crucial data may be overlooked and business value may not be provided.
+Framing the business problem you are attempting to solve is absolute key for a successful machine learning project. A lot of the times, people attempt to start with either a cool algorithm or just the data they have, but without a clear understanding of the problem they are trying to solve. Furthermore, without a dialog with Subject Matter Experts (SMEs), crucial data may be overlooked and business value may not be provided.
 
   </p>
 </details>
@@ -49,9 +49,9 @@ Other available data-sources worth exploring are:
    **Questions to think about:**
    - What kind of features are we working with?(columns)<br/>
    - Which column is considered your label column (what we would like to predict)?<br/>
-   - Is the dataset balanced? (hint: what's the distribution of fraudulent and non-fraudulent transactions)<br/>
+   - Is the dataset balanced? (Hint: What's the distribution of fraudulent and non-fraudulent transactions)<br/>
    - What's the data type of the available features?<br/>
-   - Does any of the columns have missing values?<br/>   
+   - Do any of the columns have missing values?<br/>   
    </p>
   </details>
   <details>
@@ -105,6 +105,8 @@ Before we jump in to the code, let me introduce two concepts of ML.NET that will
 **Pipelines** is a paradigm in ML.NET, in which we create an object to which we chain multiple operations, such as data transformations and training algorithms.
    
    To get started, let's create an MLContext. 
+   
+   Open the `Program.cs` file and add the line below to the Main method.
    
    ```
     var mlContext = new MLContext(seed: 1);
@@ -197,7 +199,7 @@ namespace FraudPredictionTrainer
     
 A crucial part of training a machine learning model, is to be able to evaluate its performance on data not utilized during training. Thus, before starting to train our model, we want to make sure we put a portion of the data aside for evaluation purposes.
 
-ML.NET features built-in functionality to perform a random split of the data in to a training and test set. </br>
+ML.NET features built-in functionality to perform a random split of the data into a training and test set. </br>
 The created instance will have a `TrainSet` and a `TestSet` property.</br>
 
 To split the data, add the following line to your code:
@@ -219,7 +221,7 @@ The dataset from Kaggle is in an overall great condition, as opposed to how it c
    
 Machine Learning models are very picky in terms of data quality, so making sure that the data is top-notch is critical. We want to make sure that no columns have missing values, that the data is reasonable balanced and that no obvious outliers exists. The only main-concern we have with our data is that it is highly unbalanced. The number of fraudulent transactions to train the data on is just a couple of percent's of the total dataset. If we were able to, we would ideally include additional fraudulent transactions to balance the data, but as this is not possible we will apply other techniques to counter this in a later step.
 
-As previously mentioned, machine learning algorithms function best on numerical data, and has a difficult time working with textual values. Our dataset currently contains two non-numerical features, **type** and **nameDest**. We could ofcourse also look at the **nameOrig** column, but we can assume that the victims are chosen at random, so this column may not hold much predictable power and can be discarded.
+As previously mentioned, machine learning algorithms function best on numerical data, and has a difficult time working with textual values. Our dataset currently contains two non-numerical features, **type** and **nameDest**. We could of course also look at the **nameOrig** column, but we can assume that the victims are chosen at random, so this column may not hold much predictive power and can be discarded.
 
 To transform these features to float vectors, we can utilize a technique called `OneHotEncoding` which will create new binary columns for each value present in the feature space. For example, the type column contains values such as "Payment" and "Transfer". If we apply `OneHotEncoding` on the type column, ML.NET will create new columns such as IsPayment, IsTransfer with a binary response, either 1 or 0 to indicate the type. This approach greatly increases the performance of the algorithm and allows it to converge to an optimal solution.
 
@@ -229,7 +231,7 @@ To transform the type column using `OneHotEncoding`, you can call the `OneHotEnc
 
 The cardinality of the nameDest column however, is likely to be very high, thus regular `OneHotEncoding` would create a very wide dataset, causing either a large model or an out-of-memory exception when performing the training. We can instead use `OneHotHashEncoding` to reduce the dimensions and save some space.
 
-At this point, this is very pipelines come in to play. As we will have multiple transformation operations we would like to conduct, we can chain them all together in to a data processing pipeline:
+At this point, this is where pipelines come into play. As we will have multiple transformation operations we would like to conduct, we can chain them all together into a data processing pipeline:
  
     var dataProcessingPipeline = mlContext.Transforms.Categorical.OneHotEncoding("type")
                 .Append(mlContext.Transforms.Categorical.OneHotHashEncoding("nameDest"))
@@ -238,7 +240,7 @@ At this point, this is very pipelines come in to play. As we will have multiple 
  
 So which features do you think account for the variance in the dataset? Or put in another way, which features do you think are relevant  to include in our model? Feature engineering is a difficult topic. It's very likely that additional features may be needed to achieve a better model, or derived features of the existing featureset may yield a better outcome. This is where it is very important to consult with a subject matter expert to understand the problem domain you're in, and what data may be relevant. For our purposes, we can start off by trying to include more or less all columns in our model, as we only have seven or so features (you may have thousands if not more in real-world example). 
  
- To define which features to include during training, we will have to concatenate them in to a `Feature` vector
+ To define which features to include during training, we will have to concatenate them into a `Feature` vector
  This can be done by using the `Concatenate` method located in the `Transforms` catalog
  
        mlContext.Transforms.Concatenate("Features", "type", "nameDest", "amount", "oldbalanceOrg", "oldbalanceDest", "newbalanceOrig", "newbalanceDest")
@@ -328,16 +330,16 @@ If we look at the shape of the dataset given by the Jupyter notebook executed ea
 
 This is the curse of non-balanced datasets. What are some other metrics we can use together with accuracy to determine if a model truly is useful?
 </br>
-ML.NET provides some great documentation on [metrics](https://docs.microsoft.com/en-us/dotnet/machine-learning/resources/metrics)
+ML.NET provides some great documentation on [metrics](https://docs.microsoft.com/en-us/dotnet/machine-learning/resources/metrics).
 For our scenario, we want to have a better measurement to determine true positives, false positives, true negatives and false negatives.
 
-This is where to machine learning concepts, **Precision**, **Recall** and **F1 Score** comes in to play. 
+This is where the machine learning concepts, **Precision**, **Recall** and **F1 Score** come in to play. 
 
-- **Precision** - attempts to answer the question of how many of my positive findings are actually correct? If we only have true positives, this value will be 1
-- **Recall** - attempts to answer the question of how many of actual true positives were actually correct. Recall takes in to consideration false negatives, meaning in our case fraudulent transactions that we didn't catch. If we catch all fraudulent transactions then this value will be 1 </br>
+- **Precision** - attempts to answer the question of "How many of my positive findings are actually correct?". If we only have true positives, this value will be 1
+- **Recall** - attempts to answer the question of "How many of the actual true positives were actually correct?". Recall takes into consideration false negatives, meaning in our case fraudulent transactions that we didn't catch. If we catch all fraudulent transactions then this value will be 1 </br>
 - **F1 Score** - The harmonic mean between Precision and Recall</br>
 
-Precision and Recall are normally working against each-other, meaning that you'll have to pick what is most important for you. Would you rather flag more transactions as fraudulent even if they're not, but in that case make sure not to miss any (e.g. having many false positives) or are you willing to let some fraudulent transactions flow through with every actually flagged transaction being correct (e.g. having no false positives but some false negatives).
+Precision and Recall are normally working against each-other, meaning that you'll have to pick what is most important for you. Would you rather flag more transactions as fraudulent even if they're not, but in that case make sure not to miss any (e.g. having many false positives) or are you willing to let some fraudulent transactions flow through with every actually flagged transaction being correct (e.g. having no false positives but some false negatives)?
 
 A good measurement for a binary classifier, especially trained on highly unbalanced dataset, is the F1 Score. In an ideal world this value **should be 1**. If we look at how our model did, we can see that **we only got a value of 0.48**, which is very low.
 
