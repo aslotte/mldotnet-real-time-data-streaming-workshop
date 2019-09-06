@@ -1,5 +1,5 @@
 ## Introduction
-Working with real-time data streams, and deriving real-time insights using custom machine learning models have become increasingly important for many organizations. There are numerous real-time data platforms currently available (e.g. Kafa, Hadoop Spark), but the one we will be focusing on in this workshop in particular is **Azure Stream Analytics**. In addition to diving in to Azure Stream Analytics, we will also explore the open-source cross-plattform library [ML.NET](https://github.com/dotnet/machinelearning), which we will use to build our custom machine learning models and look at an alternative solution using **Azure Machine Learning Service**.
+Working with real-time data streams, and deriving real-time insights using custom machine learning models have become increasingly important for many organizations. There are numerous real-time data platforms currently available (e.g. Kafka, Hadoop, Spark), but the one we will be focusing on in this workshop in particular is **Azure Stream Analytics**. In addition to diving in to Azure Stream Analytics, we will also explore the open-source cross-plattform library [ML.NET](https://github.com/dotnet/machinelearning), which we will use to build our custom machine learning models and look at an alternative solution using **Azure Machine Learning Service**.
 
 ## Getting Started
 <details>
@@ -29,7 +29,7 @@ Working with real-time data streams, and deriving real-time insights using custo
      <li>Click <b>Install</b><img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-install-csharpextension.png"></li>      
   </ol>   
   </br>
-   <li><b>Install the Azure Function's Extension</b></li>
+   <li><b>Install the Azure Functions Extension</b></li>
    <ol>
       <li>In VS Code, select View -> Extensions<img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-opening-extensions.png"></li>
      <li>Search for <b>Azure Function</b></li> 
@@ -75,7 +75,7 @@ Working with real-time data streams, and deriving real-time insights using custo
    </br>
    <li><b>Download Azure Storage Explorer (required for part 3)</b></li>
        <ol>
-          <li><a href="https://azure.microsoft.com/en-us/features/storage-explorer/">Download Azure Storage Explorer</a>Make sure to select the correct OS.<img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-storage-explorer.PNG"></li>
+          <li><a href="https://azure.microsoft.com/en-us/features/storage-explorer/">Download Azure Storage Explorer</a>. Make sure to select the correct OS.<img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-storage-explorer.PNG"></li>
   <li>Open the installer and follow provided instructions</li>
     <li>Follow the provided instructions</li>
       </ol>   
