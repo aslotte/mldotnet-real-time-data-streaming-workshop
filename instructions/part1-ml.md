@@ -43,7 +43,7 @@ Other available data-sources worth exploring are:
    - When selecting Kernel type, select **Notebook**
    - In the top-left corner, select File -> Upload Notebook
    - Upload the [Jupyter notebook](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/src/machine-learning/jupyter/fraudulent-transactions-jupyter-notebook.ipynb) from this repo
-   - Replace the path in the following cell, with the path to the file (found if clicking on the workspace to the right)
+   - Replace the path in the following cell, with the path to the file (found if clicking on the workspace to the right)</br>
    `df = pd.read_csv("../input/paysim1/PS_20174392719_1491204439457_log.csv")`
    - Select Run -> Run all
    - Explore the results
