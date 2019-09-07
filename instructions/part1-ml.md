@@ -469,12 +469,12 @@ To build your machine learning model using ML.NET's AutoML builder, please refer
 <details>
   <summary>Instructions</summary>
   </br>
-Selecting the correct features, algorithms, hyper arameters and so forth is complex. There is a lot of trial and error involved until you've managed to fine-tune a model to not only have good enough accuracy but also a decent area under the precision-recall curve.</br>
+Selecting the correct features, algorithms, hyper parameters and so forth is complex. There is a lot of trial and error involved until you've managed to fine-tune a model to not only have good enough accuracy but also a decent area under the precision-recall curve.</br>
 </br>
 To simplify, ML.NET has introduced AutoML to automatically iterate through numerous algorithms with various hyper parameters to find one that yields a good model.
 </br>
 
-To use the ML.NET CLI to automatically train a model based on our given data, to the following:
+To use the ML.NET CLI to automatically train a model based on our given data, do the following:
 
    - In VS Code, open a new terminal window ![terminal](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-open-terminal.png) </br>
    - In the terminal window, execute the following command to navigate to the workspace folder.</br>`cd C:\mldotnet-real-time-data-streaming-workshop\workspace\FraudPredictionTrainer`</br>
@@ -489,7 +489,7 @@ For this example we are setting the max-exploration time to only 2 minutes, whic
 
 AutoML is a tremendous addition to the ML.NET toolset. Not only does it create a ready to go model based on the best algorithm, but it also creates a sample application with the code used to come up with this model for further fine-tuning. 
 
-It is also possible to use AutoML through Visual Studio. If you would like to do that, please download the Model Builder Visual Studio Extension which will give you a nice UI to work with.
+It is also possible to use AutoML through Visual Studio. If you would like to do that, please download the Model Builder Visual Studio Extension, which will give you a nice UI to work with.
 
 <h5> Exploring the sample solution </h5>
 The ML.NET CLI creates a couple of artifacts
