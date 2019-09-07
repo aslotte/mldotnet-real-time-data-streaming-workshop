@@ -78,7 +78,9 @@ Working with real-time data streams, and deriving real-time insights using custo
           <li><a href="https://azure.microsoft.com/en-us/features/storage-explorer/">Download Azure Storage Explorer</a>. Make sure to select the correct OS.<img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-storage-explorer.PNG"></li>
   <li>Open the installer</li>
     <li>Follow the provided instructions</li>
-      </ol>   
+      </ol>
+      </br>
+      <p>Note to macOS users: If the web site downloads an .exe file even after selecting the macOS option please, download the macOS version from <a href="https://docs.microsoft.com/en-us/azure/vs-azure-tools-storage-explorer-relnotes">here</a>.</p>
   </ol>
   </p>
 </details>
