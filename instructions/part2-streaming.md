@@ -52,7 +52,7 @@ To upload the reference data, please do the following:
 - In the terminal window, execute the following command to open the `reference-data.json` file </br> 
 `code C:\mldotnet-real-time-data-streaming-workshop\src\real-time-data-streaming\stream-analytics\reference-data.json`![refData](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-reference-data.PNG)
 - In `reference-data.json`, do a "Find All" and replace the current e-mail with the one you would like to get notifications too.
-- In Azure, navigate to your storage account starting with mlmodel and select **Blob** ![storageAccount](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-storage-blob.png)
+- In Azure, navigate to your storage account starting with mlmodel and select **Blobs** ![storageAccount](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-storage-blob.png)
 - Select the container named **reference**
 - Click on **Upload** and browse to, and upload the `reference-data.json` file. ![upload](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-storage-upload.png)
 
@@ -68,7 +68,7 @@ To upload the reference data, please do the following:
 You can either upload your previously trained model or a pre-trained model found [here](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/tree/master/src/machine-learning/model) to Azure.
 
 To upload the model:
-- In Azure, navigate to your storage account starting with mlmodel and select **Blob** ![storageAccount](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-storage-blob.png)
+- In Azure, navigate to your storage account starting with mlmodel and select **Blobs** ![storageAccount](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-storage-blob.png)
 - Select the container named **model**
 - Click on **Upload** and browse to, and upload the `MLModel.zip` file. ![upload](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-storage-upload.png)
 
@@ -144,7 +144,7 @@ Please follow the steps below to get started with Power BI.</br>
 
 #### 6.2 Create a Power BI Output
 To output data from Azure Stream Analytics, we'll need to create an output.
-1. Navigate to your Stream Analyics Job in Azure
+1. Navigate to your Stream Analytics Job in Azure
 2. Stop the job if it is running
 3. Click on **Outputs** ![streamAnalytics](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-stream-analytics.png)
 4. Select to add an output and select Power BI in the list ![output](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-stream-analytics-add-output.png)
