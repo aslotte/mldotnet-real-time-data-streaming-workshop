@@ -80,6 +80,7 @@ In the previously open terminal window, copy/paste and execute the following bel
 
 To browse the solution:</br>
 - In the terminal window, execute the following command `code . -r` to open VS Code in the folder
+  - Optional for Mac users, if the command `code` is not working go to View -> Command Palette and execute Shell Commands:Install 'code' command in PATH command and restart the terminal.  
 ![navigatetofolder](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-open-folder.PNG)</br>
 - Click **Yes** if asked to add build assets
 - Open the project file to the left. The content should look as below
