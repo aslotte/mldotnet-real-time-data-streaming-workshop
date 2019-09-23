@@ -11,6 +11,9 @@ In this part of the workshop, we will be setting up the real-time data pipeline 
   <p>
 
 #### 0.1 Deploy Event Hubs </br>
+- Open your [Azure Portal](https://portal.azure.com)
+- Click on "Create a resource" (top-left corner)
+- Search for "Event Hubs"
 #### 0.2 Deploy Storage Account </br>
 #### 0.3 Deploy Service Bus Queue </br>
 #### 0.4 Deploy Logic App </br>
