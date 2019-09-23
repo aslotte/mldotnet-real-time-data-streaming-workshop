@@ -27,7 +27,7 @@ Once the deployment is complete, navigate to the Event Hub namespace you just cr
 - Name the first Event Hub **transaction-eh**
 - Click "Create"
 - Again in your Event Hub namespace, click the "+Event Hub" button in the top-middle of your screen
-- Name the second Event Hub **transaction-eh-enriched**
+- Name the second Event Hub **transaction-enriched-eh**
 - Click "Create"
 
 #### 0.2 Deploy Storage Account </br>
@@ -114,7 +114,37 @@ Once the deployment is complete, navigate to the Logic App you just created.
 - Click "Create"
 
 Once the deployment is complete, navigate to the Stream Analytics job you just created.
-- TBD
+
+**To add inputs**
+- Click on "Inputs" in the menu to the left
+- Click on the "Add Stream Input" button in the top-middle of the screen
+- In the dropdown, select "Event Hub"
+- Name the input **transactions**
+- Select your previously created event hub namespace
+- Select the event hub named **transaction-enriched-eh**
+- Click "Save"
+- Click on the "Add Reference Input" button in the top-middle of the screen
+- Select Blob Storage
+- Name the input **reference**
+- Select the previously created storage account
+- Select to use the existing container named **reference**
+- Enter the following for path pattern: reference-data.json
+- Click "Save"
+
+**To add an output**
+- Click on "Outputs" in the menu to the left
+- Click on the button "Add" in the top-middle of the screen
+- In the dropdown, select "Service Bus queue"
+- Name the output **fraudulent**
+- Select the previously created service bus namespace
+- Click "Save"
+
+**To add the query**
+- Click on "Query" in the menu to the left
+- Copy paste the following [query](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/src/real-time-data-streaming/stream-analytics/fraudulent-query.txt)
+- Click "Save query"
+
+To start the job, click on "Overview" in the menu to the left, and click "Start"
 
  </p>
 </details>
