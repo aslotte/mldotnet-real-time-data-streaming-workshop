@@ -17,10 +17,13 @@ In this part of the workshop, we will be setting up the real-time data pipeline 
     #### 0.6 Deploy Stream Analytics Job
   </p>
 </details>
+
 ### 1. Deploy with ARM Templates
 <details>
   <summary>Deploy with ARM Templates</summary>
   <p>
+
+**Note: This step is only required if we skipped step 0**
 
 #### 1.1 Deploy ARM Template
 - Navigate to [deploy an ARM template](https://portal.azure.com/#create/Microsoft.Template)
