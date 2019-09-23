@@ -64,6 +64,14 @@ Once the deployment is complete, navigate to the Service Bus namespace you just 
 - Click "Create"
 
 #### 0.4 Deploy Logic App </br>
+- Open your [Azure Portal](https://portal.azure.com)
+- Click on "Create a resource" (top-left corner)
+- Search for "Logic App"
+- Click "Create"
+- Enter a unique name (e.g fraudulent-notifier-yourname)
+- Select an existing resource group or create a new one 
+- Click "Create"
+
 #### 0.5 Deploy Function App </br>
 #### 0.6 Deploy Stream Analytics Job </br>
  
