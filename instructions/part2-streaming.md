@@ -105,7 +105,17 @@ Once the deployment is complete, navigate to the Logic App you just created.
 - Click "Create"
 
 #### 0.6 Deploy Stream Analytics Job </br>
- 
+- Open your [Azure Portal](https://portal.azure.com)
+- Click on "Create a resource" (top-left corner)
+- Search for "Stream Analytics job"
+- Click "Create"
+- Enter a unique name (e.g fraud-analytics-yourname)
+- Select an existing resource group or create a new one 
+- Click "Create"
+
+Once the deployment is complete, navigate to the Stream Analytics job you just created.
+- TBD
+
  </p>
 </details>
 
