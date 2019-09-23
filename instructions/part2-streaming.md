@@ -10,6 +10,8 @@ In this part of the workshop, we will be setting up the real-time data pipeline 
   <summary>Deploy Infrastructure Manually</summary>
   <p>
 
+**Please Note: The explicit guidance for this section is intentionally kept at a mimimum. This is so that you more effectively can sharpen you Azure skills! No need to worry if you were not able to fully set up the infrastructure manually. You can automatically set it up using the provided ARM templates in step 1.**
+
 #### 0.1 Deploy Event Hubs </br>
 - Open your [Azure Portal](https://portal.azure.com)
 - Click on "Create a resource" (top-left corner)
