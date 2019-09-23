@@ -85,6 +85,15 @@ Once the deployment is complete, navigate to the Logic App you just created.
 - In the drop-down, select your previously created queue, called **fraudulent-transactions**
 - Change the polling internval to once every second
 - Click "New Step"
+- In the search input box for the next step, search for "Outlook"
+- In the returned result, select the "Outlook.com" option
+- In the list of options, select "Send an email"
+- Sign-in to your Outlook account
+- Set the following values
+**To:** @{json(base64toString(triggerBody()['ContentData']))['email']}
+**Subject:** Alert: Fraudulent Transaction Detected
+**Body:** A Fraudulent Transaction was discovered, your account has been locked. The transactions was of type @{json(base64toString(triggerBody()['ContentData']))['Type']}  originating from @{json(base64toString(triggerBody()['ContentData']))['NameDest']}
+- In the top-left corner, click "Save"
 
 #### 0.5 Deploy Function App </br>
 #### 0.6 Deploy Stream Analytics Job </br>
