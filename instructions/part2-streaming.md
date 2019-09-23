@@ -16,7 +16,6 @@ In this part of the workshop, we will be setting up the real-time data pipeline 
 - Open your [Azure Portal](https://portal.azure.com)
 - Click on "Create a resource" (top-left corner)
 - Search for "Event Hubs"
-- Select "Event Hubs" in the returned list of results
 - Click "Create"
 - Enter a unique name (e.g. transaction-eh-yourname)
 - Select a pricing tier
@@ -34,8 +33,7 @@ Once the deployment is complete, navigate to the Event Hub namespace you just cr
 #### 0.2 Deploy Storage Account </br>
 - Open your [Azure Portal](https://portal.azure.com)
 - Click on "Create a resource" (top-left corner)
-- Search for "Storage Account"
-- Select "Storage Account" in the returned list of results
+- Search for "Storage account"
 - Click "Create"
 - Select an existing resource group or create a new one 
 - Enter a unique name (e.g. mlmodelyourname)
@@ -51,6 +49,15 @@ Once the deployment is complete, navigate to the Storage Account you just create
 - Name the second container **reference**
 
 #### 0.3 Deploy Service Bus Queue </br>
+- Open your [Azure Portal](https://portal.azure.com)
+- Click on "Create a resource" (top-left corner)
+- Search for "Service Bus"
+- Click "Create"
+- Enter a unique name (e.g fraudalertsyourname)
+- Select a pricing tier
+- Select an existing resource group or create a new one 
+- Click "Create"
+
 #### 0.4 Deploy Logic App </br>
 #### 0.5 Deploy Function App </br>
 #### 0.6 Deploy Stream Analytics Job </br>
