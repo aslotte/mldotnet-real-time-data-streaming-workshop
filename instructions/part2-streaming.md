@@ -96,6 +96,14 @@ Once the deployment is complete, navigate to the Logic App you just created.
 - In the top-left corner, click "Save"
 
 #### 0.5 Deploy Function App </br>
+- Open your [Azure Portal](https://portal.azure.com)
+- Click on "Create a resource" (top-left corner)
+- Search for "Function App"
+- Click "Create"
+- Enter a unique name (e.g prediction-function-yourname)
+- Select an existing resource group or create a new one 
+- Click "Create"
+
 #### 0.6 Deploy Stream Analytics Job </br>
  
  </p>
