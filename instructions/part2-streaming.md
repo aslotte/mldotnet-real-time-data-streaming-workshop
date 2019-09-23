@@ -72,6 +72,20 @@ Once the deployment is complete, navigate to the Service Bus namespace you just 
 - Select an existing resource group or create a new one 
 - Click "Create"
 
+Once the deployment is complete, navigate to the Logic App you just created.
+- Click on the "Logic App Designer" in the menu to the left
+- Click on the "Blank Logic App" tile
+- In the search input box for connectors, search for "Service Bus"
+- Click on the "Service Bus" option in the returned results
+- Select the first option in the new list, named "When a message is received in a queue (auto-complete)
+- Name the connection **servicebus**
+- Select your service bus namespace in the list 
+- Select the RootManagedSharedAccessKey
+- Click "Create"
+- In the drop-down, select your previously created queue, called **fraudulent-transactions**
+- Change the polling internval to once every second
+- Click "New Step"
+
 #### 0.5 Deploy Function App </br>
 #### 0.6 Deploy Stream Analytics Job </br>
  
