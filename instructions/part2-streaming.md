@@ -329,6 +329,3 @@ Great job! With the event producer kicked off, you should start to see events fl
 1. Open your Azure Event Hub and observe event flowing
 2. Open your Outlook inbox to see e-mails being sent to you from your Azure Logic App, when fraudulent transactions are detected
 3. Open your Power BI Dashboard to see live events flowing via you Stream Analytics job (optional)
-
-### Set up infrastructure manually
-If you are interested and would like to further sharpen your Azure skills, attempt to set up the infrastructure manually in a new resource group
