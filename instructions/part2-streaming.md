@@ -105,6 +105,17 @@ Once the deployment is complete, navigate to the Logic App you just created.
 - Select an existing resource group or create a new one 
 - Click "Create"
 
+Once the deployment is complete, navigate to the Function App you just created.
+- Navigate to the "Configuration" by clicking on the "Platform features" tab and then "Configuration"
+- Click on "New application setting" 
+- Name the setting **eventHubConnection**. 
+- Set the value to the primary connection string of the event hub namespace. You can get the connection string by navigating to your event hub, clicking on "Shared access policies", and clicking on the RootManagedSharedAccessKey.
+- Click "OK"
+- Click on "New application setting" again
+- Name the second application setting **storageAccountConnection**
+- Set the value to the connection string of the storage account previously created. You can get the connection string by navigating to your storage account and clicking on "Access keys"
+- Click "Save"
+
 #### 0.6 Deploy Stream Analytics Job </br>
 - Open your [Azure Portal](https://portal.azure.com)
 - Click on "Create a resource" (top-left corner)
