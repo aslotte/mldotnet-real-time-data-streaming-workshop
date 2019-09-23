@@ -89,10 +89,10 @@ Once the deployment is complete, navigate to the Logic App you just created.
 - In the returned result, select the "Outlook.com" option
 - In the list of options, select "Send an email"
 - Sign-in to your Outlook account
-- Set the following values
-**To:** @{json(base64toString(triggerBody()['ContentData']))['email']}
-**Subject:** Alert: Fraudulent Transaction Detected
-**Body:** A Fraudulent Transaction was discovered, your account has been locked. The transactions was of type @{json(base64toString(triggerBody()['ContentData']))['Type']}  originating from @{json(base64toString(triggerBody()['ContentData']))['NameDest']}
+- Set the following values </br>
+**To:** @{json(base64toString(triggerBody()['ContentData']))['email']} </br>
+**Subject:** Alert: Fraudulent Transaction Detected </br>
+**Body:** A Fraudulent Transaction was discovered, your account has been locked. The transactions was of type @{json(base64toString(triggerBody()['ContentData']))['Type']}  originating from @{json(base64toString(triggerBody()['ContentData']))['NameDest']} </br>
 - In the top-left corner, click "Save"
 
 #### 0.5 Deploy Function App </br>
