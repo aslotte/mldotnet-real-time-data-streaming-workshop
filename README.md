@@ -107,6 +107,7 @@ In this workshop we will be looking at detecting fradulent transactions in real-
 - **Part 4** [Consume ONNX Model from Jupyter Notebook in ML.NET](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part3-consume-onnx-model.md)
   - Consume an exported ONNX model in ML.NET, which was trained with Scikit Learn (Python)
 - **Part 5** [ML.NET + Jupyter](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part5-mlnet-jupyter.md)
+  - Introduction to ML.NET in Jupyter Notebooks
   - Train a machine learning model using ML.NET and Jupyter Notebooks
   
 **Reminder**: Remember to remove your resource group once finished with this workshop, not to incur additional costs.
