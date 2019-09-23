@@ -58,6 +58,11 @@ Once the deployment is complete, navigate to the Storage Account you just create
 - Select an existing resource group or create a new one 
 - Click "Create"
 
+Once the deployment is complete, navigate to the Service Bus namespace you just created.
+- In your Service Bus, click on the "+Queue+ button in the top-middle of the screen
+- Name the queue **fraudulent-transactions**
+- Click "Create"
+
 #### 0.4 Deploy Logic App </br>
 #### 0.5 Deploy Function App </br>
 #### 0.6 Deploy Stream Analytics Job </br>
