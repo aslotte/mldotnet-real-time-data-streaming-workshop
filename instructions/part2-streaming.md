@@ -32,6 +32,16 @@ Once deployment is complete, open up the Event Hub namespace you just created (y
 - Click "Create"
 
 #### 0.2 Deploy Storage Account </br>
+- Open your [Azure Portal](https://portal.azure.com)
+- Click on "Create a resource" (top-left corner)
+- Search for "Storage Account"
+- Select "Storage Account" in the returned list of results
+- Click "Create"
+- Select an existing resource group or create a new one 
+- Enter a unique name (e.g. mlmodelyourname)
+- Click "Review + create"
+- Click "Create"
+
 #### 0.3 Deploy Service Bus Queue </br>
 #### 0.4 Deploy Logic App </br>
 #### 0.5 Deploy Function App </br>
