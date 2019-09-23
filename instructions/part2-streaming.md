@@ -16,6 +16,21 @@ In this part of the workshop, we will be setting up the real-time data pipeline 
 - Open your [Azure Portal](https://portal.azure.com)
 - Click on "Create a resource" (top-left corner)
 - Search for "Event Hubs"
+- Select "Event Hubs" in the returned list of results
+- Click "Create"
+- Enter a unique name (e.g. transaction-eh-yourname)
+- Select a pricing tier
+- Select an existing resource group or create a new one 
+- Click "Create"
+
+Once deployment is complete, open up the Event Hub namespace you just created (you can navigate to it from your resource group).
+- In your Event Hub namespace, click the "+Event Hub" button in the top-middle of your screen
+- Give it the name of **transaction-eh**
+- Click "Create"
+- Again in your Event Hub namespace, click the "+Event Hub" button in the top-middle of your screen
+- Give it the name of **transaction-eh-enriched**
+- Click "Create"
+
 #### 0.2 Deploy Storage Account </br>
 #### 0.3 Deploy Service Bus Queue </br>
 #### 0.4 Deploy Logic App </br>
