@@ -5,6 +5,18 @@ In this part of the workshop, we will be setting up the real-time data pipeline 
 
 ## Real-Time Data Pipeline with ML.NET integration
 
+### 0. Deploy Infrastructure Manually
+<details>
+  <summary>Deploy with ARM Templates</summary>
+  <p>
+    #### 0.1 Deploy Event Hubs
+    #### 0.2 Deploy Storage Account
+    #### 0.3 Deploy Service Bus Queue
+    #### 0.4 Deploy Logic App
+    #### 0.5 Deploy Function App
+    #### 0.6 Deploy Stream Analytics Job
+  </p>
+</details>
 ### 1. Deploy with ARM Templates
 <details>
   <summary>Deploy with ARM Templates</summary>
