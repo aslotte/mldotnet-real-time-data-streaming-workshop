@@ -23,12 +23,12 @@ In this part of the workshop, we will be setting up the real-time data pipeline 
 - Select an existing resource group or create a new one 
 - Click "Create"
 
-Once deployment is complete, open up the Event Hub namespace you just created (you can navigate to it from your resource group).
+Once the deployment is complete, navigate to the Event Hub namespace you just created.
 - In your Event Hub namespace, click the "+Event Hub" button in the top-middle of your screen
-- Give it the name of **transaction-eh**
+- Name the first Event Hub **transaction-eh**
 - Click "Create"
 - Again in your Event Hub namespace, click the "+Event Hub" button in the top-middle of your screen
-- Give it the name of **transaction-eh-enriched**
+- Name the second Event Hub **transaction-eh-enriched**
 - Click "Create"
 
 #### 0.2 Deploy Storage Account </br>
@@ -41,6 +41,14 @@ Once deployment is complete, open up the Event Hub namespace you just created (y
 - Enter a unique name (e.g. mlmodelyourname)
 - Click "Review + create"
 - Click "Create"
+
+Once the deployment is complete, navigate to the Storage Account you just created.
+- In your Storage Account, click "Blobs"
+- Click on the "+Container" button in the top-middle of the screen
+- Name the first container **model**
+- Click "OK"
+- Again in your Storage Container, "+Container" button in the top-middle of the screen
+- Name the second container **reference**
 
 #### 0.3 Deploy Service Bus Queue </br>
 #### 0.4 Deploy Logic App </br>
