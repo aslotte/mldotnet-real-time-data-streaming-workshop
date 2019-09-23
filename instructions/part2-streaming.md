@@ -7,15 +7,17 @@ In this part of the workshop, we will be setting up the real-time data pipeline 
 
 ### 0. Deploy Infrastructure Manually
 <details>
-  <summary>Deploy with ARM Templates</summary>
+  <summary>Deploy Infrastructure Manually</summary>
   <p>
-    #### 0.1 Deploy Event Hubs
-    #### 0.2 Deploy Storage Account
-    #### 0.3 Deploy Service Bus Queue
-    #### 0.4 Deploy Logic App
-    #### 0.5 Deploy Function App
-    #### 0.6 Deploy Stream Analytics Job
-  </p>
+
+#### 0.1 Deploy Event Hubs </br>
+#### 0.2 Deploy Storage Account </br>
+#### 0.3 Deploy Service Bus Queue </br>
+#### 0.4 Deploy Logic App </br>
+#### 0.5 Deploy Function App </br>
+#### 0.6 Deploy Stream Analytics Job </br>
+ 
+ </p>
 </details>
 
 ### 1. Deploy with ARM Templates
