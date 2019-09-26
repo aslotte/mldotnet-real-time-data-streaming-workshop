@@ -23,7 +23,7 @@ Framing the business problem you are attempting to solve is absolute key for a s
   <summary><b>2. Gather and load your data</b></summary>
     <p>
       
-Once the problem has been defined, it's time to gather our data. Data is normally gathered from multiple sources (both public and private), and then aggregated and pivoted in to a workable shape. For our purposes, the data we will be using can be retrieved from [Kaggle](https://www.kaggle.com/ntnu-testimon/paysim1). You should already have downloaded the data as part of getting started.
+Once the problem has been defined, it's time to gather our data. Data is normally gathered from multiple sources (both public and private), and then aggregated and pivoted in to a workable shape. For our purposes, the data we will be using can be retrieved from Kaggle. You should already have downloaded the data as part of getting started.
       
 Other available data-sources worth exploring are: 
    - [Google Public Datasets](https://cloud.google.com/public-datasets/)  
@@ -39,7 +39,7 @@ Other available data-sources worth exploring are:
    
    To explore the dataset using Pandas and a Jupyter notebook:
    - Create a free [Kaggle account](https://www.kaggle.com/)
-   - Navigate to the [Dataset](https://www.kaggle.com/ntnu-testimon/paysim1) and click **New Notebook**. 
+   - Navigate to the [this specific dataset](https://www.kaggle.com/ntnu-testimon/paysim1) and click **New Notebook**. 
    - When selecting Kernel type, select **Notebook**
    - In the top-left corner, select File -> Upload Notebook
    - Upload the [Jupyter notebook](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/src/machine-learning/jupyter/fraudulent-transactions-jupyter-notebook.ipynb) from this repo
