@@ -155,3 +155,6 @@ src/machine-learning/FraudPredictionTrainer/FraudPredictionTrainer/obj/FraudPred
 src/machine-learning/FraudPredictionTrainer/FraudPredictionTrainer/obj/project.assets.json
 src/machine-learning/FraudPredictorOnnx/.vs/FraudPredictorOnnx/DesignTimeBuild/.dtbcache
 src/machine-learning/FraudPredictionTrainer/.vs/FraudPredictionTrainer/DesignTimeBuild/.dtbcache
+src/machine-learning/FraudPredictionTrainer/obj/Debug/netcoreapp2.2/FraudPredictionTrainer.AssemblyInfo.cs
+src/machine-learning/FraudPredictionTrainer/obj/Debug/netcoreapp2.2/FraudPredictionTrainer.AssemblyInfoInputs.cache
+src/machine-learning/FraudPredictionTrainer/obj/Debug/netcoreapp2.2/FraudPredictionTrainer.csproj.CoreCompileInputs.cache
