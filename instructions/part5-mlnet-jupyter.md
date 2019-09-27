@@ -6,5 +6,5 @@ Please note, as of time of writing, this has not yet been released for public pr
 ### Steps
 
 1. Open the link to MyBinder, provided during the workshop
-2. Upload the [following]() Jupyter Notebook
+2. Upload the [following](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/src/machine-learning/jupyter/fraudulent-classifier-mlnet.ipynb) Jupyter Notebook
 3. Execute all cells and compare and contrast the differences with a similar Python implementation
