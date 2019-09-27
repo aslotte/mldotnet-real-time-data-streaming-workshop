@@ -46,14 +46,14 @@ Working with real-time data streams, and deriving real-time insights using custo
     <ol>
       <li>In VS Code, select Terminal -> New Terminal to open a new terminal window<img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-open-terminal.png"></li>
       <li>In the terminal, enter <code>cd C:\</code> and hit enter</li>
-      <li>In the terminal, enter <code>git clone https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop.git</code> and hit enter to clone the repository to the C: drive. </br><b>Note:</b> Feel free to clone the repository elsewhere, just make sure to adjust the path in instructions to follow<img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-clone-repo.PNG"></li>
+      <li>In the terminal, enter <code>git clone https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop.git</code> and hit enter to clone the repository to the C: drive. </br><b>Note:</b> Feel free to clone the repository elsewhere, just make sure to adjust the path in instructions to follow. Furthermore, the repository is also available on provided USB memory sticks, in case the internet bandwidth is not sufficient.<img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-clone-repo.PNG"></li>
     </ol>   
     </br>
    <li><b>Download the data</b></li>
     <ol>
       <li>There are three (3) ways to get the data we will be working with. Please choose the most convenient for you:</li>
         <ol>
-          <li>Download the data from provided USB Memory sticks</li>
+          <li>Download the data from provided USB Memory sticks (download the .zip file and extract it on your local computer)</li>
           <li>Download the data from <a href="https://bit.ly/2NC5P7f">here</a>
           <li>Download the data from <a href="https://www.kaggle.com/ntnu-testimon/paysim1">Kaggle</a> (requires free account)
         </ol>
@@ -106,6 +106,9 @@ In this workshop we will be looking at detecting fradulent transactions in real-
   - Train a machine learning using Jupyter Notebooks and  Scikit Learn
 - **Part 4** [Consume ONNX Model from Jupyter Notebook in ML.NET](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part3-consume-onnx-model.md)
   - Consume an exported ONNX model in ML.NET, which was trained with Scikit Learn (Python)
+- **Part 5** [ML.NET + Jupyter](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part5-mlnet-jupyter.md)
+  - Introduction to ML.NET in Jupyter Notebooks
+  - Train a machine learning model using ML.NET and Jupyter Notebooks
   
 **Reminder**: Remember to remove your resource group once finished with this workshop, not to incur additional costs.
   
