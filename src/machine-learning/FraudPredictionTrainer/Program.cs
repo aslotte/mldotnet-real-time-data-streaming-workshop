@@ -7,7 +7,7 @@ namespace FraudPreditionTrainer
 {
     class Program
     {
-        private static string DataPath = @"X:\\data\\data.csv";
+        private static string DataPath = @"X:\\data.csv";
 
         static void Main(string[] args)
         {
