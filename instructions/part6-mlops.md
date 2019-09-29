@@ -28,6 +28,10 @@ You can skip this section if you already have an account.
 </details>
 
 #### 2. Setting up a CI pipeline
+<details>
+  <summary> Setting up a CI pipelinet</summary>
+  <p>
+    
 1. Navigate to [Azure DevOps](https://dev.azure.com)
 2. Click on **New Project** in the top-right corner ![newproject](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-new-project.PNG)
 3. Give the new project a name, e.g. `fraud-detection`
@@ -42,6 +46,9 @@ You can skip this section if you already have an account.
 - Uploading a small file
 - Attaching it during the pipeline
 - Modifying the code to point to new location
+
+</p>
+</details>
 
 #### 3. Adding unit tests
 
