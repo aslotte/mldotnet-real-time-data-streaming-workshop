@@ -158,3 +158,10 @@ src/machine-learning/FraudPredictionTrainer/.vs/FraudPredictionTrainer/DesignTim
 src/machine-learning/FraudPredictionTrainer/obj/Debug/netcoreapp2.2/FraudPredictionTrainer.AssemblyInfo.cs
 src/machine-learning/FraudPredictionTrainer/obj/Debug/netcoreapp2.2/FraudPredictionTrainer.AssemblyInfoInputs.cache
 src/machine-learning/FraudPredictionTrainer/obj/Debug/netcoreapp2.2/FraudPredictionTrainer.csproj.CoreCompileInputs.cache
+src/machine-learning/FraudPredictionTrainer/obj/Debug/netcoreapp2.2/FraudPredictionTrainer.assets.cache
+src/machine-learning/FraudPredictionTrainer/obj/Debug/netcoreapp2.2/FraudPredictionTrainer.csprojAssemblyReference.cache
+src/machine-learning/FraudPredictionTrainer/obj/FraudPredictionTrainer.csproj.nuget.cache
+src/machine-learning/FraudPredictionTrainer/obj/FraudPredictionTrainer.csproj.nuget.dgspec.json
+src/machine-learning/FraudPredictionTrainer/obj/FraudPredictionTrainer.csproj.nuget.g.props
+src/machine-learning/FraudPredictionTrainer/obj/FraudPredictionTrainer.csproj.nuget.g.targets
+src/machine-learning/FraudPredictionTrainer/obj/project.assets.json
