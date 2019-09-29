@@ -10,7 +10,7 @@ variables:
   value: 'Release'
 
 steps:
-- script: 'net use C: \\filesharepublic.file.core.windows.net\data /u:filesharepublic $(filestorage.key)'
+- script: 'net use X: \\filesharepublic.file.core.windows.net\data /u:filesharepublic $(filestorage.key)'
   displayName: 'Map disk drive to Azure Files share folder'
   
 - script: dotnet build src/machine-learning/FraudPredictionTrainer/FraudPredictionTrainer.csproj --configuration $(buildConfiguration)
