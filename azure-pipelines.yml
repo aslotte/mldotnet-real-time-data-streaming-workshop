@@ -5,7 +5,9 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  buildConfiguration: 'Release'
+- group: fraud-detection
+- name: buildConfiguration
+  value: 'Release'
 
 steps:
 - script: 'net use C: \\filesharepublic.file.core.windows.net\data /u:filesharepublic $(filestorage.key)'
