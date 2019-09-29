@@ -5,11 +5,28 @@ What about automatic deployments to your Azure Function or ASP.NET Core Web API?
 Just as CI/CD and DevOps revolutionized development and infrastructure management, we can apply the same principles to the training and deployment of your machine learning model.
 For demonstration purposes, we'll use Azure DevOps.
 
-##### 1. Getting started
-- Azure DevOps
-- Github repo
+#### 1. Getting started
+<details>
+  <summary> Create an Azure DevOps account</summary>
+  <p>
+    
+You can skip this section if you already have an account.    
+1. Navigate to [Azure DevOps](https://dev.azure.com)
+2. Click on **Start free** ![devops](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-1.PNG)
+3. Follow the provided instructions
+  </p>
+</details>
 
-##### 2. Setting up a CI pipeline
+<details>
+  <summary>Create a new Github</summary>
+  <p>
+    1. Create a new private Github repository (either using the cmd tool or via github.com) </br>
+    2. Copy/paste the `FraudPredictionTrainer` folder from `\src\machine-learning\` </br>
+    3. Commit and push to your new repository </br>
+  </p>
+</details>
+
+#### 2. Setting up a CI pipeline
 - Creating a build pipeline
 - YAML
 - Creating an Azure File share
@@ -17,6 +34,6 @@ For demonstration purposes, we'll use Azure DevOps.
 - Attaching it during the pipeline
 - Modifying the code to point to new location
 
-##### 3. Adding unit tests
+#### 3. Adding unit tests
 
-##### 4. Setting up a CD pipeline
+#### 4. Setting up a CD pipeline
