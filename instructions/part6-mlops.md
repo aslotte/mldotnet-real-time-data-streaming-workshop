@@ -23,7 +23,8 @@ You can skip this section if you already have an account.
    
 1. Create a new private Github repository (either using the cmd tool or via github.com) </br>
 2. Copy/paste the `FraudPredictionTrainer` folder from `\src\machine-learning\` to your new repository </br>
-3. Commit and push to your new repository </br>
+3. Remove the data.csv file if it exist
+4. Commit and push to your new repository </br>
   </p>
 </details>
 
