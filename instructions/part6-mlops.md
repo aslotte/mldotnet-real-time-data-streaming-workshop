@@ -18,13 +18,11 @@ You can skip this section if you already have an account.
 </details>
 
 <details>
-  <summary>Create a new Github</summary>
+  <summary>Fork this repo</summary>
   <p>
    
-1. Create a new private Github repository (either using the cmd tool or via github.com) </br>
-2. Copy/paste the `FraudPredictionTrainer` folder from `\src\machine-learning\` to your new repository </br>
-3. Remove the data.csv file if it exist
-4. Commit and push to your new repository </br>
+1. In the top right corner of this repo, click **Fork** </br>
+2. Select to **Fork** this repository to your own Github account </br>
   </p>
 </details>
 
