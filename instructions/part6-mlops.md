@@ -36,8 +36,9 @@ You can skip this section if you already have an account.
 3. Give the new project a name, e.g. `fraud-detection`
 4. In the menu to the left, click on **Builds** and then **New pipeline** ![newproject](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-new-pipeline.PNG)
 5. In the list, select **GitHub**
-6. In the list of repositories, select the new repository you've just created
-7. 
+6. In the list of repositories, select the new repository you just forked
+7. You'll be asked to enter your Github account for authentication
+8. Select to Approve and Install Azure Pipelines
 
 - Creating a build pipeline
 - YAML
