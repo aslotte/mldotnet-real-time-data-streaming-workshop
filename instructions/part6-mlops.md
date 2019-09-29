@@ -1,4 +1,4 @@
-#### ML.NET + Azure DevOps = MLOps
+### ML.NET + Azure DevOps = MLOps
 How do you keep your model up to date, as your data and the code used during training changes?
 What about automatic deployments to your Azure Function or ASP.NET Core Web API? 
 
