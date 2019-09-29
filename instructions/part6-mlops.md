@@ -20,9 +20,9 @@ You can skip this section if you already have an account.
 <details>
   <summary>Create a new Github</summary>
   <p>
-    1. Create a new private Github repository (either using the cmd tool or via github.com)
-    2. Copy/paste the `FraudPredictionTrainer` folder from `\src\machine-learning\`
-    3. Commit and push to your new repository
+    1. Create a new private Github repository (either using the cmd tool or via github.com) </br>
+    2. Copy/paste the `FraudPredictionTrainer` folder from `\src\machine-learning\` </br>
+    3. Commit and push to your new repository </br>
   </p>
 </details>
 
