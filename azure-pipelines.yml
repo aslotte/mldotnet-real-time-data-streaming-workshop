@@ -1,5 +1,14 @@
 trigger:
-- master
+  branches:
+    include:
+    - master
+  paths:
+    include:
+    - src/*
+    exclude:
+    - instructions/*
+    - presentation/*
+    - workspace/*
 
 pool:
   vmImage: 'windows-latest'
