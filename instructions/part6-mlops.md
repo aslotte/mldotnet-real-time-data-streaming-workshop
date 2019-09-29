@@ -62,7 +62,7 @@ variables:
 
 Your YAML file should now look like ![pipeline](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-default-pipeline.PNG)
 
-11. In the top-right corner, click **Run** </br>
+11. In the top-right corner, click **Save and Run** </br>
 
 - Creating an Azure File share
 - Uploading a small file
