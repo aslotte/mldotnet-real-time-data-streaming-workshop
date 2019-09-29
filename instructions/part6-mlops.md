@@ -6,8 +6,22 @@ Just as CI/CD and DevOps revolutionized development and infrastructure managemen
 For demonstration purposes, we'll use Azure DevOps.
 
 ##### 1. Getting started
-- Azure DevOps
-- Github repo
+<details>
+  <summary> Create an Azure DevOps account</summary>
+  <p>
+    
+You can skip this section if you already have an account.    
+1. Navigate to [Azure DevOps](https://dev.azure.com)
+2. Click on **Start free** ![devops](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-1.PNG)
+3. Follow the provided instructions
+  </p>
+</details>
+
+<details>
+  <summary>Create a Github repository</summary>
+  <p>
+  </p>
+</details>
 
 ##### 2. Setting up a CI pipeline
 - Creating a build pipeline
