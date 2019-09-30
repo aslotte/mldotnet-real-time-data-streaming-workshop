@@ -70,7 +70,7 @@ If you have a look at the completed build, you'll see that it failed. This is be
 
 ##### 2.1. Create an Azure Fileshare 
 1. Navigate to the [Azure portal](https://portal.azure.com)
-2. Navigate to a previously created storage account ([part 2](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-streaming.md)
+2. Navigate to a previously created storage account ([in part 2](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-streaming.md))
 3. In the storage account, select **File shares** ![files](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-storage-fileshare.png)
 4. In the top-middle, click on **+ File share**
 5. Give the file share a name, e.g. `data`
