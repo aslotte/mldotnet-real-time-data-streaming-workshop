@@ -103,7 +103,7 @@ In this workshop we will be looking at detecting fradulent transactions in real-
   - Introduction to Azure Resource Management (ARM) Templates
 - **Part 3** [ML.NET + Azure DevOps = MLOps](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part6-mlops.md)
   - Introduction to MLOps
-  - Set up a CI/CD pipeline for your model
+  - Set up a CI/CD pipeline for model training
 - **Part 4** [ML.NET + Jupyter](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part5-mlnet-jupyter.md)
   - Introduction to ML.NET in Jupyter Notebooks
   - Train a machine learning model using ML.NET and Jupyter Notebooks  
