@@ -32,5 +32,5 @@ steps:
   displayName: 'Run Unit Tests using trained ML model'
   inputs:
     command: test
-    projects: '../FraudPrediction.Tests.csproj'
+    projects: 'src/machine-learning/FraudPrediction.Tests/FraudPrediction.Tests.csproj'
     arguments: '--configuration $(buildConfiguration)'
