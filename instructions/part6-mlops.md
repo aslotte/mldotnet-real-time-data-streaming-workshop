@@ -128,7 +128,7 @@ To queue a new build, click on the **Queue** button in the top-right corner. The
 
 #### 3. Set up Continuous Delivery
 <details>
-  <summar>Set up Continuous Delivery</summary>
+  <summary>Set up Continuous Delivery</summary>
   <p>
     We now have a continuous integration pipeline set up, in which a new model is trained each time any check-in to the repository is made. We can take this one step further and deploy the MLModel.zip to our Azure storage account on completion of the build.
     
@@ -151,6 +151,9 @@ To queue a new build, click on the **Queue** button in the top-right corner. The
    ```
    
    8. Click **Save**
+   
+   Your YAML file should now look like: ![service](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-after-deploy.PNG)
+   
    
   </p>
 </details>
