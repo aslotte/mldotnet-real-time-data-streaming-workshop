@@ -36,9 +36,9 @@ You can skip this section if you already have an account.
 </p>
 </details>
 
-#### 2. Set up a CI pipeline
+#### 2. Set up Continuous Integration
 <details>
-  <summary> Set up a CI pipeline</summary>
+  <summary>Set up Continuous Integration</summary>
   <p>
     
 1. Navigate to [Azure DevOps](https://dev.azure.com)
