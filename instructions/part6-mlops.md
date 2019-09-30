@@ -35,7 +35,7 @@ You can skip this section if you already have an account.
 2. Click on **New Project** in the top-right corner ![newproject](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-new-project.PNG)
 3. Give the new project a name, e.g. `fraud-detection`
 4. In the menu to the left, click on **Builds** and then **New pipeline** ![newproject](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-new-pipeline.PNG)
-5. In the list, select **GitHub**
+5. In the list, select **GitHub** ![starter](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-select-git.PNG)
 6. In the list of repositories, select the new repository you just forked
 7. You may be asked to enter your Github account for authentication
 8. Click on **Approve and Install** to install Azure Pipelines in the forked repository ![approve](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-approve-and-install.PNG)
@@ -70,7 +70,7 @@ If you have a look at the completed build, you'll see that it failed. This is be
 
 ##### 2.1. Create an Azure Fileshare 
 1. Navigate to the [Azure portal](https://portal.azure.com)
-2. Navigate to a previously created storage account ([part 2](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-streaming.md)
+2. Navigate to a previously created storage account ([in part 2](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-streaming.md))
 3. In the storage account, select **File shares** ![files](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-storage-fileshare.png)
 4. In the top-middle, click on **+ File share**
 5. Give the file share a name, e.g. `data`
