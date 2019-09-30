@@ -18,7 +18,7 @@ You can skip this section if you already have an account.
 </details>
 
 <details>
-  <summary>Fork this repo</summary>
+  <summary>Fork repository</summary>
   <p>
    
 1. In the top right corner of this repo, click **Fork** </br>
@@ -28,7 +28,7 @@ You can skip this section if you already have an account.
 
 #### 2. Setting up a CI pipeline
 <details>
-  <summary> Setting up a CI pipelinet</summary>
+  <summary> Setting up a CI pipeline</summary>
   <p>
     
 1. Navigate to [Azure DevOps](https://dev.azure.com)
@@ -59,10 +59,13 @@ variables:
 - script: dotnet run --project src/machine-learning/FraudPredictionTrainer/FraudPredictionTrainer.csproj --configuration $(buildConfiguration)
   displayName: 'Train ML model (dotnet run)'
 ```
+The steps above builds and runs the console application used to train our model in a windows image.
 
 Your YAML file should now look like ![pipeline](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-default-pipeline.PNG)
 
 11. In the top-right corner, click **Save and Run** </br>
+
+If you have a look at the completed build, you'll see that it failed. This is because the console application cannot find the `data.csv` file used for training.
 
 - Creating an Azure File share
 - Uploading a small file
