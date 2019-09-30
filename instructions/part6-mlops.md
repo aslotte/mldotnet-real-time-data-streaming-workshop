@@ -26,7 +26,7 @@ You can skip this section if you already have an account.
   </p>
 </details>
 
-#### 2. Setting up a CI pipeline
+#### 2. Set up a CI pipeline
 <details>
   <summary> Setting up a CI pipeline</summary>
   <p>
@@ -78,7 +78,7 @@ If you have a look at the completed build, you'll see that it failed. This is be
 5. Give the file share a name, e.g. `data`
 6. Click **Create**
 
-_As the current data source is 500+ Mb large, we'll only use a small portion of the total amount of data for demonstrational purposes. This will speed up the build process. Upload_
+_As the current data source is 500+ Mb large, we'll only use a small portion of the total amount of data for demonstrational purposes. This will speed up the build process._
 
 7. Upload the following [file](https://aslottepublic.blob.core.windows.net/small/data.csv) to your newly created file share 
 
@@ -91,4 +91,4 @@ _As the current data source is 500+ Mb large, we'll only use a small portion of 
 
 #### 3. Adding unit tests
 
-#### 4. Setting up a CD pipeline
+#### 4. Set up a CD pipeline
