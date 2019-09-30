@@ -146,7 +146,7 @@ using Microsoft.ML.Data;
 
 namespace FraudPredictionTrainer 
 {
-    internal sealed class Transaction
+    public sealed class Transaction
     {
         [ColumnName("step"), LoadColumn(0)]
         public float Step { get; set; }
