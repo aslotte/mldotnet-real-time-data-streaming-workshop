@@ -36,9 +36,9 @@ You can skip this section if you already have an account.
 </p>
 </details>
 
-#### 2. Set up a CI pipeline
+#### 2. Set up Continuous Integration
 <details>
-  <summary> Set up a CI pipeline</summary>
+  <summary>Set up Continuous Integration</summary>
   <p>
     
 1. Navigate to [Azure DevOps](https://dev.azure.com)
@@ -154,6 +154,6 @@ To queue a new build, click on the **Queue** button in the top-right corner. The
    
    Your YAML file should now look like: ![service](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-after-deploy.PNG)
    
-   
+Great job! You've now successfully set up a CI/CD pipeline for your model. This pipeline can be further extended with triggers for changes in data, or additional unit and integration tests to ensure the model performance as expected.
   </p>
 </details>

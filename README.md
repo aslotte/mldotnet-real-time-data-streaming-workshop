@@ -101,16 +101,19 @@ In this workshop we will be looking at detecting fradulent transactions in real-
 - **Part 2**: [Setting up real-time data streaming pipeline](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-streaming.md)
   - Introduction to Stream Processing and Azure Stream Analytics
   - Introduction to Azure Resource Management (ARM) Templates
-- **Part 3** [Machine Learning in Azure](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part3-azureml.md)
+- **Part 3** [ML.NET + Azure DevOps = MLOps](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part6-mlops.md)
+  - Introduction to MLOps
+  - Set up a CI/CD pipeline for your model
+- **Part 4** [ML.NET + Jupyter](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part5-mlnet-jupyter.md)
+  - Introduction to ML.NET in Jupyter Notebooks
+  - Train a machine learning model using ML.NET and Jupyter Notebooks  
+- **Part 5** [Machine Learning in Azure](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part3-azureml.md)
   - Introduction to Azure Machine Learning Service
   - Train a machine learning model using Azure ML Visual Interface
   - Train a machine learning using Azure AutoML
   - Train a machine learning using Jupyter Notebooks and  Scikit Learn
-- **Part 4** [Consume ONNX Model from Jupyter Notebook in ML.NET](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part3-consume-onnx-model.md)
+- **Part 6** [Consume ONNX Model from Jupyter Notebook in ML.NET](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part3-consume-onnx-model.md)
   - Consume an exported ONNX model in ML.NET, which was trained with Scikit Learn (Python)
-- **Part 5** [ML.NET + Jupyter](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part5-mlnet-jupyter.md)
-  - Introduction to ML.NET in Jupyter Notebooks
-  - Train a machine learning model using ML.NET and Jupyter Notebooks
   
 **Reminder**: Remember to remove your resource group once finished with this workshop, not to incur additional costs.
   
