@@ -28,7 +28,7 @@ You can skip this section if you already have an account.
 
 #### 2. Set up a CI pipeline
 <details>
-  <summary> Setting up a CI pipeline</summary>
+  <summary> Set up a CI pipeline</summary>
   <p>
     
 1. Navigate to [Azure DevOps](https://dev.azure.com)
