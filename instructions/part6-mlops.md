@@ -35,6 +35,7 @@ You can skip this section if you already have an account.
 
 </p>
 </details>
+
 #### 2. Set up a CI pipeline
 <details>
   <summary> Set up a CI pipeline</summary>
