@@ -6,7 +6,7 @@ Just as CI/CD and DevOps revolutionized development and infrastructure managemen
 
 For demonstration purposes we'll be using Azure DevOps.
 
-![mlops](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/mlops.PNG)
+![mlops](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/mlops.png)
 
 #### 1. Getting started
 <details>
