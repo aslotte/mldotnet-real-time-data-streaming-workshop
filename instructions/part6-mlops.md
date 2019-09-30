@@ -35,7 +35,7 @@ You can skip this section if you already have an account.
 2. Click on **New Project** in the top-right corner ![newproject](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-new-project.PNG)
 3. Give the new project a name, e.g. `fraud-detection`
 4. In the menu to the left, click on **Builds** and then **New pipeline** ![newproject](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-new-pipeline.PNG)
-5. In the list, select **GitHub**
+5. In the list, select **GitHub** ![starter](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-select-git.PNG)
 6. In the list of repositories, select the new repository you just forked
 7. You may be asked to enter your Github account for authentication
 8. Click on **Approve and Install** to install Azure Pipelines in the forked repository ![approve](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-approve-and-install.PNG)
