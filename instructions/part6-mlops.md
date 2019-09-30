@@ -154,6 +154,6 @@ To queue a new build, click on the **Queue** button in the top-right corner. The
    
    Your YAML file should now look like: ![service](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-after-deploy.PNG)
    
-   
+Great job! You've now successfully set up a CI/CD pipeline for your model. This pipeline can be further extended with triggers for changes in data, or additional unit and integration tests to ensure the model performance as expected.
   </p>
 </details>
