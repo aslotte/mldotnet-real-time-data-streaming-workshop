@@ -68,9 +68,7 @@ Your YAML file should now look like ![pipeline](https://github.com/aslotte/mldot
 
 If you have a look at the completed build, you'll see that it failed. This is because the console application cannot find the `data.csv` file used for training, as it is not a part of the repository. For smaller data sources, it may make sense to include them in the repository. For any file larger than 100 Mb, we can instead store it in an Azure fileshare, and mount the share as a separate step in the build. Let's have a look at how this can be done.
 
-
-
-##### 2.1. Create and mount an Azure Fileshare to the build pipeline
+##### 2.1. Create an Azure Fileshare 
 1. Navigate to the [Azure portal](https://portal.azure.com)
 2. Navigate to a previously created storage account ([part 2](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-streaming.md)
 3. In the storage account, select **File shares** ![files](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-storage-fileshare.png)
@@ -82,9 +80,16 @@ _As the current data source is 500+ Mb large, we'll only use a small portion of 
 
 7. Upload the following [file](https://aslottepublic.blob.core.windows.net/small/data.csv) to your newly created file share 
 
+##### 2.2. Mount the Azure Fileshare as part of a build step
+1. Navigate back to [Azure DevOps](https://dev.azure.com)
+2. If you're not already in your YAML file, click the **Edit** button in the top-right corner to edit your build pipeline
 
-- Attaching it during the pipeline
-- Modifying the code to point to new location
+In your YAML file, add the snippet below as a first step (**replace the placeholder with the name of your storage account**)
+```
+- script: 'net use X: \\nameofyourstorageaccount.file.core.windows.net\data /u:nameofyourstorageaccount $(filestorage.key)'
+  displayName: 'Map disk drive to Azure Files share folder'
+```
+3. 
 
 </p>
 </details>
