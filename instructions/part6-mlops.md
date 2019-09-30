@@ -96,9 +96,20 @@ variables:
 - name: buildConfiguration
   value: 'Release'
 ```
+4. Click **Save**
 
 Your YAML file should now like like:
 ![pipeline](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-pipeline-with-mount.PNG)
+
+The final piece that is missing, is a variable holding the access key to your fileshare. 
+
+5. In Azure DevOps, navigate to variable groups, by clicking on the **Library** menu item to the left
+6. Click on **+ Variable group** ![variablegroup](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-variable-group.PNG)
+7. Name the variable group **fraud-detection**
+8. Add a new variable called **filestorage.key**
+9. Set the value of the variable to the access key of your storage account ![variablegroup](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-finished-variable-group.PNG)
+10. Make sure to check the lock symbol to the right, so that the variable becomes a secret variable
+11. Click **Save**
 
 </p>
 </details>
