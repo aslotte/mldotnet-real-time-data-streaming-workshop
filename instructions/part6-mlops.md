@@ -70,13 +70,13 @@ variables:
 - script: dotnet run --project src/machine-learning/FraudPredictionTrainer/FraudPredictionTrainer.csproj --configuration $(buildConfiguration)
   displayName: 'Train ML model (dotnet run)'
 ```
-The steps above builds and runs the console application used to train our model in a windows image.
+The steps above builds and runs the console application used to train our model.
 
 Your YAML file should now look like ![pipeline](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-default-pipeline.PNG)
 
 11. In the top-right corner, click **Save and Run** </br>
 
-If you have a look at the completed build, you'll see that it failed. This is because the console application cannot find the `data.csv` file used for training, as it is not a part of the repository. For smaller data sources, it may make sense to include them in the repository. For any file larger than 100 Mb, we can instead store it in an Azure file share and mount the share as a separate step in the build. Let's have a look at how this can be done.
+If you have a look at the completed build, you'll see that it failed. This is because the console application cannot find the `data.csv` file used during training. For smaller data sources, it may make sense to include them in the repository. For any file larger than 100 Mb (as in our case), we can instead store the data in an Azure file share and mount the share as a separate step in the build. Let's have a look at how this can be done.
 
 ##### 2.1. Create an Azure File Share 
 1. Navigate to the [Azure portal](https://portal.azure.com)
