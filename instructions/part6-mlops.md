@@ -1,6 +1,6 @@
 ### ML.NET + Azure DevOps = MLOps
-How do you keep your model up to date, as your data, and code used during training changes?
-What about automatic buil and deployments to production environments?
+How do you keep your model up to date as your data, and the code used during training changes?
+What about automatic build and deployments to production environments?
 
 Just as CI/CD and DevOps revolutionized development and infrastructure management, we can apply the same principles to the training and deployment of our machine learning model.
 
@@ -76,9 +76,9 @@ Your YAML file should now look like ![pipeline](https://github.com/aslotte/mldot
 
 11. In the top-right corner, click **Save and Run** </br>
 
-If you have a look at the completed build, you'll see that it failed. This is because the console application cannot find the `data.csv` file used for training, as it is not a part of the repository. For smaller data sources, it may make sense to include them in the repository. For any file larger than 100 Mb, we can instead store it in an Azure fileshare, and mount the share as a separate step in the build. Let's have a look at how this can be done.
+If you have a look at the completed build, you'll see that it failed. This is because the console application cannot find the `data.csv` file used for training, as it is not a part of the repository. For smaller data sources, it may make sense to include them in the repository. For any file larger than 100 Mb, we can instead store it in an Azure file share and mount the share as a separate step in the build. Let's have a look at how this can be done.
 
-##### 2.1. Create an Azure Fileshare 
+##### 2.1. Create an Azure File Share 
 1. Navigate to the [Azure portal](https://portal.azure.com)
 2. Navigate to a previously created storage account ([in part 2](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/part2-streaming.md))
 3. In the storage account, select **File shares** ![files](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-storage-fileshare.png)
@@ -90,7 +90,7 @@ _As the current data source is 500+ Mb large, we'll only use a small portion of 
 
 7. Upload the following [file](https://aslottepublic.blob.core.windows.net/small/data.csv) to your newly created file share 
 
-##### 2.2. Mount the Azure Fileshare as part of a build step
+##### 2.2. Mount the Azure File Share as part of the build
 1. Navigate back to [Azure DevOps](https://dev.azure.com)
 2. If you're not already in your YAML file, click the **Edit** button in the top-right corner to edit your build pipeline
 
@@ -108,10 +108,10 @@ variables:
 ```
 4. Click **Save**
 
-Your YAML file should now like like:
+Your YAML file should now like:
 ![pipeline](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-pipeline-with-mount.PNG)
 
-The final piece that is missing, is a variable holding the access key to your fileshare. 
+The final piece that is missing, is a variable holding the access key to your file share. 
 
 5. In Azure DevOps, navigate to variable groups, by clicking on the **Library** menu item to the left
 6. Click on **+ Variable group** ![variablegroup](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-variable-group.PNG)
@@ -121,7 +121,7 @@ The final piece that is missing, is a variable holding the access key to your fi
 10. Make sure to check the lock symbol to the right, so that the variable becomes a secret variable
 11. Click **Save**
 
-To queue a new build, click on the **Queue** button in the top-right corner. The build should now complete succesfully in about 2 min.
+To queue a new build, click on the **Queue** button in the top-right corner. The build should now complete successfully in about 2 min.
 
 </p>
 </details>
