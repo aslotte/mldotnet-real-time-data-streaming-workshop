@@ -89,7 +89,16 @@ In your YAML file, add the snippet below as a first step (**replace the placehol
 - script: 'net use X: \\nameofyourstorageaccount.file.core.windows.net\data /u:nameofyourstorageaccount $(filestorage.key)'
   displayName: 'Map disk drive to Azure Files share folder'
 ```
-3. 
+3. Replace the variables section with:
+```
+variables:
+- group: fraud-detection
+- name: buildConfiguration
+  value: 'Release'
+```
+
+Your YAML file should now like like:
+![pipeline](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-pipeline-with-mount.PNG)
 
 </p>
 </details>
