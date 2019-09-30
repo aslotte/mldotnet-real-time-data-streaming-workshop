@@ -141,9 +141,9 @@ To queue a new build, click on the **Queue** button in the top-right corner. The
    7. Copy/paste the following as the last step. Replace the placeholder with the name of your storage account
    
    ```
-   - task: AzureFileCopy@3
+- task: AzureFileCopy@3
   inputs:
-    SourcePath: 'MLModel.zip'
+    SourcePath: 'X://MLModel.zip'
     azureSubscription: 'Azure'
     Destination: 'AzureBlob'
     storage: '{name-of-your-storage-account}'
@@ -200,7 +200,7 @@ namespace FraudPrediction.Tests
         public void SetUp()
         {
             var mlContext = new MLContext();
-            var model = mlContext.Model.Load("..\\..\\..\\..\\FraudPredictionTrainer\\MLModel.zip", out _);
+            var model = mlContext.Model.Load(@"X:\\MLModel.zip", out _);
             predictionEngine = mlContext.Model.CreatePredictionEngine<Transaction, FraudPrediction>(model);
         }
 
