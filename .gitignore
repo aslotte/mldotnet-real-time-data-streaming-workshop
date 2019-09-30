@@ -165,3 +165,11 @@ src/machine-learning/FraudPredictionTrainer/obj/FraudPredictionTrainer.csproj.nu
 src/machine-learning/FraudPredictionTrainer/obj/FraudPredictionTrainer.csproj.nuget.g.props
 src/machine-learning/FraudPredictionTrainer/obj/FraudPredictionTrainer.csproj.nuget.g.targets
 src/machine-learning/FraudPredictionTrainer/obj/project.assets.json
+src/machine-learning/FraudPredictionTrainer/MLModel.zip
+src/machine-learning/FraudPredictionTrainer/bin/Debug/netcoreapp2.2/FraudPredictionTrainer.deps.json
+src/machine-learning/FraudPredictionTrainer/bin/Debug/netcoreapp2.2/FraudPredictionTrainer.dll
+src/machine-learning/FraudPredictionTrainer/bin/Debug/netcoreapp2.2/FraudPredictionTrainer.runtimeconfig.dev.json
+src/machine-learning/FraudPredictionTrainer/bin/Debug/netcoreapp2.2/FraudPredictionTrainer.runtimeconfig.json
+src/machine-learning/FraudPredictionTrainer/obj/Debug/netcoreapp2.2/FraudPredictionTrainer.csproj.FileListAbsolute.txt
+src/machine-learning/FraudPredictionTrainer/obj/Debug/netcoreapp2.2/FraudPredictionTrainer.dll
+src/machine-learning/FraudPredictionTrainer/bin/Debug/netcoreapp2.2/data.csv

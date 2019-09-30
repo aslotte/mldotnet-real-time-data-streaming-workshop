@@ -3,7 +3,7 @@ using Microsoft.ML.Trainers.FastTree;
 using System;
 using System.Diagnostics;
 
-namespace FraudPreditionTrainer
+namespace FraudPredictionTrainer
 {
     class Program
     {

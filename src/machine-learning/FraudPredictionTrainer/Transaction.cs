@@ -1,6 +1,6 @@
 using Microsoft.ML.Data;
 
-namespace FraudPreditionTrainer
+namespace FraudPredictionTrainer
 {
     internal sealed class Transaction
     {
