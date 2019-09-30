@@ -126,4 +126,31 @@ To queue a new build, click on the **Queue** button in the top-right corner. The
 </p>
 </details>
 
-#### 4. Set up a CD pipeline
+#### 3. Set up Continuous Delivery
+<details>
+  <summar>Set up Continuous Delivery</summary>
+  <p>
+    We now have a continuous integration pipeline set up, in which a new model is trained each time any check-in to the repository is made. We can take this one step further and deploy the MLModel.zip to our Azure storage account on completion of the build.
+    
+   1. In Azure DevOps, click on **Project Settings** in the bottom-left corner
+   2. In the menu that appears, click on **Service Connections** (under pipelines) ![service](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-service-connection.PNG)
+   3. Click on **+ New Service Connection** and select **Azure Resource Manager** in the list
+   4. In the modal that appears, give the connection the name of **Azure** and select your subscription
+   5. Click **OK** to close the modal
+   6. In Azure DevOps, navigate back to your build's YAML file
+   7. Copy/paste the following as the last step. Replace the placeholder with the name of your storage account
+   
+   ```
+   - task: AzureFileCopy@3
+  inputs:
+    SourcePath: 'MLModel.zip'
+    azureSubscription: 'Azure'
+    Destination: 'AzureBlob'
+    storage: '{name-of-your-storage-account}'
+    ContainerName: 'model'
+   ```
+   
+   8. Click **Save**
+   
+  </p>
+</details>
