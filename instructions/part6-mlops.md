@@ -1,9 +1,8 @@
 ### ML.NET + Azure DevOps = MLOps
-How do you keep your model up to date as your data, and the code used during training changes?
-What about automatic build and deployments to production environments?
+How do you keep your model up to date as the data, and the code used during training changes?
+What about automatic builds and deployments?
 
-Just as CI/CD and DevOps revolutionized development and infrastructure management, we can apply the same principles to the training and deployment of our machine learning model.
-
+We can apply the same DevOps' principles and ideas to managing our machine learning model as we can with our code.
 For demonstration purposes we'll be using Azure DevOps.
 
 ![mlops](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/mlops.png)
@@ -17,7 +16,8 @@ For demonstration purposes we'll be using Azure DevOps.
   <summary> Create an Azure DevOps account</summary>
   <p>
     
-You can skip this section if you already have an account.    
+_Feel free to skip this section if you already have an account._    
+
 1. Navigate to [Azure DevOps](https://dev.azure.com)
 2. Click on **Start free** ![devops](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-1.PNG)
 3. Follow the provided instructions to create a free account
