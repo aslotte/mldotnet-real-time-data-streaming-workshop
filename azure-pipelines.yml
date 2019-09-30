@@ -5,10 +5,6 @@ trigger:
   paths:
     include:
     - src/*
-    exclude:
-    - instructions/*
-    - presentation/*
-    - workspace/*
 
 pool:
   vmImage: 'windows-latest'
