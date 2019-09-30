@@ -190,7 +190,6 @@ using FraudPredictionTrainer;
 using Microsoft.ML;
 
 namespace FraudPrediction.Tests
-
 {
     [TestFixture]
     public class FraudDetectionTests 
