@@ -14,7 +14,7 @@ namespace FraudPrediction.Tests
         public void SetUp()
         {
             var mlContext = new MLContext();
-            var model = mlContext.Model.Load("..\\..\\..\\..\\FraudPredictionTrainer\\MLModel.zip", out _);
+            var model = mlContext.Model.Load(@"X:\\MLModel.zip", out _);
             predictionEngine = mlContext.Model.CreatePredictionEngine<Transaction, FraudPrediction>(model);
         }
 

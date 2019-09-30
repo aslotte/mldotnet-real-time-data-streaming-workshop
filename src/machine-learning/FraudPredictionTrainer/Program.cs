@@ -49,7 +49,7 @@ namespace FraudPredictionTrainer
             Console.WriteLine($"F1Score: {metrics.F1Score}");
 
             //Save
-            mlContext.Model.Save(trainedModel, data.Schema, "MLModel.zip");
+            mlContext.Model.Save(trainedModel, data.Schema, @"X:\\MLModel.zip");
             Console.WriteLine("End Program Time elapsed: {0}", stopwatch.Elapsed);
             stopwatch.Stop();
         }

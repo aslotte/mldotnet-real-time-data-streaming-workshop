@@ -300,3 +300,14 @@ src/machine-learning/FraudPrediction.Tests/obj/FraudPrediction.Tests.csproj.nuge
 src/machine-learning/FraudPrediction.Tests/obj/FraudPrediction.Tests.csproj.nuget.g.props
 src/machine-learning/FraudPrediction.Tests/obj/FraudPrediction.Tests.csproj.nuget.g.targets
 src/machine-learning/FraudPrediction.Tests/obj/project.assets.json
+src/machine-learning/FraudPredictionTrainer/bin/Release/netcoreapp2.2/data.csv
+src/machine-learning/FraudPredictionTrainer/bin/Release/netcoreapp2.2/FraudPredictionTrainer.deps.json
+src/machine-learning/FraudPredictionTrainer/bin/Release/netcoreapp2.2/FraudPredictionTrainer.dll
+src/machine-learning/FraudPredictionTrainer/bin/Release/netcoreapp2.2/FraudPredictionTrainer.runtimeconfig.dev.json
+src/machine-learning/FraudPredictionTrainer/bin/Release/netcoreapp2.2/FraudPredictionTrainer.runtimeconfig.json
+src/machine-learning/FraudPredictionTrainer/obj/Release/netcoreapp2.2/FraudPredictionTrainer.AssemblyInfo.cs
+src/machine-learning/FraudPredictionTrainer/obj/Release/netcoreapp2.2/FraudPredictionTrainer.AssemblyInfoInputs.cache
+src/machine-learning/FraudPredictionTrainer/obj/Release/netcoreapp2.2/FraudPredictionTrainer.csproj.FileListAbsolute.txt
+src/machine-learning/FraudPredictionTrainer/obj/Release/netcoreapp2.2/FraudPredictionTrainer.assets.cache
+src/machine-learning/FraudPredictionTrainer/obj/Release/netcoreapp2.2/FraudPredictionTrainer.csprojAssemblyReference.cache
+src/machine-learning/FraudPredictionTrainer/obj/Release/netcoreapp2.2/FraudPredictionTrainer.dll
