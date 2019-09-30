@@ -27,3 +27,10 @@ steps:
 
 - script: dotnet run --project src/machine-learning/FraudPredictionTrainer/FraudPredictionTrainer.csproj --configuration $(buildConfiguration)
   displayName: 'Train ML model (dotnet run)'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Run Unit Tests using trained ML model'
+  inputs:
+    command: test
+    projects: 'src/machine-learning/FraudPrediction.Tests/FraudPrediction.Tests.csproj'
+    arguments: '--configuration $(buildConfiguration)'

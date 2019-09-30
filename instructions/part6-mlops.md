@@ -157,3 +157,115 @@ To queue a new build, click on the **Queue** button in the top-right corner. The
 Great job! You've now successfully set up a CI/CD pipeline for your model. This pipeline can be further extended with triggers for changes in data, or additional unit and integration tests to ensure the model performance as expected.
   </p>
 </details>
+
+#### 4. Add Automated Testing
+<details>
+  <summary>Add Automated Testing</summary>
+  <p>
+   
+  In the same way as we can add unit tests to test our regular code base, we can add unit tests to test the performance of our model.
+  Let's have a look at how we can do just that.
+  
+  1. Open VS Code
+  2. In VS Code, select Terminal -> New Terminal to open a new terminal window<img src="https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-open-terminal.png"></li>
+  3. Navigate to `{location of forked repo}\mldotnet-real-time-data-streaming-workshop\src\machine-learning`
+  4. In the terminal, execute the following command to create a new test project `dotnet new nunit -o FraudPrediction.Tests`
+  5. In the terminal, execute the following command to navigate to the location of the new test project `cd FraudPrediction.Tests`
+  6. In the terminal, execute the following command to open the folder in VS Code `code . -r`
+  7. Open a new terminal and execute the following command to add the required NuGet packages 
+  ```
+  dotnet add package Microsoft.ML
+  ```
+  8. Open the project file called `FraudPrediction.Tests.csproj`
+  9. Within `ItemGroup` add a project reference to `FraudPredictionTrainer.csproj`
+  ```
+      <ProjectReference Include="..\FraudPredictionTrainer\FraudPredictionTrainer.csproj" />
+  ```
+  10. Delete the default `UnitTest1.cs` class
+  11. Add a new class called `FraudPredictionTests.cs`
+  12. Copy the following to the new class
+  ```
+using NUnit.Framework;
+using FraudPredictionTrainer;
+using Microsoft.ML;
+
+namespace FraudPrediction.Tests
+
+{
+    [TestFixture]
+    public class FraudDetectionTests 
+    {
+        private PredictionEngine<Transaction, FraudPrediction> predictionEngine;
+
+        [SetUp]
+        public void SetUp()
+        {
+            var mlContext = new MLContext();
+            var model = mlContext.Model.Load("..\\..\\..\\..\\FraudPredictionTrainer\\MLModel.zip", out _);
+            predictionEngine = mlContext.Model.CreatePredictionEngine<Transaction, FraudPrediction>(model);
+        }
+
+        [Test]
+        public void Predict_GivenNonFraudulentTransaction_ShouldReturnFalse()
+        {
+            //Arrange
+            var transaction = new Transaction 
+            {
+                    Amount = 1500f,
+                    OldbalanceDest = 100,
+                    NewbalanceDest = 300,
+                    NameDest = "C123",
+                    NameOrig = "B123"
+            };
+
+            //Act
+            var result = this.predictionEngine.Predict(transaction);
+
+            //Assert
+            Assert.IsFalse(result.IsFraud);
+        }
+
+    }
+}
+  ```
+13. Add a new class called `FraudPrediction.cs`
+14. Copy the following to the new class
+```
+using Microsoft.ML.Data;
+
+namespace FraudPrediction.Tests 
+{
+    public class FraudPrediction
+    {
+        [ColumnName("PredictedLabel")]
+        public bool IsFraud { get; set; }
+
+        [ColumnName("Score")]
+        public float Score { get; set; }
+    }
+}
+```
+15. In the terminal, execute the following command to build the solution `dotnet build`
+16. To run the test, execute the following command in the terminal window `dotnet test`
+17. Commit and push the changes to your repository
+
+Congratulations! You've just created your first unit test to test your machine learning model.
+Let's see if we can integrate this test in our CI/CD pipeline.
+
+1. Navigate to [Azure DevOps](https://dev.azure.com)
+2. Open the build's YAML file
+3. Copy/paste the following as the second-to-last step (before the copy to blob storage step)
+```
+- task: DotNetCoreCLI@2
+  displayName: 'Run Unit Tests using trained ML model'
+  inputs:
+    command: test
+    projects: 'src/machine-learning/FraudPrediction.Tests/FraudPrediction.Tests.csproj'
+    arguments: '--configuration $(buildConfiguration)'
+```
+4. Click **Save** and queue up a new build to see test run as part of the build
+
+Your YAML file should now look like:
+![finalyaml](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-final-yaml.PNG)
+  </p>
+</detail>
