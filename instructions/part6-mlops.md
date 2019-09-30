@@ -1,11 +1,18 @@
 ### ML.NET + Azure DevOps = MLOps
-How do you keep your model up to date, as your data and the code used during training changes?
-What about automatic deployments to your Azure Function or ASP.NET Core Web API? 
+How do you keep your model up to date, as your data, and code used during training changes?
+What about automatic buil and deployments to production environments?
 
-Just as CI/CD and DevOps revolutionized development and infrastructure management, we can apply the same principles to the training and deployment of your machine learning model.
-For demonstration purposes, we'll use Azure DevOps.
+Just as CI/CD and DevOps revolutionized development and infrastructure management, we can apply the same principles to the training and deployment of our machine learning model.
+
+For demonstration purposes we'll be using Azure DevOps.
+
+![mlops](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/mlops.PNG)
 
 #### 1. Getting started
+<details>
+  <summary> Getting started</summary>
+  <p>
+    
 <details>
   <summary> Create an Azure DevOps account</summary>
   <p>
@@ -26,6 +33,8 @@ You can skip this section if you already have an account.
   </p>
 </details>
 
+</p>
+</details>
 #### 2. Set up a CI pipeline
 <details>
   <summary> Set up a CI pipeline</summary>
@@ -111,9 +120,9 @@ The final piece that is missing, is a variable holding the access key to your fi
 10. Make sure to check the lock symbol to the right, so that the variable becomes a secret variable
 11. Click **Save**
 
+To queue a new build, click on the **Queue** button in the top-right corner. The build should now complete succesfully in about 2 min.
+
 </p>
 </details>
-
-#### 3. Adding unit tests
 
 #### 4. Set up a CD pipeline
