@@ -30,6 +30,7 @@ _Feel free to skip this section if you already have an account._
    
 1. In the top right corner of this repo, click **Fork** </br>
 2. Select to **Fork** this repository to your own Github account </br>
+3. After the repository has been forked, remove the existing azure-pipelines.yml file
   </p>
 </details>
 
@@ -108,7 +109,7 @@ variables:
 ```
 4. Click **Save**
 
-Your YAML file should now like:
+Your YML file should now like:
 ![pipeline](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-pipeline-with-mount.PNG)
 
 The final piece that is missing, is a variable holding the access key to your file share. 
@@ -137,7 +138,7 @@ To queue a new build, click on the **Queue** button in the top-right corner. The
    3. Click on **+ New Service Connection** and select **Azure Resource Manager** in the list
    4. In the modal that appears, give the connection the name of **Azure** and select your subscription
    5. Click **OK** to close the modal
-   6. In Azure DevOps, navigate back to your build's YAML file
+   6. In Azure DevOps, navigate back to your build's YML file
    7. Copy/paste the following as the last step. Replace the placeholder with the name of your storage account
    
    ```
@@ -152,7 +153,7 @@ To queue a new build, click on the **Queue** button in the top-right corner. The
    
    8. Click **Save**
    
-   Your YAML file should now look like: ![service](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-after-deploy.PNG)
+   Your YML file should now look like: ![service](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-after-deploy.PNG)
    
 Great job! You've now successfully set up a CI/CD pipeline for your model. This pipeline can be further extended with triggers for changes in data, or additional unit and integration tests to ensure the model performance as expected.
   </p>
@@ -252,7 +253,7 @@ Congratulations! You've just created your first unit test to test your machine l
 Let's see if we can integrate this test in our CI/CD pipeline.
 
 1. Navigate to [Azure DevOps](https://dev.azure.com)
-2. Open the build's YAML file
+2. Open the build's YML file
 3. Copy/paste the following as the second-to-last step (before the copy to blob storage step)
 ```
 - task: DotNetCoreCLI@2
@@ -264,7 +265,7 @@ Let's see if we can integrate this test in our CI/CD pipeline.
 ```
 4. Click **Save** and queue up a new build to see test run as part of the build
 
-Your YAML file should now look like:
+Your YML file should now look like:
 ![finalyaml](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-final-yaml.PNG)
   </p>
 </detail>
