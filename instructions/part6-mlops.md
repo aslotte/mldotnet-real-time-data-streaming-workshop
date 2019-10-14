@@ -52,7 +52,7 @@ _Feel free to skip this section if you already have an account._
 1. Navigate to [Azure DevOps](https://dev.azure.com)
 2. Click on **New Project** in the top-right corner
 3. Give the new project a name, e.g. `fraud-detection`
-4. In the menu to the left, click on **Builds** and then **New pipeline** ![newproject](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-new-pipeline.PNG)
+4. In the menu to the left under **Pipelines**, click on **Builds** and then **New pipeline** ![newproject](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-new-pipeline.PNG)
 5. In the list, select **GitHub** ![starter](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-select-git.PNG)
 6. You may be asked to enter your Github account for authentication
 7. In the list of repositories, select the new repository you just forked
