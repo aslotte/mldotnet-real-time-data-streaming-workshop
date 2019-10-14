@@ -30,7 +30,14 @@ _Feel free to skip this section if you already have an account._
    
 1. In the top right corner of this repo, click **Fork** </br>
 2. Select to **Fork** this repository to your own Github account </br>
-3. After the repository has been forked, remove the existing azure-pipelines.yml file
+  </p>
+</details>
+
+<details>
+  <summary>Remove existing YML file</summary>
+  <p>
+   
+1. After the repository has been forked, remove the existing `azure-pipelines.yml` file
   </p>
 </details>
 
@@ -47,18 +54,18 @@ _Feel free to skip this section if you already have an account._
 3. Give the new project a name, e.g. `fraud-detection`
 4. In the menu to the left, click on **Builds** and then **New pipeline** ![newproject](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-new-pipeline.PNG)
 5. In the list, select **GitHub** ![starter](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-select-git.PNG)
-6. In the list of repositories, select the new repository you just forked
-7. You may be asked to enter your Github account for authentication
+6. You may be asked to enter your Github account for authentication
+7. In the list of repositories, select the new repository you just forked
 8. Click on **Approve and Install** to install Azure Pipelines in the forked repository
 9. Select **Starter pipeline** ![starter](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-configure.PNG)
-10. Let's make some changes to the default YAML file. </br>
+10. Let's make some changes to the default YML file. </br>
 
 10.1. Change the VM image to
 ```
 pool:
   vmImage: 'windows-latest'
 ```
-10.2. Add a variables section </br>
+10.2. Add a variables section (after the vmImage) </br>
 ```
 variables:
   buildConfiguration: 'Release'
@@ -73,7 +80,7 @@ variables:
 ```
 The steps above builds and runs the console application used to train our model.
 
-Your YAML file should now look like ![pipeline](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-default-pipeline.PNG)
+Your YML file should now look like ![pipeline](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-default-pipeline.PNG)
 
 11. In the top-right corner, click **Save and Run** </br>
 
@@ -95,7 +102,7 @@ _As the current data source is 500+ Mb large, we'll only use a small portion of 
 1. Navigate back to [Azure DevOps](https://dev.azure.com)
 2. If you're not already in your YAML file, click the **Edit** button in the top-right corner to edit your build pipeline
 
-In your YAML file, add the snippet below as a first step (**replace the placeholder with the name of your storage account**)
+In your YML file, add the snippet below as a first step (**replace the placeholder with the name of your storage account**)
 ```
 - script: 'net use X: \\nameofyourstorageaccount.file.core.windows.net\data /u:nameofyourstorageaccount $(filestorage.key)'
   displayName: 'Map disk drive to Azure Files share folder'
