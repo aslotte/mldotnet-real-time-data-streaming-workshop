@@ -100,9 +100,9 @@ _As the current data source is 500+ Mb large, we'll only use a small portion of 
 
 ##### 2.2. Mount the Azure File Share as part of the build
 1. Navigate back to [Azure DevOps](https://dev.azure.com)
-2. If you're not already in your YAML file, click the **Edit** button in the top-right corner to edit your build pipeline
+2. If you're not already in your YML file, click the **Edit** button in the top-right corner to edit your build pipeline
 
-In your YML file, add the snippet below as a first step (**replace the placeholder with the name of your storage account**)
+In your YML file, add the snippet below as a first step (make sure to replace the **two placeholders** with the name of your storage account)
 ```
 - script: 'net use X: \\nameofyourstorageaccount.file.core.windows.net\data /u:nameofyourstorageaccount $(filestorage.key)'
   displayName: 'Map disk drive to Azure Files share folder'
@@ -125,11 +125,11 @@ The final piece that is missing, is a variable holding the access key to your fi
 6. Click on **+ Variable group** ![variablegroup](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-variable-group.PNG)
 7. Name the variable group **fraud-detection**
 8. Add a new variable called **filestorage.key**
-9. Set the value of the variable to the access key of your storage account ![variablegroup](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-finished-variable-group.PNG)
+9. Set the value of the variable to the access key of your storage account. The access key can be found by navigating to your storage account and selecting the **Access Keys** menu option in the menu to the left ![variablegroup](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-devops-finished-variable-group.PNG)
 10. Make sure to check the lock symbol to the right, so that the variable becomes a secret variable
 11. Click **Save**
 
-To queue a new build, click on the **Queue** button in the top-right corner. The build should now complete successfully in about 2 min.
+To queue a new build, navigate to Pipelines -> Builds and click on the **Queue** button in the top-right corner. The build should now complete successfully in about 2 min.
 
 </p>
 </details>
