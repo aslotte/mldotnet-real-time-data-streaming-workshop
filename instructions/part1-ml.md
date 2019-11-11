@@ -38,7 +38,7 @@ Other available data-sources worth exploring are:
    Exploring a large dataset can be daunting. Loading a dataset containing 6+ million rows in something like Excel is not always feasible due to application limitations and performance. To make life easier for us we can load our data into a Jupyter Notebook to plot relationships and obtain summary statistics.  
    
    To explore the dataset in a Jupyter Notebook:
-   - Follow this [link to open our Jupyter Notebook in an application called MyBinder](bit.ly/33EcOlf)
+   - Follow this [link to open our Jupyter Notebook in an application called MyBinder](https://bit.ly/33EcOlf)
    - Once the notebook had loaded, click on the menu option `Cell -> Run All`
    - Explore the result
    
