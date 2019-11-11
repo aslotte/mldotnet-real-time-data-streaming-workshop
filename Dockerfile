@@ -51,7 +51,7 @@ RUN dotnet help
 
 # Copy notebooks
 
-COPY ./notebooks/ ${HOME}/notebooks/
+COPY ./src/machine-learning/jupyter/ ${HOME}/notebooks/
 
 # Copy package sources
 
