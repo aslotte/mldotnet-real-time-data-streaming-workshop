@@ -126,7 +126,7 @@ In this workshop we will be looking at detecting fradulent transactions in real-
 ![Real-Time Data Pipeline with Azure ML](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/Solution%20Architecture%20-%20Azure%20ML.png)
 
 ## Assumptions
-This workshop is currently valid for ML.NET v1.3.1
+This workshop is currently valid for ML.NET v1.4.0
 
 ## Additional Resources
 - [ML.NET](https://github.com/dotnet/machinelearning)
