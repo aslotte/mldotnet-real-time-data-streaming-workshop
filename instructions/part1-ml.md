@@ -35,25 +35,17 @@ Other available data-sources worth exploring are:
     <summary><b>2.1 Explore the dataset</b></summary>
    <p>
    
-   Exploring a large dataset can be daunting. Loading a dataset containing 6+ million rows in something like Excel is not always feasible due to application limitations and performance. To make life easier for us we can use an open-source Python library called **Pandas** in e.g. a Jupyter notebook.
+   Exploring a large dataset can be daunting. Loading a dataset containing 6+ million rows in something like Excel is not always feasible due to application limitations and performance. To make life easier for us we can load our data into a Jupyter Notebook to plot relationships and obtain summary statistics.  
    
-   To explore the dataset using Pandas and a Jupyter notebook:
-   - Create a free [Kaggle account](https://www.kaggle.com/)
-   - Navigate to the [this specific dataset](https://www.kaggle.com/ntnu-testimon/paysim1) and click **New Notebook**. 
-   - When selecting Kernel type, select **Notebook**
-   - In the top-left corner, select File -> Upload Notebook
-   - Upload the [Jupyter notebook](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/src/machine-learning/jupyter/fraudulent-transactions-jupyter-notebook.ipynb) from this repo
-   - Replace the path in the following cell, with the path to the file (found if clicking on the workspace to the right)</br>
-   `df = pd.read_csv("../input/paysim1/PS_20174392719_1491204439457_log.csv")`
-   - Select Run -> Run all
-   - Explore the results
+   To explore the dataset in a Jupyter Notebook:
+   - Follow this [link to open our Jupyter Notebook in an application called MyBinder](https://bit.ly/33EcOlf)
+   - Once the notebook had loaded, click on the menu option `Cell -> Run All`
+   - Explore the result
    
    **Questions to think about:**
    - What kind of features are we working with?(columns)<br/>
    - Which column is considered your label column (what we would like to predict)?<br/>
    - Is the dataset balanced? (Hint: What's the distribution of fraudulent and non-fraudulent transactions)<br/>
-   - What's the data type of the available features?<br/>
-   - Do any of the columns have missing values?<br/>   
    </p>
   </details>
   <details>
