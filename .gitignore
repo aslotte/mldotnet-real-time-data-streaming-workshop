@@ -348,3 +348,4 @@ src/machine-learning/FraudPredictionTrainer/bin/Debug/netcoreapp3.0/FraudPredict
 src/machine-learning/FraudPredictionTrainer/bin/Debug/netcoreapp3.0/FraudPredictionTrainer.dll
 src/machine-learning/FraudPredictionTrainer/bin/Debug/netcoreapp3.0/FraudPredictionTrainer.exe
 src/machine-learning/FraudPredictionTrainer/bin/Debug/netcoreapp3.0/FraudPredictionTrainer.deps.json
+src/machine-learning/FraudPrediction.Tests/bin/Debug/netcoreapp3.0/FraudPredictionTrainer.exe
