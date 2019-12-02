@@ -210,7 +210,7 @@ To upload the reference data, please do the following:
 - In the terminal window, execute the following command to open the `reference-data.json` file </br> 
 `code C:\mldotnet-real-time-data-streaming-workshop\src\real-time-data-streaming\stream-analytics\reference-data.json`![refData](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-reference-data.PNG)
 - In `reference-data.json`, do a "Find All" and replace the current e-mail with the one you would like to get notifications too.
-- In Azure, navigate to your storage account starting with mlmodel and select **Blobs** ![storageAccount](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-storage-blob.png)
+- In Azure, navigate to your storage account starting with mlmodel and select **Containers** ![storageAccount](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-storage-blob.png)
 - Select the container named **reference**
 - Click on **Upload** and browse to, and upload the `reference-data.json` file. ![upload](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-storage-upload.png)
 
@@ -226,7 +226,7 @@ To upload the reference data, please do the following:
 You can either upload your previously trained model or a pre-trained model found [here](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/tree/master/src/machine-learning/model) to Azure.
 
 To upload the model:
-- In Azure, navigate to your storage account starting with mlmodel and select **Blobs** ![storageAccount](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-storage-blob.png)
+- In Azure, navigate to your storage account starting with mlmodel and select **Containers** ![storageAccount](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-storage-blob.png)
 - Select the container named **model**
 - Click on **Upload** and browse to, and upload the `MLModel.zip` file. ![upload](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-storage-upload.png)
 
