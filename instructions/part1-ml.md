@@ -388,7 +388,7 @@ To implement the `FastTreeBinary` algorithm, substitute the line defining the tr
     { 
       NumberOfLeaves = 10, 
       NumberOfTrees = 50,  
-      LabelColumnName = "isFraud", 
+      LabelColumnName = nameof(Transaction.IsFraud),
       FeatureColumnName = "Features" 
     }));
 
