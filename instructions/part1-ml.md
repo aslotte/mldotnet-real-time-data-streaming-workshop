@@ -275,9 +275,9 @@ So which features do you think account for the variance in the dataset? Or put i
    
    We can create a training pipeline using logistic linear regression by appending the `LbfgsLogisticRegression` trainer to our previously created data processing pipeline. The `LbfgsLogisticRegression` requires us to define which column in the dataset is contains our labels, the value we are trying to predict</br>
    To do this, add the below lines of code to your `Program.cs` file
-   
+  
     var trainingPipeline = dataProcessingPipeline
-        .Append(mlContext.BinaryClassification.Trainers.LbfgsLogisticRegression(labelColumnName: "isFraud"));
+      .Append(mlContext.BinaryClassification.Trainers.LbfgsLogisticRegression(labelColumnName: nameof(Transaction.IsFraud)));
    
   Once we have appended the trainer, all that remains is to use the `trainingPipeline` to a fit an as accurate model as possible based on the training dataset. To do this, we will use the `.Fit` method located on the `IEstimator` interface.</br>
   Add the below line of code to your `Program.cs` file
@@ -307,7 +307,7 @@ Add the below line of code to your `Program.cs` file
 To calculate the evaluation metrics for our model, use the `BinaryClassification` evaluator on the `MLContext`.
 Add the below line of code to your `Program.cs` file
       
-    var metrics = mlContext.BinaryClassification.Evaluate(predictions, labelColumnName: "isFraud");
+    var metrics = mlContext.BinaryClassification.Evaluate(predictions, labelColumnName: nameof(Transaction.IsFraud));  
 
  The `Program.cs` file should now look as below
  ![afterEvaluation](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-after-evaluation.PNG)  
