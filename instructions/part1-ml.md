@@ -222,14 +222,14 @@ To transform these features to float vectors, we can utilize a technique called 
 
 To transform the type column using `OneHotEncoding`, you can call the `OneHotEncoding` method located in the Transforms catalog of ML.NET
 
-    mlContext.Transforms.Categorical.OneHotEncoding("type")
+    mlContext.Transforms.Categorical.OneHotEncoding(nameof(Transaction.Type))
 
 The cardinality of the nameDest column however, is likely to be very high, thus regular `OneHotEncoding` would create a very wide dataset, causing either a large model or an out-of-memory exception when performing the training. We can instead use `OneHotHashEncoding` to reduce the dimensions and save some space.
 
 At this point, this is where pipelines come into play. As we will have multiple transformation operations we would like to conduct, we can chain them all together into a data processing pipeline:
  
-    var dataProcessingPipeline = mlContext.Transforms.Categorical.OneHotEncoding("type")
-                .Append(mlContext.Transforms.Categorical.OneHotHashEncoding("nameDest"))
+    var dataProcessingPipeline = mlContext.Transforms.Categorical.OneHotEncoding(nameof(Transaction.Type))
+                .Append(mlContext.Transforms.Categorical.OneHotHashEncoding(nameof(Transaction.NameDest)))
                 
  Perfect. Our non-numeric features are now transformed into a form the algorithm can understand.</br>
  
@@ -238,14 +238,17 @@ So which features do you think account for the variance in the dataset? Or put i
  To define which features to include during training, we will have to concatenate them into a `Feature` vector
  This can be done by using the `Concatenate` method located in the `Transforms` catalog
  
-       mlContext.Transforms.Concatenate("Features", "type", "nameDest", "amount", "oldbalanceOrg", "oldbalanceDest", "newbalanceOrig", "newbalanceDest")
+    mlContext.Transforms.Concatenate("Features", nameof(Transaction.Type), nameof(Transaction.NameDest), 
+                nameof(Transaction.Amount), nameof(Transaction.OldbalanceOrg), nameof(Transaction.OldbalanceDest), 
+                nameof(Transaction.NewbalanceOrig), nameof(Transaction.NewbalanceDest))
        
  To add the required transformations, add the below lines to your `Program.cs` file.
  
-            var dataProcessingPipeline = mlContext.Transforms.Categorical.OneHotEncoding("type")
-                .Append(mlContext.Transforms.Categorical.OneHotHashEncoding("nameDest"))
-                .Append(mlContext.Transforms.Concatenate("Features", "type", "nameDest", 
-                "amount", "oldbalanceOrg", "oldbalanceDest", "newbalanceOrig", "newbalanceDest"));
+            var dataProcessingPipeline = mlContext.Transforms.Categorical.OneHotEncoding(nameof(Transaction.Type))
+                .Append(mlContext.Transforms.Categorical.OneHotHashEncoding(nameof(Transaction.NameDest))
+                .Append(mlContext.Transforms.Concatenate("Features", nameof(Transaction.Type), nameof(Transaction.NameDest), 
+                nameof(Transaction.Amount), nameof(Transaction.OldbalanceOrg), nameof(Transaction.OldbalanceDest), 
+                nameof(Transaction.NewbalanceOrig), nameof(Transaction.NewbalanceDest))));
  
  The `Program.cs` file should now look as below
  ![afterTransformations](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/vscode-after-transformations.PNG)
