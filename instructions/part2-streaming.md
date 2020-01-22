@@ -11,8 +11,6 @@ In this part of the workshop, we will be setting up the real-time data pipeline 
   <summary>Deploy with ARM Templates</summary>
   <p>
 
-**This step is only required if we skipped step 0**
-
 #### 1.1 Deploy ARM Template
 - Navigate to [deploy an ARM template](https://portal.azure.com/#create/Microsoft.Template)
 - Click on **Build your own Template in the Editor** ![editor](https://github.com/aslotte/mldotnet-real-time-data-streaming-workshop/blob/master/instructions/images/azure-custom-deploy.PNG) </br>
