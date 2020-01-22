@@ -12,7 +12,7 @@ In this part of the workshop, we will be setting up the real-time data pipeline 
   <p>
 
 #### 1.1 Deploy ARM Template
-- Click on the Deployment button below to open up the Azure Portal with an ARM template pre-configured
+- Hold down CTRL and click on the Deployment button below to open up the Azure Portal with an ARM template pre-configured in a new tab
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Faslotte%2Fmldotnet-real-time-data-streaming-workshop%2Fmaster%2Fsrc%2Freal-time-data-streaming%2Fdeploy%2Fpipeline-with-mldotnet.json" target="_blank">
 <img src="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png"/>
 </a>
