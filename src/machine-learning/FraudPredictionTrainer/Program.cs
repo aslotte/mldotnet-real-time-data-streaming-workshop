@@ -39,7 +39,7 @@ namespace FraudPredictionTrainer
             var predictions = trainedModel.Transform(testTrainData.TestSet);
             Console.WriteLine("Time elapsed: {0}-Transform", stopwatch.Elapsed);
 
-            var metrics = mlContext.BinaryClassification.Evaluate(predictions, labelColumnName: "isFraud");
+            var metrics = mlContext.BinaryClassification.Evaluate(predictions, labelColumnName: nameof(Transaction.IsFraud));
             Console.WriteLine("Time elapsed: {0}-Evaluate", stopwatch.Elapsed);
 
             Console.WriteLine($"Accuracy: {metrics.Accuracy}");
@@ -56,15 +56,22 @@ namespace FraudPredictionTrainer
 
         private static IEstimator<ITransformer> BuildDataProcessingPipeline(MLContext mlContext)
         {
-            return mlContext.Transforms.Categorical.OneHotEncoding("type")
-                .Append(mlContext.Transforms.Categorical.OneHotHashEncoding("nameDest"))
-                .Append(mlContext.Transforms.Concatenate("Features", "type", "nameDest", "amount", "oldbalanceOrg", "oldbalanceDest", "newbalanceOrig", "newbalanceDest")
+            return mlContext.Transforms.Categorical.OneHotEncoding(nameof(Transaction.Type))
+                .Append(mlContext.Transforms.Categorical.OneHotHashEncoding(nameof(Transaction.NameDest)))
+                .Append(mlContext.Transforms.Concatenate("Features", nameof(Transaction.Type), nameof(Transaction.NameDest), nameof(Transaction.Amount), 
+                nameof(Transaction.OldbalanceOrg), nameof(Transaction.OldbalanceDest), nameof(Transaction.NewbalanceOrig), nameof(Transaction.NewbalanceDest))
                 .Append(mlContext.Transforms.NormalizeMinMax("Features")));
         }
 
         private static IEstimator<ITransformer> BuildTrainingPipeline(MLContext mlContext, IEstimator<ITransformer> dataProcessingPipeline)
         {
-            return dataProcessingPipeline.Append(mlContext.BinaryClassification.Trainers.FastTree(new FastTreeBinaryTrainer.Options() { NumberOfLeaves = 10, NumberOfTrees = 50, LabelColumnName = "isFraud", FeatureColumnName = "Features" }));
+            return dataProcessingPipeline.Append(mlContext.BinaryClassification.Trainers.FastTree(new FastTreeBinaryTrainer.Options() 
+            { 
+                NumberOfLeaves = 10, 
+                NumberOfTrees = 50, 
+                LabelColumnName = nameof(Transaction.IsFraud), 
+                FeatureColumnName = "Features" 
+                }));
         }
     }
 }
