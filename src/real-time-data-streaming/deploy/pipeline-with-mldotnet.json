@@ -472,6 +472,10 @@
                             "value": "dotnet"
                         },
                         {
+                            "name": "FUNCTIONS_EXTENSION_VERSION",
+                            "value": "~3"
+                        },                        
+                        {
                             "name": "AzureWebJobsStorage",
                             "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccounts_prognetstorage_name'), ';AccountKey=', listKeys(variables('storageAccounts_prognetstorage_name'), '2018-07-01').keys[0].value, ';EndpointSuffix=core.windows.net')]"
                         },
